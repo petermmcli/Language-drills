@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greek Passage — Ο Κόσμος του Άντριαν</title>
+<style>
+  :root { --accent: #4a6fa5; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f9f9f9; color: #222; font-size: 16px; line-height: 1.7; }
+
+  #controls {
+    position: sticky; top: 0; z-index: 100;
+    background: #f4f4f4; border-bottom: 1px solid #ddd;
+    padding: 8px 20px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    font-size: 13px;
+  }
+  #controls h1 { font-size: 15px; font-weight: bold; margin-right: auto; color: #222; }
+  #controls button {
+    background: #f5f5f5; border: 1px solid #ddd; border-radius: 4px;
+    padding: 5px 12px; cursor: pointer; font-size: 13px;
+  }
+  #controls button:hover { background: #eee; }
+  #controls label { font-weight: bold; color: #555; }
+
+  .voice-toggle { display: flex; gap: 8px; align-items: center; }
+  .voice-toggle input[type=radio] { margin: 0 3px 0 0; }
+  .voice-toggle label { font-weight: normal; color: #222; }
+
+  #speed-wrap { display: flex; align-items: center; gap: 6px; }
+  #speed-slider { width: 140px; }
+
+  #sentence-counter { font-size: 12px; color: #888; white-space: nowrap; }
+
+  #btn-en-toggle { background: #e8e8e8; border: 1px solid #ccc; }
+  #btn-en-toggle.on { background: #d0e8ff; border-color: #8ab4f8; }
+
+  #content-wrapper { max-width: 860px; margin: 24px auto; padding: 0 20px; }
+  #content-wrapper.show-translation { max-width: 1400px; }
+
+  .para-block { margin-bottom: 24px; }
+  .para-block.title-block { margin-bottom: 6px; }
+  .para-block.subtitle-block { margin-bottom: 28px; }
+
+  .sentence-row { padding: 4px 0; border-radius: 4px; }
+  .sentence-row:hover { background: rgba(74,111,165,0.05); cursor: pointer; }
+
+  .sentence.is-title { font-size: 1.4em; font-weight: bold; color: #222; line-height: 1.4; }
+  .sentence.is-subtitle { font-size: 0.95em; color: #666; font-style: italic; }
+  .sentence-en.is-title { font-size: 1.1em; font-weight: bold; }
+  .sentence-en.is-subtitle { font-size: 0.9em; font-style: italic; }
+
+  .sentence.active { background: #fff3b0; border-radius: 3px; padding: 0 2px; }
+  .sentence.played { color: #aaa; }
+  .sentence-en.active { background: #cce5ff; border-radius: 3px; padding: 0 2px; }
+  .sentence-en.played { color: #bbb; }
+
+  .sentence-en { display: none; color: #555; font-size: 14px; font-style: italic; }
+
+  #content-wrapper.show-translation .sentence-en { display: block; padding-left: 16px; border-left: 3px solid #ddd; margin-top: 2px; }
+
+  @media (min-width: 1000px) {
+    #content-wrapper.show-translation .sentence-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start;
+    }
+    #content-wrapper.show-translation .sentence-en {
+      border-left: none; padding-left: 0; margin-top: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="controls">
+  <h1>Ο Κόσμος του Άντριαν</h1>
+  <div class="voice-toggle">
+    <label>Voice:</label>
+    <input type="radio" name="voice" id="voice-male" value="el-GR-NestorasNeural" checked>
+    <label for="voice-male">&#9794; Nestoras</label>
+    <input type="radio" name="voice" id="voice-female" value="el-GR-AthinaNeural">
+    <label for="voice-female">&#9792; Athina</label>
+  </div>
+  <label>Speed:</label>
+  <div id="speed-wrap">
+    <input type="range" id="speed-slider" min="0.30" max="1.00" step="0.05" value="0.80">
+    <span id="speed-label">0.80x</span>
+  </div>
+  <button id="btn-prev">&#9194; Prev</button>
+  <button id="btn-play">&#9654; Play</button>
+  <button id="btn-next">&#9193; Next</button>
+  <span id="sentence-counter"></span>
+  <button id="btn-en-toggle">EN Translation</button>
+</div>
+
+<div id="content-wrapper">
+</div>
+<script>
+const greekParas = [["Ο Κόσμος του Άντριαν"], ["Μια νύχτα στη βροχή"], ["Η βροχή έπεφτε σε ρίγες έξω από το κτίριο, αλλά μέσα η Έλενα ένιωθε ζεστή και ανήσυχη.", "Οι σκέψεις της πήγαιναν συνέχεια στον Άντριαν.", "Κάθε φορά που την κοίταζε, το στήθος της σφιγγόταν.", "Κάθε φορά που χαμογελούσε, ένιωθε αδύναμη.", "Δεν είχε βιώσει ποτέ τέτοια συναισθήματα."], ["Ο Άντριαν εμφανίστηκε στην πόρτα με το παλτό βρεγμένο και τα μαλλιά υγρά.", "«Έλενα», είπε απαλά. «Είσαι έτοιμη;»", "Έγνεψε ναι, και η καρδιά της χτυπούσε δυνατά.", "Δεν ήξερε τι να περιμένει, αλλά τον εμπιστευόταν — τουλάχιστον ήθελε να τον εμπιστευτεί."], ["Βγήκαν έξω.", "Η βροχή μούσκεψε τα ρούχα τους, αλλά εκείνος δεν νοιαζόταν.", "Την κρατούσε κοντά, προστατεύοντάς την από τον αέρα.", "Περπάτησαν στους δρόμους μέχρι που έφτασαν σε ένα ήσυχο μέρος της πόλης.", "Ο Άντριαν σταμάτησε και στράφηκε προς αυτήν."], ["«Απόψε», είπε με χαμηλή φωνή, «χρειάζομαι να καταλάβεις κάτι.", "Ο κόσμος μου δεν είναι ασφαλής, αλλά σε θέλω σε αυτόν.", "Σε χρειάζομαι.»"], ["Η Έλενα ένιωσε την καρδιά της να χτυπά πιο γρήγορα.", "Δεν είχε ακούσει ποτέ κανέναν να της λέει κάτι τέτοιο.", "Ήθελε να απαντήσει, αλλά τα λόγια την εγκατέλειψαν.", "Απλώς κοίταξε στα μάτια του, αφήνοντάς τον να δει τον φόβο και τον ενθουσιασμό της."], ["Άπλωσε το χέρι του, σπρώχνοντας μια βρεγμένη τούφα μαλλιών από το πρόσωπό της.", "Τα δάχτυλά του παρέμειναν, στέλνοντας ρίγη στη ράχη της.", "«Δεν θέλω να σε πονέσω», ψιθύρισε.", "«Αλλά δεν μπορώ να υποσχεθώ ότι δεν θα σε κάνω να νιώσεις πράγματα που δεν μπορείς να αγνοήσεις.»"], ["Ένιωσε ζέστη να ανεβαίνει στα μάγουλά της.", "Τον ήθελε περισσότερο από ό,τι είχε θελήσει ποτέ κανέναν.", "Αλλά ο φόβος την κρατούσε στη θέση της.", "Τότε πλησίασε πιο κοντά.", "Τα χείλη του άγγιξαν απαλά το μάγουλό της.", "«Απόψε», ψιθύρισε, «τα πάντα αλλάζουν.»"], ["Η βροχή έπεφτε πιο δυνατά, χτυπώντας στον δρόμο γύρω τους.", "Η καρδιά της Έλενας χτυπούσε γρήγορα.", "Ήθελε να τρέξει, αλλά ήθελε να μείνει.", "Η ένταση μεταξύ τους ήταν ηλεκτρική, τραβώντας τη πιο κοντά, προκαλώντας την να παραδοθεί."], ["Ξαφνικά μια δυνατή κραυγή αντήχησε κοντά.", "Το σώμα του Άντριαν τεντώθηκε.", "«Μείνε κοντά», είπε με τα μάτια να σαρώνουν τον δρόμο.", "Η Έλενα ένιωσε έναν παλμό φόβου.", "Ο κόσμος του ήταν επικίνδυνος, αλλά δεν ήθελε να τον αφήσει."], ["Το χέρι της βρήκε το δικό του.", "«Μην με αφήσεις», ψιθύρισε.", "«Δεν θα σε αφήσω», είπε σταθερά.", "«Όχι τώρα. Ποτέ.»", "Στέκονταν μαζί στη θύελλα, με τις καρδιές να χτυπούν αβέβαιοι για το τι θα ακολουθούσε.", "Η πόλη ήταν δυνατή και σκοτεινή, αλλά μέσα σε εκείνο τον μικρό χώρο μεταξύ τους, όλα τα άλλα εξαφανίστηκαν.", "Και η Έλενα συνειδητοποίησε ότι η ζωή της είχε αλλάξει για πάντα."]];
+
+const englishParas = [["Adrian's World"], ["A night in the rain"], ["The rain fell in streaks outside the building, but inside Elena felt warm and uneasy.", "Her thoughts went constantly to Adrian.", "Every time he looked at her, her chest tightened.", "Every time he smiled, she felt weak.", "She had never experienced such feelings before."], ["Adrian appeared at the door, his coat wet and his hair damp.", "\"Elena,\" he said softly. \"Are you ready?\"", "She nodded yes, and her heart was beating loudly.", "She didn't know what to expect, but she trusted him — at least she wanted to trust him."], ["They went outside.", "The rain soaked their clothes, but he didn't care.", "He held her close, shielding her from the wind.", "They walked through the streets until they reached a quiet part of the city.", "Adrian stopped and turned toward her."], ["\"Tonight,\" he said in a low voice, \"I need you to understand something.", "My world isn't safe, but I want you in it.", "I need you.\""], ["Elena felt her heart beating faster.", "She had never heard anyone say something like that to her.", "She wanted to answer, but the words abandoned her.", "She simply looked into his eyes, letting him see her fear and her excitement."], ["He reached out his hand, pushing a wet lock of hair from her face.", "His fingers lingered, sending shivers down her back.", "\"I don't want to hurt you,\" he whispered.", "\"But I can't promise that I won't make you feel things you can't ignore.\""], ["She felt warmth rising in her cheeks.", "She wanted him more than she had ever wanted anyone.", "But fear kept her in place.", "Then he drew closer.", "His lips touched her cheek softly.", "\"Tonight,\" he whispered, \"everything changes.\""], ["The rain fell harder, beating on the road around them.", "Elena's heart was racing.", "She wanted to run, but she wanted to stay.", "The tension between them was electric, pulling her closer, daring her to surrender."], ["Suddenly a loud scream echoed nearby.", "Adrian's body tensed up.", "\"Stay close,\" he said, his eyes scanning the street.", "Elena felt a pulse of fear.", "His world was dangerous, but she didn't want to leave him."], ["Her hand found his.", "\"Don't leave me,\" she whispered.", "\"I won't leave you,\" he said firmly.", "\"Not now. Never.\"", "They stood together in the storm, their hearts beating, uncertain about what would follow.", "The city was loud and dark, but inside that small space between them, everything else disappeared.", "And Elena realized her life had changed forever."]];
+
+const paraRoles = ["title", "subtitle", "body", "body", "body", "body", "body", "body", "body", "body", "body", "body"];
+const blockExtraClass = ["title-block", "subtitle-block", "", "", "", "", "", "", "", "", "", ""];
+
+const wrapper = document.getElementById('content-wrapper');
+const allRows = [];
+
+greekParas.forEach((gSents, pi) => {
+  const eSents = englishParas[pi] || [];
+  const role = paraRoles[pi] || 'body';
+  const block = document.createElement('div');
+  block.className = 'para-block' + (blockExtraClass[pi] ? ' ' + blockExtraClass[pi] : '');
+  gSents.forEach((gText, si) => {
+    const row = document.createElement('div');
+    row.className = 'sentence-row';
+    const idx = allRows.length;
+    const elClass = 'sentence' + (role !== 'body' ? ' is-' + role : '');
+    const enClass = 'sentence-en' + (role !== 'body' ? ' is-' + role : '');
+    row.innerHTML = `<span class="${elClass}">${gText}</span><span class="${enClass}">${eSents[si] || ''}</span>`;
+    row.addEventListener('click', () => jumpTo(idx));
+    block.appendChild(row);
+    allRows.push({ el: row, greek: gText, en: eSents[si] || '' });
+  });
+  wrapper.appendChild(block);
+});
+
+const sentenceCounter = document.getElementById('sentence-counter');
+sentenceCounter.textContent = `0 / ${allRows.length}`;
+
+const AZURE_KEY = '9FHvN91sOhURXdvTqpspl0D9YlrK0y8fxUmj1jR4aVpHPkN1whmHJQQJ99CDACYeBjFXJ3w3AAAYACOGP37b';
+const TOKEN_URL = 'https://eastus.api.cognitive.microsoft.com/sts/v1.0/issueToken';
+const TTS_URL   = 'https://eastus.tts.speech.microsoft.com/cognitiveservices/v1';
+const VOICES = { male: 'el-GR-NestorasNeural', female: 'el-GR-AthinaNeural' };
+let voice = VOICES.male;
+let speed = 0.80;
+let curIdx = 0;
+let playing = false;
+let curAudio = null;
+const cache = {};
+let cachedToken = null;
+let tokenExpiry = 0;
+
+async function getToken() {
+  if (cachedToken && Date.now() < tokenExpiry) return cachedToken;
+  const resp = await fetch(TOKEN_URL, { method:'POST', headers:{ 'Ocp-Apim-Subscription-Key': AZURE_KEY, 'Content-Length':'0' }});
+  cachedToken = await resp.text();
+  tokenExpiry = Date.now() + 8*60*1000;
+  return cachedToken;
+}
+
+function escXml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;'); }
+
+document.querySelectorAll('input[name="voice"]').forEach(r => {
+  r.addEventListener('change', () => { voice = r.value; Object.keys(cache).forEach(k => delete cache[k]); });
+});
+document.getElementById('speed-slider').addEventListener('input', e => {
+  speed = parseFloat(e.target.value);
+  document.getElementById('speed-label').textContent = speed.toFixed(2) + 'x';
+  Object.keys(cache).forEach(k => delete cache[k]);
+});
+
+async function getAudio(text) {
+  const key = voice+'|'+speed+'|'+text;
+  if (cache[key]) return cache[key];
+  const token = await getToken();
+  const rate = speed >= 1 ? '+0%' : '-'+Math.round((1-speed)*100)+'%';
+  const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="el-GR"><voice name="${voice}"><prosody rate="${rate}">${escXml(text)}</prosody></voice></speak>`;
+  const resp = await fetch(TTS_URL, { method:'POST', headers:{ 'Authorization':'Bearer '+token, 'Content-Type':'application/ssml+xml', 'X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3' }, body: ssml });
+  const blob = await resp.blob();
+  const url = URL.createObjectURL(blob);
+  const a = new Audio(url);
+  cache[key] = a;
+  return a;
+}
+
+function prefetch(idx) { if (idx < allRows.length) getAudio(allRows[idx].greek).catch(()=>{}); }
+
+function setActive(idx) {
+  allRows.forEach((r, i) => {
+    const gs = r.el.querySelector('.sentence');
+    const es = r.el.querySelector('.sentence-en');
+    const gBase = gs.className.replace(/ active| played/g, '');
+    const eBase = es.className.replace(/ active| played/g, '');
+    gs.className = gBase + (i===idx?' active': i<idx?' played':'');
+    es.className = eBase + (i===idx?' active': i<idx?' played':'');
+  });
+  allRows[idx]?.el.scrollIntoView({ behavior:'smooth', block:'center' });
+  sentenceCounter.textContent = `${idx+1} / ${allRows.length}`;
+}
+
+const btnPlay = document.getElementById('btn-play');
+
+async function playSentence(idx) {
+  if (idx >= allRows.length) { playing=false; btnPlay.innerHTML='&#9654; Play'; return; }
+  curIdx = idx;
+  setActive(idx);
+  prefetch(idx+1);
+  try {
+    const audio = await getAudio(allRows[idx].greek);
+    curAudio = audio;
+    audio.currentTime = 0;
+    await new Promise((res) => { audio.onended = res; audio.onerror = res; audio.play().catch(res); });
+  } catch(e) {}
+  if (playing) playSentence(idx+1);
+}
+
+btnPlay.addEventListener('click', () => {
+  if (playing) {
+    playing=false; curAudio?.pause(); btnPlay.innerHTML='&#9654; Play';
+  } else {
+    playing=true; btnPlay.innerHTML='&#9646;&#9646; Pause'; playSentence(curIdx);
+  }
+});
+
+document.getElementById('btn-prev').addEventListener('click', () => jumpTo(Math.max(0, curIdx-1)));
+document.getElementById('btn-next').addEventListener('click', () => jumpTo(Math.min(allRows.length-1, curIdx+1)));
+
+function jumpTo(idx) {
+  curIdx = idx;
+  if (playing) { curAudio?.pause(); playSentence(idx); }
+  else setActive(idx);
+}
+
+const btnEn = document.getElementById('btn-en-toggle');
+btnEn.addEventListener('click', function() {
+  wrapper.classList.toggle('show-translation');
+  this.classList.toggle('on');
+});
+</script>
+</body>
+</html>

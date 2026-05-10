@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greek Passage Vocab — Ο Κόσμος του Άντριαν</title>
+<style>
+  :root { --accent: #4a6fa5; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f9f9f9; color: #222; font-size: 15px; }
+
+  #toolbar {
+    position: sticky; top: 0; z-index: 200;
+    background: #f4f4f4; border-bottom: 1px solid #ddd;
+    padding: 8px 20px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    font-size: 13px;
+  }
+  #toolbar h1 { font-size: 15px; font-weight: bold; margin-right: auto; color: #222; }
+  #cross-count { font-size: 12px; color: #888; white-space: nowrap; }
+  #toolbar button {
+    background: #f5f5f5; border: 1px solid #ddd; border-radius: 4px;
+    padding: 5px 12px; cursor: pointer; font-size: 13px;
+  }
+  #toolbar button:hover { background: #eee; }
+
+  /* Cross-off */
+  tr.crossed-off td { text-decoration: line-through; color: #bbb; background: #f8f8f8; }
+  tr.crossed-off .audio-btn { opacity: 0.2; }
+  tbody tr:not(.cat-row) { cursor: pointer; }
+  tbody tr:not(.cat-row):hover { outline: 2px solid #cde; }
+  #toggle-all-btn { background: #c0392b; color: #000; border: none; border-radius: 4px; padding: 5px 12px; font-size: 13px; font-weight: bold; cursor: pointer; white-space: nowrap; }
+  #toggle-all-btn:hover { background: #a93226; }
+  #toggle-all-btn.all-crossed { background: #27ae60; }
+  #toggle-all-btn.all-crossed:hover { background: #1e8449; }
+
+  .voice-toggle { display: flex; gap: 8px; align-items: center; }
+  .voice-toggle input[type=radio] { margin: 0 3px 0 0; }
+  #toolbar label { font-weight: bold; color: #555; }
+  .voice-toggle label { font-weight: normal; color: #222; }
+
+  #speed-wrap { display: flex; align-items: center; gap: 6px; }
+  #speed-slider { width: 140px; }
+
+  #mini-player {
+    position: fixed; bottom: 16px; right: 16px; z-index: 300;
+    background: #fff; border: 1px solid #ccc; border-radius: 8px;
+    padding: 8px 12px; display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); font-size: 13px;
+    min-width: 240px;
+  }
+  #mini-player button { border: none; background: none; cursor: pointer; font-size: 18px; padding: 0 4px; }
+  #mini-player-text { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  main { padding: 20px; max-width: 1200px; margin: 0 auto; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 32px; }
+  th { background: #eef2f7; font-size: 13px; font-weight: bold; text-align: left; padding: 8px 10px; border: 1px solid #ddd; }
+  td { padding: 7px 10px; border: 1px solid #eee; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) { background: #fafafa; }
+  .el { font-style: italic; }
+  .en { color: #666; font-size: 13px; }
+
+  .audio-btn {
+    background: none; border: none; cursor: pointer; font-size: 16px;
+    padding: 0 4px; vertical-align: middle;
+  }
+  .audio-btn:hover { opacity: 0.7; }
+
+  .freq-dot {
+    display: inline-block; width: 10px; height: 10px;
+    border-radius: 50%; margin-right: 2px; vertical-align: middle;
+    flex-shrink: 0; cursor: default;
+  }
+
+  #freq-legend {
+    font-size: 12px; color: #555; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .leg-item { display: flex; align-items: center; gap: 4px; }
+
+  /* Flashcard Modal */
+  #fc-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:2000; align-items:center; justify-content:center; }
+  .fc-box { background:#fff; border-radius:14px; width:min(580px,94vw); padding:24px 28px 28px; box-shadow:0 10px 40px rgba(0,0,0,0.28); display:flex; flex-direction:column; gap:14px; }
+  .fc-header { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .fc-mode-btns { display:flex; gap:6px; }
+  .fc-mode-btn { padding:4px 13px; border-radius:20px; border:1.5px solid #99aac4; background:#fff; font-size:12px; cursor:pointer; color:#3a5a80; font-weight:600; white-space:nowrap; }
+  .fc-mode-btn.active { background:#4a6a9c; color:#fff; border-color:#4a6a9c; }
+  .fc-mode-btn:hover:not(.active) { background:#eef2f8; }
+  .fc-progress { font-size:12px; color:#888; margin-left:auto; white-space:nowrap; }
+  .fc-close { background:none; border:none; font-size:20px; cursor:pointer; color:#aaa; line-height:1; padding:0 0 0 4px; }
+  .fc-close:hover { color:#333; }
+  .fc-card { min-height:180px; border:1.5px solid #dde4f0; border-radius:10px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:28px 24px 20px; gap:10px; text-align:center; cursor:pointer; transition:border-color 0.15s; user-select:none; }
+  .fc-card:hover { border-color:#99aac4; }
+  .fc-greek { font-size:32px; line-height:1.3; }
+  .fc-english { font-size:32px; color:#222; line-height:1.3; }
+  .fc-reveal-hint { font-size:11px; color:#ccc; margin-top:6px; }
+  .fc-divider { border:none; border-top:1.5px solid #eee; margin:4px 0; }
+  .fc-answer-area { display:none; flex-direction:column; align-items:center; gap:12px; }
+  .fc-answer-content { text-align:center; }
+  .fc-inline-answer { text-align:center; margin-top:6px; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; }
+  .fc-inline-answer .fc-english, .fc-inline-answer .fc-greek { font-size:32px; color:#2980b9; line-height:1.3; }
+  .fc-inline-answer .fc-tts-btn { font-size:24px; margin-top:0; }
+  .fc-example { margin-top:18px; }
+  .fc-ex-el { margin-bottom:6px; }
+  .fc-ex-en { color:#2980b9; }
+  .fc-btns { display:flex; gap:12px; justify-content:center; }
+  #fc-correct-btn, #fc-wrong-btn, #fc-restart-btn { border:none; border-radius:7px; padding:8px 22px; font-size:14px; font-weight:bold; cursor:pointer; }
+  #fc-correct-btn { background:#3a7d44; color:#fff; }
+  #fc-correct-btn:hover { background:#2d6335; }
+  #fc-wrong-btn { background:#b94040; color:#fff; }
+  #fc-wrong-btn:hover { background:#962f2f; }
+  #fc-restart-btn { background:#4a6a9c; color:#fff; margin-top:8px; }
+  #fc-restart-btn:hover { background:#395a8a; }
+  .fc-complete { display:none; flex-direction:column; align-items:center; padding:12px 0 4px; text-align:center; }
+  .fc-complete-icon { font-size:48px; margin-bottom:10px; }
+  .fc-complete h3 { font-size:22px; color:#3a7d44; margin:0 0 8px; }
+  .fc-complete p { color:#666; margin:0; font-size:14px; }
+  #flashcard-btn { background:#7a4a9c; color:#000; border:none; border-radius:4px; padding:5px 12px; font-size:13px; font-weight:bold; cursor:pointer; white-space:nowrap; }
+  #flashcard-btn:hover { background:#623d80; }
+  .fc-voice-bar { display:flex; align-items:center; gap:8px; font-size:12px; color:#555; flex-wrap:wrap; }
+  .fc-voice-bar label { cursor:pointer; white-space:nowrap; }
+  .fc-voice-bar input[type=radio] { margin-right:2px; }
+  #fc-speed-wrap { display:flex; align-items:center; gap:5px; margin-left:6px; }
+  #fc-speed-slider { width:100px; }
+  .fc-tts-btn { cursor:pointer; font-size:22px; opacity:0.5; transition:opacity 0.15s; user-select:none; -webkit-user-select:none; display:inline-block; margin-top:4px; }
+  .fc-tts-btn:hover { opacity:1; }
+  /* Freq picker modal */
+  #fc-freq-picker { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:3000; align-items:center; justify-content:center; }
+  .fc-picker-box { background:#fff; border-radius:14px; padding:24px 28px 24px; box-shadow:0 10px 40px rgba(0,0,0,0.28); display:flex; flex-direction:column; gap:16px; min-width:280px; }
+  .fc-picker-box h3 { margin:0; font-size:15px; color:#333; font-weight:700; }
+  .fc-picker-box p { margin:0; font-size:12px; color:#888; }
+  .fc-freq-circles { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .fc-freq-toggle { display:flex; align-items:center; gap:6px; padding:5px 10px 5px 7px; border-radius:20px; border:2px solid #ddd; cursor:pointer; font-size:12px; color:#555; user-select:none; transition:border-color 0.15s, background 0.15s; }
+  .fc-freq-toggle .fc-dot { display:inline-block; width:12px; height:12px; border-radius:50%; flex-shrink:0; }
+  .fc-freq-toggle.selected { border-color:#4a6a9c; background:#eef2f8; color:#333; font-weight:600; }
+  .fc-freq-toggle:hover { border-color:#99aac4; }
+  .fc-picker-actions { display:flex; gap:10px; justify-content:flex-end; align-items:center; }
+  #fc-picker-count { font-size:12px; color:#888; flex:1; }
+  #fc-picker-start { background:#4a6a9c; color:#fff; border:none; border-radius:7px; padding:8px 20px; font-size:13px; font-weight:bold; cursor:pointer; }
+  #fc-picker-start:hover { background:#395a8a; }
+  #fc-picker-cancel { background:none; border:1px solid #ddd; border-radius:7px; padding:8px 14px; font-size:13px; cursor:pointer; color:#666; }
+  #fc-picker-cancel:hover { background:#f5f5f5; }
+</style>
+</head>
+<body>
+
+<div id="toolbar">
+  <h1>Greek Passage Vocabulary — Ο Κόσμος του Άντριαν</h1>
+  <span id="cross-count">0 / 0 crossed off</span>
+  <div id="freq-legend">
+    <span class="leg-item"><span class="freq-dot" style="background:#27ae60"></span>top 3k</span>
+    <span class="leg-item"><span class="freq-dot" style="background:#2980b9"></span>3k–8k</span>
+    <span class="leg-item"><span class="freq-dot" style="background:#e67e22"></span>8k–15k</span>
+    <span class="leg-item"><span class="freq-dot" style="background:#c0392b"></span>15k+</span>
+    <span class="leg-item"><span class="freq-dot" style="background:#bdc3c7"></span>rare</span>
+  </div>
+  <div class="voice-toggle">
+    <label>Voice:</label>
+    <input type="radio" name="voice" id="voice-male" value="el-GR-NestorasNeural" checked>
+    <label for="voice-male">&#9794; Nestoras</label>
+    <input type="radio" name="voice" id="voice-female" value="el-GR-AthinaNeural">
+    <label for="voice-female">&#9792; Athina</label>
+  </div>
+  <label>Speed:</label>
+  <div id="speed-wrap">
+    <input type="range" id="speed-slider" min="0.30" max="1.00" step="0.05" value="0.80">
+    <span id="speed-label">0.80x</span>
+  </div>
+  <button id="export-anki-btn">Export to Anki</button>
+  <button id="download-marked-btn">&#11015; Download Marked File</button>
+  <button id="toggle-all-btn">&#10007; Cross Off All</button>
+  <button id="flashcard-btn">&#127183; Flashcards</button>
+</div>
+
+<div id="mini-player">
+  <button id="mp-prev">&#9194;</button>
+  <button id="mp-play">&#9654;</button>
+  <button id="mp-next">&#9193;</button>
+  <span id="mini-player-text">—</span>
+</div>
+
+<main>
+  <table id="vocab-table">
+    <thead>
+      <tr>
+        <th style="width:18px"></th>
+        <th style="width:220px">Greek</th>
+        <th style="width:220px">English</th>
+        <th>Example Sentence</th>
+      </tr>
+    </thead>
+    <tbody id="vocab-body">
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.36, wordfreq)"></span></td><td><span class="word-text">ανήσυχος</span> <button class="audio-btn" data-text="ανήσυχος" onclick="tts(this.dataset.text, this)">🔊</button></td><td>anxious, uneasy</td><td><span class="el">Ένιωθα ανήσυχος όλη τη νύχτα.</span> <button class="audio-btn" data-text="Ένιωθα ανήσυχος όλη τη νύχτα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I felt uneasy all night.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (Zipf 4.52, wordfreq)"></span></td><td><span class="word-text">το στήθος</span> <button class="audio-btn" data-text="το στήθος" onclick="tts(this.dataset.text, this)">🔊</button></td><td>chest</td><td><span class="el">Άπλωσε το χέρι στο στήθος του.</span> <button class="audio-btn" data-text="Άπλωσε το χέρι στο στήθος του." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He laid his hand on his chest.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (override)"></span></td><td><span class="word-text">σφίγγομαι</span> <button class="audio-btn" data-text="σφίγγομαι" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to tighten, clench up</td><td><span class="el">Η καρδιά μου σφίγγεται κάθε φορά που τη βλέπω.</span> <button class="audio-btn" data-text="Η καρδιά μου σφίγγεται κάθε φορά που τη βλέπω." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">My heart clenches every time I see her.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.54, suffix→βιώνει)"></span></td><td><span class="word-text">βιώνω</span> <button class="audio-btn" data-text="βιώνω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to experience</td><td><span class="el">Δεν είχα βιώσει ποτέ τέτοιο φόβο.</span> <button class="audio-btn" data-text="Δεν είχα βιώσει ποτέ τέτοιο φόβο." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I had never experienced such fear.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (Zipf 4.47, wordfreq)"></span></td><td><span class="word-text">το συναίσθημα</span> <button class="audio-btn" data-text="το συναίσθημα" onclick="tts(this.dataset.text, this)">🔊</button></td><td>feeling, emotion</td><td><span class="el">Δεν μπορώ να περιγράψω τα συναισθήματά μου.</span> <button class="audio-btn" data-text="Δεν μπορώ να περιγράψω τα συναισθήματά μου." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I can't describe my feelings.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#27ae60;" title="top 3k (override)"></span></td><td><span class="word-text">εμφανίζομαι</span> <button class="audio-btn" data-text="εμφανίζομαι" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to appear, show up</td><td><span class="el">Εμφανίστηκε ξαφνικά στην πόρτα.</span> <button class="audio-btn" data-text="Εμφανίστηκε ξαφνικά στην πόρτα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He suddenly appeared at the door.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#27ae60;" title="top 3k (override)"></span></td><td><span class="word-text">βρεγμένος</span> <button class="audio-btn" data-text="βρεγμένος" onclick="tts(this.dataset.text, this)">🔊</button></td><td>wet</td><td><span class="el">Τα ρούχα του ήταν εντελώς βρεγμένα.</span> <button class="audio-btn" data-text="Τα ρούχα του ήταν εντελώς βρεγμένα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">His clothes were completely wet.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#c0392b;" title="15k+ (Zipf 3.11, wordfreq)"></span></td><td><span class="word-text">υγρός</span> <button class="audio-btn" data-text="υγρός" onclick="tts(this.dataset.text, this)">🔊</button></td><td>damp, moist</td><td><span class="el">Τα μαλλιά της ήταν ακόμα υγρά.</span> <button class="audio-btn" data-text="Τα μαλλιά της ήταν ακόμα υγρά." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">Her hair was still damp.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.95, wordfreq)"></span></td><td><span class="word-text">απαλά</span> <button class="audio-btn" data-text="απαλά" onclick="tts(this.dataset.text, this)">🔊</button></td><td>softly, gently</td><td><span class="el">Της μίλησε απαλά για να μην τη φοβίσει.</span> <button class="audio-btn" data-text="Της μίλησε απαλά για να μην τη φοβίσει." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He spoke to her softly so as not to frighten her.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (override)"></span></td><td><span class="word-text">γνέφω</span> <button class="audio-btn" data-text="γνέφω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to nod</td><td><span class="el">Έγνεψα ναι χωρίς να πω λέξη.</span> <button class="audio-btn" data-text="Έγνεψα ναι χωρίς να πω λέξη." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I nodded yes without saying a word.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#27ae60;" title="top 3k (override)"></span></td><td><span class="word-text">χτυπώ</span> <button class="audio-btn" data-text="χτυπώ" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to beat, knock</td><td><span class="el">Η καρδιά μου χτυπούσε δυνατά.</span> <button class="audio-btn" data-text="Η καρδιά μου χτυπούσε δυνατά." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">My heart was beating loudly.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.89, wordfreq)"></span></td><td><span class="word-text">εμπιστεύομαι</span> <button class="audio-btn" data-text="εμπιστεύομαι" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to trust</td><td><span class="el">Τον εμπιστεύομαι περισσότερο από οποιονδήποτε.</span> <button class="audio-btn" data-text="Τον εμπιστεύομαι περισσότερο από οποιονδήποτε." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I trust him more than anyone.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (Zipf 5.36, wordfreq)"></span></td><td><span class="word-text">τουλάχιστον</span> <button class="audio-btn" data-text="τουλάχιστον" onclick="tts(this.dataset.text, this)">🔊</button></td><td>at least</td><td><span class="el">Τουλάχιστον προσπάθησε.</span> <button class="audio-btn" data-text="Τουλάχιστον προσπάθησε." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">At least he tried.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (override)"></span></td><td><span class="word-text">μουσκεύω</span> <button class="audio-btn" data-text="μουσκεύω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to soak, drench</td><td><span class="el">Η βροχή μούσκεψε όλα μου τα ρούχα.</span> <button class="audio-btn" data-text="Η βροχή μούσκεψε όλα μου τα ρούχα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">The rain soaked all my clothes.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.40, wordfreq)"></span></td><td><span class="word-text">νοιάζομαι</span> <button class="audio-btn" data-text="νοιάζομαι" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to care</td><td><span class="el">Δεν νοιάζομαι τι λένε οι άλλοι.</span> <button class="audio-btn" data-text="Δεν νοιάζομαι τι λένε οι άλλοι." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I don't care what others say.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#27ae60;" title="top 3k (override)"></span></td><td><span class="word-text">προστατεύω</span> <button class="audio-btn" data-text="προστατεύω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to protect</td><td><span class="el">Προστάτευε την αδερφή του από κάθε κίνδυνο.</span> <button class="audio-btn" data-text="Προστάτευε την αδερφή του από κάθε κίνδυνο." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He protected his sister from every danger.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (override)"></span></td><td><span class="word-text">στρέφομαι</span> <button class="audio-btn" data-text="στρέφομαι" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to turn (toward)</td><td><span class="el">Στράφηκε προς εμένα και χαμογέλασε.</span> <button class="audio-btn" data-text="Στράφηκε προς εμένα και χαμογέλασε." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He turned toward me and smiled.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (Zipf 4.17, wordfreq)"></span></td><td><span class="word-text">ασφαλής</span> <button class="audio-btn" data-text="ασφαλής" onclick="tts(this.dataset.text, this)">🔊</button></td><td>safe</td><td><span class="el">Δεν είμαι σίγουρος ότι ο δρόμος είναι ασφαλής.</span> <button class="audio-btn" data-text="Δεν είμαι σίγουρος ότι ο δρόμος είναι ασφαλής." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I'm not sure the road is safe.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#c0392b;" title="15k+ (Zipf 3.05, wordfreq)"></span></td><td><span class="word-text">εγκαταλείπω</span> <button class="audio-btn" data-text="εγκαταλείπω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to abandon, leave behind</td><td><span class="el">Τα λόγια με εγκατέλειψαν εκείνη τη στιγμή.</span> <button class="audio-btn" data-text="Τα λόγια με εγκατέλειψαν εκείνη τη στιγμή." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">Words abandoned me at that moment.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (Zipf 4.96, wordfreq)"></span></td><td><span class="word-text">απλώς</span> <button class="audio-btn" data-text="απλώς" onclick="tts(this.dataset.text, this)">🔊</button></td><td>simply, just</td><td><span class="el">Απλώς ήθελα να σε δω.</span> <button class="audio-btn" data-text="Απλώς ήθελα να σε δω." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I just wanted to see you.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (Zipf 4.44, wordfreq)"></span></td><td><span class="word-text">ο φόβος</span> <button class="audio-btn" data-text="ο φόβος" onclick="tts(this.dataset.text, this)">🔊</button></td><td>fear</td><td><span class="el">Ο φόβος της ήταν ολοφάνερος.</span> <button class="audio-btn" data-text="Ο φόβος της ήταν ολοφάνερος." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">Her fear was obvious.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.67, wordfreq)"></span></td><td><span class="word-text">ο ενθουσιασμός</span> <button class="audio-btn" data-text="ο ενθουσιασμός" onclick="tts(this.dataset.text, this)">🔊</button></td><td>excitement, enthusiasm</td><td><span class="el">Δεν μπορούσε να κρύψει τον ενθουσιασμό της.</span> <button class="audio-btn" data-text="Δεν μπορούσε να κρύψει τον ενθουσιασμό της." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">She couldn't hide her excitement.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.24, suffix→απλώνει)"></span></td><td><span class="word-text">απλώνω</span> <button class="audio-btn" data-text="απλώνω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to stretch out, reach out</td><td><span class="el">Άπλωσε το χέρι του προς το πρόσωπό μου.</span> <button class="audio-btn" data-text="Άπλωσε το χέρι του προς το πρόσωπό μου." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He reached his hand toward my face.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (override)"></span></td><td><span class="word-text">σπρώχνω</span> <button class="audio-btn" data-text="σπρώχνω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to push</td><td><span class="el">Έσπρωξα την πόρτα και μπήκα μέσα.</span> <button class="audio-btn" data-text="Έσπρωξα την πόρτα και μπήκα μέσα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I pushed the door and went inside.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (override)"></span></td><td><span class="word-text">η τούφα</span> <button class="audio-btn" data-text="η τούφα" onclick="tts(this.dataset.text, this)">🔊</button></td><td>tuft, lock (of hair)</td><td><span class="el">Μια τούφα μαλλιών έπεσε στα μάτια της.</span> <button class="audio-btn" data-text="Μια τούφα μαλλιών έπεσε στα μάτια της." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">A lock of hair fell into her eyes.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.39, wordfreq)"></span></td><td><span class="word-text">παραμένω</span> <button class="audio-btn" data-text="παραμένω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to remain, stay</td><td><span class="el">Παρέμεινε σιωπηλός για ώρα.</span> <button class="audio-btn" data-text="Παρέμεινε σιωπηλός για ώρα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He remained silent for a long time.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#c0392b;" title="15k+ (Zipf 3.16, wordfreq)"></span></td><td><span class="word-text">το ρίγος</span> <button class="audio-btn" data-text="το ρίγος" onclick="tts(this.dataset.text, this)">🔊</button></td><td>shiver, chill</td><td><span class="el">Ένιωσα ένα ρίγος στη ράχη μου.</span> <button class="audio-btn" data-text="Ένιωσα ένα ρίγος στη ράχη μου." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I felt a shiver down my back.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.56, wordfreq)"></span></td><td><span class="word-text">η ράχη</span> <button class="audio-btn" data-text="η ράχη" onclick="tts(this.dataset.text, this)">🔊</button></td><td>back (anatomical)</td><td><span class="el">Πονούσε η ράχη του από τη δουλειά.</span> <button class="audio-btn" data-text="Πονούσε η ράχη του από τη δουλειά." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">His back hurt from work.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (override)"></span></td><td><span class="word-text">ψιθυρίζω</span> <button class="audio-btn" data-text="ψιθυρίζω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to whisper</td><td><span class="el">Της ψιθύρισε κάτι στο αυτί.</span> <button class="audio-btn" data-text="Της ψιθύρισε κάτι στο αυτί." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He whispered something in her ear.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.87, wordfreq)"></span></td><td><span class="word-text">υπόσχομαι</span> <button class="audio-btn" data-text="υπόσχομαι" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to promise</td><td><span class="el">Δεν μπορώ να σου υποσχεθώ τίποτα.</span> <button class="audio-btn" data-text="Δεν μπορώ να σου υποσχεθώ τίποτα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I can't promise you anything.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.23, wordfreq)"></span></td><td><span class="word-text">αγνοώ</span> <button class="audio-btn" data-text="αγνοώ" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to ignore</td><td><span class="el">Προσπάθησε να αγνοήσει τον θόρυβο.</span> <button class="audio-btn" data-text="Προσπάθησε να αγνοήσει τον θόρυβο." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He tried to ignore the noise.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.54, wordfreq)"></span></td><td><span class="word-text">το μάγουλο</span> <button class="audio-btn" data-text="το μάγουλο" onclick="tts(this.dataset.text, this)">🔊</button></td><td>cheek</td><td><span class="el">Ένα δάκρυ κύλησε στο μάγουλό της.</span> <button class="audio-btn" data-text="Ένα δάκρυ κύλησε στο μάγουλό της." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">A tear rolled down her cheek.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.54, wordfreq)"></span></td><td><span class="word-text">πλησιάζω</span> <button class="audio-btn" data-text="πλησιάζω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to approach, draw near</td><td><span class="el">Πλησίασε αργά τη γάτα.</span> <button class="audio-btn" data-text="Πλησίασε αργά τη γάτα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He slowly approached the cat.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.83, wordfreq)"></span></td><td><span class="word-text">το χείλος</span> <button class="audio-btn" data-text="το χείλος" onclick="tts(this.dataset.text, this)">🔊</button></td><td>lip</td><td><span class="el">Δάγκωσε το κάτω χείλος της.</span> <button class="audio-btn" data-text="Δάγκωσε το κάτω χείλος της." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">She bit her lower lip.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.43, wordfreq)"></span></td><td><span class="word-text">αγγίζω</span> <button class="audio-btn" data-text="αγγίζω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to touch</td><td><span class="el">Μην αγγίζεις τίποτα στο μουσείο.</span> <button class="audio-btn" data-text="Μην αγγίζεις τίποτα στο μουσείο." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">Don't touch anything in the museum.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (Zipf 4.60, wordfreq)"></span></td><td><span class="word-text">η ένταση</span> <button class="audio-btn" data-text="η ένταση" onclick="tts(this.dataset.text, this)">🔊</button></td><td>tension</td><td><span class="el">Η ένταση στο δωμάτιο ήταν ψηλή.</span> <button class="audio-btn" data-text="Η ένταση στο δωμάτιο ήταν ψηλή." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">The tension in the room was high.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#c0392b;" title="15k+ (Zipf 3.14, wordfreq)"></span></td><td><span class="word-text">ηλεκτρικός</span> <button class="audio-btn" data-text="ηλεκτρικός" onclick="tts(this.dataset.text, this)">🔊</button></td><td>electric</td><td><span class="el">Ένιωθα ένα ηλεκτρικό ρεύμα στον αέρα.</span> <button class="audio-btn" data-text="Ένιωθα ένα ηλεκτρικό ρεύμα στον αέρα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I felt an electric current in the air.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#27ae60;" title="top 3k (override)"></span></td><td><span class="word-text">τραβώ</span> <button class="audio-btn" data-text="τραβώ" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to pull</td><td><span class="el">Τράβηξε την καρέκλα κοντά του.</span> <button class="audio-btn" data-text="Τράβηξε την καρέκλα κοντά του." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He pulled the chair close to him.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#c0392b;" title="15k+ (Zipf 3.09, wordfreq)"></span></td><td><span class="word-text">προκαλώ</span> <button class="audio-btn" data-text="προκαλώ" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to provoke, cause</td><td><span class="el">Τα λόγια του προκάλεσαν αναστάτωση.</span> <button class="audio-btn" data-text="Τα λόγια του προκάλεσαν αναστάτωση." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">His words caused a stir.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (override)"></span></td><td><span class="word-text">παραδίνομαι</span> <button class="audio-btn" data-text="παραδίνομαι" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to surrender, give in</td><td><span class="el">Δεν παραδίδομαι ποτέ εύκολα.</span> <button class="audio-btn" data-text="Δεν παραδίδομαι ποτέ εύκολα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I never surrender easily.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.88, wordfreq)"></span></td><td><span class="word-text">η κραυγή</span> <button class="audio-btn" data-text="η κραυγή" onclick="tts(this.dataset.text, this)">🔊</button></td><td>scream, cry</td><td><span class="el">Μια κραυγή ακούστηκε μέσα στη νύχτα.</span> <button class="audio-btn" data-text="Μια κραυγή ακούστηκε μέσα στη νύχτα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">A scream was heard in the night.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#c0392b;" title="15k+ (override)"></span></td><td><span class="word-text">αντηχώ</span> <button class="audio-btn" data-text="αντηχώ" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to echo, resound</td><td><span class="el">Η φωνή του αντήχησε στους τοίχους.</span> <button class="audio-btn" data-text="Η φωνή του αντήχησε στους τοίχους." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">His voice echoed off the walls.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (override)"></span></td><td><span class="word-text">τεντώνομαι</span> <button class="audio-btn" data-text="τεντώνομαι" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to tense up, stiffen</td><td><span class="el">Το σώμα του τεντώθηκε από την έκπληξη.</span> <button class="audio-btn" data-text="Το σώμα του τεντώθηκε από την έκπληξη." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">His body tensed up from surprise.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.31, suffix→σαρώνει)"></span></td><td><span class="word-text">σαρώνω</span> <button class="audio-btn" data-text="σαρώνω" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to scan, sweep</td><td><span class="el">Σάρωσε με τα μάτια ολόκληρο το δωμάτιο.</span> <button class="audio-btn" data-text="Σάρωσε με τα μάτια ολόκληρο το δωμάτιο." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He swept the entire room with his eyes.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.33, wordfreq)"></span></td><td><span class="word-text">ο παλμός</span> <button class="audio-btn" data-text="ο παλμός" onclick="tts(this.dataset.text, this)">🔊</button></td><td>pulse, throb</td><td><span class="el">Ένιωθε τον παλμό της καρδιάς του.</span> <button class="audio-btn" data-text="Ένιωθε τον παλμό της καρδιάς του." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He felt the throb of his heart.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.97, wordfreq)"></span></td><td><span class="word-text">επικίνδυνος</span> <button class="audio-btn" data-text="επικίνδυνος" onclick="tts(this.dataset.text, this)">🔊</button></td><td>dangerous</td><td><span class="el">Αυτός ο δρόμος είναι επικίνδυνος τη νύχτα.</span> <button class="audio-btn" data-text="Αυτός ο δρόμος είναι επικίνδυνος τη νύχτα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">This road is dangerous at night.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (Zipf 4.45, wordfreq)"></span></td><td><span class="word-text">σταθερά</span> <button class="audio-btn" data-text="σταθερά" onclick="tts(this.dataset.text, this)">🔊</button></td><td>steadily, firmly</td><td><span class="el">Της κράτησε σταθερά το χέρι.</span> <button class="audio-btn" data-text="Της κράτησε σταθερά το χέρι." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He held her hand firmly.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.92, wordfreq)"></span></td><td><span class="word-text">η θύελλα</span> <button class="audio-btn" data-text="η θύελλα" onclick="tts(this.dataset.text, this)">🔊</button></td><td>storm</td><td><span class="el">Η θύελλα κράτησε όλη τη νύχτα.</span> <button class="audio-btn" data-text="Η θύελλα κράτησε όλη τη νύχτα." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">The storm lasted all night.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (override)"></span></td><td><span class="word-text">αβέβαιος</span> <button class="audio-btn" data-text="αβέβαιος" onclick="tts(this.dataset.text, this)">🔊</button></td><td>uncertain</td><td><span class="el">Είμαι αβέβαιος για το μέλλον.</span> <button class="audio-btn" data-text="Είμαι αβέβαιος για το μέλλον." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I'm uncertain about the future.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.93, wordfreq)"></span></td><td><span class="word-text">ακολουθώ</span> <button class="audio-btn" data-text="ακολουθώ" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to follow</td><td><span class="el">Με ακολούθησε μέχρι το σπίτι.</span> <button class="audio-btn" data-text="Με ακολούθησε μέχρι το σπίτι." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He followed me to the house.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.50, wordfreq)"></span></td><td><span class="word-text">σκοτεινός</span> <button class="audio-btn" data-text="σκοτεινός" onclick="tts(this.dataset.text, this)">🔊</button></td><td>dark</td><td><span class="el">Το δωμάτιο ήταν σκοτεινό και κρύο.</span> <button class="audio-btn" data-text="Το δωμάτιο ήταν σκοτεινό και κρύο." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">The room was dark and cold.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (Zipf 4.81, wordfreq)"></span></td><td><span class="word-text">ο χώρος</span> <button class="audio-btn" data-text="ο χώρος" onclick="tts(this.dataset.text, this)">🔊</button></td><td>space, area</td><td><span class="el">Δεν υπάρχει αρκετός χώρος για όλους.</span> <button class="audio-btn" data-text="Δεν υπάρχει αρκετός χώρος για όλους." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">There isn't enough space for everyone.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#2980b9;" title="3k–8k (override)"></span></td><td><span class="word-text">εξαφανίζομαι</span> <button class="audio-btn" data-text="εξαφανίζομαι" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to disappear</td><td><span class="el">Εξαφανίστηκε χωρίς ίχνος.</span> <button class="audio-btn" data-text="Εξαφανίστηκε χωρίς ίχνος." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">He disappeared without a trace.</span></td></tr>
+      <tr><td style="width:18px;padding:4px 6px;text-align:center;vertical-align:middle;border-right:none;"><span class="freq-dot" style="background:#e67e22;" title="8k–15k (Zipf 3.35, wordfreq)"></span></td><td><span class="word-text">συνειδητοποιώ</span> <button class="audio-btn" data-text="συνειδητοποιώ" onclick="tts(this.dataset.text, this)">🔊</button></td><td>to realize</td><td><span class="el">Συνειδητοποίησα ότι είχα κάνει λάθος.</span> <button class="audio-btn" data-text="Συνειδητοποίησα ότι είχα κάνει λάθος." onclick="tts(this.dataset.text, this)">🔊</button><br><span class="en">I realized I had made a mistake.</span></td></tr>
+    </tbody>
+  </table>
+</main>
+<script>
+const AZURE_KEY = '9FHvN91sOhURXdvTqpspl0D9YlrK0y8fxUmj1jR4aVpHPkN1whmHJQQJ99CDACYeBjFXJ3w3AAAYACOGP37b';
+const TOKEN_URL = 'https://eastus.api.cognitive.microsoft.com/sts/v1.0/issueToken';
+const TTS_URL   = 'https://eastus.tts.speech.microsoft.com/cognitiveservices/v1';
+const VOICES = { male: 'el-GR-NestorasNeural', female: 'el-GR-AthinaNeural' };
+let currentVoice = VOICES.male;
+let currentSpeed = 0.80;
+let fcSpeed = 0.80;
+let audioQueue = [];
+let currentAudio = null;
+let queueIndex = 0;
+let cachedToken = null;
+let tokenExpiry = 0;
+
+async function getToken() {
+  if (cachedToken && Date.now() < tokenExpiry) return cachedToken;
+  const resp = await fetch(TOKEN_URL, { method:'POST', headers:{ 'Ocp-Apim-Subscription-Key': AZURE_KEY, 'Content-Length':'0' }});
+  cachedToken = await resp.text();
+  tokenExpiry = Date.now() + 8*60*1000;
+  return cachedToken;
+}
+
+function escXml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;'); }
+
+document.querySelectorAll('input[name="voice"]').forEach(r => {
+  r.addEventListener('change', () => { currentVoice = r.value; });
+});
+document.getElementById('speed-slider').addEventListener('input', e => {
+  currentSpeed = parseFloat(e.target.value);
+  document.getElementById('speed-label').textContent = currentSpeed.toFixed(2) + 'x';
+});
+
+async function tts(text, btn, speedOverride) {
+  if (btn) btn.textContent = '⏳';
+  try {
+    const token = await getToken();
+    const spd = (speedOverride !== undefined) ? speedOverride : currentSpeed;
+    const rate = spd >= 1 ? '+0%' : '-'+Math.round((1-spd)*100)+'%';
+    const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="el-GR"><voice name="${currentVoice}"><prosody rate="${rate}">${escXml(text)}</prosody></voice></speak>`;
+    const resp = await fetch(TTS_URL, { method:'POST', headers:{ 'Authorization':'Bearer '+token, 'Content-Type':'application/ssml+xml', 'X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3' }, body: ssml });
+    const blob = await resp.blob();
+    const audio = new Audio(URL.createObjectURL(blob));
+    if (btn) { audio.addEventListener('ended', () => btn.textContent = '🔊'); audio.addEventListener('error', () => btn.textContent = '🔊'); }
+    audio.play();
+    return audio;
+  } catch(e) { if (btn) btn.textContent = '🔊'; }
+}
+
+function buildQueue() {
+  audioQueue = Array.from(document.querySelectorAll('.audio-btn[data-text]'))
+    .map(b => ({ text: b.dataset.text, btn: b }));
+}
+document.getElementById('mp-play').addEventListener('click', () => {
+  buildQueue(); if (audioQueue.length === 0) return; playQueueItem(queueIndex);
+});
+document.getElementById('mp-next').addEventListener('click', () => { queueIndex = Math.min(queueIndex+1, audioQueue.length-1); playQueueItem(queueIndex); });
+document.getElementById('mp-prev').addEventListener('click', () => { queueIndex = Math.max(queueIndex-1, 0); playQueueItem(queueIndex); });
+function playQueueItem(i) {
+  if (currentAudio) currentAudio.pause();
+  const item = audioQueue[i];
+  if (!item) return;
+  document.getElementById('mini-player-text').textContent = item.text.slice(0, 50);
+  tts(item.text, item.btn).then(a => {
+    if (!a) return;
+    currentAudio = a;
+    a.addEventListener('ended', () => { queueIndex++; if (queueIndex < audioQueue.length) playQueueItem(queueIndex); });
+  });
+}
+
+// ── Cross-off logic ──
+function getVocabRows() {
+  return Array.from(document.querySelectorAll('#vocab-body tr'));
+}
+function updateCount() {
+  var all = getVocabRows();
+  var crossed = all.filter(function(r){ return r.classList.contains('crossed-off'); }).length;
+  document.getElementById('cross-count').textContent = crossed + ' / ' + all.length + ' crossed off';
+}
+getVocabRows().forEach(function(row) {
+  row.addEventListener('click', function(e) {
+    if (e.target.closest('button')) return;
+    row.classList.toggle('crossed-off');
+    updateCount();
+    syncToggleAllBtn();
+  });
+});
+updateCount();
+
+var toggleAllBtn = document.getElementById('toggle-all-btn');
+function syncToggleAllBtn() {
+  var all = getVocabRows();
+  var allCrossed = all.length > 0 && all.every(function(r){ return r.classList.contains('crossed-off'); });
+  toggleAllBtn.classList.toggle('all-crossed', allCrossed);
+  toggleAllBtn.innerHTML = allCrossed ? '&#10003; Un-cross All' : '&#10007; Cross Off All';
+}
+toggleAllBtn.addEventListener('click', function() {
+  var all = getVocabRows();
+  var allCrossed = all.length > 0 && all.every(function(r){ return r.classList.contains('crossed-off'); });
+  all.forEach(function(r){ allCrossed ? r.classList.remove('crossed-off') : r.classList.add('crossed-off'); });
+  updateCount(); syncToggleAllBtn();
+});
+syncToggleAllBtn();
+
+document.getElementById('export-anki-btn').addEventListener('click', () => {
+  const rows = getVocabRows().filter(r => !r.classList.contains('crossed-off'));
+  if (rows.length === 0) { alert('All words are crossed off — nothing to export.'); return; }
+  let tsv = '';
+  rows.forEach(row => {
+    const cells = row.querySelectorAll('td');
+    if (cells.length < 4) return;
+    const greek = cells[1].querySelector('.word-text')?.textContent.trim() || '';
+    const eng = cells[2].textContent.trim();
+    const el = cells[3].querySelector('.el')?.textContent.trim() || '';
+    const en = cells[3].querySelector('.en')?.textContent.trim() || '';
+    tsv += `${greek}\t${eng}\t${el} — ${en}\n`;
+  });
+  const blob = new Blob([tsv], { type: 'text/plain' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'greek-anki.txt'; a.click();
+});
+
+document.getElementById('download-marked-btn').addEventListener('click', () => {
+  // Clone DOM to preserve crossed-off state in the downloaded file
+  const clone = document.documentElement.cloneNode(true);
+  // Inline crossed-off state as a data attribute for round-trip fidelity
+  const origRows = document.querySelectorAll('#vocab-body tr');
+  const cloneRows = clone.querySelectorAll('#vocab-body tr');
+  origRows.forEach((r, i) => {
+    if (r.classList.contains('crossed-off')) cloneRows[i].classList.add('crossed-off');
+  });
+  const blob = new Blob(['<!DOCTYPE html>' + clone.outerHTML], { type: 'text/html' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'Greek-passage-vocab-marked.html'; a.click();
+});
+</script>
+<!-- ═══════════════════════════ FREQ PICKER MODAL -->
+<div id="fc-freq-picker" style="display:none;">
+  <div class="fc-picker-box">
+    <h3>&#127183; Flashcard Filter</h3>
+    <p>Select which frequency groups to include:</p>
+    <div class="fc-freq-circles">
+      <div class="fc-freq-toggle selected" data-color="#27ae60"><span class="fc-dot" style="background:#27ae60;"></span>top 3k</div>
+      <div class="fc-freq-toggle selected" data-color="#2980b9"><span class="fc-dot" style="background:#2980b9;"></span>3k&#8211;8k</div>
+      <div class="fc-freq-toggle selected" data-color="#e67e22"><span class="fc-dot" style="background:#e67e22;"></span>8k&#8211;15k</div>
+      <div class="fc-freq-toggle selected" data-color="#c0392b"><span class="fc-dot" style="background:#c0392b;"></span>15k+</div>
+      <div class="fc-freq-toggle selected" data-color="#bdc3c7"><span class="fc-dot" style="background:#bdc3c7;"></span>unknown</div>
+    </div>
+    <div class="fc-picker-actions">
+      <span id="fc-picker-count">0 words</span>
+      <button id="fc-picker-cancel">Cancel</button>
+      <button id="fc-picker-start">Start Flashcards</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ FLASHCARD MODAL -->
+<div id="fc-modal">
+  <div class="fc-box">
+    <div class="fc-header">
+      <div class="fc-mode-btns">
+        <button class="fc-mode-btn active" id="fc-mode-g2e">&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940; &#8594; English</button>
+        <button class="fc-mode-btn" id="fc-mode-e2g">English &#8594; &#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;</button>
+      </div>
+      <span class="fc-progress" id="fc-progress"></span>
+      <button class="fc-close" id="fc-close-btn" title="Close">&#10005;</button>
+    </div>
+    <div class="fc-voice-bar" id="fc-voice-bar">
+      <span style="font-weight:600;">Voice:</span>
+      <label><input type="radio" name="fc-voice" value="el-GR-NestorasNeural" checked> &#9794; Nestoras</label>
+      <label><input type="radio" name="fc-voice" value="el-GR-AthinaNeural"> &#9792; Athina</label>
+      <div id="fc-speed-wrap">
+        <span style="font-weight:600;">Speed:</span>
+        <input type="range" id="fc-speed-slider" min="0.30" max="1.00" step="0.05" value="0.80">
+        <span id="fc-speed-label">0.80x</span>
+      </div>
+      <label style="margin-left:8px;" title="Automatically play Greek audio when a card is shown or its answer revealed"><input type="checkbox" id="fc-autoplay" checked> &#128264; Auto</label>
+    </div>
+    <div id="fc-study-area">
+      <div class="fc-card" id="fc-card">
+        <div id="fc-front-content"></div>
+        <span class="fc-tts-btn" id="fc-tts-btn" title="Play pronunciation">&#128266;</span>
+        <div class="fc-inline-answer" id="fc-inline-answer" style="display:none;"></div>
+        <div class="fc-reveal-hint" id="fc-reveal-hint">Click to reveal</div>
+      </div>
+      <div class="fc-answer-area" id="fc-answer-area">
+        <hr class="fc-divider">
+        <div class="fc-answer-content" id="fc-answer-content"></div>
+        <div class="fc-btns">
+          <button id="fc-wrong-btn">&#10007; Review Again</button>
+          <button id="fc-correct-btn">&#10003; Got It</button>
+        </div>
+      </div>
+    </div>
+    <div class="fc-complete" id="fc-complete">
+      <div class="fc-complete-icon">&#127881;</div>
+      <h3>Session complete!</h3>
+      <p id="fc-complete-msg"></p>
+      <button id="fc-restart-btn">Study Again</button>
+    </div>
+  </div>
+</div>
+<script>
+// ── Flashcard Logic (Greek Passage) ──
+(function(){
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function normalizeColor(s) {
+    s = s.trim();
+    if (s.charAt(0) === '#') return s.toLowerCase();
+    var m = s.match(/rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+    if (m) {
+      return '#' + [m[1],m[2],m[3]].map(function(n){
+        return ('0'+parseInt(n).toString(16)).slice(-2);
+      }).join('');
+    }
+    return s.toLowerCase();
+  }
+
+  function buildDeck(allowedColors) {
+    var cards = [];
+    document.querySelectorAll('tbody tr:not(.cat-row)').forEach(function(row) {
+      if (row.classList.contains('crossed-off')) return;
+      var tds = row.querySelectorAll('td');
+      if (tds.length < 3) return;
+      if (allowedColors && allowedColors.length > 0) {
+        var dot = tds[0].querySelector('span');
+        var bg = dot ? normalizeColor(dot.style.background) : '';
+        if (allowedColors.indexOf(bg) === -1) return;
+      }
+      var gClone = tds[1].cloneNode(true);
+      gClone.querySelectorAll('button').forEach(function(b){ b.remove(); });
+      var greek = gClone.textContent.trim();
+      var english = tds[2].textContent.trim();
+      var exGreek = '', exEnglish = '';
+      if (tds.length >= 4) {
+        var elSpan = tds[3].querySelector('.el');
+        var enSpan = tds[3].querySelector('.en');
+        if (elSpan) {
+          var elClone = elSpan.cloneNode(true);
+          elClone.querySelectorAll('button').forEach(function(b){ b.remove(); });
+          exGreek = elClone.textContent.trim();
+        }
+        if (enSpan) exEnglish = enSpan.textContent.trim();
+      }
+      if (greek && english) {
+        cards.push({ greek: greek, english: english, exGreek: exGreek, exEnglish: exEnglish });
+      }
+    });
+    return cards;
+  }
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  var remaining = [];
+  var totalCount = 0;
+  var masteredCount = 0;
+  var mode = 'g2e';
+  var revealed = false;
+  var lastColors = null;
+
+  var modal        = document.getElementById('fc-modal');
+  var progressEl   = document.getElementById('fc-progress');
+  var frontContent = document.getElementById('fc-front-content');
+  var revealHint   = document.getElementById('fc-reveal-hint');
+  var answerArea   = document.getElementById('fc-answer-area');
+  var answerContent= document.getElementById('fc-answer-content');
+  var studyArea    = document.getElementById('fc-study-area');
+  var completeDiv  = document.getElementById('fc-complete');
+  var completeMsg  = document.getElementById('fc-complete-msg');
+  var ttsBtn       = document.getElementById('fc-tts-btn');
+
+  function updateProgress() {
+    progressEl.textContent = masteredCount + ' / ' + totalCount + ' mastered  \u00b7  ' + remaining.length + ' remaining';
+  }
+
+  function isAutoplayOn() {
+    var cb = document.getElementById('fc-autoplay');
+    return cb ? cb.checked : true;
+  }
+
+  function buildExampleHtml(card) {
+    if (!card.exGreek) return '';
+    var html = '<div class="fc-example">';
+    html += '<div class="fc-ex-el"><span class="fc-greek">' + escHtml(card.exGreek) + '</span> ';
+    html += '<span class="fc-tts-btn fc-tts-ex" title="Play example">&#128266;</span></div>';
+    if (card.exEnglish) {
+      html += '<div class="fc-english fc-ex-en">' + escHtml(card.exEnglish) + '</div>';
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function renderCard() {
+    if (remaining.length === 0) { updateProgress(); showComplete(); return; }
+    revealed = false;
+    answerArea.style.display = 'none';
+    ttsBtn.classList.remove('playing');
+    var inlineAns = document.getElementById('fc-inline-answer');
+    if (inlineAns) { inlineAns.innerHTML = ''; inlineAns.style.display = 'none'; }
+    var card = remaining[0];
+    if (mode === 'g2e') {
+      frontContent.innerHTML = '<div class="fc-greek">' + escHtml(card.greek) + '</div>';
+      ttsBtn.style.display = '';
+    } else {
+      frontContent.innerHTML = '<div class="fc-english">' + escHtml(card.english) + '</div>';
+      ttsBtn.style.display = 'none';
+    }
+    updateProgress();
+    if (mode === 'g2e' && isAutoplayOn() && window.tts) {
+      setTimeout(function() {
+        if (remaining[0] === card) {
+          window.tts(card.greek, ttsBtn, fcSpeed);
+        }
+      }, 150);
+    }
+  }
+
+  function revealAnswer() {
+    if (revealed) return;
+    revealed = true;
+    var card = remaining[0];
+    var exHtml = buildExampleHtml(card);
+    var inlineAns = document.getElementById('fc-inline-answer');
+    if (mode === 'g2e') {
+      if (inlineAns) {
+        inlineAns.innerHTML = '<span class="fc-english">' + escHtml(card.english) + '</span>';
+        inlineAns.style.display = 'flex';
+      }
+      answerContent.innerHTML = exHtml;
+    } else {
+      if (inlineAns) {
+        inlineAns.innerHTML = '<span class="fc-greek">' + escHtml(card.greek) + '</span>' +
+          '<span class="fc-tts-btn fc-tts-answer" title="Play pronunciation">&#128266;</span>';
+        inlineAns.style.display = 'flex';
+        var ansBtn = inlineAns.querySelector('.fc-tts-answer');
+        if (ansBtn) {
+          ansBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (window.tts) window.tts(card.greek, ansBtn, fcSpeed);
+          });
+        }
+      }
+      answerContent.innerHTML = exHtml;
+    }
+    var exBtn = answerContent.querySelector('.fc-tts-ex');
+    if (exBtn && card.exGreek) {
+      exBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (window.tts) window.tts(card.exGreek, exBtn, fcSpeed);
+      });
+    }
+    answerArea.style.display = 'flex';
+    if (isAutoplayOn() && window.tts) {
+      if (mode === 'e2g') {
+        setTimeout(function() {
+          var ansBtn2 = inlineAns ? inlineAns.querySelector('.fc-tts-answer') : null;
+          if (ansBtn2) window.tts(card.greek, ansBtn2, fcSpeed);
+          if (card.exGreek) {
+            setTimeout(function() {
+              if (exBtn) window.tts(card.exGreek, exBtn, fcSpeed);
+            }, 2000);
+          }
+        }, 200);
+      } else if (card.exGreek) {
+        setTimeout(function() {
+          if (exBtn) window.tts(card.exGreek, exBtn, fcSpeed);
+        }, 200);
+      }
+    }
+  }
+
+  function gotIt() { remaining.shift(); masteredCount++; renderCard(); }
+  function reviewAgain() {
+    var card = remaining.shift();
+    var pos = Math.min(3, remaining.length);
+    remaining.splice(pos, 0, card);
+    renderCard();
+  }
+  function showComplete() {
+    studyArea.style.display = 'none';
+    completeDiv.style.display = 'flex';
+    completeMsg.textContent = 'You worked through all ' + totalCount + ' card' + (totalCount !== 1 ? 's' : '') + '.';
+  }
+
+  function startSession(allowedColors) {
+    lastColors = allowedColors;
+    var deck = buildDeck(allowedColors);
+    if (deck.length === 0) { alert('No words to study! Un-cross some rows first.'); return; }
+    remaining = shuffle(deck);
+    totalCount = remaining.length;
+    masteredCount = 0;
+    studyArea.style.display = '';
+    completeDiv.style.display = 'none';
+    modal.style.display = 'flex';
+    var cur = document.querySelector('input[name="voice"]:checked');
+    if (cur) {
+      document.querySelectorAll('#fc-voice-bar input[name="fc-voice"]').forEach(function(r) {
+        r.checked = (r.value === cur.value);
+      });
+    }
+    renderCard();
+  }
+
+  // ── Flashcard voice radios → update shared currentVoice ──
+  document.querySelectorAll('#fc-voice-bar input[name="fc-voice"]').forEach(function(r) {
+    r.addEventListener('change', function() { currentVoice = r.value; });
+  });
+
+  // ── Flashcard speed slider ──
+  document.getElementById('fc-speed-slider').addEventListener('input', function(e) {
+    fcSpeed = parseFloat(e.target.value);
+    document.getElementById('fc-speed-label').textContent = fcSpeed.toFixed(2) + 'x';
+  });
+
+  // ── Frequency picker controller ──
+  var freqPickerEl  = document.getElementById('fc-freq-picker');
+  var pickerCountEl = document.getElementById('fc-picker-count');
+
+  function getSelectedColors() {
+    var colors = [];
+    document.querySelectorAll('.fc-freq-toggle.selected').forEach(function(t) {
+      colors.push(t.getAttribute('data-color').toLowerCase());
+    });
+    return colors;
+  }
+
+  function countPickerWords() {
+    var selected = getSelectedColors();
+    var n = 0;
+    document.querySelectorAll('tbody tr:not(.cat-row)').forEach(function(row) {
+      if (row.classList.contains('crossed-off')) return;
+      var tds = row.querySelectorAll('td');
+      if (tds.length < 3) return;
+      var dot = tds[0].querySelector('span');
+      var bg = dot ? normalizeColor(dot.style.background) : '';
+      if (selected.indexOf(bg) !== -1) n++;
+    });
+    return n;
+  }
+
+  function updatePickerCount() {
+    var n = countPickerWords();
+    pickerCountEl.textContent = n + ' word' + (n !== 1 ? 's' : '');
+    document.getElementById('fc-picker-start').disabled = (n === 0);
+  }
+
+  function openFreqPicker() {
+    freqPickerEl.style.display = 'flex';
+    updatePickerCount();
+  }
+
+  document.querySelectorAll('.fc-freq-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      var selected = document.querySelectorAll('.fc-freq-toggle.selected');
+      if (toggle.classList.contains('selected') && selected.length === 1) return;
+      toggle.classList.toggle('selected');
+      updatePickerCount();
+    });
+  });
+
+  document.getElementById('fc-picker-start').addEventListener('click', function() {
+    var colors = getSelectedColors();
+    freqPickerEl.style.display = 'none';
+    startSession(colors);
+  });
+
+  document.getElementById('fc-picker-cancel').addEventListener('click', function() {
+    freqPickerEl.style.display = 'none';
+  });
+
+  freqPickerEl.addEventListener('click', function(e) {
+    if (e.target === freqPickerEl) freqPickerEl.style.display = 'none';
+  });
+
+  // Flashcard button → open freq picker first
+  document.getElementById('flashcard-btn').addEventListener('click', function() { openFreqPicker(); });
+  document.getElementById('fc-close-btn').addEventListener('click', function() { modal.style.display = 'none'; });
+
+  document.getElementById('fc-card').addEventListener('click', function(e) {
+    if (e.target === ttsBtn || ttsBtn.contains(e.target)) return;
+    revealAnswer();
+  });
+
+  ttsBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (remaining.length === 0) return;
+    if (window.tts) window.tts(remaining[0].greek, ttsBtn, fcSpeed);
+  });
+
+  document.getElementById('fc-mode-g2e').addEventListener('click', function() {
+    if (mode === 'g2e') return;
+    mode = 'g2e';
+    this.classList.add('active');
+    document.getElementById('fc-mode-e2g').classList.remove('active');
+    renderCard();
+  });
+  document.getElementById('fc-mode-e2g').addEventListener('click', function() {
+    if (mode === 'e2g') return;
+    mode = 'e2g';
+    this.classList.add('active');
+    document.getElementById('fc-mode-g2e').classList.remove('active');
+    renderCard();
+  });
+
+  document.getElementById('fc-correct-btn').addEventListener('click', gotIt);
+  document.getElementById('fc-wrong-btn').addEventListener('click', reviewAgain);
+  // Restart → re-open freq picker so user can adjust filter
+  document.getElementById('fc-restart-btn').addEventListener('click', function() { openFreqPicker(); });
+
+  /* Overlay click does NOT close the flashcard modal — prevents accidental dismissal.
+     Modal closes only via the ✕ button or Escape key. */
+
+  document.addEventListener('keydown', function(e) {
+    if (modal.style.display !== 'flex') return;
+    if (e.key === 'Escape') { modal.style.display = 'none'; return; }
+    if (!revealed) {
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); revealAnswer(); }
+    } else {
+      if (e.key === 'ArrowRight' || e.key === '2') { e.preventDefault(); gotIt(); }
+      if (e.key === 'ArrowLeft'  || e.key === '1') { e.preventDefault(); reviewAgain(); }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
