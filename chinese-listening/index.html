@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chinese Listening Practice — Apr 26, 2026</title>
+<style>
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 15px;
+  padding: 24px;
+  background: #fafafa;
+  color: #222;
+  max-width: 780px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 4px;
+  color: #333;
+}
+.subtitle {
+  color: #888;
+  font-size: 0.9em;
+  margin-bottom: 28px;
+}
+.section-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.section-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+.section-instructions {
+  color: #777;
+  font-size: 0.88em;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+.badge {
+  display: inline-block;
+  font-size: 0.75em;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.badge-easy { background: #e6f9e6; color: #267326; }
+.badge-medium { background: #fff8e0; color: #b38600; }
+.badge-harder { background: #fde8e8; color: #cc2200; }
+.toggle-btn {
+  display: inline-block;
+  cursor: pointer;
+  color: #0066cc;
+  font-size: 0.9em;
+  padding: 4px 12px;
+  border: 1px solid #ccd;
+  border-radius: 6px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  user-select: none;
+  background: #f8f8ff;
+  transition: background 0.15s;
+}
+.toggle-btn:hover {
+  background: #eef0ff;
+}
+.hideable {
+  display: none;
+  margin-top: 10px;
+}
+.hideable.show {
+  display: block;
+}
+.pinyin-block {
+  font-size: 1.05em;
+  line-height: 2.2;
+  padding: 12px 16px;
+  background: #f9f9f9;
+  border-radius: 6px;
+  border-left: 3px solid #ccc;
+  margin-bottom: 10px;
+}
+.answer-box {
+  padding: 12px 16px;
+  background: #fefefe;
+  border-radius: 6px;
+  border-left: 3px solid #aac;
+  color: #444;
+  line-height: 1.8;
+}
+.transcript-box {
+  padding: 14px 18px;
+  background: #fefefe;
+  border-radius: 6px;
+  border-left: 3px solid #c8d8c8;
+  font-size: 1.08em;
+  line-height: 2.0;
+}
+.new-word {
+  border-bottom: 2px dotted #e07800;
+  color: #b35a00;
+  font-weight: 500;
+}
+.drill-question {
+  margin-bottom: 16px;
+  padding: 10px 0 6px 0;
+  border-bottom: 1px dashed #eee;
+}
+.drill-question:last-of-type { border-bottom: none; }
+.hanzi-text {
+  font-size: 1.12em;
+  margin: 0 0 6px 0;
+  color: #222;
+}
+.q-number {
+  font-weight: 600;
+  color: #555;
+  margin-right: 4px;
+}
+.exercise-audio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: #f0f4ff;
+  border-radius: 8px;
+}
+.play-label {
+  color: #555;
+  font-size: 0.92em;
+}
+.tts-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 2px 4px;
+  font-size: 1em;
+  opacity: 0.75;
+  transition: opacity 0.15s, transform 0.1s;
+  vertical-align: middle;
+}
+.tts-btn:hover { opacity: 1; transform: scale(1.15); }
+.tts-btn.playing { opacity: 1; animation: pulse 0.8s infinite alternate; }
+@keyframes pulse { from { opacity: 0.6; } to { opacity: 1; } }
+.play-full { font-size: 1.6em; opacity: 0.7; }
+.dialogue-line {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.speaker-label {
+  font-weight: 700;
+  color: #444;
+  min-width: 22px;
+  flex-shrink: 0;
+}
+.t1 { color: #cc0000; }
+.t2 { color: #e07800; }
+.t3 { color: #267326; }
+.t4 { color: #0044cc; }
+.tn, .t0 { color: #888; }
+.instructions-box {
+  background: #f0f4ff;
+  border: 1px solid #c0ccee;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  font-size: 0.92em;
+  color: #334;
+}
+.instructions-box h3 { margin: 0 0 10px 0; color: #224; font-size: 1em; }
+.instructions-box ol { margin: 0; padding-left: 20px; line-height: 1.9; }
+/* Sticky bars */
+.voice-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 8px 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.92em;
+}
+.voice-bar label { cursor: pointer; }
+.voice-bar input[type=radio] { margin-right: 3px; }
+.voice-bar .voice-label { font-weight: 600; white-space: nowrap; }
+@media print { .voice-bar { display: none; } }
+.tts-bar {
+  position: sticky;
+  top: 37px;
+  z-index: 99;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88em;
+  flex-wrap: wrap;
+}
+.speed-val { font-weight: 600; min-width: 38px; }
+.mini-player {
+  position: sticky;
+  top: 74px;
+  z-index: 98;
+  background: #222;
+  color: #fff;
+  padding: 6px 14px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85em;
+  border-bottom: 2px solid #444;
+}
+.mini-player.active { display: flex; }
+.mini-player .mp-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1em;
+  cursor: pointer;
+  padding: 2px 6px;
+  opacity: 0.8;
+}
+.mini-player .mp-btn:hover { opacity: 1; }
+.mini-player .mp-seek {
+  flex: 1;
+  min-width: 60px;
+  accent-color: #4af;
+}
+.mini-player .mp-time {
+  white-space: nowrap;
+  opacity: 0.8;
+  font-size: 0.9em;
+  min-width: 80px;
+}
+.mini-player .mp-text {
+  opacity: 0.65;
+  font-size: 0.85em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+/* Sentence-sync styles */
+.sentence-hz, .sentence-py, .sentence-en {
+  display: block;
+}
+.sentence-hz.active-sentence {
+  background: #fff3b0;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+}
+.sentence-py.active-sentence {
+  background: #fff3b0;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+}
+.sentence-en.active-sentence {
+  background: #e8f0fe;
+  color: #333;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+}
+.sentence-hz.played, .sentence-py.played { color: #999; }
+.sentence-en.played { color: #bbb; }
+.play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0055cc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1.05em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: background 0.15s;
+}
+.play-btn:hover { background: #0044aa; }
+.play-btn.playing { background: #cc4400; }
+@media print { .tts-bar { display: none; } .mini-player { display: none !important; } .tts-btn { display: none !important; } .play-btn { display: none !important; } }
+</style>
+<script>
+function toggle(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('show');
+}
+</script>
+</head>
+<body>
+
+<div class="voice-bar">
+  <span class="voice-label">Voice:</span>
+  <label><input type="radio" name="voice" value="zh-CN-YunxiNeural" checked> ♂ Yunxi (male)</label>
+  <label><input type="radio" name="voice" value="zh-CN-XiaoxiaoNeural"> ♀ Xiaoxiao (female)</label>
+</div>
+
+<div class="tts-bar">
+  <label>🔊 Audio Speed:</label>
+  <input type="range" min="0.50" max="1.00" step="0.05" value="0.70"
+         oninput="ttsSetSpeed(this.value)" />
+  <span class="speed-val" id="tts-speed-val">0.70x</span>
+  <span style="color:#999; font-size:0.85em;">Click any 🔊 to hear pronunciation · 👫 Dialogue uses two voices</span>
+</div>
+<div class="mini-player" id="mini-player">
+  <button class="mp-btn" id="mp-rewind" title="Rewind 5s" onclick="mpRewind()">⏪</button>
+  <button class="mp-btn" id="mp-playpause" title="Play / Pause" onclick="mpToggle()">⏸</button>
+  <input type="range" class="mp-seek" id="mp-seek" min="0" max="100" value="0" step="0.1" oninput="mpSeek(this.value)" />
+  <span class="mp-time" id="mp-time">0:00 / 0:00</span>
+  <span class="mp-text" id="mp-text"></span>
+</div>
+
+<h1>Chinese Listening Practice</h1>
+<p class="subtitle">Apr 26, 2026 — 3 exercises from your latest vocabulary batch. All words drawn from your master file.</p>
+
+<!-- ==================== INSTRUCTIONS ==================== -->
+<div class="instructions-box">
+  <h3>🎧 Listening Workflow</h3>
+  <ol>
+    <li>Listen at normal speed without reading the transcript</li>
+    <li>Try to understand the main idea</li>
+    <li>Listen again at slow speed for specific details</li>
+    <li>Answer comprehension questions</li>
+    <li>Reveal transcript to check</li>
+    <li>Listen at normal speed again while reading along</li>
+    <li>Listen at normal speed without transcript to confirm understanding</li>
+  </ol>
+</div>
+
+<!-- ==================== EXERCISE 1: EASY ==================== -->
+<div class="section-card" id="exercise-E1" data-type="narrative">
+  <div class="section-title">Exercise 1: 去公园 — Going to the Park <span class="badge badge-easy">Easy</span></div>
+  <p class="section-instructions">Short narrative, single speaker. Listen and answer the questions below.</p>
+
+  <div class="exercise-audio">
+    <button class="play-btn" id="play-E1" onclick="startExercise('E1')">▶ Play Passage</button>
+    <span class="tts-btn play-full" onclick="ttsSpeak(this,'今天天气很好。我想去公园走走。公园就在我家附近，很近，非常方便。公园里有很多漂亮的花。我在公园里走了很长时间。我真的很开心。')" style="font-size:1.6em; opacity:0.7;">🔊</span>
+    <span class="play-label">Listen to full passage</span>
+  </div>
+
+  <!-- Comprehension Questions -->
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">1.</span> 今天天气怎么样？</p>
+    <span class="toggle-btn" onclick="toggle('e1-py1')">▸ Pinyin</span>
+    <div id="e1-py1" class="hideable pinyin-block">
+      <span class="t1">Jīn</span> <span class="t1">tiān</span> <span class="t1">tiān</span> <span class="t4">qì</span> <span class="t3">zěn</span> <span class="t0">me</span> <span class="t4">yàng</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e1-a1')">▸ answer</span>
+    <div id="e1-a1" class="hideable answer-box">
+      今天天气很好。<br/>
+      <span class="t1">Jīn</span> <span class="t1">tiān</span> <span class="t1">tiān</span> <span class="t4">qì</span> <span class="t3">hěn</span> <span class="t3">hǎo</span><span class="t0">。</span><br/>
+      <em>The weather today is very good.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">2.</span> 公园离他家远吗？</p>
+    <span class="toggle-btn" onclick="toggle('e1-py2')">▸ Pinyin</span>
+    <div id="e1-py2" class="hideable pinyin-block">
+      <span class="t1">Gōng</span> <span class="t2">yuán</span> <span class="t2">lí</span> <span class="t1">tā</span> <span class="t1">jiā</span> <span class="t2">yuǎn</span> <span class="t0">ma</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e1-a2')">▸ answer</span>
+    <div id="e1-a2" class="hideable answer-box">
+      不远，公园就在他家<span class="new-word">附近</span>，很<span class="new-word">近</span>，非常<span class="new-word">方便</span>。<br/>
+      <span class="t4">Bù</span> <span class="t2">yuǎn</span><span class="t0">，</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t4">jiù</span> <span class="t4">zài</span> <span class="t1">tā</span> <span class="t1">jiā</span> <span class="t4">fù</span> <span class="t4">jìn</span><span class="t0">，</span> <span class="t3">hěn</span> <span class="t4">jìn</span><span class="t0">，</span> <span class="t1">fēi</span> <span class="t2">cháng</span> <span class="t1">fāng</span> <span class="t4">biàn</span><span class="t0">。</span><br/>
+      <em>Not far — the park is right near his home, very close, very convenient.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">3.</span> 公园里有什么？</p>
+    <span class="toggle-btn" onclick="toggle('e1-py3')">▸ Pinyin</span>
+    <div id="e1-py3" class="hideable pinyin-block">
+      <span class="t1">Gōng</span> <span class="t2">yuán</span> <span class="t3">lǐ</span> <span class="t3">yǒu</span> <span class="t2">shén</span> <span class="t0">me</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e1-a3')">▸ answer</span>
+    <div id="e1-a3" class="hideable answer-box">
+      公园里有很多<span class="new-word">漂亮</span>的花。<br/>
+      <span class="t1">Gōng</span> <span class="t2">yuán</span> <span class="t3">lǐ</span> <span class="t3">yǒu</span> <span class="t3">hěn</span> <span class="t1">duō</span> <span class="t4">piào</span> <span class="t0">liang</span> <span class="t0">de</span> <span class="t1">huā</span><span class="t0">。</span><br/>
+      <em>There are many beautiful flowers in the park.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">4.</span> 他在公园里走了多长时间？</p>
+    <span class="toggle-btn" onclick="toggle('e1-py4')">▸ Pinyin</span>
+    <div id="e1-py4" class="hideable pinyin-block">
+      <span class="t1">Tā</span> <span class="t4">zài</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t3">lǐ</span> <span class="t3">zǒu</span> <span class="t0">le</span> <span class="t1">duō</span> <span class="t2">cháng</span> <span class="t2">shí</span> <span class="t1">jiān</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e1-a4')">▸ answer</span>
+    <div id="e1-a4" class="hideable answer-box">
+      他走了很长时间。<br/>
+      <span class="t1">Tā</span> <span class="t3">zǒu</span> <span class="t0">le</span> <span class="t3">hěn</span> <span class="t2">cháng</span> <span class="t2">shí</span> <span class="t1">jiān</span><span class="t0">。</span><br/>
+      <em>He walked for a long time.</em>
+    </div>
+  </div>
+
+  <!-- Transcript -->
+  <span class="toggle-btn" onclick="toggle('e1-hanzi')">▸ Hanzi Transcript</span>
+  <div id="e1-hanzi" class="hideable transcript-box">
+    <span class="sentence-hz" data-level="E1" data-i="0">今天天气很好。<span class="tts-btn" onclick="ttsSpeak(this,'今天天气很好。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E1" data-i="1">我想去<span class="new-word">公园</span>走走。<span class="tts-btn" onclick="ttsSpeak(this,'我想去公园走走。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E1" data-i="2"><span class="new-word">公园</span>就在我家<span class="new-word">附近</span>，很<span class="new-word">近</span>，非常<span class="new-word">方便</span>。<span class="tts-btn" onclick="ttsSpeak(this,'公园就在我家附近，很近，非常方便。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E1" data-i="3"><span class="new-word">公园</span>里有很多<span class="new-word">漂亮</span>的花。<span class="tts-btn" onclick="ttsSpeak(this,'公园里有很多漂亮的花。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E1" data-i="4">我在<span class="new-word">公园</span>里走了很长时间。<span class="tts-btn" onclick="ttsSpeak(this,'我在公园里走了很长时间。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E1" data-i="5">我<span class="new-word">真</span>的很开心。<span class="tts-btn" onclick="ttsSpeak(this,'我真的很开心。')" title="Play">🔊</span></span>
+  </div>
+
+  <span class="toggle-btn" onclick="toggle('e1-pinyin')">▸ Pinyin Transcript</span>
+  <div id="e1-pinyin" class="hideable pinyin-block">
+    <span class="sentence-py" data-level="E1" data-i="0"><span class="t1">Jīn</span> <span class="t1">tiān</span> <span class="t1">tiān</span> <span class="t4">qì</span> <span class="t3">hěn</span> <span class="t3">hǎo</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E1" data-i="1"><span class="t3">Wǒ</span> <span class="t3">xiǎng</span> <span class="t4">qù</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t3">zǒu</span> <span class="t0">zou</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E1" data-i="2"><span class="t1">Gōng</span> <span class="t2">yuán</span> <span class="t4">jiù</span> <span class="t4">zài</span> <span class="t3">wǒ</span> <span class="t1">jiā</span> <span class="t4">fù</span> <span class="t4">jìn</span><span class="t0">，</span> <span class="t3">hěn</span> <span class="t4">jìn</span><span class="t0">，</span> <span class="t1">fēi</span> <span class="t2">cháng</span> <span class="t1">fāng</span> <span class="t4">biàn</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E1" data-i="3"><span class="t1">Gōng</span> <span class="t2">yuán</span> <span class="t3">lǐ</span> <span class="t3">yǒu</span> <span class="t3">hěn</span> <span class="t1">duō</span> <span class="t4">piào</span> <span class="t0">liang</span> <span class="t0">de</span> <span class="t1">huā</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E1" data-i="4"><span class="t3">Wǒ</span> <span class="t4">zài</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t3">lǐ</span> <span class="t3">zǒu</span> <span class="t0">le</span> <span class="t3">hěn</span> <span class="t2">cháng</span> <span class="t2">shí</span> <span class="t1">jiān</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E1" data-i="5"><span class="t3">Wǒ</span> <span class="t1">zhēn</span> <span class="t0">de</span> <span class="t3">hěn</span> <span class="t1">kāi</span> <span class="t1">xīn</span><span class="t0">。</span></span>
+  </div>
+
+  <span class="toggle-btn" onclick="toggle('e1-en')">▸ English Transcript</span>
+  <div id="e1-en" class="hideable answer-box">
+    <span class="sentence-en" data-level="E1" data-i="0">The weather today is very good.</span>
+    <span class="sentence-en" data-level="E1" data-i="1">I want to go for a walk in the park.</span>
+    <span class="sentence-en" data-level="E1" data-i="2">The park is right near my home — very close, very convenient.</span>
+    <span class="sentence-en" data-level="E1" data-i="3">There are many beautiful flowers in the park.</span>
+    <span class="sentence-en" data-level="E1" data-i="4">I walked in the park for a long time.</span>
+    <span class="sentence-en" data-level="E1" data-i="5">I was truly very happy.</span>
+  </div>
+</div>
+
+<!-- ==================== EXERCISE 2: MEDIUM (DIALOGUE) ==================== -->
+<div class="section-card" id="exercise-E2" data-type="dialogue">
+  <div class="section-title">Exercise 2: 在商场门口见面 — Meeting at the Mall Entrance <span class="badge badge-medium">Medium</span></div>
+  <p class="section-instructions">Two-speaker dialogue. Listen and answer the questions below.</p>
+
+  <div class="exercise-audio">
+    <button class="play-btn" id="play-E2" onclick="startExercise('E2')">▶ Play Dialogue</button>
+    <span class="tts-btn play-full" onclick='ttsDialogue(this,[{"voice":"male","text":"喂，你在哪里？我到商场东门了。"},{"voice":"female","text":"对不起，我迷路了，找不到东门。"},{"voice":"male","text":"没事儿。你现在在哪个地方？"},{"voice":"female","text":"我在一个咖啡店旁边，附近有一个公园。"},{"voice":"male","text":"好，我知道了。你走到公园门口，然后直走，就可以看到东门。"},{"voice":"female","text":"谢谢！我已经看到公园了，我走过去。"},{"voice":"male","text":"好呀，我在东门等你。"},{"voice":"female","text":"我到了，我在东门！真的很方便，就在旁边。"},{"voice":"male","text":"太好了！我们进去逛一逛吧，我要买一些东西。"},{"voice":"female","text":"好的，走吧！"}])' style="font-size:1.6em; opacity:0.7;">🔊</span>
+    <span class="play-label">Listen to full dialogue (2 voices)</span>
+  </div>
+
+  <!-- Comprehension Questions -->
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">1.</span> A 迷路了吗？她找不到什么？</p>
+    <span class="toggle-btn" onclick="toggle('e2-py1')">▸ Pinyin</span>
+    <div id="e2-py1" class="hideable pinyin-block">
+      A <span class="t2">mí</span> <span class="t4">lù</span> <span class="t0">le</span> <span class="t0">ma</span><span class="t0">？</span> <span class="t1">Tā</span> <span class="t3">zhǎo</span> <span class="t4">bù</span> <span class="t4">dào</span> <span class="t2">shén</span> <span class="t0">me</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e2-a1')">▸ answer</span>
+    <div id="e2-a1" class="hideable answer-box">
+      是的，A <span class="new-word">迷路了</span>，<span class="new-word">找不到路</span>，找不到<span class="new-word">东门</span>。<br/>
+      <span class="t4">Shì</span> <span class="t0">de</span><span class="t0">，</span> A <span class="t2">mí</span> <span class="t4">lù</span> <span class="t0">le</span><span class="t0">，</span> <span class="t3">zhǎo</span> <span class="t4">bù</span> <span class="t4">dào</span> <span class="t2">dōng</span> <span class="t2">mén</span><span class="t0">。</span><br/>
+      <em>Yes, A got lost and couldn't find the east gate.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">2.</span> A 旁边有什么？</p>
+    <span class="toggle-btn" onclick="toggle('e2-py2')">▸ Pinyin</span>
+    <div id="e2-py2" class="hideable pinyin-block">
+      A <span class="t2">páng</span> <span class="t1">biān</span> <span class="t3">yǒu</span> <span class="t2">shén</span> <span class="t0">me</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e2-a2')">▸ answer</span>
+    <div id="e2-a2" class="hideable answer-box">
+      A 在一个咖啡店<span class="new-word">旁边</span>，<span class="new-word">附近</span>有一个<span class="new-word">公园</span>。<br/>
+      A <span class="t4">zài</span> <span class="t4">yī</span> <span class="t0">ge</span> <span class="t1">kā</span> <span class="t1">fēi</span> <span class="t4">diàn</span> <span class="t2">páng</span> <span class="t1">biān</span><span class="t0">，</span> <span class="t4">fù</span> <span class="t4">jìn</span> <span class="t3">yǒu</span> <span class="t4">yī</span> <span class="t0">ge</span> <span class="t1">gōng</span> <span class="t2">yuán</span><span class="t0">。</span><br/>
+      <em>A is beside a coffee shop, and there is a park nearby.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">3.</span> B 怎么告诉 A 找到东门？</p>
+    <span class="toggle-btn" onclick="toggle('e2-py3')">▸ Pinyin</span>
+    <div id="e2-py3" class="hideable pinyin-block">
+      B <span class="t3">zěn</span> <span class="t0">me</span> <span class="t4">gào</span> <span class="t4">su</span> A <span class="t3">zhǎo</span> <span class="t4">dào</span> <span class="t1">dōng</span> <span class="t2">mén</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e2-a3')">▸ answer</span>
+    <div id="e2-a3" class="hideable answer-box">
+      走到<span class="new-word">公园</span><span class="new-word">门口</span>，然后直走，就可以看到<span class="new-word">东门</span>。<br/>
+      <span class="t3">Zǒu</span> <span class="t4">dào</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t2">mén</span> <span class="t3">kǒu</span><span class="t0">，</span> <span class="t2">rán</span> <span class="t4">hòu</span> <span class="t2">zhí</span> <span class="t3">zǒu</span><span class="t0">，</span> <span class="t4">jiù</span> <span class="t3">kě</span> <span class="t3">yǐ</span> <span class="t4">kàn</span> <span class="t4">dào</span> <span class="t1">dōng</span> <span class="t2">mén</span><span class="t0">。</span><br/>
+      <em>Walk to the park entrance, then go straight, and you'll see the east gate.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">4.</span> 他们进商场要做什么？</p>
+    <span class="toggle-btn" onclick="toggle('e2-py4')">▸ Pinyin</span>
+    <div id="e2-py4" class="hideable pinyin-block">
+      <span class="t1">Tā</span> <span class="t0">men</span> <span class="t4">jìn</span> <span class="t1">shāng</span> <span class="t2">chǎng</span> <span class="t4">yào</span> <span class="t4">zuò</span> <span class="t2">shén</span> <span class="t0">me</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e2-a4')">▸ answer</span>
+    <div id="e2-a4" class="hideable answer-box">
+      他们要<span class="new-word">逛</span>一<span class="new-word">逛</span>，B 要买一些<span class="new-word">东西</span>。<br/>
+      <span class="t1">Tā</span> <span class="t0">men</span> <span class="t4">yào</span> <span class="t4">guàng</span> <span class="t4">yi</span> <span class="t4">guàng</span><span class="t0">，</span> B <span class="t4">yào</span> <span class="t3">mǎi</span> <span class="t4">yī</span> <span class="t1">xiē</span> <span class="t1">dōng</span> <span class="t0">xi</span><span class="t0">。</span><br/>
+      <em>They want to stroll around; B wants to buy some things.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">5.</span> A 说东门方便吗？</p>
+    <span class="toggle-btn" onclick="toggle('e2-py5')">▸ Pinyin</span>
+    <div id="e2-py5" class="hideable pinyin-block">
+      A <span class="t1">shuō</span> <span class="t1">dōng</span> <span class="t2">mén</span> <span class="t1">fāng</span> <span class="t4">biàn</span> <span class="t0">ma</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e2-a5')">▸ answer</span>
+    <div id="e2-a5" class="hideable answer-box">
+      是的，A 说<span class="new-word">真</span>的很<span class="new-word">方便</span>，就在<span class="new-word">旁边</span>。<br/>
+      <span class="t4">Shì</span> <span class="t0">de</span><span class="t0">，</span> A <span class="t1">shuō</span> <span class="t1">zhēn</span> <span class="t0">de</span> <span class="t3">hěn</span> <span class="t1">fāng</span> <span class="t4">biàn</span><span class="t0">，</span> <span class="t4">jiù</span> <span class="t4">zài</span> <span class="t2">páng</span> <span class="t1">biān</span><span class="t0">。</span><br/>
+      <em>Yes, A said it was really convenient — right beside her.</em>
+    </div>
+  </div>
+
+  <!-- Transcript -->
+  <span class="toggle-btn" onclick="toggle('e2-hanzi')">▸ Hanzi Transcript</span>
+  <div id="e2-hanzi" class="hideable transcript-box">
+    <div class="dialogue-line">
+      <span class="speaker-label">B:</span>
+      <span class="sentence-hz" data-level="E2" data-i="0" data-voice="zh-CN-YunxiNeural">喂，你在哪里？我到<span class="new-word">商场</span><span class="new-word">东门</span>了。<span class="tts-btn" onclick="ttsSpeak(this,'喂，你在哪里？我到商场东门了。','zh-CN-YunxiNeural')" title="Play: B (male)">🔊</span></span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker-label">A:</span>
+      <span class="sentence-hz" data-level="E2" data-i="1" data-voice="zh-CN-XiaoxiaoNeural"><span class="new-word">对不起</span>，我<span class="new-word">迷路了</span>，<span class="new-word">找不到路</span>，找不到<span class="new-word">东门</span>。<span class="tts-btn" onclick="ttsSpeak(this,'对不起，我迷路了，找不到路，找不到东门。','zh-CN-XiaoxiaoNeural')" title="Play: A (female)">🔊</span></span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker-label">B:</span>
+      <span class="sentence-hz" data-level="E2" data-i="2" data-voice="zh-CN-YunxiNeural"><span class="new-word">没事儿</span>。你现在在哪个<span class="new-word">地方</span>？<span class="tts-btn" onclick="ttsSpeak(this,'没事儿。你现在在哪个地方？','zh-CN-YunxiNeural')" title="Play: B (male)">🔊</span></span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker-label">A:</span>
+      <span class="sentence-hz" data-level="E2" data-i="3" data-voice="zh-CN-XiaoxiaoNeural">我在一个咖啡店<span class="new-word">旁边</span>，<span class="new-word">附近</span>有一个<span class="new-word">公园</span>。<span class="tts-btn" onclick="ttsSpeak(this,'我在一个咖啡店旁边，附近有一个公园。','zh-CN-XiaoxiaoNeural')" title="Play: A (female)">🔊</span></span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker-label">B:</span>
+      <span class="sentence-hz" data-level="E2" data-i="4" data-voice="zh-CN-YunxiNeural">好，我知道了。你走到<span class="new-word">公园</span><span class="new-word">门口</span>，然后直走，就可以看到<span class="new-word">东门</span>。<span class="tts-btn" onclick="ttsSpeak(this,'好，我知道了。你走到公园门口，然后直走，就可以看到东门。','zh-CN-YunxiNeural')" title="Play: B (male)">🔊</span></span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker-label">A:</span>
+      <span class="sentence-hz" data-level="E2" data-i="5" data-voice="zh-CN-XiaoxiaoNeural">谢谢！我已经看到<span class="new-word">公园</span>了，我走过去。<span class="tts-btn" onclick="ttsSpeak(this,'谢谢！我已经看到公园了，我走过去。','zh-CN-XiaoxiaoNeural')" title="Play: A (female)">🔊</span></span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker-label">B:</span>
+      <span class="sentence-hz" data-level="E2" data-i="6" data-voice="zh-CN-YunxiNeural"><span class="new-word">好呀</span>，我在<span class="new-word">东门</span>等你。<span class="tts-btn" onclick="ttsSpeak(this,'好呀，我在东门等你。','zh-CN-YunxiNeural')" title="Play: B (male)">🔊</span></span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker-label">A:</span>
+      <span class="sentence-hz" data-level="E2" data-i="7" data-voice="zh-CN-XiaoxiaoNeural">我到了，我在<span class="new-word">东门</span>！<span class="new-word">真</span>的很<span class="new-word">方便</span>，就在<span class="new-word">旁边</span>。<span class="tts-btn" onclick="ttsSpeak(this,'我到了，我在东门！真的很方便，就在旁边。','zh-CN-XiaoxiaoNeural')" title="Play: A (female)">🔊</span></span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker-label">B:</span>
+      <span class="sentence-hz" data-level="E2" data-i="8" data-voice="zh-CN-YunxiNeural">太好了！我们进去<span class="new-word">逛</span>一<span class="new-word">逛</span>吧，我要买一些<span class="new-word">东西</span>。<span class="tts-btn" onclick="ttsSpeak(this,'太好了！我们进去逛一逛吧，我要买一些东西。','zh-CN-YunxiNeural')" title="Play: B (male)">🔊</span></span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker-label">A:</span>
+      <span class="sentence-hz" data-level="E2" data-i="9" data-voice="zh-CN-XiaoxiaoNeural">好的，<span class="new-word">走吧</span>！<span class="tts-btn" onclick="ttsSpeak(this,'好的，走吧！','zh-CN-XiaoxiaoNeural')" title="Play: A (female)">🔊</span></span>
+    </div>
+  </div>
+
+  <span class="toggle-btn" onclick="toggle('e2-pinyin')">▸ Pinyin Transcript</span>
+  <div id="e2-pinyin" class="hideable pinyin-block">
+    <span class="sentence-py" data-level="E2" data-i="0"><strong>B:</strong> <span class="t4">Wèi</span><span class="t0">，</span> <span class="t3">nǐ</span> <span class="t4">zài</span> <span class="t3">nǎ</span> <span class="t3">lǐ</span><span class="t0">？</span> <span class="t3">Wǒ</span> <span class="t4">dào</span> <span class="t1">shāng</span> <span class="t2">chǎng</span> <span class="t1">dōng</span> <span class="t2">mén</span> <span class="t0">le</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E2" data-i="1"><strong>A:</strong> <span class="t4">Duì</span> <span class="t0">bu</span> <span class="t3">qǐ</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t2">mí</span> <span class="t4">lù</span> <span class="t0">le</span><span class="t0">，</span> <span class="t3">zhǎo</span> <span class="t4">bù</span> <span class="t4">dào</span> <span class="t4">lù</span><span class="t0">，</span> <span class="t3">zhǎo</span> <span class="t4">bù</span> <span class="t4">dào</span> <span class="t1">dōng</span> <span class="t2">mén</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E2" data-i="2"><strong>B:</strong> <span class="t2">Méi</span> <span class="t4">shìr</span><span class="t0">。</span> <span class="t3">Nǐ</span> <span class="t4">xiàn</span> <span class="t4">zài</span> <span class="t4">zài</span> <span class="t3">nǎ</span> <span class="t0">ge</span> <span class="t4">dì</span> <span class="t0">fang</span><span class="t0">？</span></span>
+    <span class="sentence-py" data-level="E2" data-i="3"><strong>A:</strong> <span class="t3">Wǒ</span> <span class="t4">zài</span> <span class="t4">yī</span> <span class="t0">ge</span> <span class="t1">kā</span> <span class="t1">fēi</span> <span class="t4">diàn</span> <span class="t2">páng</span> <span class="t1">biān</span><span class="t0">，</span> <span class="t4">fù</span> <span class="t4">jìn</span> <span class="t3">yǒu</span> <span class="t4">yī</span> <span class="t0">ge</span> <span class="t1">gōng</span> <span class="t2">yuán</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E2" data-i="4"><strong>B:</strong> <span class="t3">Hǎo</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t1">zhī</span> <span class="t4">dào</span> <span class="t0">le</span><span class="t0">。</span> <span class="t3">Nǐ</span> <span class="t3">zǒu</span> <span class="t4">dào</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t2">mén</span> <span class="t3">kǒu</span><span class="t0">，</span> <span class="t2">rán</span> <span class="t4">hòu</span> <span class="t2">zhí</span> <span class="t3">zǒu</span><span class="t0">，</span> <span class="t4">jiù</span> <span class="t3">kě</span> <span class="t3">yǐ</span> <span class="t4">kàn</span> <span class="t4">dào</span> <span class="t1">dōng</span> <span class="t2">mén</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E2" data-i="5"><strong>A:</strong> <span class="t4">Xiè</span> <span class="t0">xie</span><span class="t0">！</span> <span class="t3">Wǒ</span> <span class="t3">yǐ</span> <span class="t1">jīng</span> <span class="t4">kàn</span> <span class="t4">dào</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t0">le</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t3">zǒu</span> <span class="t4">guò</span> <span class="t4">qù</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E2" data-i="6"><strong>B:</strong> <span class="t3">Hǎo</span> <span class="t0">ya</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t4">zài</span> <span class="t1">dōng</span> <span class="t2">mén</span> <span class="t3">děng</span> <span class="t3">nǐ</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E2" data-i="7"><strong>A:</strong> <span class="t3">Wǒ</span> <span class="t4">dào</span> <span class="t0">le</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t4">zài</span> <span class="t1">dōng</span> <span class="t2">mén</span><span class="t0">！</span> <span class="t1">Zhēn</span> <span class="t0">de</span> <span class="t3">hěn</span> <span class="t1">fāng</span> <span class="t4">biàn</span><span class="t0">，</span> <span class="t4">jiù</span> <span class="t4">zài</span> <span class="t2">páng</span> <span class="t1">biān</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E2" data-i="8"><strong>B:</strong> <span class="t4">Tài</span> <span class="t3">hǎo</span> <span class="t0">le</span><span class="t0">！</span> <span class="t3">Wǒ</span> <span class="t0">men</span> <span class="t4">jìn</span> <span class="t4">qù</span> <span class="t4">guàng</span> <span class="t4">yi</span> <span class="t4">guàng</span> <span class="t0">ba</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t4">yào</span> <span class="t3">mǎi</span> <span class="t4">yī</span> <span class="t1">xiē</span> <span class="t1">dōng</span> <span class="t0">xi</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E2" data-i="9"><strong>A:</strong> <span class="t3">Hǎo</span> <span class="t0">de</span><span class="t0">，</span> <span class="t3">zǒu</span> <span class="t0">ba</span><span class="t0">！</span></span>
+  </div>
+
+  <span class="toggle-btn" onclick="toggle('e2-en')">▸ English Transcript</span>
+  <div id="e2-en" class="hideable answer-box">
+    <span class="sentence-en" data-level="E2" data-i="0"><strong>B:</strong> Hello, where are you? I've arrived at the mall's east gate.</span>
+    <span class="sentence-en" data-level="E2" data-i="1"><strong>A:</strong> Sorry, I got lost — I can't find the way, I can't find the east gate.</span>
+    <span class="sentence-en" data-level="E2" data-i="2"><strong>B:</strong> No problem. What place are you at right now?</span>
+    <span class="sentence-en" data-level="E2" data-i="3"><strong>A:</strong> I'm next to a coffee shop, with a park nearby.</span>
+    <span class="sentence-en" data-level="E2" data-i="4"><strong>B:</strong> Got it. Walk to the park entrance, then go straight, and you'll be able to see the east gate.</span>
+    <span class="sentence-en" data-level="E2" data-i="5"><strong>A:</strong> Thanks! I can already see the park — I'll walk over.</span>
+    <span class="sentence-en" data-level="E2" data-i="6"><strong>B:</strong> Great, I'll wait for you at the east gate.</span>
+    <span class="sentence-en" data-level="E2" data-i="7"><strong>A:</strong> I'm here — I'm at the east gate! It's really convenient, right next to me.</span>
+    <span class="sentence-en" data-level="E2" data-i="8"><strong>B:</strong> Excellent! Let's go inside and have a browse — I want to buy a few things.</span>
+    <span class="sentence-en" data-level="E2" data-i="9"><strong>A:</strong> Sure, let's go!</span>
+  </div>
+</div>
+
+<!-- ==================== EXERCISE 3: HARDER ==================== -->
+<div class="section-card" id="exercise-E3" data-type="narrative">
+  <div class="section-title">Exercise 3: 我的一天 — My Day Out <span class="badge badge-harder">Harder</span></div>
+  <p class="section-instructions">Longer narrative, single speaker. More complex grammar. Listen carefully.</p>
+
+  <div class="exercise-audio">
+    <button class="play-btn" id="play-E3" onclick="startExercise('E3')">▶ Play Passage</button>
+    <span class="tts-btn play-full" onclick="ttsSpeak(this,'今天上午，我打电话给朋友，问她有没有时间一起出去逛一逛。她说好呀，我们在商场西门见面。我是一个路痴，经常迷路，所以我早点出发。走到西门的时候，我看到一个漂亮的公园在旁边，就在商场附近，真的很方便。我已经找到西门了，但是我的朋友还没到。我等了几分钟，终于看见她了。我们进了商场，逛了很多地方，买了一些东西。下午我们去吃川菜，特别好吃。回家的时候，我给老板发了一封邮件，告诉他明天我要请假。')" style="font-size:1.6em; opacity:0.7;">🔊</span>
+    <span class="play-label">Listen to full passage</span>
+  </div>
+
+  <!-- Comprehension Questions -->
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">1.</span> 她早上打电话给谁？要做什么？</p>
+    <span class="toggle-btn" onclick="toggle('e3-py1')">▸ Pinyin</span>
+    <div id="e3-py1" class="hideable pinyin-block">
+      <span class="t1">Tā</span> <span class="t3">zǎo</span> <span class="t0">shang</span> <span class="t3">dǎ</span> <span class="t4">diàn</span> <span class="t4">huà</span> <span class="t3">gěi</span> <span class="t2">shuí</span><span class="t0">？</span> <span class="t4">Yào</span> <span class="t4">zuò</span> <span class="t2">shén</span> <span class="t0">me</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e3-a1')">▸ answer</span>
+    <div id="e3-a1" class="hideable answer-box">
+      她<span class="new-word">打电话</span>给朋友，问她有没有时间一起出去<span class="new-word">逛</span>一<span class="new-word">逛</span>。<br/>
+      <span class="t1">Tā</span> <span class="t3">dǎ</span> <span class="t4">diàn</span> <span class="t4">huà</span> <span class="t3">gěi</span> <span class="t2">péng</span> <span class="t3">yǒu</span><span class="t0">，</span> <span class="t4">wèn</span> <span class="t1">tā</span> <span class="t3">yǒu</span> <span class="t2">méi</span> <span class="t3">yǒu</span> <span class="t2">shí</span> <span class="t1">jiān</span> <span class="t4">yī</span> <span class="t3">qǐ</span> <span class="t1">chū</span> <span class="t4">qù</span> <span class="t4">guàng</span> <span class="t4">yi</span> <span class="t4">guàng</span><span class="t0">。</span><br/>
+      <em>She called her friend, asking if she had time to go out for a stroll together.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">2.</span> 他们在哪儿见面？为什么她早点出发？</p>
+    <span class="toggle-btn" onclick="toggle('e3-py2')">▸ Pinyin</span>
+    <div id="e3-py2" class="hideable pinyin-block">
+      <span class="t1">Tā</span> <span class="t0">men</span> <span class="t4">zài</span> <span class="t3">nǎr</span> <span class="t4">jiàn</span> <span class="t4">miàn</span><span class="t0">？</span> <span class="t4">Wèi</span> <span class="t2">shén</span> <span class="t0">me</span> <span class="t1">tā</span> <span class="t3">zǎo</span> <span class="t3">diǎn</span> <span class="t1">chū</span> <span class="t1">fā</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e3-a2')">▸ answer</span>
+    <div id="e3-a2" class="hideable answer-box">
+      她们在<span class="new-word">商场</span><span class="new-word">西门</span><span class="new-word">见面</span>。因为她是<span class="new-word">路痴</span>，经常<span class="new-word">迷路</span>，所以早点出发。<br/>
+      <span class="t1">Tā</span> <span class="t0">men</span> <span class="t4">zài</span> <span class="t1">shāng</span> <span class="t2">chǎng</span> <span class="t1">xī</span> <span class="t2">mén</span> <span class="t4">jiàn</span> <span class="t4">miàn</span><span class="t0">。</span> <span class="t1">Yīn</span> <span class="t4">wèi</span> <span class="t1">tā</span> <span class="t4">shì</span> <span class="t4">lù</span> <span class="t1">chī</span><span class="t0">，</span> <span class="t1">jīng</span> <span class="t2">cháng</span> <span class="t2">mí</span> <span class="t4">lù</span><span class="t0">，</span> <span class="t1">suǒ</span> <span class="t3">yǐ</span> <span class="t3">zǎo</span> <span class="t3">diǎn</span> <span class="t1">chū</span> <span class="t1">fā</span><span class="t0">。</span><br/>
+      <em>They met at the mall's west gate. Because she has a poor sense of direction and often gets lost, she left early.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">3.</span> 她在西门附近看到了什么？</p>
+    <span class="toggle-btn" onclick="toggle('e3-py3')">▸ Pinyin</span>
+    <div id="e3-py3" class="hideable pinyin-block">
+      <span class="t1">Tā</span> <span class="t4">zài</span> <span class="t1">xī</span> <span class="t2">mén</span> <span class="t4">fù</span> <span class="t4">jìn</span> <span class="t4">kàn</span> <span class="t4">dào</span> <span class="t0">le</span> <span class="t2">shén</span> <span class="t0">me</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e3-a3')">▸ answer</span>
+    <div id="e3-a3" class="hideable answer-box">
+      她看到一个<span class="new-word">漂亮</span>的<span class="new-word">公园</span>在<span class="new-word">旁边</span>，就在<span class="new-word">商场</span><span class="new-word">附近</span>，<span class="new-word">真</span>的很<span class="new-word">方便</span>。<br/>
+      <span class="t1">Tā</span> <span class="t4">kàn</span> <span class="t4">dào</span> <span class="t4">yī</span> <span class="t0">ge</span> <span class="t4">piào</span> <span class="t0">liang</span> <span class="t0">de</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t4">zài</span> <span class="t2">páng</span> <span class="t1">biān</span><span class="t0">，</span> <span class="t4">jiù</span> <span class="t4">zài</span> <span class="t1">shāng</span> <span class="t2">chǎng</span> <span class="t4">fù</span> <span class="t4">jìn</span><span class="t0">，</span> <span class="t1">zhēn</span> <span class="t0">de</span> <span class="t3">hěn</span> <span class="t1">fāng</span> <span class="t4">biàn</span><span class="t0">。</span><br/>
+      <em>She saw a beautiful park next to her, right near the mall — really convenient.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">4.</span> 下午她们去吃什么？怎么样？</p>
+    <span class="toggle-btn" onclick="toggle('e3-py4')">▸ Pinyin</span>
+    <div id="e3-py4" class="hideable pinyin-block">
+      <span class="t4">Xià</span> <span class="t3">wǔ</span> <span class="t1">tā</span> <span class="t0">men</span> <span class="t4">qù</span> <span class="t1">chī</span> <span class="t2">shén</span> <span class="t0">me</span><span class="t0">？</span> <span class="t3">Zěn</span> <span class="t0">me</span> <span class="t4">yàng</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e3-a4')">▸ answer</span>
+    <div id="e3-a4" class="hideable answer-box">
+      她们去吃<span class="new-word">川菜</span>，<span class="new-word">特别</span>好吃。<br/>
+      <span class="t1">Tā</span> <span class="t0">men</span> <span class="t4">qù</span> <span class="t1">chī</span> <span class="t1">chuān</span> <span class="t4">cài</span><span class="t0">，</span> <span class="t4">tè</span> <span class="t2">bié</span> <span class="t3">hǎo</span> <span class="t1">chī</span><span class="t0">。</span><br/>
+      <em>They went to eat Sichuan cuisine — especially delicious.</em>
+    </div>
+  </div>
+
+  <div class="drill-question">
+    <p class="hanzi-text"><span class="q-number">5.</span> 回家的时候，她给老板发了什么？说了什么？</p>
+    <span class="toggle-btn" onclick="toggle('e3-py5')">▸ Pinyin</span>
+    <div id="e3-py5" class="hideable pinyin-block">
+      <span class="t2">Huí</span> <span class="t1">jiā</span> <span class="t0">de</span> <span class="t2">shí</span> <span class="t0">hou</span><span class="t0">，</span> <span class="t1">tā</span> <span class="t3">gěi</span> <span class="t3">lǎo</span> <span class="t3">bǎn</span> <span class="t1">fā</span> <span class="t0">le</span> <span class="t2">shén</span> <span class="t0">me</span><span class="t0">？</span> <span class="t1">Shuō</span> <span class="t0">le</span> <span class="t2">shén</span> <span class="t0">me</span><span class="t0">？</span>
+    </div>
+    <span class="toggle-btn" onclick="toggle('e3-a5')">▸ answer</span>
+    <div id="e3-a5" class="hideable answer-box">
+      她给<span class="new-word">老板</span>发了一封<span class="new-word">邮件</span>，告诉他明天她要请假。<br/>
+      <span class="t1">Tā</span> <span class="t3">gěi</span> <span class="t3">lǎo</span> <span class="t3">bǎn</span> <span class="t1">fā</span> <span class="t0">le</span> <span class="t4">yī</span> <span class="t1">fēng</span> <span class="t2">yóu</span> <span class="t4">jiàn</span><span class="t0">，</span> <span class="t4">gào</span> <span class="t4">su</span> <span class="t1">tā</span> <span class="t2">míng</span> <span class="t1">tiān</span> <span class="t1">tā</span> <span class="t4">yào</span> <span class="t3">qǐng</span> <span class="t4">jià</span><span class="t0">。</span><br/>
+      <em>She sent her boss an email, telling him she would take a day off tomorrow.</em>
+    </div>
+  </div>
+
+  <!-- Transcript -->
+  <span class="toggle-btn" onclick="toggle('e3-hanzi')">▸ Hanzi Transcript</span>
+  <div id="e3-hanzi" class="hideable transcript-box">
+    <span class="sentence-hz" data-level="E3" data-i="0">今天上午，我<span class="new-word">打电话</span>给朋友，问她有没有时间一起出去<span class="new-word">逛</span>一<span class="new-word">逛</span>。<span class="tts-btn" onclick="ttsSpeak(this,'今天上午，我打电话给朋友，问她有没有时间一起出去逛一逛。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E3" data-i="1">她说<span class="new-word">好呀</span>，我们在<span class="new-word">商场</span><span class="new-word">西门</span><span class="new-word">见面</span>。<span class="tts-btn" onclick="ttsSpeak(this,'她说好呀，我们在商场西门见面。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E3" data-i="2">我是一个<span class="new-word">路痴</span>，经常<span class="new-word">迷路</span>，所以我早点出发。<span class="tts-btn" onclick="ttsSpeak(this,'我是一个路痴，经常迷路，所以我早点出发。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E3" data-i="3">走到<span class="new-word">西门</span>的时候，我看到一个<span class="new-word">漂亮</span>的<span class="new-word">公园</span>在<span class="new-word">旁边</span>，就在<span class="new-word">商场</span><span class="new-word">附近</span>，<span class="new-word">真</span>的很<span class="new-word">方便</span>。<span class="tts-btn" onclick="ttsSpeak(this,'走到西门的时候，我看到一个漂亮的公园在旁边，就在商场附近，真的很方便。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E3" data-i="4">我已经<span class="new-word">找到</span><span class="new-word">西门</span>了，但是我的朋友还没到。<span class="tts-btn" onclick="ttsSpeak(this,'我已经找到西门了，但是我的朋友还没到。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E3" data-i="5">我等了几<span class="new-word">分钟</span>，终于<span class="new-word">看见</span>她了。<span class="tts-btn" onclick="ttsSpeak(this,'我等了几分钟，终于看见她了。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E3" data-i="6">我们进了<span class="new-word">商场</span>，<span class="new-word">逛</span>了很多<span class="new-word">地方</span>，买了一些<span class="new-word">东西</span>。<span class="tts-btn" onclick="ttsSpeak(this,'我们进了商场，逛了很多地方，买了一些东西。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E3" data-i="7">下午我们去吃<span class="new-word">川菜</span>，<span class="new-word">特别</span>好吃。<span class="tts-btn" onclick="ttsSpeak(this,'下午我们去吃川菜，特别好吃。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="E3" data-i="8">回家的<span class="new-word">时候</span>，我给<span class="new-word">老板</span>发了一封<span class="new-word">邮件</span>，告诉他明天我要请假。<span class="tts-btn" onclick="ttsSpeak(this,'回家的时候，我给老板发了一封邮件，告诉他明天我要请假。')" title="Play">🔊</span></span>
+  </div>
+
+  <span class="toggle-btn" onclick="toggle('e3-pinyin')">▸ Pinyin Transcript</span>
+  <div id="e3-pinyin" class="hideable pinyin-block">
+    <span class="sentence-py" data-level="E3" data-i="0"><span class="t1">Jīn</span> <span class="t1">tiān</span> <span class="t4">shàng</span> <span class="t3">wǔ</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t3">dǎ</span> <span class="t4">diàn</span> <span class="t4">huà</span> <span class="t3">gěi</span> <span class="t2">péng</span> <span class="t3">yǒu</span><span class="t0">，</span> <span class="t4">wèn</span> <span class="t1">tā</span> <span class="t3">yǒu</span> <span class="t2">méi</span> <span class="t3">yǒu</span> <span class="t2">shí</span> <span class="t1">jiān</span> <span class="t4">yī</span> <span class="t3">qǐ</span> <span class="t1">chū</span> <span class="t4">qù</span> <span class="t4">guàng</span> <span class="t4">yi</span> <span class="t4">guàng</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E3" data-i="1"><span class="t1">Tā</span> <span class="t1">shuō</span> <span class="t3">hǎo</span> <span class="t0">ya</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t0">men</span> <span class="t4">zài</span> <span class="t1">shāng</span> <span class="t2">chǎng</span> <span class="t1">xī</span> <span class="t2">mén</span> <span class="t4">jiàn</span> <span class="t4">miàn</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E3" data-i="2"><span class="t3">Wǒ</span> <span class="t4">shì</span> <span class="t4">yī</span> <span class="t0">ge</span> <span class="t4">lù</span> <span class="t1">chī</span><span class="t0">，</span> <span class="t1">jīng</span> <span class="t2">cháng</span> <span class="t2">mí</span> <span class="t4">lù</span><span class="t0">，</span> <span class="t1">suǒ</span> <span class="t3">yǐ</span> <span class="t3">wǒ</span> <span class="t3">zǎo</span> <span class="t3">diǎn</span> <span class="t1">chū</span> <span class="t1">fā</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E3" data-i="3"><span class="t3">Zǒu</span> <span class="t4">dào</span> <span class="t1">xī</span> <span class="t2">mén</span> <span class="t0">de</span> <span class="t2">shí</span> <span class="t0">hou</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t4">kàn</span> <span class="t4">dào</span> <span class="t4">yī</span> <span class="t0">ge</span> <span class="t4">piào</span> <span class="t0">liang</span> <span class="t0">de</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t4">zài</span> <span class="t2">páng</span> <span class="t1">biān</span><span class="t0">，</span> <span class="t4">jiù</span> <span class="t4">zài</span> <span class="t1">shāng</span> <span class="t2">chǎng</span> <span class="t4">fù</span> <span class="t4">jìn</span><span class="t0">，</span> <span class="t1">zhēn</span> <span class="t0">de</span> <span class="t3">hěn</span> <span class="t1">fāng</span> <span class="t4">biàn</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E3" data-i="4"><span class="t3">Wǒ</span> <span class="t3">yǐ</span> <span class="t1">jīng</span> <span class="t3">zhǎo</span> <span class="t4">dào</span> <span class="t1">xī</span> <span class="t2">mén</span> <span class="t0">le</span><span class="t0">，</span> <span class="t4">dàn</span> <span class="t4">shì</span> <span class="t3">wǒ</span> <span class="t0">de</span> <span class="t2">péng</span> <span class="t3">yǒu</span> <span class="t2">hái</span> <span class="t2">méi</span> <span class="t4">dào</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E3" data-i="5"><span class="t3">Wǒ</span> <span class="t3">děng</span> <span class="t0">le</span> <span class="t3">jǐ</span> <span class="t1">fēn</span> <span class="t1">zhōng</span><span class="t0">，</span> <span class="t1">zhōng</span> <span class="t2">yú</span> <span class="t4">kàn</span> <span class="t4">jiàn</span> <span class="t1">tā</span> <span class="t0">le</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E3" data-i="6"><span class="t3">Wǒ</span> <span class="t0">men</span> <span class="t4">jìn</span> <span class="t0">le</span> <span class="t1">shāng</span> <span class="t2">chǎng</span><span class="t0">，</span> <span class="t4">guàng</span> <span class="t0">le</span> <span class="t3">hěn</span> <span class="t1">duō</span> <span class="t4">dì</span> <span class="t0">fang</span><span class="t0">，</span> <span class="t3">mǎi</span> <span class="t0">le</span> <span class="t4">yī</span> <span class="t1">xiē</span> <span class="t1">dōng</span> <span class="t0">xi</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E3" data-i="7"><span class="t4">Xià</span> <span class="t3">wǔ</span> <span class="t3">wǒ</span> <span class="t0">men</span> <span class="t4">qù</span> <span class="t1">chī</span> <span class="t1">chuān</span> <span class="t4">cài</span><span class="t0">，</span> <span class="t4">tè</span> <span class="t2">bié</span> <span class="t3">hǎo</span> <span class="t1">chī</span><span class="t0">。</span></span>
+    <span class="sentence-py" data-level="E3" data-i="8"><span class="t2">Huí</span> <span class="t1">jiā</span> <span class="t0">de</span> <span class="t2">shí</span> <span class="t0">hou</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t3">gěi</span> <span class="t3">lǎo</span> <span class="t3">bǎn</span> <span class="t1">fā</span> <span class="t0">le</span> <span class="t4">yī</span> <span class="t1">fēng</span> <span class="t2">yóu</span> <span class="t4">jiàn</span><span class="t0">，</span> <span class="t4">gào</span> <span class="t4">su</span> <span class="t1">tā</span> <span class="t2">míng</span> <span class="t1">tiān</span> <span class="t3">wǒ</span> <span class="t4">yào</span> <span class="t3">qǐng</span> <span class="t4">jià</span><span class="t0">。</span></span>
+  </div>
+
+  <span class="toggle-btn" onclick="toggle('e3-en')">▸ English Transcript</span>
+  <div id="e3-en" class="hideable answer-box">
+    <span class="sentence-en" data-level="E3" data-i="0">This morning, I called my friend and asked if she had time to go out for a stroll together.</span>
+    <span class="sentence-en" data-level="E3" data-i="1">She said great, let's meet at the mall's west gate.</span>
+    <span class="sentence-en" data-level="E3" data-i="2">I have a terrible sense of direction and often get lost, so I left early.</span>
+    <span class="sentence-en" data-level="E3" data-i="3">On the way to the west gate, I saw a beautiful park next to me — right near the mall, really convenient.</span>
+    <span class="sentence-en" data-level="E3" data-i="4">I had already found the west gate, but my friend hadn't arrived yet.</span>
+    <span class="sentence-en" data-level="E3" data-i="5">I waited a few minutes and finally spotted her.</span>
+    <span class="sentence-en" data-level="E3" data-i="6">We went into the mall, browsed many places, and bought some things.</span>
+    <span class="sentence-en" data-level="E3" data-i="7">In the afternoon we went to eat Sichuan cuisine — especially delicious.</span>
+    <span class="sentence-en" data-level="E3" data-i="8">On the way home, I sent my boss an email telling him I would take a day off tomorrow.</span>
+  </div>
+</div>
+
+<!-- ==================== AZURE TTS SCRIPT ==================== -->
+<script>
+(function() {
+  const AZURE_KEY = '9FHvN91sOhURXdvTqpspl0D9YlrK0y8fxUmj1jR4aVpHPkN1whmHJQQJ99CDACYeBjFXJ3w3AAAYACOGP37b';
+  const AZURE_REGION = 'eastus';
+  const VOICE_MALE = 'zh-CN-YunxiNeural';
+  const VOICE_FEMALE = 'zh-CN-XiaoxiaoNeural';
+  function getVoice() {
+    var c = document.querySelector('input[name="voice"]:checked');
+    return c ? c.value : 'zh-CN-YunxiNeural';
+  }
+
+  let currentSpeed = 0.70;
+  let currentAudio = null;
+  let currentBtn = null;
+  let currentObjUrl = null;
+  let seekDragging = false;
+  let rafId = null;
+
+  let cachedToken = null;
+  let tokenExpiry = 0;
+
+  // Mini-player elements
+  const mpBar = document.getElementById('mini-player');
+  const mpPlayPause = document.getElementById('mp-playpause');
+  const mpSeekEl = document.getElementById('mp-seek');
+  const mpTimeEl = document.getElementById('mp-time');
+  const mpTextEl = document.getElementById('mp-text');
+
+  function fmtTime(s) {
+    if (!s || isNaN(s)) return '0:00';
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+
+  function updateMiniPlayer() {
+    if (!currentAudio) { cancelAnimationFrame(rafId); return; }
+    const dur = currentAudio.duration || 0;
+    const cur = currentAudio.currentTime || 0;
+    if (!seekDragging) mpSeekEl.value = dur ? (cur / dur * 100) : 0;
+    mpTimeEl.textContent = fmtTime(cur) + ' / ' + fmtTime(dur);
+    rafId = requestAnimationFrame(updateMiniPlayer);
+  }
+
+  function showMiniPlayer(text) {
+    mpBar.classList.add('active');
+    mpPlayPause.textContent = '⏸';
+    mpSeekEl.value = 0;
+    mpTimeEl.textContent = '0:00 / 0:00';
+    const preview = text.length > 30 ? text.slice(0, 28) + '…' : text;
+    mpTextEl.textContent = preview;
+  }
+
+  function hideMiniPlayer() {
+    mpBar.classList.remove('active');
+    cancelAnimationFrame(rafId);
+  }
+
+  async function getToken() {
+    if (cachedToken && Date.now() < tokenExpiry) return cachedToken;
+    const resp = await fetch(
+      `https://${AZURE_REGION}.api.cognitive.microsoft.com/sts/v1.0/issueToken`,
+      { method: 'POST', headers: { 'Ocp-Apim-Subscription-Key': AZURE_KEY, 'Content-Length': '0' } }
+    );
+    if (!resp.ok) throw new Error('Token fetch failed: ' + resp.status);
+    cachedToken = await resp.text();
+    tokenExpiry = Date.now() + 8 * 60 * 1000;
+    return cachedToken;
+  }
+
+  function buildSSML(text, rate, voice) {
+    voice = voice || getVoice();
+    const pct = Math.round((rate - 1) * 100);
+    const rateStr = (pct >= 0 ? '+' : '') + pct + '%';
+    return `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="zh-CN">
+      <voice name="${voice}">
+        <prosody rate="${rateStr}">${escapeXml(text)}</prosody>
+      </voice>
+    </speak>`;
+  }
+
+  function buildDialogueSSML(lines, rate) {
+    const pct = Math.round((rate - 1) * 100);
+    const rateStr = (pct >= 0 ? '+' : '') + pct + '%';
+    let body = '';
+    for (const line of lines) {
+      const voice = line.voice === 'female' ? VOICE_FEMALE : VOICE_MALE;
+      body += `<voice name="${voice}"><prosody rate="${rateStr}">${escapeXml(line.text)}</prosody></voice>\n`;
+    }
+    return `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="zh-CN">${body}</speak>`;
+  }
+
+  function escapeXml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function cleanupAudio() {
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.onended = null;
+      currentAudio.onerror = null;
+      currentAudio.ontimeupdate = null;
+      currentAudio = null;
+    }
+    if (currentObjUrl) { URL.revokeObjectURL(currentObjUrl); currentObjUrl = null; }
+    if (currentBtn) { currentBtn.classList.remove('playing'); currentBtn = null; }
+    cancelAnimationFrame(rafId);
+  }
+
+  window.ttsSpeak = async function(btn, text, voice) {
+    cleanupAudio();
+    btn.classList.add('playing');
+    currentBtn = btn;
+    showMiniPlayer(text);
+    try {
+      const token = await getToken();
+      const ssml = buildSSML(text, currentSpeed, voice);
+      const resp = await fetch(
+        `https://${AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/ssml+xml',
+            'X-Microsoft-OutputFormat': 'audio-24khz-48kbitrate-mono-mp3'
+          },
+          body: ssml
+        }
+      );
+      if (!resp.ok) throw new Error('TTS failed: ' + resp.status);
+      const blob = await resp.blob();
+      currentObjUrl = URL.createObjectURL(blob);
+      const audio = new Audio(currentObjUrl);
+      currentAudio = audio;
+      audio.onended = () => {
+        btn.classList.remove('playing');
+        mpPlayPause.textContent = '▶';
+        cancelAnimationFrame(rafId);
+        // Keep mini-player visible so user can replay/rewind
+      };
+      audio.onerror = () => {
+        btn.classList.remove('playing');
+        hideMiniPlayer();
+        currentAudio = null;
+        currentBtn = null;
+      };
+      audio.play();
+      rafId = requestAnimationFrame(updateMiniPlayer);
+    } catch(e) {
+      console.error('TTS error:', e);
+      btn.classList.remove('playing');
+      btn.title = 'Error: ' + e.message;
+      hideMiniPlayer();
+    }
+  };
+
+  window.ttsDialogue = async function(btn, lines) {
+    cleanupAudio();
+    btn.classList.add('playing');
+    currentBtn = btn;
+    const preview = lines.map(l => l.text).join(' ');
+    showMiniPlayer(preview);
+    try {
+      const token = await getToken();
+      const ssml = buildDialogueSSML(lines, currentSpeed);
+      const resp = await fetch(
+        `https://${AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/ssml+xml',
+            'X-Microsoft-OutputFormat': 'audio-24khz-48kbitrate-mono-mp3'
+          },
+          body: ssml
+        }
+      );
+      if (!resp.ok) throw new Error('TTS failed: ' + resp.status);
+      const blob = await resp.blob();
+      currentObjUrl = URL.createObjectURL(blob);
+      const audio = new Audio(currentObjUrl);
+      currentAudio = audio;
+      audio.onended = () => {
+        btn.classList.remove('playing');
+        mpPlayPause.textContent = '\u25b6';
+        cancelAnimationFrame(rafId);
+      };
+      audio.onerror = () => {
+        btn.classList.remove('playing');
+        hideMiniPlayer();
+        currentAudio = null;
+        currentBtn = null;
+      };
+      audio.play();
+      rafId = requestAnimationFrame(updateMiniPlayer);
+    } catch(e) {
+      console.error('TTS error:', e);
+      btn.classList.remove('playing');
+      btn.title = 'Error: ' + e.message;
+      hideMiniPlayer();
+    }
+  };
+
+  // Mini-player controls
+  window.mpToggle = function() {
+    if (!currentAudio) return;
+    if (currentAudio.paused) {
+      currentAudio.play();
+      mpPlayPause.textContent = '⏸';
+      if (currentBtn) currentBtn.classList.add('playing');
+      rafId = requestAnimationFrame(updateMiniPlayer);
+    } else {
+      currentAudio.pause();
+      mpPlayPause.textContent = '▶';
+      if (currentBtn) currentBtn.classList.remove('playing');
+      cancelAnimationFrame(rafId);
+    }
+  };
+
+  window.mpRewind = function() {
+    if (!currentAudio) return;
+    currentAudio.currentTime = Math.max(0, currentAudio.currentTime - 5);
+  };
+
+  window.mpSeek = function(val) {
+    if (!currentAudio || !currentAudio.duration) return;
+    currentAudio.currentTime = (val / 100) * currentAudio.duration;
+  };
+
+  // Track drag state so the scrubber doesn't fight with updateMiniPlayer
+  mpSeekEl.addEventListener('mousedown', () => { seekDragging = true; });
+  mpSeekEl.addEventListener('touchstart', () => { seekDragging = true; });
+  mpSeekEl.addEventListener('mouseup', () => { seekDragging = false; });
+  mpSeekEl.addEventListener('touchend', () => { seekDragging = false; });
+
+  window.ttsSetSpeed = function(val) {
+    currentSpeed = parseFloat(val);
+    document.getElementById('tts-speed-val').textContent = currentSpeed.toFixed(2) + 'x';
+  };
+
+  // Voice change: stop current audio so it re-synthesizes with new voice
+  document.querySelectorAll('input[name="voice"]').forEach(function(r) {
+    r.onchange = function() {
+      if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+      if (currentBtn) { currentBtn.classList.remove('playing'); currentBtn = null; }
+    };
+  });
+
+  // ==================== SENTENCE-BY-SENTENCE SYNC ENGINE ====================
+  // Exercise data: sentences for each exercise level
+  const EXERCISE_DATA = {
+    'E1': {
+      type: 'narrative',
+      sentences: [
+        '今天天气很好。',
+        '我想去公园走走。',
+        '公园就在我家附近，很近，非常方便。',
+        '公园里有很多漂亮的花。',
+        '我在公园里走了很长时间。',
+        '我真的很开心。'
+      ]
+    },
+    'E2': {
+      type: 'dialogue',
+      sentences: [
+        {voice: 'male', text: '喂，你在哪里？我到商场东门了。'},
+        {voice: 'female', text: '对不起，我迷路了，找不到路，找不到东门。'},
+        {voice: 'male', text: '没事儿。你现在在哪个地方？'},
+        {voice: 'female', text: '我在一个咖啡店旁边，附近有一个公园。'},
+        {voice: 'male', text: '好，我知道了。你走到公园门口，然后直走，就可以看到东门。'},
+        {voice: 'female', text: '谢谢！我已经看到公园了，我走过去。'},
+        {voice: 'male', text: '好呀，我在东门等你。'},
+        {voice: 'female', text: '我到了，我在东门！真的很方便，就在旁边。'},
+        {voice: 'male', text: '太好了！我们进去逛一逛吧，我要买一些东西。'},
+        {voice: 'female', text: '好的，走吧！'}
+      ]
+    },
+    'E3': {
+      type: 'narrative',
+      sentences: [
+        '今天上午，我打电话给朋友，问她有没有时间一起出去逛一逛。',
+        '她说好呀，我们在商场西门见面。',
+        '我是一个路痴，经常迷路，所以我早点出发。',
+        '走到西门的时候，我看到一个漂亮的公园在旁边，就在商场附近，真的很方便。',
+        '我已经找到西门了，但是我的朋友还没到。',
+        '我等了几分钟，终于看见她了。',
+        '我们进了商场，逛了很多地方，买了一些东西。',
+        '下午我们去吃川菜，特别好吃。',
+        '回家的时候，我给老板发了一封邮件，告诉他明天我要请假。'
+      ]
+    }
+  };
+
+  let activeSyncLevel = null;
+  let activeSyncIndex = 0;
+  let syncPlayBtn = null;
+
+  function clearSentenceHighlights(level) {
+    document.querySelectorAll('[data-level="' + level + '"]').forEach(function(el) {
+      el.classList.remove('active-sentence');
+    });
+  }
+
+  function highlightSentence(level, index) {
+    clearSentenceHighlights(level);
+    document.querySelectorAll('[data-level="' + level + '"][data-i="' + index + '"]').forEach(function(el) {
+      el.classList.add('active-sentence');
+    });
+  }
+
+  async function playSentenceSequence(level, sentences, startIndex, btn) {
+    if (activeSyncLevel && activeSyncLevel !== level) {
+      clearSentenceHighlights(activeSyncLevel);
+    }
+    activeSyncLevel = level;
+    activeSyncIndex = startIndex;
+    syncPlayBtn = btn;
+
+    const data = EXERCISE_DATA[level];
+    const isDialogue = data.type === 'dialogue';
+
+    for (let i = startIndex; i < sentences.length; i++) {
+      if (activeSyncLevel !== level) break; // cancelled
+      activeSyncIndex = i;
+      highlightSentence(level, i);
+
+      const sentence = sentences[i];
+      let text, voice;
+      if (isDialogue) {
+        text = sentence.text;
+        voice = sentence.voice === 'female' ? VOICE_FEMALE : VOICE_MALE;
+      } else {
+        text = sentence;
+        voice = getVoice();
+      }
+
+      await new Promise(function(resolve) {
+        cleanupAudio();
+        showMiniPlayer(text);
+
+        getToken().then(function(token) {
+          const ssml = buildSSML(text, currentSpeed, voice);
+          fetch(
+            'https://' + AZURE_REGION + '.tts.speech.microsoft.com/cognitiveservices/v1',
+            {
+              method: 'POST',
+              headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/ssml+xml',
+                'X-Microsoft-OutputFormat': 'audio-24khz-48kbitrate-mono-mp3'
+              },
+              body: ssml
+            }
+          ).then(function(resp) {
+            if (!resp.ok) { resolve(); return; }
+            return resp.blob();
+          }).then(function(blob) {
+            if (!blob) { resolve(); return; }
+            currentObjUrl = URL.createObjectURL(blob);
+            const audio = new Audio(currentObjUrl);
+            currentAudio = audio;
+            audio.onended = function() {
+              mpPlayPause.textContent = '▶';
+              cancelAnimationFrame(rafId);
+              resolve();
+            };
+            audio.onerror = function() {
+              hideMiniPlayer();
+              currentAudio = null;
+              resolve();
+            };
+            audio.play();
+            rafId = requestAnimationFrame(updateMiniPlayer);
+          }).catch(function() { resolve(); });
+        }).catch(function() { resolve(); });
+      });
+
+      if (activeSyncLevel !== level) break;
+    }
+
+    // Done
+    if (activeSyncLevel === level) {
+      clearSentenceHighlights(level);
+      activeSyncLevel = null;
+      if (syncPlayBtn) {
+        syncPlayBtn.textContent = data.type === 'dialogue' ? '▶ Play Dialogue' : '▶ Play Passage';
+        syncPlayBtn.classList.remove('playing');
+        syncPlayBtn = null;
+      }
+    }
+  }
+
+  window.startExercise = function(level) {
+    const btn = document.getElementById('play-' + level);
+    const data = EXERCISE_DATA[level];
+    if (!data) return;
+
+    // Toggle: if already playing this level, stop
+    if (activeSyncLevel === level) {
+      activeSyncLevel = null;
+      cleanupAudio();
+      clearSentenceHighlights(level);
+      btn.textContent = data.type === 'dialogue' ? '▶ Play Dialogue' : '▶ Play Passage';
+      btn.classList.remove('playing');
+      syncPlayBtn = null;
+      return;
+    }
+
+    // Stop any other running sync
+    if (activeSyncLevel) {
+      clearSentenceHighlights(activeSyncLevel);
+      const oldBtn = document.getElementById('play-' + activeSyncLevel);
+      if (oldBtn) {
+        const oldData = EXERCISE_DATA[activeSyncLevel];
+        oldBtn.textContent = oldData && oldData.type === 'dialogue' ? '▶ Play Dialogue' : '▶ Play Passage';
+        oldBtn.classList.remove('playing');
+      }
+      activeSyncLevel = null;
+      cleanupAudio();
+    }
+
+    btn.textContent = '⏹ Stop';
+    btn.classList.add('playing');
+
+    playSentenceSequence(level, data.sentences, 0, btn);
+  };
+
+})();
+</script>
+
+</body>
+</html>
