@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chinese Weekly Lesson 05-06-2026</title>
+<style>
+  body { background: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; color: #222; font-size: 15px; }
+  nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #ddd; padding: 10px 20px; z-index: 100; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 12px 24px; }
+  nav a { text-decoration: none; color: #333; font-weight: bold; font-size: 14px; }
+  nav a:hover { color: #000; }
+  section { padding: 20px; }
+  h2 { font-size: 16px; font-weight: bold; margin: 24px 0 8px 0; color: #444; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 24px; }
+  th { background: #f5f5f5; font-size: 13px; font-weight: bold; text-align: left; padding: 8px 10px; border: 1px solid #ddd; }
+  td { padding: 7px 10px; border: 1px solid #eee; vertical-align: top; font-size: 14px; }
+  tr:nth-child(even) { background: #fafafa; }
+  .hanzi { font-size: 18px; }
+  .cat-row td { background: #dce8ff; font-weight: bold; font-size: 13px; color: #334; cursor: pointer; user-select: none; -webkit-user-select: none; }
+  .cat-row td:hover { background: #c8d8f0; }
+  .cat-row.cat-crossed td { text-decoration: line-through; color: #aaa; background: #eee; }
+  .grammar-block { margin-bottom: 28px; }
+  .grammar-block h3 { font-size: 15px; margin-bottom: 6px; cursor: pointer; padding: 4px 8px; border-radius: 4px; user-select: none; -webkit-user-select: none; }
+  .grammar-block h3:hover { background: #eef3ff; }
+  .grammar-block.all-crossed h3 { text-decoration: line-through; color: #bbb; }
+  .grammar-block p { margin: 4px 0; }
+  .ex { margin: 6px 0 6px 12px; line-height: 1.8; }
+  /* Tone colors */
+  .t1 { color: #cc0000; }
+  .t2 { color: #e07800; }
+  .t3 { color: #267326; }
+  .t4 { color: #0044cc; }
+  .t0 { color: #888888; }
+
+  /* TTS Controls */
+  .tts-btn {
+    cursor: pointer;
+    font-size: 0.6em;
+    vertical-align: middle;
+    margin-left: 6px;
+    opacity: 0.45;
+    transition: opacity 0.15s;
+    display: inline-block;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .tts-btn:hover { opacity: 1; }
+  .tts-btn.playing { opacity: 1; animation: pulse 0.8s infinite; }
+  @keyframes pulse { 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.15); } }
+  /* Voice selector */
+  .voice-bar {
+    position: sticky; top: 37px; z-index: 99;
+    background: #f4f4f4; border-bottom: 1px solid #ddd;
+    padding: 6px 20px;
+    display: flex; align-items: center; gap: 14px;
+    font-size: 0.85em; color: #555;
+  }
+  .voice-bar label { cursor: pointer; }
+  .voice-bar input[type=radio] { margin-right: 3px; }
+  .voice-bar .voice-label { font-weight: 600; white-space: nowrap; }
+  @media print { .voice-bar { display: none; } }
+  .tts-bar {
+    position: sticky; top: 71px; z-index: 98;
+    background: #f9f9f9; border-bottom: 1px solid #ddd;
+    padding: 6px 20px;
+    display: flex; align-items: center; gap: 14px;
+    font-size: 0.85em; color: #555;
+  }
+  .tts-bar label { font-weight: 600; white-space: nowrap; }
+  .tts-bar input[type=range] { width: 120px; accent-color: #1155cc; }
+  .tts-bar .speed-val { min-width: 36px; text-align: center; font-variant-numeric: tabular-nums; }
+  @media print { .tts-bar { display: none; } .tts-btn { display: none !important; } .nav-tools { display: none !important; } #toggle-all-btn { display: none !important; } }
+
+  /* Crossed-off rows */
+  tr.crossed-off td { text-decoration: line-through; color: #bbb !important; background: #f8f8f8 !important; }
+  tr.crossed-off .tts-btn { opacity: 0.15 !important; pointer-events: none; }
+  tr.crossed-off span[class^="t"] { color: #ccc !important; }
+  /* Crossed-off grammar examples */
+  .ex.crossed-off { text-decoration: line-through; color: #bbb !important; background: #f8f8f8 !important; cursor: pointer; padding: 4px 8px; border-radius: 4px; }
+  .ex.crossed-off .tts-btn { opacity: 0.15 !important; pointer-events: none; }
+  .ex.crossed-off span[class^="t"] { color: #ccc !important; }
+  .ex.crossed-off span { color: #ccc !important; }
+  .ex { cursor: pointer; padding: 4px 8px; border-radius: 4px; }
+  .ex:hover { outline: 2px solid #c8d8f0; }
+  /* Crossed-off grammar table cells */
+  td.grammar-crossed { text-decoration: line-through; color: #bbb !important; background: #f8f8f8 !important; }
+  td.grammar-crossed .tts-btn { opacity: 0.15 !important; pointer-events: none; }
+  td.grammar-crossed span[class^="t"] { color: #ccc !important; }
+  td.grammar-crossed span { color: #ccc !important; }
+  /* Vocab row interactivity */
+  tbody tr:not(.cat-row) { cursor: pointer; }
+  tbody tr:not(.cat-row):hover { outline: 2px solid #c8d8f0; }
+  /* Nav tools (counter + button) */
+  .nav-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 8px 10px; width: 100%; }
+  .nav-tools button { height: 30px; line-height: 1; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; }
+  #cross-count { font-size: 12px; color: #888; white-space: nowrap; }
+  #export-btn { background: #4a7c59; color: #fff; border: none; border-radius: 4px; padding: 6px 14px; font-size: 13px; font-weight: bold; cursor: pointer; white-space: nowrap; }
+  #export-btn:hover { background: #3a6349; }
+  #download-btn { background: #4a6a9c; color: #fff; border: none; border-radius: 4px; padding: 6px 14px; font-size: 13px; font-weight: bold; cursor: pointer; white-space: nowrap; }
+  #download-btn:hover { background: #395a8a; }
+  #toggle-all-btn { background: #c0392b; color: #fff; border: none; border-radius: 4px; padding: 6px 14px; font-size: 13px; font-weight: bold; cursor: pointer; white-space: nowrap; }
+  #toggle-all-btn:hover { background: #a93226; }
+  #toggle-all-btn.all-crossed { background: #27ae60; }
+  #toggle-all-btn.all-crossed:hover { background: #1e8449; }
+  /* Grammar h2 toggle */
+  #grammar h2 { cursor: pointer; user-select: none; -webkit-user-select: none; transition: color 0.15s; }
+  #grammar h2:hover { color: #222; }
+  #grammar h2.grammar-off { text-decoration: line-through; color: #bbb; }
+  #grammar h2.grammar-off:hover { color: #999; }
+
+  /* ── Flashcard Modal ── */
+  #fc-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+  }
+  .fc-box {
+    background: #fff;
+    border-radius: 14px;
+    width: min(580px, 94vw);
+    padding: 24px 28px 28px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.28);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .fc-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .fc-mode-btns { display: flex; gap: 6px; }
+  .fc-mode-btn {
+    padding: 4px 13px;
+    border-radius: 20px;
+    border: 1.5px solid #99aac4;
+    background: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    color: #3a5a80;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .fc-mode-btn.active {
+    background: #4a6a9c;
+    color: #fff;
+    border-color: #4a6a9c;
+  }
+  .fc-mode-btn:hover:not(.active) { background: #eef2f8; }
+  .fc-progress {
+    font-size: 12px;
+    color: #888;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .fc-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #aaa;
+    line-height: 1;
+    padding: 0 0 0 4px;
+  }
+  .fc-close:hover { color: #333; }
+  .fc-card {
+    min-height: 180px;
+    border: 1.5px solid #dde4f0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 24px 20px;
+    gap: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    user-select: none;
+  }
+  .fc-card:hover { border-color: #99aac4; }
+  .fc-front-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #bbb;
+    font-weight: 600;
+  }
+  .fc-hanzi { font-size: 38px; line-height: 1.3; }
+  .fc-pinyin { font-size: 16px; letter-spacing: 0.04em; line-height: 1.6; }
+  .fc-english { font-size: 21px; color: #222; line-height: 1.4; }
+  /* Front-of-card English in English→Hanzi mode — match Hanzi size from h2e mode */
+  #fc-front-content .fc-english.fc-english-front { font-size: 38px; line-height: 1.3; }
+  /* Example block (rendered outside the answer box, on reveal) */
+  .fc-example {
+    margin-top: 14px;
+    padding: 12px 14px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.55;
+    border-top: 1px dashed #e0e0e0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .fc-example .fc-example-hanzi {
+    font-size: 28px;
+    color: #222;
+    line-height: 1.4;
+    position: relative;
+    display: inline-block;
+  }
+  .fc-example .fc-example-hanzi .fc-tts-example {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+    font-size: 22px;
+    margin-top: 0;
+  }
+  .fc-example .fc-example-pinyin { font-size: 18px; letter-spacing: 0.04em; line-height: 1.6; }
+  .fc-example .fc-example-english { font-size: 17px; color: #555; font-style: italic; }
+  /* In-modal speed slider */
+  .fc-speed-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #555;
+    flex-wrap: wrap;
+  }
+  .fc-speed-bar input[type="range"] {
+    flex: 1 1 160px;
+    max-width: 220px;
+    accent-color: #4a6a9c;
+  }
+  .fc-speed-bar .fc-speed-val { font-weight: 600; color: #4a6a9c; min-width: 42px; text-align: right; }
+  .fc-reveal-hint {
+    font-size: 11px;
+    color: #ccc;
+    margin-top: 6px;
+  }
+  .fc-pinyin-toggle {
+    font-size: 11px;
+    padding: 3px 11px;
+    border-radius: 12px;
+    border: 1px solid #b0c0d8;
+    background: #fff;
+    cursor: pointer;
+    color: #4a6a9c;
+    font-weight: 600;
+  }
+  .fc-pinyin-toggle.on { background: #e8f0ff; border-color: #6080c0; }
+  .fc-pinyin-toggle:hover { background: #eef2f8; }
+  .fc-divider {
+    border: none;
+    border-top: 1.5px solid #eee;
+    margin: 4px 0;
+  }
+  .fc-answer-area {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .fc-answer-content { text-align: center; }
+  .fc-btns { display: flex; gap: 12px; justify-content: center; }
+  #fc-reveal-btn, #fc-correct-btn, #fc-wrong-btn, #fc-restart-btn {
+    border: none;
+    border-radius: 7px;
+    padding: 8px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  #fc-reveal-btn { background: #4a6a9c; color: #fff; }
+  #fc-reveal-btn:hover { background: #395a8a; }
+  #fc-correct-btn { background: #3a7d44; color: #fff; }
+  #fc-correct-btn:hover { background: #2d6335; }
+  #fc-wrong-btn { background: #b94040; color: #fff; }
+  #fc-wrong-btn:hover { background: #962f2f; }
+  #fc-restart-btn { background: #4a6a9c; color: #fff; margin-top: 8px; }
+  #fc-restart-btn:hover { background: #395a8a; }
+  .fc-complete {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0 4px;
+    text-align: center;
+  }
+  .fc-complete-icon { font-size: 48px; margin-bottom: 10px; }
+  .fc-complete h3 { font-size: 22px; color: #3a7d44; margin: 0 0 8px; }
+  .fc-complete p { color: #666; margin: 0; font-size: 14px; }
+  #flashcard-btn, #grammar-fc-btn { background: #7a4a9c; color: #fff; border: none; border-radius: 4px; padding: 6px 14px; font-size: 13px; font-weight: bold; cursor: pointer; white-space: nowrap; }
+  #flashcard-btn:hover, #grammar-fc-btn:hover { background: #623d80; }
+  .fc-deck-label { font-size: 12px; font-weight: 700; color: #7a4a9c; padding: 2px 10px; border: 1.5px solid #c4a8d8; border-radius: 12px; white-space: nowrap; }
+  .fc-voice-bar { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #555; }
+  .fc-voice-bar label { cursor: pointer; white-space: nowrap; }
+  .fc-voice-bar input[type=radio] { margin-right: 2px; }
+  .fc-tts-btn {
+    cursor: pointer;
+    font-size: 22px;
+    opacity: 0.5;
+    transition: opacity 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    display: inline-block;
+    margin-top: 4px;
+  }
+  .fc-tts-btn:hover { opacity: 1; }
+  .fc-tts-btn.playing { opacity: 1; animation: pulse 0.8s infinite; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#vocabulary">Vocabulary</a>
+  <a href="#phrases">Phrases</a>
+  <a href="#grammar">Grammar</a>
+  <div class="nav-tools">
+    <span id="cross-count">Vocab: 0 / 0 · Grammar: 0 / 0</span>
+    <button id="export-btn" title="Export non-crossed-off words to Anki">Export to Anki</button>
+    <button id="download-btn" title="Download this file with crossed-off rows baked in">⬇ Download Marked File</button>
+    <button id="flashcard-btn" title="Start vocab flashcard session">🃏 Vocab Flashcards</button>
+    <button id="grammar-fc-btn" title="Start grammar flashcard session">🃏 Grammar Flashcards</button>
+    <button id="toggle-all-btn" title="Cross off all rows — then un-cross the sections you want to study">✗ Cross Off All</button>
+  </div>
+</nav>
+<div class="voice-bar">
+  <span class="voice-label">Voice:</span>
+  <label><input type="radio" name="voice" value="zh-CN-YunxiNeural" checked> ♂ Yunxi (male)</label>
+  <label><input type="radio" name="voice" value="zh-CN-XiaoxiaoNeural"> ♀ Xiaoxiao (female)</label>
+</div>
+<div class="tts-bar">
+  <label>🔊 Audio Speed:</label>
+  <input type="range" min="0.50" max="1.00" step="0.05" value="0.70" oninput="ttsSetSpeed(this.value)">
+  <span class="speed-val" id="tts-speed-val">0.70x</span>
+  <span style="color:#999; font-size:0.85em;">Click any 🔊 to hear pronunciation</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ VOCABULARY -->
+<section id="vocabulary">
+<h2>Vocabulary</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:180px">Hanzi</th>
+      <th style="width:240px">Pinyin</th>
+      <th style="width:200px">English</th>
+      <th>Example Sentence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="cat-row"><td colspan="4">🕐 Nouns — Time</td></tr>
+
+    <tr>
+      <td class="hanzi">假期<span class="tts-btn" onclick="ttsSpeak(this,'假期')" title="Play: 假期">🔊</span></td>
+      <td><span class="t4">jià</span> <span class="t1">qī</span></td>
+      <td>holiday; vacation</td>
+      <td>
+        <span class="hanzi">我的假期很长。<span class="tts-btn" onclick="ttsSpeak(this,'我的假期很长。')" title="Play: 我的假期很长。">🔊</span></span><br>
+        <span class="t3">Wǒ</span> <span class="t0">de</span> <span class="t4">jià</span> <span class="t1">qī</span> <span class="t3">hěn</span> <span class="t2">cháng</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">My vacation is very long.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">以后<span class="tts-btn" onclick="ttsSpeak(this,'以后')" title="Play: 以后">🔊</span></td>
+      <td><span class="t3">yǐ</span> <span class="t4">hòu</span></td>
+      <td>after; later; from now on</td>
+      <td>
+        <span class="hanzi">以后我每天学习。<span class="tts-btn" onclick="ttsSpeak(this,'以后我每天学习。')" title="Play: 以后我每天学习。">🔊</span></span><br>
+        <span class="t3">Yǐ</span> <span class="t4">hòu</span> <span class="t3">wǒ</span> <span class="t3">měi</span> <span class="t1">tiān</span> <span class="t2">xué</span> <span class="t2">xí</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">From now on, I study every day.</span>
+      </td>
+    </tr>
+
+    <tr class="cat-row"><td colspan="4">⛪ Nouns — Places</td></tr>
+
+    <tr>
+      <td class="hanzi">城市<span class="tts-btn" onclick="ttsSpeak(this,'城市')" title="Play: 城市">🔊</span></td>
+      <td><span class="t2">chéng</span> <span class="t4">shì</span></td>
+      <td>city</td>
+      <td>
+        <span class="hanzi">这个城市很大。<span class="tts-btn" onclick="ttsSpeak(this,'这个城市很大。')" title="Play: 这个城市很大。">🔊</span></span><br>
+        <span class="t4">Zhè</span> <span class="t0">ge</span> <span class="t2">chéng</span> <span class="t4">shì</span> <span class="t3">hěn</span> <span class="t4">dà</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">This city is very big.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">层<span class="tts-btn" onclick="ttsSpeak(this,'层')" title="Play: 层">🔊</span></td>
+      <td><span class="t2">céng</span></td>
+      <td>level; story; floor (counting unit)</td>
+      <td>
+        <span class="hanzi">这栋楼有十层。<span class="tts-btn" onclick="ttsSpeak(this,'这栋楼有十层。')" title="Play: 这栋楼有十层。">🔊</span></span><br>
+        <span class="t4">Zhè</span> <span class="t4">dòng</span> <span class="t2">lóu</span> <span class="t3">yǒu</span> <span class="t2">shí</span> <span class="t2">céng</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">This building has ten floors.</span>
+      </td>
+    </tr>
+
+    <tr class="cat-row"><td colspan="4">🍵 Nouns — Food & Drink</td></tr>
+
+    <tr>
+      <td class="hanzi">烧卖<span class="tts-btn" onclick="ttsSpeak(this,'烧卖')" title="Play: 烧卖">🔊</span></td>
+      <td><span class="t1">shāo</span> <span class="t4">mài</span></td>
+      <td>shumai (steamed dumpling)</td>
+      <td>
+        <span class="hanzi">我喜欢吃烧卖。<span class="tts-btn" onclick="ttsSpeak(this,'我喜欢吃烧卖。')" title="Play: 我喜欢吃烧卖。">🔊</span></span><br>
+        <span class="t3">Wǒ</span> <span class="t3">xǐ</span> <span class="t1">huān</span> <span class="t1">chī</span> <span class="t1">shāo</span> <span class="t4">mài</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">I like to eat shumai.</span>
+      </td>
+    </tr>
+
+    <tr class="cat-row"><td colspan="4">🎁 Nouns — People & Objects</td></tr>
+
+    <tr>
+      <td class="hanzi">号<span class="tts-btn" onclick="ttsSpeak(this,'号')" title="Play: 号">🔊</span></td>
+      <td><span class="t4">hào</span></td>
+      <td>date; number; size</td>
+      <td>
+        <span class="hanzi">今天五号。<span class="tts-btn" onclick="ttsSpeak(this,'今天五号。')" title="Play: 今天五号。">🔊</span></span><br>
+        <span class="t1">Jīn</span> <span class="t1">tiān</span> <span class="t3">wǔ</span> <span class="t4">hào</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">Today is the fifth.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">大小<span class="tts-btn" onclick="ttsSpeak(this,'大小')" title="Play: 大小">🔊</span></td>
+      <td><span class="t4">dà</span> <span class="t3">xiǎo</span></td>
+      <td>size</td>
+      <td>
+        <span class="hanzi">衣服的大小怎么样？<span class="tts-btn" onclick="ttsSpeak(this,'衣服的大小怎么样？')" title="Play: 衣服的大小怎么样？">🔊</span></span><br>
+        <span class="t1">Yī</span> <span class="t0">fu</span> <span class="t0">de</span> <span class="t4">dà</span> <span class="t3">xiǎo</span> <span class="t3">zěn</span> <span class="t0">me</span> <span class="t4">yàng</span><span class="t0">？</span><br>
+        <span style="color:#555; font-style:italic;">How is the size of the clothes?</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">颜色<span class="tts-btn" onclick="ttsSpeak(this,'颜色')" title="Play: 颜色">🔊</span></td>
+      <td><span class="t2">yán</span> <span class="t4">sè</span></td>
+      <td>color</td>
+      <td>
+        <span class="hanzi">我喜欢这个颜色。<span class="tts-btn" onclick="ttsSpeak(this,'我喜欢这个颜色。')" title="Play: 我喜欢这个颜色。">🔊</span></span><br>
+        <span class="t3">Wǒ</span> <span class="t3">xǐ</span> <span class="t1">huān</span> <span class="t4">zhè</span> <span class="t0">ge</span> <span class="t2">yán</span> <span class="t4">sè</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">I like this color.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">黄色<span class="tts-btn" onclick="ttsSpeak(this,'黄色')" title="Play: 黄色">🔊</span></td>
+      <td><span class="t2">huáng</span> <span class="t4">sè</span></td>
+      <td>yellow</td>
+      <td>
+        <span class="hanzi">我喜欢黄色。<span class="tts-btn" onclick="ttsSpeak(this,'我喜欢黄色。')" title="Play: 我喜欢黄色。">🔊</span></span><br>
+        <span class="t3">Wǒ</span> <span class="t3">xǐ</span> <span class="t1">huān</span> <span class="t2">huáng</span> <span class="t4">sè</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">I like yellow.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">新词<span class="tts-btn" onclick="ttsSpeak(this,'新词')" title="Play: 新词">🔊</span></td>
+      <td><span class="t1">xīn</span> <span class="t2">cí</span></td>
+      <td>new word</td>
+      <td>
+        <span class="hanzi">今天有很多新词。<span class="tts-btn" onclick="ttsSpeak(this,'今天有很多新词。')" title="Play: 今天有很多新词。">🔊</span></span><br>
+        <span class="t1">Jīn</span> <span class="t1">tiān</span> <span class="t3">yǒu</span> <span class="t3">hěn</span> <span class="t1">duō</span> <span class="t1">xīn</span> <span class="t2">cí</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">There are many new words today.</span>
+      </td>
+    </tr>
+
+    <tr class="cat-row"><td colspan="4">📚 Nouns — Subjects & Fields</td></tr>
+
+    <tr>
+      <td class="hanzi">数学<span class="tts-btn" onclick="ttsSpeak(this,'数学')" title="Play: 数学">🔊</span></td>
+      <td><span class="t4">shù</span> <span class="t2">xué</span></td>
+      <td>math; mathematics</td>
+      <td>
+        <span class="hanzi">我喜欢数学。<span class="tts-btn" onclick="ttsSpeak(this,'我喜欢数学。')" title="Play: 我喜欢数学。">🔊</span></span><br>
+        <span class="t3">Wǒ</span> <span class="t3">xǐ</span> <span class="t1">huān</span> <span class="t4">shù</span> <span class="t2">xué</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">I like math.</span>
+      </td>
+    </tr>
+
+    <tr class="cat-row"><td colspan="4">🎬 Verbs</td></tr>
+
+    <tr>
+      <td class="hanzi">记得<span class="tts-btn" onclick="ttsSpeak(this,'记得')" title="Play: 记得">🔊</span></td>
+      <td><span class="t4">jì</span> <span class="t0">de</span></td>
+      <td>to remember; to keep in memory</td>
+      <td>
+        <span class="hanzi">我记得她的朋友。<span class="tts-btn" onclick="ttsSpeak(this,'我记得她的朋友。')" title="Play: 我记得她的朋友。">🔊</span></span><br>
+        <span class="t3">Wǒ</span> <span class="t4">jì</span> <span class="t0">de</span> <span class="t1">tā</span> <span class="t0">de</span> <span class="t2">péng</span> <span class="t0">you</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">I remember her friend.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">跑步<span class="tts-btn" onclick="ttsSpeak(this,'跑步')" title="Play: 跑步">🔊</span></td>
+      <td><span class="t3">pǎo</span> <span class="t4">bù</span></td>
+      <td>to run; jogging</td>
+      <td>
+        <span class="hanzi">我每天跑步。<span class="tts-btn" onclick="ttsSpeak(this,'我每天跑步。')" title="Play: 我每天跑步。">🔊</span></span><br>
+        <span class="t3">Wǒ</span> <span class="t3">měi</span> <span class="t1">tiān</span> <span class="t3">pǎo</span> <span class="t4">bù</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">I run every day.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">发<span class="tts-btn" onclick="ttsSpeak(this,'发')" title="Play: 发">🔊</span></td>
+      <td><span class="t1">fā</span></td>
+      <td>to send</td>
+      <td>
+        <span class="hanzi">我发给你。<span class="tts-btn" onclick="ttsSpeak(this,'我发给你。')" title="Play: 我发给你。">🔊</span></span><br>
+        <span class="t3">Wǒ</span> <span class="t1">fā</span> <span class="t3">gěi</span> <span class="t3">nǐ</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">I'll send it to you.</span>
+      </td>
+    </tr>
+
+    <tr class="cat-row"><td colspan="4">✨ Adjectives</td></tr>
+
+    <tr>
+      <td class="hanzi">长<span class="tts-btn" onclick="ttsSpeak(this,'长')" title="Play: 长">🔊</span></td>
+      <td><span class="t2">cháng</span></td>
+      <td>long (length / duration)</td>
+      <td>
+        <span class="hanzi">这条路很长。<span class="tts-btn" onclick="ttsSpeak(this,'这条路很长。')" title="Play: 这条路很长。">🔊</span></span><br>
+        <span class="t4">Zhè</span> <span class="t2">tiáo</span> <span class="t4">lù</span> <span class="t3">hěn</span> <span class="t2">cháng</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">This road is very long.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">短<span class="tts-btn" onclick="ttsSpeak(this,'短')" title="Play: 短">🔊</span></td>
+      <td><span class="t3">duǎn</span></td>
+      <td>short (length / duration)</td>
+      <td>
+        <span class="hanzi">这条裤子有点儿短。<span class="tts-btn" onclick="ttsSpeak(this,'这条裤子有点儿短。')" title="Play: 这条裤子有点儿短。">🔊</span></span><br>
+        <span class="t4">Zhè</span> <span class="t2">tiáo</span> <span class="t4">kù</span> <span class="t0">zi</span> <span class="t3">yǒu</span> <span class="t3">diǎn</span> <span class="t0">r</span> <span class="t3">duǎn</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">These pants are a bit short.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">新<span class="tts-btn" onclick="ttsSpeak(this,'新')" title="Play: 新">🔊</span></td>
+      <td><span class="t1">xīn</span></td>
+      <td>new</td>
+      <td>
+        <span class="hanzi">我有一件新衣服。<span class="tts-btn" onclick="ttsSpeak(this,'我有一件新衣服。')" title="Play: 我有一件新衣服。">🔊</span></span><br>
+        <span class="t3">Wǒ</span> <span class="t3">yǒu</span> <span class="t1">yī</span> <span class="t4">jiàn</span> <span class="t1">xīn</span> <span class="t1">yī</span> <span class="t0">fu</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">I have a new piece of clothing.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">可靠<span class="tts-btn" onclick="ttsSpeak(this,'可靠')" title="Play: 可靠">🔊</span></td>
+      <td><span class="t3">kě</span> <span class="t4">kào</span></td>
+      <td>reliable</td>
+      <td>
+        <span class="hanzi">这个人很可靠。<span class="tts-btn" onclick="ttsSpeak(this,'这个人很可靠。')" title="Play: 这个人很可靠。">🔊</span></span><br>
+        <span class="t4">Zhè</span> <span class="t0">ge</span> <span class="t2">rén</span> <span class="t3">hěn</span> <span class="t3">kě</span> <span class="t4">kào</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">This person is very reliable.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">老样子<span class="tts-btn" onclick="ttsSpeak(this,'老样子')" title="Play: 老样子">🔊</span></td>
+      <td><span class="t3">lǎo</span> <span class="t4">yàng</span> <span class="t0">zi</span></td>
+      <td>the same as usual</td>
+      <td>
+        <span class="hanzi">老样子，谢谢！<span class="tts-btn" onclick="ttsSpeak(this,'老样子，谢谢！')" title="Play: 老样子，谢谢！">🔊</span></span><br>
+        <span class="t3">Lǎo</span> <span class="t4">yàng</span> <span class="t0">zi</span><span class="t0">，</span> <span class="t4">xiè</span> <span class="t0">xie</span><span class="t0">！</span><br>
+        <span style="color:#555; font-style:italic;">The usual, thanks!</span>
+      </td>
+    </tr>
+
+    <tr class="cat-row"><td colspan="4">💬 Adverbs & Expressions</td></tr>
+
+    <tr>
+      <td class="hanzi">再<span class="tts-btn" onclick="ttsSpeak(this,'再')" title="Play: 再">🔊</span></td>
+      <td><span class="t4">zài</span></td>
+      <td>again (forward-looking; future or sequential)</td>
+      <td>
+        <span class="hanzi">我明天再来。<span class="tts-btn" onclick="ttsSpeak(this,'我明天再来。')" title="Play: 我明天再来。">🔊</span></span><br>
+        <span class="t3">Wǒ</span> <span class="t2">míng</span> <span class="t1">tiān</span> <span class="t4">zài</span> <span class="t2">lái</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">I'll come again tomorrow.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">又<span class="tts-btn" onclick="ttsSpeak(this,'又')" title="Play: 又">🔊</span></td>
+      <td><span class="t4">yòu</span></td>
+      <td>again (already happened; past repetition)</td>
+      <td>
+        <span class="hanzi">他又迟到了。<span class="tts-btn" onclick="ttsSpeak(this,'他又迟到了。')" title="Play: 他又迟到了。">🔊</span></span><br>
+        <span class="t1">Tā</span> <span class="t4">yòu</span> <span class="t2">chí</span> <span class="t4">dào</span> <span class="t0">le</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">He's late again.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">我都知道<span class="tts-btn" onclick="ttsSpeak(this,'我都知道')" title="Play: 我都知道">🔊</span></td>
+      <td><span class="t3">wǒ</span> <span class="t1">dōu</span> <span class="t1">zhī</span> <span class="t4">dào</span></td>
+      <td>I know it all; I know everything</td>
+      <td>
+        <span class="hanzi">别担心，我都知道。<span class="tts-btn" onclick="ttsSpeak(this,'别担心，我都知道。')" title="Play: 别担心，我都知道。">🔊</span></span><br>
+        <span class="t2">Bié</span> <span class="t1">dān</span> <span class="t1">xīn</span><span class="t0">，</span> <span class="t3">wǒ</span> <span class="t1">dōu</span> <span class="t1">zhī</span> <span class="t4">dào</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">Don't worry, I know everything.</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">看情况<span class="tts-btn" onclick="ttsSpeak(this,'看情况')" title="Play: 看情况">🔊</span></td>
+      <td><span class="t4">kàn</span> <span class="t2">qíng</span> <span class="t4">kuàng</span></td>
+      <td>it depends; depends on the situation</td>
+      <td>
+        <span class="hanzi">看情况吧。<span class="tts-btn" onclick="ttsSpeak(this,'看情况吧。')" title="Play: 看情况吧。">🔊</span></span><br>
+        <span class="t4">Kàn</span> <span class="t2">qíng</span> <span class="t4">kuàng</span> <span class="t0">ba</span><span class="t0">。</span><br>
+        <span style="color:#555; font-style:italic;">It depends.</span>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ PHRASES -->
+<section id="phrases">
+<h2>Phrases</h2>
+
+<table id="phrases-table">
+  <thead>
+    <tr>
+      <th style="width:260px">Hanzi</th>
+      <th style="width:280px">Pinyin</th>
+      <th style="width:200px">English</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="cat-row"><td colspan="4">💬 Useful Sentences</td></tr>
+
+    <tr>
+      <td class="hanzi">我发给你。<span class="tts-btn" onclick="ttsSpeak(this,'我发给你。')" title="Play: 我发给你。">🔊</span></td>
+      <td><span class="t3">Wǒ</span> <span class="t1">fā</span> <span class="t3">gěi</span> <span class="t3">nǐ</span><span class="t0">。</span></td>
+      <td>I'll send it to you.</td>
+      <td>Use 发 (fā) + indirect-object marker 给 + person.</td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">你可以在Chat里发给我。<span class="tts-btn" onclick="ttsSpeak(this,'你可以在Chat里发给我。')" title="Play: 你可以在Chat里发给我。">🔊</span></td>
+      <td><span class="t3">Nǐ</span> <span class="t3">kě</span> <span class="t3">yǐ</span> <span class="t4">zài</span> <span class="t0">Chat</span> <span class="t3">lǐ</span> <span class="t1">fā</span> <span class="t3">gěi</span> <span class="t3">wǒ</span><span class="t0">。</span></td>
+      <td>You can send it to me in Chat.</td>
+      <td>在 + place + 里 = "inside [place]".</td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">我都知道。<span class="tts-btn" onclick="ttsSpeak(this,'我都知道。')" title="Play: 我都知道。">🔊</span></td>
+      <td><span class="t3">Wǒ</span> <span class="t1">dōu</span> <span class="t1">zhī</span> <span class="t4">dào</span><span class="t0">。</span></td>
+      <td>I know everything / I know it all.</td>
+      <td>都 (dōu) emphasises "all". Often shortened from 我都知道了.</td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">看情况。<span class="tts-btn" onclick="ttsSpeak(this,'看情况。')" title="Play: 看情况。">🔊</span></td>
+      <td><span class="t4">Kàn</span> <span class="t2">qíng</span> <span class="t4">kuàng</span><span class="t0">。</span></td>
+      <td>It depends.</td>
+      <td>Literally "look at situation". Common conversational filler.</td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">老样子。<span class="tts-btn" onclick="ttsSpeak(this,'老样子。')" title="Play: 老样子。">🔊</span></td>
+      <td><span class="t3">Lǎo</span> <span class="t4">yàng</span> <span class="t0">zi</span><span class="t0">。</span></td>
+      <td>Same as usual.</td>
+      <td>Used to answer 怎么样？ (How are things?) when nothing's changed.</td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">我记得 May 和她的朋友在商场。<span class="tts-btn" onclick="ttsSpeak(this,'我记得 May 和她的朋友在商场。')" title="Play: 我记得 May 和她的朋友在商场。">🔊</span></td>
+      <td><span class="t3">Wǒ</span> <span class="t4">jì</span> <span class="t0">de</span> <span class="t0">May</span> <span class="t2">hé</span> <span class="t1">tā</span> <span class="t0">de</span> <span class="t2">péng</span> <span class="t0">you</span> <span class="t4">zài</span> <span class="t1">shāng</span> <span class="t3">chǎng</span><span class="t0">。</span></td>
+      <td>I remember May and her friends are at the mall.</td>
+      <td>记得 = to remember (something is true).</td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">有别的颜色的吗？<span class="tts-btn" onclick="ttsSpeak(this,'有别的颜色的吗？')" title="Play: 有别的颜色的吗？">🔊</span></td>
+      <td><span class="t3">Yǒu</span> <span class="t2">bié</span> <span class="t0">de</span> <span class="t2">yán</span> <span class="t4">sè</span> <span class="t0">de</span> <span class="t0">ma</span><span class="t0">？</span></td>
+      <td>Do you have it in another color?</td>
+      <td>S + 有 + size/color + 的吗? — availability question for shopping.</td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">衣服的大小怎么样？<span class="tts-btn" onclick="ttsSpeak(this,'衣服的大小怎么样？')" title="Play: 衣服的大小怎么样？">🔊</span></td>
+      <td><span class="t1">Yī</span> <span class="t0">fu</span> <span class="t0">de</span> <span class="t4">dà</span> <span class="t3">xiǎo</span> <span class="t3">zěn</span> <span class="t0">me</span> <span class="t4">yàng</span><span class="t0">？</span></td>
+      <td>How is the size of the clothes?</td>
+      <td>Asking about fit when shopping.</td>
+    </tr>
+
+    <tr>
+      <td class="hanzi">下次见！<span class="tts-btn" onclick="ttsSpeak(this,'下次见！')" title="Play: 下次见！">🔊</span></td>
+      <td><span class="t4">Xià</span> <span class="t4">cì</span> <span class="t4">jiàn</span><span class="t0">！</span></td>
+      <td>See you next time!</td>
+      <td>Casual sign-off.</td>
+    </tr>
+
+  </tbody>
+</table>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ GRAMMAR -->
+<section id="grammar">
+<h2>Grammar</h2>
+
+
+<div class="grammar-block">
+  <h3>1. Adjective + 一点儿 — "a bit more [adjective]"</h3>
+  <p>Place 一点儿 (yī diǎnr) directly after an adjective to mean "a bit more / a little [adjective]." Common in shopping requests when asking for a slightly different version. Structure: <strong>Adjective + 一点儿</strong>. Note: 一点儿 sits after the adjective; it does NOT mean "a small amount" (that's 一点 in a different position).</p>
+
+  <div class="ex">
+    <span class="hanzi">我想要大一点儿的衣服。<span class="tts-btn" onclick="ttsSpeak(this,'我想要大一点儿的衣服。')" title="Play">🔊</span></span><br>
+    <span class="t3">Wǒ</span> <span class="t3">xiǎng</span> <span class="t4">yào</span> <span class="t4">dà</span> <span class="t1">yī</span> <span class="t3">diǎn</span> <span class="t0">r</span> <span class="t0">de</span> <span class="t1">yī</span> <span class="t0">fu</span><span class="t0">。</span><br>
+    I'd like a slightly bigger piece of clothing.
+  </div>
+  <div class="ex">
+    <span class="hanzi">我想要小一点儿的衣服。<span class="tts-btn" onclick="ttsSpeak(this,'我想要小一点儿的衣服。')" title="Play">🔊</span></span><br>
+    <span class="t3">Wǒ</span> <span class="t3">xiǎng</span> <span class="t4">yào</span> <span class="t3">xiǎo</span> <span class="t1">yī</span> <span class="t3">diǎn</span> <span class="t0">r</span> <span class="t0">de</span> <span class="t1">yī</span> <span class="t0">fu</span><span class="t0">。</span><br>
+    I'd like a slightly smaller piece of clothing.
+  </div>
+  <div class="ex">
+    <span class="hanzi">便宜一点儿。<span class="tts-btn" onclick="ttsSpeak(this,'便宜一点儿。')" title="Play">🔊</span></span><br>
+    <span class="t2">Pián</span> <span class="t0">yi</span> <span class="t1">yī</span> <span class="t3">diǎn</span> <span class="t0">r</span><span class="t0">。</span><br>
+    A little cheaper, please.
+  </div>
+</div>
+
+<div class="grammar-block">
+  <h3>2. 想 + Verb VS 想 + Noun — Two completely different meanings</h3>
+  <p>想 (xiǎng) changes meaning depending on what follows it. Before a <strong>verb</strong> it means "want to / would like to do." Before a <strong>noun</strong> (especially a person or place) it means "miss / think of." Structure: <strong>想 + Verb = want to do</strong> | <strong>想 + Noun = miss / think of</strong>.</p>
+
+  <div class="ex">
+    <span class="hanzi">我想喝水。<span class="tts-btn" onclick="ttsSpeak(this,'我想喝水。')" title="Play">🔊</span></span><br>
+    <span class="t3">Wǒ</span> <span class="t3">xiǎng</span> <span class="t1">hē</span> <span class="t3">shuǐ</span><span class="t0">。</span><br>
+    I want to drink water. (想 + verb)
+  </div>
+  <div class="ex">
+    <span class="hanzi">我想去中国。<span class="tts-btn" onclick="ttsSpeak(this,'我想去中国。')" title="Play">🔊</span></span><br>
+    <span class="t3">Wǒ</span> <span class="t3">xiǎng</span> <span class="t4">qù</span> <span class="t1">Zhōng</span> <span class="t2">guó</span><span class="t0">。</span><br>
+    I want to go to China. (想 + verb)
+  </div>
+  <div class="ex">
+    <span class="hanzi">我想你。<span class="tts-btn" onclick="ttsSpeak(this,'我想你。')" title="Play">🔊</span></span><br>
+    <span class="t3">Wǒ</span> <span class="t3">xiǎng</span> <span class="t3">nǐ</span><span class="t0">。</span><br>
+    I miss you. (想 + noun)
+  </div>
+  <div class="ex">
+    <span class="hanzi">他想家。<span class="tts-btn" onclick="ttsSpeak(this,'他想家。')" title="Play">🔊</span></span><br>
+    <span class="t1">Tā</span> <span class="t3">xiǎng</span> <span class="t1">jiā</span><span class="t0">。</span><br>
+    He misses home. (想 + noun)
+  </div>
+</div>
+
+<div class="grammar-block">
+  <h3>3. 有 + size/color + 的吗？ — "Do you have one in [size/color]?"</h3>
+  <p>A core shopping question pattern. Drop the noun being shopped for after 有 (yǒu) and instead use a description (size, color, style) followed by 的 to nominalize the description, then close with 吗 to make it a yes/no question. Structure: <strong>S + 有 + [description] + 的 + 吗?</strong></p>
+
+  <div class="ex">
+    <span class="hanzi">有别的颜色的吗？<span class="tts-btn" onclick="ttsSpeak(this,'有别的颜色的吗？')" title="Play">🔊</span></span><br>
+    <span class="t3">Yǒu</span> <span class="t2">bié</span> <span class="t0">de</span> <span class="t2">yán</span> <span class="t4">sè</span> <span class="t0">de</span> <span class="t0">ma</span><span class="t0">？</span><br>
+    Do you have it in another color?
+  </div>
+  <div class="ex">
+    <span class="hanzi">有大一点儿的吗？<span class="tts-btn" onclick="ttsSpeak(this,'有大一点儿的吗？')" title="Play">🔊</span></span><br>
+    <span class="t3">Yǒu</span> <span class="t4">dà</span> <span class="t1">yī</span> <span class="t3">diǎn</span> <span class="t0">r</span> <span class="t0">de</span> <span class="t0">ma</span><span class="t0">？</span><br>
+    Do you have a slightly bigger one?
+  </div>
+  <div class="ex">
+    <span class="hanzi">有黄色的吗？<span class="tts-btn" onclick="ttsSpeak(this,'有黄色的吗？')" title="Play">🔊</span></span><br>
+    <span class="t3">Yǒu</span> <span class="t2">huáng</span> <span class="t4">sè</span> <span class="t0">de</span> <span class="t0">ma</span><span class="t0">？</span><br>
+    Do you have it in yellow?
+  </div>
+  <div class="ex">
+    <span class="hanzi">有便宜一点儿的吗？<span class="tts-btn" onclick="ttsSpeak(this,'有便宜一点儿的吗？')" title="Play">🔊</span></span><br>
+    <span class="t3">Yǒu</span> <span class="t2">pián</span> <span class="t0">yi</span> <span class="t1">yī</span> <span class="t3">diǎn</span> <span class="t0">r</span> <span class="t0">de</span> <span class="t0">ma</span><span class="t0">？</span><br>
+    Do you have a cheaper one?
+  </div>
+</div>
+
+<div class="grammar-block">
+  <h3>4. 楼 vs 层 — "the place" vs "the counting unit"</h3>
+  <p>Both relate to floors of a building, but they point at different things. <strong>楼 (lóu)</strong> = the place / a named floor — "what you walk into." <strong>层 (céng)</strong> = the counting unit / level — "how you count it." Patterns: <strong>[number] + 楼</strong> ("on the Nth floor") · <strong>这栋楼有 [number] 层</strong> ("this building has N floors"). 第 + number + 层 = the Nth level (more formal/descriptive).</p>
+
+  <div class="ex">
+    <span class="hanzi">三楼。<span class="tts-btn" onclick="ttsSpeak(this,'三楼。')" title="Play">🔊</span></span><br>
+    <span class="t1">Sān</span> <span class="t2">lóu</span><span class="t0">。</span><br>
+    Third floor. (the place you go)
+  </div>
+  <div class="ex">
+    <span class="hanzi">这栋楼有十层。<span class="tts-btn" onclick="ttsSpeak(this,'这栋楼有十层。')" title="Play">🔊</span></span><br>
+    <span class="t4">Zhè</span> <span class="t4">dòng</span> <span class="t2">lóu</span> <span class="t3">yǒu</span> <span class="t2">shí</span> <span class="t2">céng</span><span class="t0">。</span><br>
+    This building has 10 floors.
+  </div>
+  <div class="ex">
+    <span class="hanzi">第一层。<span class="tts-btn" onclick="ttsSpeak(this,'第一层。')" title="Play">🔊</span></span><br>
+    <span class="t4">Dì</span> <span class="t1">yī</span> <span class="t2">céng</span><span class="t0">。</span><br>
+    The first level. (formal)
+  </div>
+  <div class="ex">
+    <span class="hanzi">试衣间在二楼。<span class="tts-btn" onclick="ttsSpeak(this,'试衣间在二楼。')" title="Play">🔊</span></span><br>
+    <span class="t4">Shì</span> <span class="t1">yī</span> <span class="t1">jiān</span> <span class="t4">zài</span> <span class="t4">èr</span> <span class="t2">lóu</span><span class="t0">。</span><br>
+    The fitting room is on the second floor.
+  </div>
+</div>
+
+<div class="grammar-block">
+  <h3>5. 再 vs 又 — Forward-looking vs backward-looking repetition (review)</h3>
+  <p><strong>再 (zài)</strong> always points forward — future repetition or "not until then." <strong>又 (yòu)</strong> always confirms something already happened — past repetition, often with a hint of annoyance. Memory trick: <strong>再 = "next time"</strong>, <strong>又 = "one more time (already)"</strong>.</p>
+
+  <div class="ex">
+    <span class="hanzi">我再去一次。<span class="tts-btn" onclick="ttsSpeak(this,'我再去一次。')" title="Play">🔊</span></span><br>
+    <span class="t3">Wǒ</span> <span class="t4">zài</span> <span class="t4">qù</span> <span class="t2">yí</span> <span class="t4">cì</span><span class="t0">。</span><br>
+    I'll go again. (haven't gone yet)
+  </div>
+  <div class="ex">
+    <span class="hanzi">我又去了一次。<span class="tts-btn" onclick="ttsSpeak(this,'我又去了一次。')" title="Play">🔊</span></span><br>
+    <span class="t3">Wǒ</span> <span class="t4">yòu</span> <span class="t4">qù</span> <span class="t0">le</span> <span class="t2">yí</span> <span class="t4">cì</span><span class="t0">。</span><br>
+    I went again. (already did it)
+  </div>
+  <div class="ex">
+    <span class="hanzi">你再说一遍。<span class="tts-btn" onclick="ttsSpeak(this,'你再说一遍。')" title="Play">🔊</span></span><br>
+    <span class="t3">Nǐ</span> <span class="t4">zài</span> <span class="t1">shuō</span> <span class="t2">yí</span> <span class="t4">biàn</span><span class="t0">。</span><br>
+    Say it again. (request)
+  </div>
+  <div class="ex">
+    <span class="hanzi">你又说一遍。<span class="tts-btn" onclick="ttsSpeak(this,'你又说一遍。')" title="Play">🔊</span></span><br>
+    <span class="t3">Nǐ</span> <span class="t4">yòu</span> <span class="t1">shuō</span> <span class="t2">yí</span> <span class="t4">biàn</span><span class="t0">。</span><br>
+    You said it again. (complaint / observation)
+  </div>
+  <div class="ex">
+    <span class="hanzi">又下雨了。<span class="tts-btn" onclick="ttsSpeak(this,'又下雨了。')" title="Play">🔊</span></span><br>
+    <span class="t4">Yòu</span> <span class="t4">xià</span> <span class="t3">yǔ</span> <span class="t0">le</span><span class="t0">。</span><br>
+    It's raining again.
+  </div>
+  <div class="ex">
+    <span class="hanzi">明天我再给你打电话。<span class="tts-btn" onclick="ttsSpeak(this,'明天我再给你打电话。')" title="Play">🔊</span></span><br>
+    <span class="t2">Míng</span> <span class="t1">tiān</span> <span class="t3">wǒ</span> <span class="t4">zài</span> <span class="t3">gěi</span> <span class="t3">nǐ</span> <span class="t3">dǎ</span> <span class="t4">diàn</span> <span class="t4">huà</span><span class="t0">。</span><br>
+    I'll call you again tomorrow.
+  </div>
+</div>
+
+<div class="grammar-block">
+  <h3>6. 以后 vs 然后 — "in the future / after that" vs "and then" (review)</h3>
+  <p><strong>以后 (yǐhòu)</strong> = "after (a point)" or "from now on / in the future" — refers to a time after a reference point. <strong>然后 (ránhòu)</strong> = "then" — the next step in a sequence. Use 以后 for time relationships; use 然后 for step-by-step sequencing.</p>
+
+  <div class="ex">
+    <span class="hanzi">吃饭以后去。<span class="tts-btn" onclick="ttsSpeak(this,'吃饭以后去。')" title="Play">🔊</span></span><br>
+    <span class="t1">Chī</span> <span class="t4">fàn</span> <span class="t3">yǐ</span> <span class="t4">hòu</span> <span class="t4">qù</span><span class="t0">。</span><br>
+    Go after eating. (time relationship)
+  </div>
+  <div class="ex">
+    <span class="hanzi">以后我每天学习。<span class="tts-btn" onclick="ttsSpeak(this,'以后我每天学习。')" title="Play">🔊</span></span><br>
+    <span class="t3">Yǐ</span> <span class="t4">hòu</span> <span class="t3">wǒ</span> <span class="t3">měi</span> <span class="t1">tiān</span> <span class="t2">xué</span> <span class="t2">xí</span><span class="t0">。</span><br>
+    From now on, I study every day.
+  </div>
+  <div class="ex">
+    <span class="hanzi">我吃饭，然后喝咖啡。<span class="tts-btn" onclick="ttsSpeak(this,'我吃饭，然后喝咖啡。')" title="Play">🔊</span></span><br>
+    <span class="t3">Wǒ</span> <span class="t1">chī</span> <span class="t4">fàn</span><span class="t0">，</span> <span class="t2">rán</span> <span class="t4">hòu</span> <span class="t1">hē</span> <span class="t1">kā</span> <span class="t1">fēi</span><span class="t0">。</span><br>
+    I eat, then drink coffee. (step-by-step)
+  </div>
+  <div class="ex">
+    <span class="hanzi">我吃饭以后喝咖啡。<span class="tts-btn" onclick="ttsSpeak(this,'我吃饭以后喝咖啡。')" title="Play">🔊</span></span><br>
+    <span class="t3">Wǒ</span> <span class="t1">chī</span> <span class="t4">fàn</span> <span class="t3">yǐ</span> <span class="t4">hòu</span> <span class="t1">hē</span> <span class="t1">kā</span> <span class="t1">fēi</span><span class="t0">。</span><br>
+    I drink coffee after eating. (time relationship)
+  </div>
+</div>
+
+</section>
+
+<script>
+(function() {
+  const AZURE_KEY = '9FHvN91sOhURXdvTqpspl0D9YlrK0y8fxUmj1jR4aVpHPkN1whmHJQQJ99CDACYeBjFXJ3w3AAAYACOGP37b';
+  const AZURE_REGION = 'eastus';
+  function getVoice() {
+    var c = document.querySelector('input[name="voice"]:checked');
+    return c ? c.value : 'zh-CN-YunxiNeural';
+  }
+
+  let currentSpeed = 0.70;
+  let currentAudio = null;
+  let currentBtn = null;
+
+  let cachedToken = null;
+  let tokenExpiry = 0;
+
+  async function getToken() {
+    if (cachedToken && Date.now() < tokenExpiry) return cachedToken;
+    const resp = await fetch(
+      `https://${AZURE_REGION}.api.cognitive.microsoft.com/sts/v1.0/issueToken`,
+      { method: 'POST', headers: { 'Ocp-Apim-Subscription-Key': AZURE_KEY, 'Content-Length': '0' } }
+    );
+    if (!resp.ok) throw new Error('Token fetch failed: ' + resp.status);
+    cachedToken = await resp.text();
+    tokenExpiry = Date.now() + 8 * 60 * 1000;
+    return cachedToken;
+  }
+
+  function buildSSML(text, rate) {
+    const pct = Math.round((rate - 1) * 100);
+    const rateStr = (pct >= 0 ? '+' : '') + pct + '%';
+    return `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="zh-CN">
+      <voice name="${getVoice()}">
+        <prosody rate="${rateStr}" pitch="+0%">${escapeXml(text)}</prosody>
+      </voice>
+    </speak>`;
+  }
+
+  function escapeXml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  window.ttsSpeak = async function(btn, text) {
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio = null;
+      if (currentBtn) currentBtn.classList.remove('playing');
+    }
+    btn.classList.add('playing');
+    currentBtn = btn;
+    try {
+      const token = await getToken();
+      const ssml = buildSSML(text, currentSpeed);
+      const resp = await fetch(
+        `https://${AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/ssml+xml',
+            'X-Microsoft-OutputFormat': 'audio-24khz-48kbitrate-mono-mp3'
+          },
+          body: ssml
+        }
+      );
+      if (!resp.ok) throw new Error('TTS failed: ' + resp.status);
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      const audio = new Audio(url);
+      currentAudio = audio;
+      // Return a promise that resolves when playback actually finishes
+      await new Promise((resolve) => {
+        audio.onended = () => {
+          btn.classList.remove('playing');
+          if (currentAudio === audio) { currentAudio = null; currentBtn = null; }
+          URL.revokeObjectURL(url);
+          resolve();
+        };
+        audio.onerror = () => {
+          btn.classList.remove('playing');
+          if (currentAudio === audio) { currentAudio = null; currentBtn = null; }
+          resolve();
+        };
+        // If a newer ttsSpeak call replaces currentAudio, we'll get pause — also resolve so chain advances
+        audio.onpause = () => {
+          if (currentAudio !== audio) {
+            btn.classList.remove('playing');
+            resolve();
+          }
+        };
+        audio.play().catch(() => resolve());
+      });
+    } catch(e) {
+      console.error('TTS error:', e);
+      btn.classList.remove('playing');
+      btn.title = 'Error: ' + e.message;
+    }
+  };
+
+  window.ttsSetSpeed = function(val) {
+    currentSpeed = parseFloat(val);
+    document.getElementById('tts-speed-val').textContent = currentSpeed.toFixed(2) + 'x';
+  };
+
+  // Stop any in-flight TTS audio (used by flashcard renderCard to prevent bleed-through)
+  window.__stopAllTTS = function() {
+    if (currentAudio) {
+      try { currentAudio.pause(); } catch(e) {}
+      currentAudio = null;
+    }
+    if (currentBtn) { currentBtn.classList.remove('playing'); currentBtn = null; }
+  };
+
+  document.querySelectorAll('input[name="voice"]').forEach(function(r) {
+    r.onchange = function() {
+      if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+      if (currentBtn) { currentBtn.classList.remove('playing'); currentBtn = null; }
+    };
+  });
+})();
+// ── Cross-off & Download Marked File ──
+(function(){
+  var countEl = document.getElementById('cross-count');
+
+  function getVocabRows(){
+    var rows = [];
+    ['vocabulary','phrases'].forEach(function(id){
+      var sec = document.getElementById(id);
+      if(!sec) return;
+      sec.querySelectorAll('tbody tr:not(.cat-row)').forEach(function(r){ rows.push(r); });
+    });
+    return rows;
+  }
+
+  function updateCount(){
+    var all = getVocabRows();
+    var crossed = all.filter(function(r){ return r.classList.contains('crossed-off'); }).length;
+    var gSec = document.getElementById('grammar');
+    var gTotal = 0, gCrossed = 0;
+    if(gSec){
+      gSec.querySelectorAll('.ex').forEach(function(ex){
+        gTotal++;
+        if(ex.classList.contains('crossed-off')) gCrossed++;
+      });
+      gSec.querySelectorAll('table tbody td').forEach(function(td){
+        var hasHanzi = td.querySelector('.hanzi') || td.classList.contains('hanzi');
+        if(!hasHanzi) return;
+        gTotal++;
+        if(td.classList.contains('grammar-crossed')) gCrossed++;
+      });
+    }
+    var label = 'Vocab: ' + crossed + ' / ' + all.length;
+    label += ' · Grammar: ' + gCrossed + ' / ' + gTotal;
+    countEl.textContent = label;
+  }
+
+  getVocabRows().forEach(function(row){
+    row.addEventListener('click', function(e){
+      if(e.target.closest('.tts-btn')) return;
+      row.classList.toggle('crossed-off');
+      updateCount();
+    });
+  });
+
+  updateCount();
+
+  function getRowsInCategory(catRow) {
+    var rows = [];
+    var next = catRow.nextElementSibling;
+    while (next && !next.classList.contains('cat-row')) {
+      rows.push(next);
+      next = next.nextElementSibling;
+    }
+    return rows;
+  }
+
+  function syncCatRowState(catRow) {
+    var rows = getRowsInCategory(catRow);
+    var allCrossed = rows.length > 0 && rows.every(function(r) { return r.classList.contains('crossed-off'); });
+    if (allCrossed) catRow.classList.add('cat-crossed');
+    else catRow.classList.remove('cat-crossed');
+  }
+
+  ['vocabulary', 'phrases'].forEach(function(secId) {
+    var sec = document.getElementById(secId);
+    if (!sec) return;
+    sec.querySelectorAll('.cat-row').forEach(function(catRow) {
+      catRow.addEventListener('click', function() {
+        var rows = getRowsInCategory(catRow);
+        var allCrossed = rows.every(function(r) { return r.classList.contains('crossed-off'); });
+        rows.forEach(function(r) {
+          if (allCrossed) r.classList.remove('crossed-off');
+          else r.classList.add('crossed-off');
+        });
+        syncCatRowState(catRow);
+        updateCount();
+      });
+    });
+  });
+
+  function syncSectionH2(secId) {
+    var sec = document.getElementById(secId);
+    if (!sec) return;
+    var h2 = sec.querySelector('h2');
+    if (!h2) return;
+    var rows = [];
+    sec.querySelectorAll('tbody tr:not(.cat-row)').forEach(function(r) { rows.push(r); });
+    var allCrossed = rows.length > 0 && rows.every(function(r) { return r.classList.contains('crossed-off'); });
+    h2.style.textDecoration = allCrossed ? 'line-through' : '';
+    h2.style.color = allCrossed ? '#bbb' : '';
+  }
+
+  var origUpdateCount = updateCount;
+  updateCount = function() {
+    origUpdateCount();
+    ['vocabulary', 'phrases'].forEach(function(secId) {
+      var sec = document.getElementById(secId);
+      if (!sec) return;
+      sec.querySelectorAll('.cat-row').forEach(function(catRow) {
+        syncCatRowState(catRow);
+      });
+      syncSectionH2(secId);
+    });
+  };
+
+  ['vocabulary', 'phrases'].forEach(function(secId) {
+    var sec = document.getElementById(secId);
+    if (!sec) return;
+    var h2 = sec.querySelector('h2');
+    if (!h2) return;
+    h2.style.cursor = 'pointer';
+    h2.style.userSelect = 'none';
+    h2.style.webkitUserSelect = 'none';
+    h2.addEventListener('click', function() {
+      var rows = [];
+      sec.querySelectorAll('tbody tr:not(.cat-row)').forEach(function(r) { rows.push(r); });
+      var allCrossed = rows.length > 0 && rows.every(function(r) { return r.classList.contains('crossed-off'); });
+      rows.forEach(function(r) {
+        if (allCrossed) r.classList.remove('crossed-off');
+        else r.classList.add('crossed-off');
+      });
+      sec.querySelectorAll('.cat-row').forEach(function(catRow) { syncCatRowState(catRow); });
+      if (!allCrossed) { h2.style.textDecoration = 'line-through'; h2.style.color = '#bbb'; }
+      else { h2.style.textDecoration = ''; h2.style.color = ''; }
+      updateCount();
+    });
+  });
+
+  ['vocabulary', 'phrases'].forEach(function(secId) {
+    var sec = document.getElementById(secId);
+    if (!sec) return;
+    sec.querySelectorAll('.cat-row').forEach(function(catRow) { syncCatRowState(catRow); });
+  });
+
+  var toggleAllBtn = document.getElementById('toggle-all-btn');
+  function syncToggleAllBtn() {
+    var vocabRows = getVocabRows();
+    var allVocabCrossed = vocabRows.length > 0 && vocabRows.every(function(r) { return r.classList.contains('crossed-off'); });
+    var gSec = document.getElementById('grammar');
+    var allGrammarCrossed = true;
+    if(gSec){
+      gSec.querySelectorAll('.ex').forEach(function(ex){ if(!ex.classList.contains('crossed-off')) allGrammarCrossed = false; });
+      gSec.querySelectorAll('table tbody td').forEach(function(td){
+        var hasHanzi = td.querySelector('.hanzi') || td.classList.contains('hanzi');
+        if(hasHanzi && !td.classList.contains('grammar-crossed')) allGrammarCrossed = false;
+      });
+    }
+    var allCrossed = allVocabCrossed && allGrammarCrossed;
+    if (allCrossed) {
+      toggleAllBtn.classList.add('all-crossed');
+      toggleAllBtn.innerHTML = '✓ Un-cross All';
+      toggleAllBtn.title = 'Un-cross all rows';
+    } else {
+      toggleAllBtn.classList.remove('all-crossed');
+      toggleAllBtn.innerHTML = '✗ Cross Off All';
+      toggleAllBtn.title = 'Cross off all rows — then un-cross the sections you want to study';
+    }
+  }
+  toggleAllBtn.addEventListener('click', function() {
+    var vocabRows = getVocabRows();
+    var allVocabCrossed = vocabRows.length > 0 && vocabRows.every(function(r) { return r.classList.contains('crossed-off'); });
+    var gSec = document.getElementById('grammar');
+    var allGrammarCrossed = true;
+    if(gSec){
+      gSec.querySelectorAll('.ex').forEach(function(ex){ if(!ex.classList.contains('crossed-off')) allGrammarCrossed = false; });
+      gSec.querySelectorAll('table tbody td').forEach(function(td){
+        var hasHanzi = td.querySelector('.hanzi') || td.classList.contains('hanzi');
+        if(hasHanzi && !td.classList.contains('grammar-crossed')) allGrammarCrossed = false;
+      });
+    }
+    var allCrossed = allVocabCrossed && allGrammarCrossed;
+    vocabRows.forEach(function(r) {
+      if (allCrossed) r.classList.remove('crossed-off');
+      else r.classList.add('crossed-off');
+    });
+    if(gSec){
+      gSec.querySelectorAll('.ex').forEach(function(ex){
+        if(allCrossed) ex.classList.remove('crossed-off');
+        else ex.classList.add('crossed-off');
+      });
+      gSec.querySelectorAll('table tbody td').forEach(function(td){
+        var hasHanzi = td.querySelector('.hanzi') || td.classList.contains('hanzi');
+        if(!hasHanzi) return;
+        if(allCrossed) td.classList.remove('grammar-crossed');
+        else td.classList.add('grammar-crossed');
+      });
+      gSec.querySelectorAll('.grammar-block').forEach(function(block){
+        if(allCrossed) block.classList.remove('all-crossed');
+        else block.classList.add('all-crossed');
+      });
+    }
+    updateCount();
+  });
+  var prevUpdateCount2 = updateCount;
+  updateCount = function() {
+    prevUpdateCount2();
+    syncToggleAllBtn();
+  };
+  syncToggleAllBtn();
+
+  var grammarSec = document.getElementById('grammar');
+  if(grammarSec){
+    function getBlockItems(block){
+      var items = [];
+      block.querySelectorAll('.ex').forEach(function(ex){ items.push({ el: ex, cls: 'crossed-off' }); });
+      block.querySelectorAll('table tbody td').forEach(function(td){
+        var hasHanzi = td.querySelector('.hanzi') || td.classList.contains('hanzi');
+        if(hasHanzi) items.push({ el: td, cls: 'grammar-crossed' });
+      });
+      return items;
+    }
+    function syncBlockState(block){
+      var items = getBlockItems(block);
+      var allCrossed = items.length > 0 && items.every(function(it){ return it.el.classList.contains(it.cls); });
+      if(allCrossed) block.classList.add('all-crossed');
+      else block.classList.remove('all-crossed');
+    }
+
+    grammarSec.querySelectorAll('.grammar-block').forEach(function(block){
+      var h3 = block.querySelector('h3');
+      if(!h3) return;
+      h3.addEventListener('click', function(){
+        var items = getBlockItems(block);
+        var allCrossed = items.every(function(it){ return it.el.classList.contains(it.cls); });
+        items.forEach(function(it){
+          if(allCrossed) it.el.classList.remove(it.cls);
+          else it.el.classList.add(it.cls);
+        });
+        syncBlockState(block);
+        updateCount();
+      });
+    });
+
+    grammarSec.querySelectorAll('.ex').forEach(function(ex){
+      ex.addEventListener('click', function(e){
+        if(e.target.closest('.tts-btn')) return;
+        ex.classList.toggle('crossed-off');
+        syncBlockState(ex.closest('.grammar-block'));
+        updateCount();
+      });
+    });
+    grammarSec.querySelectorAll('table tbody td').forEach(function(td){
+      var hasHanzi = td.querySelector('.hanzi') || td.classList.contains('hanzi');
+      if(!hasHanzi) return;
+      td.style.cursor = 'pointer';
+      td.addEventListener('click', function(e){
+        if(e.target.closest('.tts-btn')) return;
+        td.classList.toggle('grammar-crossed');
+        syncBlockState(td.closest('.grammar-block'));
+        updateCount();
+      });
+    });
+
+    grammarSec.querySelectorAll('.grammar-block').forEach(function(block){ syncBlockState(block); });
+
+    var grammarH2 = grammarSec.querySelector('h2');
+    if(grammarH2){
+      function isAllGrammarCrossed(){
+        var allItems = [];
+        grammarSec.querySelectorAll('.grammar-block').forEach(function(block){
+          getBlockItems(block).forEach(function(it){ allItems.push(it); });
+        });
+        return allItems.length > 0 && allItems.every(function(it){ return it.el.classList.contains(it.cls); });
+      }
+      function syncH2State(){
+        if(isAllGrammarCrossed()) grammarH2.classList.add('grammar-off');
+        else grammarH2.classList.remove('grammar-off');
+      }
+      grammarH2.addEventListener('click', function(){
+        var shouldCross = !isAllGrammarCrossed();
+        grammarSec.querySelectorAll('.grammar-block').forEach(function(block){
+          var items = getBlockItems(block);
+          items.forEach(function(it){
+            if(shouldCross) it.el.classList.add(it.cls);
+            else it.el.classList.remove(it.cls);
+          });
+          syncBlockState(block);
+        });
+        updateCount();
+        syncH2State();
+      });
+      var grammarUpdateCount = updateCount;
+      updateCount = function(){ grammarUpdateCount(); syncH2State(); };
+      syncH2State();
+    }
+  }
+
+  // ── Export to Anki ──
+  function tsvEscape(s){
+    return s.replace(/[\t\r\n]+/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  function getHanziText(td){
+    var clone = td.cloneNode(true);
+    clone.querySelectorAll('.tts-btn').forEach(function(b){ b.remove(); });
+    return clone.textContent.trim();
+  }
+
+  function getPinyinText(td){
+    var toneColors = { t1:'#cc0000', t2:'#e07800', t3:'#267326', t4:'#0044cc', t0:'#888888' };
+    var clone = td.cloneNode(true);
+    clone.querySelectorAll('span[class^="t"]').forEach(function(sp){
+      var cls = sp.className.trim();
+      if(toneColors[cls]) sp.setAttribute('style','color:'+toneColors[cls]);
+    });
+    return clone.innerHTML.trim();
+  }
+
+  function getExampleFromCell(td){
+    var clone = td.cloneNode(true);
+    clone.querySelectorAll('.tts-btn').forEach(function(b){ b.remove(); });
+    var hanziSpan = clone.querySelector('.hanzi');
+    var italicSpan = clone.querySelector('span[style*="italic"]');
+    var chinese = hanziSpan ? hanziSpan.textContent.trim() : '';
+    var english = italicSpan ? italicSpan.textContent.trim() : '';
+    if(chinese && english) return chinese + '<br>' + english;
+    return clone.textContent.trim();
+  }
+
+  var toneColors = { t1:'#cc0000', t2:'#e07800', t3:'#267326', t4:'#0044cc', t0:'#888888' };
+
+  function inlineToneColors(el){
+    var clone = el.cloneNode(true);
+    clone.querySelectorAll('span[style*="font-size"]').forEach(function(wrapper){
+      while(wrapper.firstChild) wrapper.parentNode.insertBefore(wrapper.firstChild, wrapper);
+      wrapper.parentNode.removeChild(wrapper);
+    });
+    clone.querySelectorAll('span[class^="t"]').forEach(function(sp){
+      var cls = sp.className.trim();
+      if(toneColors[cls]) sp.setAttribute('style','color:'+toneColors[cls]);
+    });
+    return clone;
+  }
+
+  function splitByBr(el){
+    var segments = [];
+    var curText = '', curHtml = '';
+    for(var i = 0; i < el.childNodes.length; i++){
+      var node = el.childNodes[i];
+      if(node.nodeName === 'BR'){
+        if(curText.trim()) segments.push({ text: curText.trim(), html: curHtml.trim() });
+        curText = ''; curHtml = '';
+      } else {
+        curText += node.textContent;
+        curHtml += node.outerHTML || node.textContent;
+      }
+    }
+    if(curText.trim()) segments.push({ text: curText.trim(), html: curHtml.trim() });
+    return segments;
+  }
+
+  function getGrammarCards(){
+    var cards = [];
+    var grammarSec = document.getElementById('grammar');
+    if(!grammarSec) return cards;
+    var blocks = grammarSec.querySelectorAll('.grammar-block');
+    blocks.forEach(function(block){
+      var h3 = block.querySelector('h3');
+      var ruleName = h3 ? h3.textContent.trim() : 'Grammar';
+      ruleName = ruleName.replace(/^\d+\.\s*/, '');
+      var exDivs = block.querySelectorAll('.ex');
+      exDivs.forEach(function(ex){
+        if(ex.classList.contains('crossed-off')) return;
+        var styled = inlineToneColors(ex);
+        styled.querySelectorAll('.tts-btn').forEach(function(b){ b.remove(); });
+        var segs = splitByBr(styled);
+        if(segs.length < 2) return;
+        var hanzi = tsvEscape(segs[0].text);
+        var english = segs.length >= 3 ? segs[segs.length - 1].text : '';
+        var pinyinSegs = segs.slice(1, segs.length >= 3 ? segs.length - 1 : segs.length);
+        var pinyin = tsvEscape(pinyinSegs.map(function(s){ return s.html; }).join(' '));
+        var context = tsvEscape(english) + (english ? '<br>' : '') + 'Grammar: ' + tsvEscape(ruleName);
+        cards.push(hanzi + '\t' + pinyin + '\t' + context);
+      });
+    });
+    var seen = {};
+    return cards.filter(function(c){
+      var h = c.split('\t')[0];
+      if(seen[h]) return false;
+      seen[h] = true;
+      return true;
+    });
+  }
+
+  document.getElementById('export-btn').addEventListener('click', function(){
+    var rows = getVocabRows().filter(function(r){ return !r.classList.contains('crossed-off'); });
+    var grammarCards = getGrammarCards();
+    if(rows.length === 0 && grammarCards.length === 0){ alert('Nothing to export.'); return; }
+
+    var lines = [];
+    rows.forEach(function(row){
+      var cells = row.querySelectorAll('td');
+      if(cells.length < 3) return;
+      var hanzi   = tsvEscape(getHanziText(cells[0]));
+      var pinyin  = tsvEscape(getPinyinText(cells[1]));
+      var english = tsvEscape(cells[2].textContent.trim());
+      lines.push(hanzi + '\t' + pinyin + '\t' + english);
+    });
+
+    grammarCards.forEach(function(card){ lines.push(card); });
+
+    var tsv  = lines.join('\n');
+    var blob = new Blob([tsv], { type: 'text/plain;charset=utf-8;' });
+    var url  = URL.createObjectURL(blob);
+    var a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'chinese-vocab-anki.txt';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // ── Download Marked File ──
+  document.getElementById('download-btn').addEventListener('click', function(){
+    var clone = document.documentElement.cloneNode(true);
+
+    var liveSections = ['vocabulary','phrases'];
+    liveSections.forEach(function(id){
+      var liveSec = document.getElementById(id);
+      var cloneSec = clone.querySelector('#' + id);
+      if(!liveSec || !cloneSec) return;
+      var liveTbodies = liveSec.querySelectorAll('tbody');
+      var cloneTbodies = cloneSec.querySelectorAll('tbody');
+      liveTbodies.forEach(function(liveBody, bi){
+        var cloneBody = cloneTbodies[bi];
+        if(!cloneBody) return;
+        var liveRows = liveBody.querySelectorAll('tr');
+        var cloneRows = cloneBody.querySelectorAll('tr');
+        liveRows.forEach(function(liveRow, ri){
+          var cloneRow = cloneRows[ri];
+          if(!cloneRow) return;
+          if(liveRow.classList.contains('crossed-off')){
+            cloneRow.classList.add('crossed-off');
+          } else {
+            cloneRow.classList.remove('crossed-off');
+          }
+        });
+      });
+    });
+
+    var liveGrammar = document.getElementById('grammar');
+    var cloneGrammar = clone.querySelector('#grammar');
+    if(liveGrammar && cloneGrammar){
+      var liveExs = liveGrammar.querySelectorAll('.ex');
+      var cloneExs = cloneGrammar.querySelectorAll('.ex');
+      liveExs.forEach(function(liveEx, i){
+        var cloneEx = cloneExs[i];
+        if(!cloneEx) return;
+        if(liveEx.classList.contains('crossed-off')){
+          cloneEx.classList.add('crossed-off');
+        } else {
+          cloneEx.classList.remove('crossed-off');
+        }
+      });
+      var liveTds = liveGrammar.querySelectorAll('table tbody td');
+      var cloneTds = cloneGrammar.querySelectorAll('table tbody td');
+      liveTds.forEach(function(liveTd, i){
+        var cloneTd = cloneTds[i];
+        if(!cloneTd) return;
+        if(liveTd.classList.contains('grammar-crossed')){
+          cloneTd.classList.add('grammar-crossed');
+        } else {
+          cloneTd.classList.remove('grammar-crossed');
+        }
+      });
+      var liveBlocks = liveGrammar.querySelectorAll('.grammar-block');
+      var cloneBlocks = cloneGrammar.querySelectorAll('.grammar-block');
+      liveBlocks.forEach(function(lb, i){
+        var cb = cloneBlocks[i];
+        if(!cb) return;
+        if(lb.classList.contains('all-crossed')) cb.classList.add('all-crossed');
+        else cb.classList.remove('all-crossed');
+      });
+    }
+
+    var title = document.title || 'chinese-weekly';
+    var fname = title.replace(/[^a-zA-Z0-9_\-]/g, '-').replace(/-+/g, '-') + '-marked.html';
+
+    var html = '<!DOCTYPE html>\n' + clone.outerHTML;
+    var blob = new Blob([html], { type: 'text/html;charset=utf-8;' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = fname;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+})();
+</script>
+
+
+<!-- ═════════════════════════════════════════════ FLASHCARD MODAL -->
+<div id="fc-modal">
+  <div class="fc-box">
+
+    <div class="fc-header">
+      <div class="fc-mode-btns">
+        <button class="fc-mode-btn active" id="fc-mode-h2e">Hanzi → English</button>
+        <button class="fc-mode-btn" id="fc-mode-e2h">English → Hanzi</button>
+      </div>
+      <span class="fc-deck-label" id="fc-deck-label"></span>
+      <span class="fc-progress" id="fc-progress"></span>
+      <button class="fc-close" id="fc-close-btn" title="Close">✕</button>
+    </div>
+
+    <div class="fc-voice-bar" id="fc-voice-bar">
+      <span style="font-weight:600;">Voice:</span>
+      <label><input type="radio" name="voice" value="zh-CN-YunxiNeural"> ♂ Male</label>
+      <label><input type="radio" name="voice" value="zh-CN-XiaoxiaoNeural"> ♀ Female</label>
+    </div>
+
+    <div class="fc-speed-bar" id="fc-speed-bar">
+      <span style="font-weight:600;">Speed:</span>
+      <input type="range" id="fc-speed-slider" min="0.50" max="1.00" step="0.05" value="0.70">
+      <span class="fc-speed-val" id="fc-speed-val">0.70x</span>
+      <label style="margin-left:auto; display:flex; align-items:center; gap:4px; cursor:pointer; font-weight:600;">
+        <input type="checkbox" id="fc-autoplay-toggle" checked> Auto-play
+      </label>
+    </div>
+
+    <div id="fc-study-area">
+
+      <div class="fc-card" id="fc-card">
+        <div class="fc-front-label" id="fc-front-label"></div>
+        <div id="fc-front-content"></div>
+        <span class="fc-tts-btn" id="fc-tts-btn" title="Play pronunciation">🔊</span>
+        <button class="fc-pinyin-toggle" id="fc-pinyin-toggle" style="display:none">Show Pinyin</button>
+        <div class="fc-reveal-hint" id="fc-reveal-hint" style="display:none"></div>
+      </div>
+
+      <div class="fc-answer-area" id="fc-answer-area">
+        <hr class="fc-divider">
+        <div class="fc-answer-content" id="fc-answer-content"></div>
+        <div class="fc-example" id="fc-example" style="display:none"></div>
+        <div class="fc-btns">
+          <button id="fc-wrong-btn">✗ Review Again</button>
+          <button id="fc-correct-btn">✓ Got It</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fc-complete" id="fc-complete">
+      <div class="fc-complete-icon">🎉</div>
+      <h3>Session complete!</h3>
+      <p id="fc-complete-msg"></p>
+      <button id="fc-restart-btn">Study Again</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── Flashcard Logic ──
+(function(){
+  var TONE_COLORS = { t1:'#cc0000', t2:'#e07800', t3:'#267326', t4:'#0044cc', t0:'#888888' };
+
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function buildVocabDeck() {
+    var cards = [];
+    ['vocabulary','phrases'].forEach(function(secId) {
+      var sec = document.getElementById(secId);
+      if (!sec) return;
+      // For phrases, the 4th column is Notes (not an example sentence) — skip example extraction
+      var skipExample = (secId === 'phrases');
+      sec.querySelectorAll('tbody tr:not(.cat-row)').forEach(function(row) {
+        if (row.classList.contains('crossed-off')) return;
+        var tds = row.querySelectorAll('td');
+        if (tds.length < 3) return;
+
+        var hClone = tds[0].cloneNode(true);
+        hClone.querySelectorAll('.tts-btn').forEach(function(b){ b.remove(); });
+        var hanzi = hClone.textContent.trim();
+
+        var pClone = tds[1].cloneNode(true);
+        pClone.querySelectorAll('span[class^="t"]').forEach(function(sp) {
+          var col = TONE_COLORS[sp.className.trim()];
+          if (col) sp.setAttribute('style', 'color:' + col);
+          sp.removeAttribute('class');
+        });
+        var pinyinHtml = pClone.innerHTML.trim();
+
+        var english = tds[2].textContent.trim();
+
+        // Extract the example sentence (column 4) for vocabulary rows only
+        var example = null;
+        if (!skipExample && tds.length >= 4) {
+          var eClone = tds[3].cloneNode(true);
+          eClone.querySelectorAll('.tts-btn').forEach(function(b){ b.remove(); });
+          eClone.querySelectorAll('span[class^="t"]').forEach(function(sp) {
+            var col = TONE_COLORS[sp.className.trim()];
+            if (col) sp.setAttribute('style', 'color:' + col);
+            sp.removeAttribute('class');
+          });
+          var segs = splitNodesByBr(eClone);
+          if (segs.length >= 2) {
+            example = {
+              hanzi: segs[0].text,
+              pinyinHtml: segs[1].html,
+              english: segs.length >= 3 ? segs[segs.length - 1].text : ''
+            };
+          }
+        }
+
+        if (hanzi && english) {
+          cards.push({ hanzi: hanzi, pinyinHtml: pinyinHtml, english: english, example: example });
+        }
+      });
+    });
+    return cards;
+  }
+
+  function splitNodesByBr(el) {
+    var segs = [], curText = '', curHtml = '';
+    for (var i = 0; i < el.childNodes.length; i++) {
+      var n = el.childNodes[i];
+      if (n.nodeName === 'BR') {
+        if (curText.trim()) segs.push({ text: curText.trim(), html: curHtml.trim() });
+        curText = ''; curHtml = '';
+      } else {
+        curText += n.textContent;
+        curHtml += n.outerHTML || n.textContent;
+      }
+    }
+    if (curText.trim()) segs.push({ text: curText.trim(), html: curHtml.trim() });
+    return segs;
+  }
+
+  function buildGrammarDeck() {
+    var cards = [];
+    var seen = {};
+    var grammarSec = document.getElementById('grammar');
+    if (!grammarSec) return cards;
+
+    grammarSec.querySelectorAll('.grammar-block').forEach(function(block) {
+      block.querySelectorAll('.ex').forEach(function(ex) {
+        if (ex.classList.contains('crossed-off')) return;
+        var clone = ex.cloneNode(true);
+        clone.querySelectorAll('.tts-btn').forEach(function(b) { b.remove(); });
+        clone.querySelectorAll('span[class^="t"]').forEach(function(sp) {
+          var col = TONE_COLORS[sp.className.trim()];
+          if (col) sp.setAttribute('style', 'color:' + col);
+          sp.removeAttribute('class');
+        });
+        var segs = splitNodesByBr(clone);
+        if (segs.length < 2) return;
+        var hanzi = segs[0].text;
+        var pinyinHtml = segs[1].html;
+        var english = segs.length >= 3 ? segs[segs.length - 1].text : '';
+        if (hanzi && english && !seen[hanzi]) {
+          seen[hanzi] = true;
+          cards.push({ hanzi: hanzi, pinyinHtml: pinyinHtml, english: english });
+        }
+      });
+    });
+    return cards;
+  }
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  var remaining = [];
+  var totalCount = 0;
+  var masteredCount = 0;
+  var mode = 'h2e';
+  var showPinyin = false;
+  var revealed = false;
+  var frontPlayPromise = Promise.resolve();
+  // Token bumped each time a card renders — used to cancel scheduled audio from old cards
+  var cardToken = 0;
+  // Auto-play default ON; user can toggle off to disable all automatic TTS playback
+  var autoplayEnabled = true;
+
+  var modal        = document.getElementById('fc-modal');
+  var progressEl   = document.getElementById('fc-progress');
+  var frontLabel   = document.getElementById('fc-front-label');
+  var frontContent = document.getElementById('fc-front-content');
+  var pinyinToggle = document.getElementById('fc-pinyin-toggle');
+  var revealHint   = document.getElementById('fc-reveal-hint');
+  var answerArea   = document.getElementById('fc-answer-area');
+  var answerContent= document.getElementById('fc-answer-content');
+  var exampleBox   = document.getElementById('fc-example');
+  var studyArea    = document.getElementById('fc-study-area');
+  var completeDiv  = document.getElementById('fc-complete');
+  var completeMsg  = document.getElementById('fc-complete-msg');
+  var ttsBtn       = document.getElementById('fc-tts-btn');
+  var deckLabel    = document.getElementById('fc-deck-label');
+  var speedSlider  = document.getElementById('fc-speed-slider');
+  var speedValEl   = document.getElementById('fc-speed-val');
+
+  function updateProgress() {
+    progressEl.textContent = masteredCount + ' / ' + totalCount + ' mastered  ·  ' + remaining.length + ' remaining';
+  }
+
+  function renderCard() {
+    if (remaining.length === 0) { showComplete(); return; }
+    cardToken++;
+    // Stop any audio from the previous card so it doesn't bleed into this one
+    if (window.__stopAllTTS) window.__stopAllTTS();
+    revealed = false;
+    answerArea.style.display = 'none';
+    exampleBox.style.display = 'none';
+    exampleBox.innerHTML = '';
+    revealHint.style.display = 'none';
+    ttsBtn.classList.remove('playing');
+
+    var card = remaining[0];
+
+    if (mode === 'h2e') {
+      frontLabel.textContent = '';
+      var html = '<div class="fc-hanzi">' + escHtml(card.hanzi) + '</div>';
+      if (showPinyin) {
+        html += '<div class="fc-pinyin">' + card.pinyinHtml + '</div>';
+      }
+      frontContent.innerHTML = html;
+      ttsBtn.style.display = '';
+      pinyinToggle.style.display = '';
+      pinyinToggle.textContent = showPinyin ? 'Hide Pinyin' : 'Show Pinyin';
+      pinyinToggle.className = 'fc-pinyin-toggle' + (showPinyin ? ' on' : '');
+      // Auto-speak the front Hanzi (track promise so reveal can chain off completion)
+      if (window.ttsSpeak && autoplayEnabled) {
+        var myToken = cardToken;
+        frontPlayPromise = new Promise(function(resolve) {
+          setTimeout(function(){
+            if (myToken !== cardToken) { resolve(); return; }
+            var p = window.ttsSpeak(ttsBtn, card.hanzi);
+            if (p && typeof p.then === 'function') p.then(resolve, resolve);
+            else resolve();
+          }, 120);
+        });
+      } else {
+        frontPlayPromise = Promise.resolve();
+      }
+    } else {
+      frontLabel.textContent = '';
+      frontContent.innerHTML = '<div class="fc-english fc-english-front">' + escHtml(card.english) + '</div>';
+      ttsBtn.style.display = 'none';
+      pinyinToggle.style.display = 'none';
+    }
+    updateProgress();
+  }
+
+  function revealAnswer() {
+    if (revealed) return;
+    revealed = true;
+    revealHint.style.display = 'none';
+    var card = remaining[0];
+
+    // Replace the front prompt inside the box with the answer (no duplication)
+    if (mode === 'h2e') {
+      // Front showed Hanzi — keep Hanzi, add Pinyin + English below
+      frontContent.innerHTML =
+        '<div class="fc-hanzi">' + escHtml(card.hanzi) + '</div>' +
+        '<div class="fc-pinyin">' + card.pinyinHtml + '</div>' +
+        '<div class="fc-english">' + escHtml(card.english) + '</div>';
+      pinyinToggle.style.display = 'none';
+    } else {
+      // Front showed English — replace with Hanzi + Pinyin
+      frontContent.innerHTML =
+        '<div class="fc-hanzi">' + escHtml(card.hanzi) + '</div>' +
+        '<div class="fc-pinyin">' + card.pinyinHtml + '</div>';
+      ttsBtn.style.display = '';
+    }
+    answerContent.innerHTML = '';
+
+    // Build outside-the-box example block (when an example exists)
+    if (card.example && card.example.hanzi) {
+      var ex = card.example;
+      var exHtml =
+        '<div><span class="fc-example-hanzi">' + escHtml(ex.hanzi) +
+          '<span class="fc-tts-btn fc-tts-example" title="Play example">🔊</span>' +
+        '</span></div>' +
+        '<div class="fc-example-pinyin">' + ex.pinyinHtml + '</div>';
+      // English translation only in Hanzi→English mode (E→H already shows English on front)
+      if (mode === 'h2e' && ex.english) {
+        exHtml += '<div class="fc-example-english">' + escHtml(ex.english) + '</div>';
+      }
+      exampleBox.innerHTML = exHtml;
+      exampleBox.style.display = '';
+      var exBtn = exampleBox.querySelector('.fc-tts-example');
+      if (exBtn) {
+        exBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (window.ttsSpeak) window.ttsSpeak(exBtn, ex.hanzi);
+        });
+      }
+      // Auto-play sequence on reveal: always wait for the box-Hanzi audio to finish,
+      // then 350ms pause, then play example. Skip if card has changed since reveal
+      // or if auto-play is disabled.
+      if (window.ttsSpeak && autoplayEnabled) {
+        var revealToken = cardToken;
+        var playExample = function(){
+          if (revealToken !== cardToken) return;
+          setTimeout(function(){
+            if (revealToken !== cardToken) return;
+            window.ttsSpeak(exBtn, ex.hanzi);
+          }, 350);
+        };
+        if (mode === 'e2h') {
+          var p = window.ttsSpeak(ttsBtn, card.hanzi);
+          if (p && typeof p.then === 'function') {
+            p.then(playExample, playExample);
+          } else {
+            setTimeout(playExample, 1400);
+          }
+        } else {
+          // H→E: wait for the front auto-play to actually finish before example
+          if (frontPlayPromise && typeof frontPlayPromise.then === 'function') {
+            frontPlayPromise.then(playExample, playExample);
+          } else {
+            setTimeout(playExample, 1400);
+          }
+        }
+      }
+    } else {
+      // No example — still need to auto-play the box Hanzi in E→H mode
+      if (mode === 'e2h' && window.ttsSpeak && autoplayEnabled) {
+        setTimeout(function(){ window.ttsSpeak(ttsBtn, card.hanzi); }, 120);
+      }
+      // (H→E front audio already plays via renderCard — nothing more to do here)
+      exampleBox.style.display = 'none';
+      exampleBox.innerHTML = '';
+    }
+
+    answerArea.style.display = 'flex';
+  }
+
+  function gotIt() {
+    remaining.shift();
+    masteredCount++;
+    renderCard();
+  }
+
+  function reviewAgain() {
+    var card = remaining.shift();
+    var pos = Math.min(3, remaining.length);
+    remaining.splice(pos, 0, card);
+    renderCard();
+  }
+
+  function showComplete() {
+    studyArea.style.display = 'none';
+    completeDiv.style.display = 'flex';
+    completeMsg.textContent = 'You worked through all ' + totalCount + ' card' + (totalCount !== 1 ? 's' : '') + '.';
+    // Refresh header counter so it doesn't show stale "X remaining" alongside the complete screen
+    masteredCount = totalCount;
+    progressEl.textContent = totalCount + ' / ' + totalCount + ' mastered  ·  0 remaining';
+  }
+
+  var currentDeckType = 'vocab';
+
+  function startSession(type) {
+    currentDeckType = type || 'vocab';
+    var deck = currentDeckType === 'grammar' ? buildGrammarDeck() : buildVocabDeck();
+    var label = currentDeckType === 'grammar' ? 'Grammar' : 'Vocab';
+    if (deck.length === 0) {
+      alert('No ' + label.toLowerCase() + ' cards to study! Un-cross some items first.');
+      return;
+    }
+    deckLabel.textContent = label;
+    remaining     = shuffle(deck);
+    totalCount    = remaining.length;
+    masteredCount = 0;
+    showPinyin    = false;
+    studyArea.style.display = '';
+    completeDiv.style.display = 'none';
+    modal.style.display = 'flex';
+    var currentVoice = document.querySelector('input[name="voice"]:checked');
+    if (currentVoice) {
+      var fcRadios = document.querySelectorAll('#fc-voice-bar input[name="voice"]');
+      fcRadios.forEach(function(r) { r.checked = (r.value === currentVoice.value); });
+    }
+    initModalSpeedFromPage();
+    renderCard();
+  }
+
+  document.getElementById('flashcard-btn').addEventListener('click', function(){ startSession('vocab'); });
+  document.getElementById('grammar-fc-btn').addEventListener('click', function(){ startSession('grammar'); });
+
+  document.getElementById('fc-close-btn').addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+
+  document.getElementById('fc-card').addEventListener('click', function(e) {
+    if (e.target === pinyinToggle || pinyinToggle.contains(e.target)) return;
+    if (e.target === ttsBtn || ttsBtn.contains(e.target)) return;
+    revealAnswer();
+  });
+
+  pinyinToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    showPinyin = !showPinyin;
+    renderCard();
+  });
+
+  ttsBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (remaining.length === 0) return;
+    var card = remaining[0];
+    if (window.ttsSpeak) window.ttsSpeak(ttsBtn, card.hanzi);
+  });
+
+  // ── Speed slider sync (in-modal slider ↔ main page slider) ──
+  function syncSpeedUI(val) {
+    var v = parseFloat(val);
+    if (isNaN(v)) return;
+    if (v > 1.0) v = 1.0;
+    if (v < 0.5) v = 0.5;
+    if (speedSlider) speedSlider.value = v.toFixed(2);
+    if (speedValEl)  speedValEl.textContent = v.toFixed(2) + 'x';
+  }
+  if (speedSlider) {
+    speedSlider.addEventListener('input', function() {
+      var v = parseFloat(speedSlider.value);
+      if (window.ttsSetSpeed) window.ttsSetSpeed(v);
+      syncSpeedUI(v);
+      // Also update the main page slider so they stay in sync
+      var mainSlider = document.querySelector('.tts-bar input[type="range"]');
+      if (mainSlider) mainSlider.value = v;
+    });
+  }
+  // Initialize modal slider from current main-page speed when opening the modal
+  function initModalSpeedFromPage() {
+    var mainSpeedVal = document.getElementById('tts-speed-val');
+    var current = 0.70;
+    if (mainSpeedVal) {
+      var parsed = parseFloat(mainSpeedVal.textContent);
+      if (!isNaN(parsed)) current = parsed;
+    }
+    syncSpeedUI(current);
+  }
+
+  document.getElementById('fc-mode-h2e').addEventListener('click', function() {
+    if (mode === 'h2e') return;
+    mode = 'h2e';
+    this.classList.add('active');
+    document.getElementById('fc-mode-e2h').classList.remove('active');
+    renderCard();
+  });
+
+  document.getElementById('fc-mode-e2h').addEventListener('click', function() {
+    if (mode === 'e2h') return;
+    mode = 'e2h';
+    this.classList.add('active');
+    document.getElementById('fc-mode-h2e').classList.remove('active');
+    renderCard();
+  });
+
+  document.getElementById('fc-correct-btn').addEventListener('click', gotIt);
+  document.getElementById('fc-wrong-btn').addEventListener('click', reviewAgain);
+
+  document.getElementById('fc-restart-btn').addEventListener('click', function(){ startSession(currentDeckType); });
+
+  // Auto-play toggle — turning it off also stops any currently-playing audio
+  document.getElementById('fc-autoplay-toggle').addEventListener('change', function() {
+    autoplayEnabled = this.checked;
+    if (!autoplayEnabled && window.__stopAllTTS) window.__stopAllTTS();
+  });
+
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (modal.style.display !== 'flex') return;
+    if (e.key === 'Escape') { modal.style.display = 'none'; return; }
+    if (!revealed) {
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); revealAnswer(); }
+    } else {
+      if (e.key === 'ArrowRight' || e.key === '2') { e.preventDefault(); gotIt(); }
+      if (e.key === 'ArrowLeft'  || e.key === '1') { e.preventDefault(); reviewAgain(); }
+    }
+  });
+})();
+</script>
+
+
+</body>
+</html>
