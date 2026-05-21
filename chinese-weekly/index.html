@@ -1183,7 +1183,7 @@
       var ex = cells.length >= 4 ? getExampleParts(cells[3]) : { hanzi: '', pinyin: '', english: '' };
       lines.push(hanzi + '\t' + pinyin + '\t' + english + '\t' +
         tsvEscape(ex.hanzi) + '\t' + tsvEscape(ex.pinyin) + '\t' + tsvEscape(ex.english) + '\t' +
-        hanzi + '\t' + tsvEscape(ex.hanzi));
+        hanzi + '。。' + tsvEscape(ex.hanzi));
     });
 
     grammarCards.forEach(function(card){ lines.push(card); });
