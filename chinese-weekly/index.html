@@ -1091,6 +1091,18 @@
     return clone.textContent.trim();
   }
 
+  function getExampleParts(td){
+    var clone = inlineToneColors(td);
+    clone.querySelectorAll('.tts-btn').forEach(function(b){ b.remove(); });
+    var segs = splitByBr(clone);
+    if(segs.length < 3) return { hanzi: '', pinyin: '', english: '' };
+    return {
+      hanzi:   segs[0].text.trim(),
+      pinyin:  segs[1].html.trim(),
+      english: segs[segs.length - 1].text.trim()
+    };
+  }
+
   var toneColors = { t1:'#cc0000', t2:'#e07800', t3:'#267326', t4:'#0044cc', t0:'#888888' };
 
   function inlineToneColors(el){
@@ -1168,7 +1180,10 @@
       var hanzi   = tsvEscape(getHanziText(cells[0]));
       var pinyin  = tsvEscape(getPinyinText(cells[1]));
       var english = tsvEscape(cells[2].textContent.trim());
-      lines.push(hanzi + '\t' + pinyin + '\t' + english);
+      var ex = cells.length >= 4 ? getExampleParts(cells[3]) : { hanzi: '', pinyin: '', english: '' };
+      lines.push(hanzi + '\t' + pinyin + '\t' + english + '\t' +
+        tsvEscape(ex.hanzi) + '\t' + tsvEscape(ex.pinyin) + '\t' + tsvEscape(ex.english) + '\t' +
+        hanzi + '\t' + tsvEscape(ex.hanzi));
     });
 
     grammarCards.forEach(function(card){ lines.push(card); });
