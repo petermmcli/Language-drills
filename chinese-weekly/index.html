@@ -1156,7 +1156,7 @@
         var pinyinSegs = segs.slice(1, segs.length >= 3 ? segs.length - 1 : segs.length);
         var pinyin = tsvEscape(pinyinSegs.map(function(s){ return s.html; }).join(' '));
         var context = tsvEscape(english) + (english ? '<br>' : '') + 'Grammar: ' + tsvEscape(ruleName);
-        cards.push(hanzi + '\t' + pinyin + '\t' + context);
+        cards.push(hanzi + '\t' + pinyin + '\t' + context + '\t\t\t\t' + hanzi);
       });
     });
     var seen = {};
