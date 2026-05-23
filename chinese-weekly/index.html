@@ -314,6 +314,27 @@
   }
   .fc-tts-btn:hover { opacity: 1; }
   .fc-tts-btn.playing { opacity: 1; animation: pulse 0.8s infinite; }
+
+  .freq-col { width: 18px; text-align: center; padding: 0 4px !important; cursor: default; }
+  .freq-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; vertical-align: middle; }
+  .freq-legend { font-size: 12px; color: #666; margin: 6px 0 14px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .freq-legend b { color: #444; margin-right: 2px; }
+  .freq-legend-item { display: inline-flex; align-items: center; gap: 5px; }
+  #fc-freq-picker { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:3000; align-items:center; justify-content:center; }
+  .fc-picker-box { background:#fff; border-radius:14px; padding:24px 28px 24px; box-shadow:0 10px 40px rgba(0,0,0,0.28); display:flex; flex-direction:column; gap:16px; min-width:280px; }
+  .fc-picker-box h3 { margin:0; font-size:15px; color:#333; font-weight:700; }
+  .fc-picker-box p { margin:0; font-size:12px; color:#888; }
+  .fc-freq-circles { display:flex; flex-direction:column; gap:8px; }
+  .fc-freq-toggle { display:flex; align-items:center; gap:6px; padding:5px 10px 5px 7px; border-radius:20px; border:2px solid #ddd; cursor:pointer; font-size:12px; color:#555; user-select:none; transition:border-color 0.15s, background 0.15s; }
+  .fc-freq-toggle .fc-dot { display:inline-block; width:12px; height:12px; border-radius:50%; flex-shrink:0; }
+  .fc-freq-toggle.selected { border-color:#4a6a9c; background:#eef2f8; color:#333; font-weight:600; }
+  .fc-freq-toggle:hover { border-color:#99aac4; }
+  .fc-picker-actions { display:flex; gap:10px; justify-content:flex-end; align-items:center; }
+  #fc-picker-count { font-size:12px; color:#888; flex:1; }
+  #fc-picker-start { background:#4a6a9c; color:#fff; border:none; border-radius:7px; padding:8px 20px; font-size:13px; font-weight:bold; cursor:pointer; }
+  #fc-picker-start:hover { background:#395a8a; }
+  #fc-picker-cancel { background:none; border:1px solid #ddd; border-radius:7px; padding:8px 14px; font-size:13px; cursor:pointer; color:#666; }
+  #fc-picker-cancel:hover { background:#f5f5f5; }
 </style>
 </head>
 <body>
@@ -346,10 +367,18 @@
 <!-- ═══════════════════════════════════════════════════════════ VOCABULARY -->
 <section id="vocabulary">
 <h2>Vocabulary</h2>
+<div class="freq-legend"><b>HSK Level:</b>
+  <span class="freq-legend-item"><span class="freq-dot" style="background:#27ae60;"></span>HSK 1–2</span>
+  <span class="freq-legend-item"><span class="freq-dot" style="background:#2980b9;"></span>HSK 3–4</span>
+  <span class="freq-legend-item"><span class="freq-dot" style="background:#e67e22;"></span>HSK 5–6</span>
+  <span class="freq-legend-item"><span class="freq-dot" style="background:#c0392b;"></span>HSK 7–9</span>
+  <span class="freq-legend-item"><span class="freq-dot" style="background:#bdc3c7;"></span>Not on HSK</span>
+</div>
 
 <table>
   <thead>
     <tr>
+      <th class="freq-col" style="width:18px"></th>
       <th style="width:180px">Hanzi</th>
       <th style="width:240px">Pinyin</th>
       <th style="width:200px">English</th>
@@ -358,9 +387,10 @@
   </thead>
   <tbody>
 
-    <tr class="cat-row"><td colspan="4">🎬 Verbs</td></tr>
+    <tr class="cat-row"><td colspan="5">🎬 Verbs</td></tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="HSK 6"></span></td>
       <td class="hanzi">踢<span class="tts-btn" onclick="ttsSpeak(this,'踢')" title="Play: 踢">🔊</span></td>
       <td><span class="t1">tī</span></td>
       <td>to kick</td>
@@ -372,6 +402,7 @@
     </tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
       <td class="hanzi">打<span class="tts-btn" onclick="ttsSpeak(this,'打')" title="Play: 打">🔊</span></td>
       <td><span class="t3">dǎ</span></td>
       <td>to hit; to play (with hands)</td>
@@ -383,6 +414,7 @@
     </tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
       <td class="hanzi">读<span class="tts-btn" onclick="ttsSpeak(this,'读')" title="Play: 读">🔊</span></td>
       <td><span class="t2">dú</span></td>
       <td>to read; to read aloud</td>
@@ -394,6 +426,7 @@
     </tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 2"></span></td>
       <td class="hanzi">骑车<span class="tts-btn" onclick="ttsSpeak(this,'骑车')" title="Play: 骑车">🔊</span></td>
       <td><span class="t2">qí</span> <span class="t1">chē</span></td>
       <td>to ride a bike</td>
@@ -404,9 +437,10 @@
       </td>
     </tr>
 
-    <tr class="cat-row"><td colspan="4">🎁 Nouns — Sports &amp; Activities</td></tr>
+    <tr class="cat-row"><td colspan="5">🎁 Nouns — Sports &amp; Activities</td></tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#2980b9;" title="HSK 3"></span></td>
       <td class="hanzi">足球<span class="tts-btn" onclick="ttsSpeak(this,'足球')" title="Play: 足球">🔊</span></td>
       <td><span class="t2">zú</span> <span class="t2">qiú</span></td>
       <td>football; soccer</td>
@@ -418,6 +452,7 @@
     </tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 2"></span></td>
       <td class="hanzi">篮球<span class="tts-btn" onclick="ttsSpeak(this,'篮球')" title="Play: 篮球">🔊</span></td>
       <td><span class="t2">lán</span> <span class="t2">qiú</span></td>
       <td>basketball</td>
@@ -429,6 +464,7 @@
     </tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)"></span></td>
       <td class="hanzi">攀岩<span class="tts-btn" onclick="ttsSpeak(this,'攀岩')" title="Play: 攀岩">🔊</span></td>
       <td><span class="t1">pān</span> <span class="t2">yán</span></td>
       <td>rock climbing</td>
@@ -439,9 +475,10 @@
       </td>
     </tr>
 
-    <tr class="cat-row"><td colspan="4">⛪ Nouns — Places</td></tr>
+    <tr class="cat-row"><td colspan="5">⛪ Nouns — Places</td></tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
       <td class="hanzi">商店<span class="tts-btn" onclick="ttsSpeak(this,'商店')" title="Play: 商店">🔊</span></td>
       <td><span class="t1">shāng</span> <span class="t4">diàn</span></td>
       <td>shop; store</td>
@@ -453,6 +490,7 @@
     </tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
       <td class="hanzi">书店<span class="tts-btn" onclick="ttsSpeak(this,'书店')" title="Play: 书店">🔊</span></td>
       <td><span class="t1">shū</span> <span class="t4">diàn</span></td>
       <td>bookstore</td>
@@ -463,9 +501,10 @@
       </td>
     </tr>
 
-    <tr class="cat-row"><td colspan="4">🍵 Nouns — Food &amp; Drink</td></tr>
+    <tr class="cat-row"><td colspan="5">🍵 Nouns — Food &amp; Drink</td></tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="Less common (not on HSK)"></span></td>
       <td class="hanzi">中国菜<span class="tts-btn" onclick="ttsSpeak(this,'中国菜')" title="Play: 中国菜">🔊</span></td>
       <td><span class="t1">Zhōng</span> <span class="t2">guó</span> <span class="t4">cài</span></td>
       <td>Chinese food; Chinese cuisine</td>
@@ -476,9 +515,10 @@
       </td>
     </tr>
 
-    <tr class="cat-row"><td colspan="4">💬 Adverbs &amp; Expressions</td></tr>
+    <tr class="cat-row"><td colspan="5">💬 Adverbs &amp; Expressions</td></tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
       <td class="hanzi">还<span class="tts-btn" onclick="ttsSpeak(this,'还')" title="Play: 还">🔊</span></td>
       <td><span class="t2">hái</span></td>
       <td>also; still</td>
@@ -490,6 +530,7 @@
     </tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#2980b9;" title="HSK 3"></span></td>
       <td class="hanzi">每<span class="tts-btn" onclick="ttsSpeak(this,'每')" title="Play: 每">🔊</span></td>
       <td><span class="t3">měi</span></td>
       <td>every</td>
@@ -511,6 +552,7 @@
 <table id="phrases-table">
   <thead>
     <tr>
+      <th class="freq-col" style="width:18px"></th>
       <th style="width:260px">Hanzi</th>
       <th style="width:280px">Pinyin</th>
       <th style="width:200px">English</th>
@@ -519,9 +561,10 @@
   </thead>
   <tbody>
 
-    <tr class="cat-row"><td colspan="4">📚 Reading &amp; Study</td></tr>
+    <tr class="cat-row"><td colspan="5">📚 Reading &amp; Study</td></tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="Less common (not on HSK)"></span></td>
       <td class="hanzi">看书<span class="tts-btn" onclick="ttsSpeak(this,'看书')" title="Play: 看书">🔊</span></td>
       <td><span class="t4">kàn</span> <span class="t1">shū</span></td>
       <td>to read (a book)</td>
@@ -531,6 +574,7 @@
     </tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
       <td class="hanzi">读书<span class="tts-btn" onclick="ttsSpeak(this,'读书')" title="Play: 读书">🔊</span></td>
       <td><span class="t2">dú</span> <span class="t1">shū</span></td>
       <td>to read; to study</td>
@@ -540,6 +584,7 @@
     </tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)"></span></td>
       <td class="hanzi">听说读写<span class="tts-btn" onclick="ttsSpeak(this,'听说读写')" title="Play: 听说读写">🔊</span></td>
       <td><span class="t1">tīng</span> <span class="t1">shuō</span> <span class="t2">dú</span> <span class="t3">xiě</span></td>
       <td>listening, speaking, reading, writing</td>
@@ -548,9 +593,10 @@
         <span style="color:#555; font-style:italic;">Learning a language requires practicing all four skills.</span></td>
     </tr>
 
-    <tr class="cat-row"><td colspan="4">🏃 Sports &amp; Activities</td></tr>
+    <tr class="cat-row"><td colspan="5">🏃 Sports &amp; Activities</td></tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)"></span></td>
       <td class="hanzi">打篮球<span class="tts-btn" onclick="ttsSpeak(this,'打篮球')" title="Play: 打篮球">🔊</span></td>
       <td><span class="t3">dǎ</span> <span class="t2">lán</span><span class="t2">qiú</span></td>
       <td>to play basketball</td>
@@ -560,6 +606,7 @@
     </tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)"></span></td>
       <td class="hanzi">踢足球<span class="tts-btn" onclick="ttsSpeak(this,'踢足球')" title="Play: 踢足球">🔊</span></td>
       <td><span class="t1">tī</span> <span class="t2">zú</span><span class="t2">qiú</span></td>
       <td>to play football</td>
@@ -568,9 +615,10 @@
         <span style="color:#555; font-style:italic;">The boys are playing football in the park.</span></td>
     </tr>
 
-    <tr class="cat-row"><td colspan="4">💬 Useful Expressions</td></tr>
+    <tr class="cat-row"><td colspan="5">💬 Useful Expressions</td></tr>
 
     <tr>
+      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="Less common (not on HSK)"></span></td>
       <td class="hanzi">我最喜欢<span class="tts-btn" onclick="ttsSpeak(this,'我最喜欢')" title="Play: 我最喜欢">🔊</span></td>
       <td><span class="t3">wǒ</span> <span class="t4">zuì</span> <span class="t3">xǐ</span><span class="t0">huan</span></td>
       <td>I like … the most</td>
@@ -1177,10 +1225,10 @@
     rows.forEach(function(row){
       var cells = row.querySelectorAll('td');
       if(cells.length < 3) return;
-      var hanzi   = tsvEscape(getHanziText(cells[0]));
-      var pinyin  = tsvEscape(getPinyinText(cells[1]));
-      var english = tsvEscape(cells[2].textContent.trim());
-      var ex = cells.length >= 4 ? getExampleParts(cells[3]) : { hanzi: '', pinyin: '', english: '' };
+      var hanzi   = tsvEscape(getHanziText(cells[1]));
+      var pinyin  = tsvEscape(getPinyinText(cells[2]));
+      var english = tsvEscape(cells[3].textContent.trim());
+      var ex = cells.length >= 5 ? getExampleParts(cells[4]) : { hanzi: '', pinyin: '', english: '' };
       lines.push(hanzi + '\t' + pinyin + '\t' + english + '\t' +
         tsvEscape(ex.hanzi) + '\t' + tsvEscape(ex.pinyin) + '\t' + tsvEscape(ex.english) + '\t' +
         hanzi + '。。' + tsvEscape(ex.hanzi));
@@ -1347,23 +1395,32 @@
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  function buildVocabDeck() {
+  function normalizeColor(c) { return (c||'').trim().toLowerCase().replace(/\s/g,''); }
+
+  function buildVocabDeck(allowedColors) {
     var cards = [];
     ['vocabulary','phrases'].forEach(function(secId) {
       var sec = document.getElementById(secId);
       if (!sec) return;
-      // For phrases, the 4th column is Notes (not an example sentence) — skip example extraction
+      // For phrases, the 5th column is Notes (not an example sentence) — skip example extraction
       var skipExample = (secId === 'phrases');
       sec.querySelectorAll('tbody tr:not(.cat-row)').forEach(function(row) {
         if (row.classList.contains('crossed-off')) return;
         var tds = row.querySelectorAll('td');
-        if (tds.length < 3) return;
+        if (tds.length < 4) return;
 
-        var hClone = tds[0].cloneNode(true);
+        // Freq filter: col 0=dot, 1=hanzi, 2=pinyin, 3=english, 4=example
+        if (allowedColors && allowedColors.length > 0) {
+          var dot = tds[0].querySelector('.freq-dot');
+          var bg = dot ? normalizeColor(dot.style.background) : '';
+          if (allowedColors.indexOf(bg) === -1) return;
+        }
+
+        var hClone = tds[1].cloneNode(true);
         hClone.querySelectorAll('.tts-btn').forEach(function(b){ b.remove(); });
         var hanzi = hClone.textContent.trim();
 
-        var pClone = tds[1].cloneNode(true);
+        var pClone = tds[2].cloneNode(true);
         pClone.querySelectorAll('span[class^="t"]').forEach(function(sp) {
           var col = TONE_COLORS[sp.className.trim()];
           if (col) sp.setAttribute('style', 'color:' + col);
@@ -1371,12 +1428,12 @@
         });
         var pinyinHtml = pClone.innerHTML.trim();
 
-        var english = tds[2].textContent.trim();
+        var english = tds[3].textContent.trim();
 
         // Extract the example sentence (column 4) for vocabulary rows only
         var example = null;
-        if (!skipExample && tds.length >= 4) {
-          var eClone = tds[3].cloneNode(true);
+        if (!skipExample && tds.length >= 5) {
+          var eClone = tds[4].cloneNode(true);
           eClone.querySelectorAll('.tts-btn').forEach(function(b){ b.remove(); });
           eClone.querySelectorAll('span[class^="t"]').forEach(function(sp) {
             var col = TONE_COLORS[sp.className.trim()];
@@ -1646,9 +1703,9 @@
 
   var currentDeckType = 'vocab';
 
-  function startSession(type) {
+  function startSession(type, allowedColors) {
     currentDeckType = type || 'vocab';
-    var deck = currentDeckType === 'grammar' ? buildGrammarDeck() : buildVocabDeck();
+    var deck = currentDeckType === 'grammar' ? buildGrammarDeck() : buildVocabDeck(allowedColors);
     var label = currentDeckType === 'grammar' ? 'Grammar' : 'Vocab';
     if (deck.length === 0) {
       alert('No ' + label.toLowerCase() + ' cards to study! Un-cross some items first.');
@@ -1671,7 +1728,7 @@
     renderCard();
   }
 
-  document.getElementById('flashcard-btn').addEventListener('click', function(){ startSession('vocab'); });
+  document.getElementById('flashcard-btn').addEventListener('click', openFreqPicker);
   document.getElementById('grammar-fc-btn').addEventListener('click', function(){ startSession('grammar'); });
 
   document.getElementById('fc-close-btn').addEventListener('click', function() {
@@ -1746,7 +1803,10 @@
   document.getElementById('fc-correct-btn').addEventListener('click', gotIt);
   document.getElementById('fc-wrong-btn').addEventListener('click', reviewAgain);
 
-  document.getElementById('fc-restart-btn').addEventListener('click', function(){ startSession(currentDeckType); });
+  document.getElementById('fc-restart-btn').addEventListener('click', function(){
+    if (currentDeckType === 'vocab') { modal.style.display = 'none'; openFreqPicker(); }
+    else { startSession(currentDeckType); }
+  });
 
   // Auto-play toggle — turning it off also stops any currently-playing audio
   document.getElementById('fc-autoplay-toggle').addEventListener('change', function() {
@@ -1769,8 +1829,85 @@
     }
   });
 })();
+
+  // -- Freq picker
+  var freqPickerEl = document.getElementById('fc-freq-picker');
+  var pickerCountEl = document.getElementById('fc-picker-count');
+
+  function countPickerWords() {
+    var selected = Array.from(document.querySelectorAll('.fc-freq-toggle.selected'))
+                        .map(function(t){ return normalizeColor(t.dataset.color); });
+    if (selected.length === 0) return 0;
+    var rows = getVocabRows().filter(function(r){ return !r.classList.contains('crossed-off'); });
+    return rows.filter(function(row){
+      var tds = row.querySelectorAll('td');
+      var dot = tds[0] ? tds[0].querySelector('.freq-dot') : null;
+      var bg = dot ? normalizeColor(dot.style.background) : '';
+      return selected.indexOf(bg) !== -1;
+    }).length;
+  }
+
+  function openFreqPicker() {
+    freqPickerEl.style.display = 'flex';
+    var n = countPickerWords();
+    pickerCountEl.textContent = n + ' word' + (n !== 1 ? 's' : '');
+    document.getElementById('fc-picker-start').disabled = (n === 0);
+  }
+
+  document.querySelectorAll('.fc-freq-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      var selected = document.querySelectorAll('.fc-freq-toggle.selected');
+      if (selected.length === 1 && toggle.classList.contains('selected')) return;
+      toggle.classList.toggle('selected');
+      var n = countPickerWords();
+      pickerCountEl.textContent = n + ' word' + (n !== 1 ? 's' : '');
+      document.getElementById('fc-picker-start').disabled = (n === 0);
+    });
+  });
+
+  document.getElementById('fc-picker-start').addEventListener('click', function() {
+    var allowedColors = Array.from(document.querySelectorAll('.fc-freq-toggle.selected'))
+                             .map(function(t){ return normalizeColor(t.dataset.color); });
+    freqPickerEl.style.display = 'none';
+    startSession('vocab', allowedColors);
+  });
+
+  document.getElementById('fc-picker-cancel').addEventListener('click', function() {
+    freqPickerEl.style.display = 'none';
+  });
+
 </script>
 
 
+
+<!-- FREQ PICKER MODAL -->
+<div id="fc-freq-picker" style="display: none;">
+  <div class="fc-picker-box">
+    <h3>🃏 Vocab Flashcards</h3>
+    <p>Select HSK levels to study:</p>
+    <div class="fc-freq-circles">
+      <div class="fc-freq-toggle selected" data-color="#27ae60">
+        <span class="fc-dot" style="background:#27ae60;"></span>HSK 1–2
+      </div>
+      <div class="fc-freq-toggle selected" data-color="#2980b9">
+        <span class="fc-dot" style="background:#2980b9;"></span>HSK 3–4
+      </div>
+      <div class="fc-freq-toggle selected" data-color="#e67e22">
+        <span class="fc-dot" style="background:#e67e22;"></span>HSK 5–6
+      </div>
+      <div class="fc-freq-toggle selected" data-color="#c0392b">
+        <span class="fc-dot" style="background:#c0392b;"></span>HSK 7–9
+      </div>
+      <div class="fc-freq-toggle selected" data-color="#bdc3c7">
+        <span class="fc-dot" style="background:#bdc3c7;"></span>Not on HSK
+      </div>
+    </div>
+    <div class="fc-picker-actions">
+      <span id="fc-picker-count">0 words</span>
+      <button id="fc-picker-cancel">Cancel</button>
+      <button id="fc-picker-start">Start Flashcards</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
