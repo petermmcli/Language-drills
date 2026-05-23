@@ -335,6 +335,24 @@
   #fc-picker-start:hover { background:#395a8a; }
   #fc-picker-cancel { background:none; border:1px solid #ddd; border-radius:7px; padding:8px 14px; font-size:13px; cursor:pointer; color:#666; }
   #fc-picker-cancel:hover { background:#f5f5f5; }
+
+  .hanzi[title] { position: relative; }
+  .hanzi[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 999;
+    margin-bottom: 4px;
+  }
 </style>
 </head>
 <body>
@@ -390,7 +408,7 @@
     <tr class="cat-row"><td colspan="5">🎬 Verbs</td></tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="HSK 6"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="HSK 6" data-color="#e67e22"></span></td>
       <td class="hanzi" title="HSK 6">踢<span class="tts-btn" onclick="ttsSpeak(this,'踢')" title="Play: 踢">🔊</span></td>
       <td><span class="t1">tī</span></td>
       <td>to kick</td>
@@ -402,7 +420,7 @@
     </tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1" data-color="#27ae60"></span></td>
       <td class="hanzi" title="HSK 1">打<span class="tts-btn" onclick="ttsSpeak(this,'打')" title="Play: 打">🔊</span></td>
       <td><span class="t3">dǎ</span></td>
       <td>to hit; to play (with hands)</td>
@@ -414,7 +432,7 @@
     </tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1" data-color="#27ae60"></span></td>
       <td class="hanzi" title="HSK 1">读<span class="tts-btn" onclick="ttsSpeak(this,'读')" title="Play: 读">🔊</span></td>
       <td><span class="t2">dú</span></td>
       <td>to read; to read aloud</td>
@@ -426,7 +444,7 @@
     </tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 2"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 2" data-color="#27ae60"></span></td>
       <td class="hanzi" title="HSK 2">骑车<span class="tts-btn" onclick="ttsSpeak(this,'骑车')" title="Play: 骑车">🔊</span></td>
       <td><span class="t2">qí</span> <span class="t1">chē</span></td>
       <td>to ride a bike</td>
@@ -440,7 +458,7 @@
     <tr class="cat-row"><td colspan="5">🎁 Nouns — Sports &amp; Activities</td></tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#2980b9;" title="HSK 3"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#2980b9;" title="HSK 3" data-color="#2980b9"></span></td>
       <td class="hanzi" title="HSK 3">足球<span class="tts-btn" onclick="ttsSpeak(this,'足球')" title="Play: 足球">🔊</span></td>
       <td><span class="t2">zú</span> <span class="t2">qiú</span></td>
       <td>football; soccer</td>
@@ -452,7 +470,7 @@
     </tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 2"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 2" data-color="#27ae60"></span></td>
       <td class="hanzi" title="HSK 2">篮球<span class="tts-btn" onclick="ttsSpeak(this,'篮球')" title="Play: 篮球">🔊</span></td>
       <td><span class="t2">lán</span> <span class="t2">qiú</span></td>
       <td>basketball</td>
@@ -464,7 +482,7 @@
     </tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)" data-color="#c0392b"></span></td>
       <td class="hanzi" title="Rare (not on HSK)">攀岩<span class="tts-btn" onclick="ttsSpeak(this,'攀岩')" title="Play: 攀岩">🔊</span></td>
       <td><span class="t1">pān</span> <span class="t2">yán</span></td>
       <td>rock climbing</td>
@@ -478,7 +496,7 @@
     <tr class="cat-row"><td colspan="5">⛪ Nouns — Places</td></tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1" data-color="#27ae60"></span></td>
       <td class="hanzi" title="HSK 1">商店<span class="tts-btn" onclick="ttsSpeak(this,'商店')" title="Play: 商店">🔊</span></td>
       <td><span class="t1">shāng</span> <span class="t4">diàn</span></td>
       <td>shop; store</td>
@@ -490,7 +508,7 @@
     </tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1" data-color="#27ae60"></span></td>
       <td class="hanzi" title="HSK 1">书店<span class="tts-btn" onclick="ttsSpeak(this,'书店')" title="Play: 书店">🔊</span></td>
       <td><span class="t1">shū</span> <span class="t4">diàn</span></td>
       <td>bookstore</td>
@@ -504,7 +522,7 @@
     <tr class="cat-row"><td colspan="5">🍵 Nouns — Food &amp; Drink</td></tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="Less common (not on HSK)"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="Less common (not on HSK)" data-color="#e67e22"></span></td>
       <td class="hanzi" title="Less common (not on HSK)">中国菜<span class="tts-btn" onclick="ttsSpeak(this,'中国菜')" title="Play: 中国菜">🔊</span></td>
       <td><span class="t1">Zhōng</span> <span class="t2">guó</span> <span class="t4">cài</span></td>
       <td>Chinese food; Chinese cuisine</td>
@@ -518,7 +536,7 @@
     <tr class="cat-row"><td colspan="5">💬 Adverbs &amp; Expressions</td></tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1" data-color="#27ae60"></span></td>
       <td class="hanzi" title="HSK 1">还<span class="tts-btn" onclick="ttsSpeak(this,'还')" title="Play: 还">🔊</span></td>
       <td><span class="t2">hái</span></td>
       <td>also; still</td>
@@ -530,7 +548,7 @@
     </tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#2980b9;" title="HSK 3"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#2980b9;" title="HSK 3" data-color="#2980b9"></span></td>
       <td class="hanzi" title="HSK 3">每<span class="tts-btn" onclick="ttsSpeak(this,'每')" title="Play: 每">🔊</span></td>
       <td><span class="t3">měi</span></td>
       <td>every</td>
@@ -564,7 +582,7 @@
     <tr class="cat-row"><td colspan="5">📚 Reading &amp; Study</td></tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="Less common (not on HSK)"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="Less common (not on HSK)" data-color="#e67e22"></span></td>
       <td class="hanzi" title="Less common (not on HSK)">看书<span class="tts-btn" onclick="ttsSpeak(this,'看书')" title="Play: 看书">🔊</span></td>
       <td><span class="t4">kàn</span> <span class="t1">shū</span></td>
       <td>to read (a book)</td>
@@ -574,7 +592,7 @@
     </tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#27ae60;" title="HSK 1" data-color="#27ae60"></span></td>
       <td class="hanzi" title="HSK 1">读书<span class="tts-btn" onclick="ttsSpeak(this,'读书')" title="Play: 读书">🔊</span></td>
       <td><span class="t2">dú</span> <span class="t1">shū</span></td>
       <td>to read; to study</td>
@@ -584,7 +602,7 @@
     </tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)" data-color="#c0392b"></span></td>
       <td class="hanzi" title="Rare (not on HSK)">听说读写<span class="tts-btn" onclick="ttsSpeak(this,'听说读写')" title="Play: 听说读写">🔊</span></td>
       <td><span class="t1">tīng</span> <span class="t1">shuō</span> <span class="t2">dú</span> <span class="t3">xiě</span></td>
       <td>listening, speaking, reading, writing</td>
@@ -596,7 +614,7 @@
     <tr class="cat-row"><td colspan="5">🏃 Sports &amp; Activities</td></tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)" data-color="#c0392b"></span></td>
       <td class="hanzi" title="Rare (not on HSK)">打篮球<span class="tts-btn" onclick="ttsSpeak(this,'打篮球')" title="Play: 打篮球">🔊</span></td>
       <td><span class="t3">dǎ</span> <span class="t2">lán</span><span class="t2">qiú</span></td>
       <td>to play basketball</td>
@@ -606,7 +624,7 @@
     </tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#c0392b;" title="Rare (not on HSK)" data-color="#c0392b"></span></td>
       <td class="hanzi" title="Rare (not on HSK)">踢足球<span class="tts-btn" onclick="ttsSpeak(this,'踢足球')" title="Play: 踢足球">🔊</span></td>
       <td><span class="t1">tī</span> <span class="t2">zú</span><span class="t2">qiú</span></td>
       <td>to play football</td>
@@ -618,7 +636,7 @@
     <tr class="cat-row"><td colspan="5">💬 Useful Expressions</td></tr>
 
     <tr>
-      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="Less common (not on HSK)"></span></td>
+      <td class="freq-col"><span class="freq-dot" style="background:#e67e22;" title="Less common (not on HSK)" data-color="#e67e22"></span></td>
       <td class="hanzi" title="Less common (not on HSK)">我最喜欢<span class="tts-btn" onclick="ttsSpeak(this,'我最喜欢')" title="Play: 我最喜欢">🔊</span></td>
       <td><span class="t3">wǒ</span> <span class="t4">zuì</span> <span class="t3">xǐ</span><span class="t0">huan</span></td>
       <td>I like … the most</td>
@@ -1444,7 +1462,7 @@
         // Freq filter: col 0=dot, 1=hanzi, 2=pinyin, 3=english, 4=example
         if (allowedColors && allowedColors.length > 0) {
           var dot = tds[0].querySelector('.freq-dot');
-          var bg = dot ? normalizeColor(dot.style.background) : '';
+          var bg = dot ? (dot.dataset.color || '').toLowerCase() : '';
           if (allowedColors.indexOf(bg) === -1) return;
         }
 
@@ -1868,13 +1886,13 @@
 
   function countPickerWords() {
     var selected = Array.from(document.querySelectorAll('.fc-freq-toggle.selected'))
-                        .map(function(t){ return normalizeColor(t.dataset.color); });
+                        .map(function(t){ return (t.dataset.color || '').toLowerCase(); });
     if (selected.length === 0) return 0;
     var rows = getVocabRows().filter(function(r){ return !r.classList.contains('crossed-off'); });
     return rows.filter(function(row){
       var tds = row.querySelectorAll('td');
       var dot = tds[0] ? tds[0].querySelector('.freq-dot') : null;
-      var bg = dot ? normalizeColor(dot.style.background) : '';
+      var bg = dot ? (dot.dataset.color || '').toLowerCase() : '';
       return selected.indexOf(bg) !== -1;
     }).length;
   }
@@ -1899,7 +1917,7 @@
 
   document.getElementById('fc-picker-start').addEventListener('click', function() {
     var allowedColors = Array.from(document.querySelectorAll('.fc-freq-toggle.selected'))
-                             .map(function(t){ return normalizeColor(t.dataset.color); });
+                             .map(function(t){ return (t.dataset.color || '').toLowerCase(); });
     freqPickerEl.style.display = 'none';
     startSession('vocab', allowedColors);
   });
