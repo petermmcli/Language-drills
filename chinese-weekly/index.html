@@ -833,6 +833,7 @@
     });
     return rows;
   }
+  window.getVocabRows = getVocabRows;
 
   function updateCount(){
     var all = getVocabRows();
@@ -1396,6 +1397,7 @@
   }
 
   function normalizeColor(c) { return (c||'').trim().toLowerCase().replace(/\s/g,''); }
+  window.normalizeColor = normalizeColor;
 
   function buildVocabDeck(allowedColors) {
     var cards = [];
