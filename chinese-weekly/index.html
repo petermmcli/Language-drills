@@ -1257,7 +1257,7 @@
     var grammarCards = getGrammarCards();
     if(rows.length === 0 && grammarCards.length === 0){ alert('Nothing to export.'); return; }
 
-    var lines = ['#separator:tab', '#html:true', '#tags column:10'];
+    var lines = ['#separator:tab', '#html:true'];
     rows.forEach(function(row){
       var cells = row.querySelectorAll('td');
       if(cells.length < 3) return;
