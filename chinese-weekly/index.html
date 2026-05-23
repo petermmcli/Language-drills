@@ -1235,6 +1235,22 @@
     });
   }
 
+  // Map freq-dot color → Anki tag
+  var COLOR_TAG = {
+    '#27ae60': 'HSK::1-2',
+    '#2980b9': 'HSK::3-4',
+    '#e67e22': 'HSK::5-6',
+    '#c0392b': 'HSK::7-9',
+    '#bdc3c7': 'Not_on_HSK'
+  };
+
+  function getHskTag(row) {
+    var dot = row.querySelector('.freq-dot');
+    if (!dot) return '';
+    var color = (dot.dataset.color || '').toLowerCase().trim();
+    return COLOR_TAG[color] || '';
+  }
+
   document.getElementById('export-btn').addEventListener('click', function(){
     var rows = getVocabRows().filter(function(r){ return !r.classList.contains('crossed-off'); });
     var grammarCards = getGrammarCards();
@@ -1248,9 +1264,10 @@
       var pinyin  = tsvEscape(getPinyinText(cells[2]));
       var english = tsvEscape(cells[3].textContent.trim());
       var ex = cells.length >= 5 ? getExampleParts(cells[4]) : { hanzi: '', pinyin: '', english: '' };
+      var tag = getHskTag(row);
       lines.push(hanzi + '\t' + pinyin + '\t' + english + '\t' +
         tsvEscape(ex.hanzi) + '\t' + tsvEscape(ex.pinyin) + '\t' + tsvEscape(ex.english) + '\t' +
-        hanzi + '。。' + tsvEscape(ex.hanzi));
+        hanzi + '。。' + tsvEscape(ex.hanzi) + '\t' + tag);
     });
 
     grammarCards.forEach(function(card){ lines.push(card); });
