@@ -1223,7 +1223,7 @@
         var pinyinSegs = segs.slice(1, segs.length >= 3 ? segs.length - 1 : segs.length);
         var pinyin = tsvEscape(pinyinSegs.map(function(s){ return s.html; }).join(' '));
         var context = tsvEscape(english) + (english ? '<br>' : '') + 'Grammar: ' + tsvEscape(ruleName);
-        cards.push(hanzi + '\t' + pinyin + '\t' + context + '\t\t\t\t' + hanzi);
+        cards.push(hanzi + '\t' + pinyin + '\t' + context + '\t\t\t\t' + hanzi + '\t\t');
       });
     });
     var seen = {};
@@ -1235,28 +1235,21 @@
     });
   }
 
-  // Map freq-dot color → Anki tag
-  var COLOR_TAG = {
-    '#27ae60': 'HSK::1-2',
-    '#2980b9': 'HSK::3-4',
-    '#e67e22': 'HSK::5-6',
-    '#c0392b': 'HSK::7-9',
-    '#bdc3c7': 'Not_on_HSK'
-  };
-
-  function getHskTag(row) {
-    var dot = row.querySelector('.freq-dot');
-    if (!dot) return '';
-    var color = (dot.dataset.color || '').toLowerCase().trim();
-    return COLOR_TAG[color] || '';
+  function getHskTagText(color) {
+    var map = {
+      '#27ae60': 'HSK 1-2',
+      '#2980b9': 'HSK 3-4',
+      '#e67e22': 'HSK 5-6',
+      '#c0392b': 'HSK 7-9',
+      '#bdc3c7': 'Not on HSK'
+    };
+    return map[(color || '').toLowerCase()] || '';
   }
 
-  function getFreqDotHtml(row) {
-    var dot = row.querySelector('.freq-dot');
-    if (!dot) return '';
-    var color = (dot.dataset.color || '').toLowerCase().trim();
-    var tip = dot.title || '';
-    return '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + color + ';margin-right:5px;vertical-align:middle;" title="' + tip + '"></span>';
+  function getFreqDotHtml(color, tip) {
+    if (!color || color === '#bdc3c7') return '';
+    return '<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:' +
+      color + ';margin-right:4px;vertical-align:middle;" title="' + (tip || '') + '"></span>';
   }
 
   document.getElementById('export-btn').addEventListener('click', function(){
@@ -1264,19 +1257,23 @@
     var grammarCards = getGrammarCards();
     if(rows.length === 0 && grammarCards.length === 0){ alert('Nothing to export.'); return; }
 
-    var lines = [];
+    var lines = ['#separator:tab', '#html:true', '#tags column:10'];
     rows.forEach(function(row){
       var cells = row.querySelectorAll('td');
       if(cells.length < 3) return;
-      var dot     = getFreqDotHtml(row);
-      var hanzi   = dot + tsvEscape(getHanziText(cells[1]));
+      var dot      = cells[0] ? cells[0].querySelector('.freq-dot') : null;
+      var dotColor = dot ? (dot.dataset.color || '').toLowerCase() : '';
+      var dotTip   = dot ? (dot.title || '') : '';
+      var hanzi   = tsvEscape(getHanziText(cells[1]));
       var pinyin  = tsvEscape(getPinyinText(cells[2]));
       var english = tsvEscape(cells[3].textContent.trim());
       var ex = cells.length >= 5 ? getExampleParts(cells[4]) : { hanzi: '', pinyin: '', english: '' };
-      var tag = getHskTag(row);
+      var audioField = hanzi + (ex.hanzi ? '。。' + tsvEscape(ex.hanzi) : '');
+      var hskTag   = getHskTagText(dotColor);
+      var freqDot  = getFreqDotHtml(dotColor, dotTip);
       lines.push(hanzi + '\t' + pinyin + '\t' + english + '\t' +
         tsvEscape(ex.hanzi) + '\t' + tsvEscape(ex.pinyin) + '\t' + tsvEscape(ex.english) + '\t' +
-        hanzi + '。。' + tsvEscape(ex.hanzi) + '\t' + tag);
+        audioField + '\t' + hskTag + '\t' + freqDot);
     });
 
     grammarCards.forEach(function(card){ lines.push(card); });
