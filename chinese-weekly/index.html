@@ -1251,6 +1251,14 @@
     return COLOR_TAG[color] || '';
   }
 
+  function getFreqDotHtml(row) {
+    var dot = row.querySelector('.freq-dot');
+    if (!dot) return '';
+    var color = (dot.dataset.color || '').toLowerCase().trim();
+    var tip = dot.title || '';
+    return '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + color + ';margin-right:5px;vertical-align:middle;" title="' + tip + '"></span>';
+  }
+
   document.getElementById('export-btn').addEventListener('click', function(){
     var rows = getVocabRows().filter(function(r){ return !r.classList.contains('crossed-off'); });
     var grammarCards = getGrammarCards();
@@ -1260,7 +1268,8 @@
     rows.forEach(function(row){
       var cells = row.querySelectorAll('td');
       if(cells.length < 3) return;
-      var hanzi   = tsvEscape(getHanziText(cells[1]));
+      var dot     = getFreqDotHtml(row);
+      var hanzi   = dot + tsvEscape(getHanziText(cells[1]));
       var pinyin  = tsvEscape(getPinyinText(cells[2]));
       var english = tsvEscape(cells[3].textContent.trim());
       var ex = cells.length >= 5 ? getExampleParts(cells[4]) : { hanzi: '', pinyin: '', english: '' };
