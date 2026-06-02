@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grammar Drills — Lesson 5-28-2026 — Directional Complements &amp; More</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 24px;
+    background: #fff;
+    color: #222;
+    line-height: 1.8;
+  }
+  h1 { text-align: center; color: #333; border-bottom: 3px solid #ccc; padding-bottom: 10px; font-size: 1.5em; }
+  h2 { color: #444; border-left: 5px solid #aaa; padding-left: 12px; margin-top: 42px; font-size: 1.25em; }
+  .section-intro { color: #666; font-size: 0.93em; margin-bottom: 18px; }
+
+  .drill-question {
+    background: #fafafa;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+  }
+  .question-text {
+    font-size: 1.05em;
+    margin: 0 0 8px 0;
+    line-height: 1.7;
+  }
+  .q-number {
+    font-weight: bold;
+    color: #555;
+    margin-right: 6px;
+  }
+  .blank { 
+    display: inline-block; 
+    min-width: 60px; 
+    border-bottom: 2px solid #333; 
+    margin: 0 2px;
+    text-align: center;
+  }
+
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    margin-bottom: 10px;
+  }
+  .options label {
+    cursor: pointer;
+    font-size: 1em;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .options label:hover { background: #eef; }
+
+  .toggle-btn {
+    display: inline-block;
+    cursor: pointer;
+    color: #1565c0;
+    font-size: 0.92em;
+    font-weight: 600;
+    user-select: none;
+    padding: 2px 0;
+  }
+  .toggle-btn:hover { text-decoration: underline; }
+
+  .hideable {
+    display: none;
+    margin-top: 8px;
+  }
+  .hideable.show { display: block; }
+
+  .answer-box {
+    background: #f0f7ff;
+    border-left: 4px solid #1565c0;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 0.97em;
+    line-height: 1.8;
+  }
+
+  .error-sentence {
+    font-size: 1.2em;
+    color: #cc0000;
+    border-bottom: 2px dashed #cc0000;
+  }
+
+  .ex-hanzi { font-size: 1.15em; display: block; margin-bottom: 2px; }
+
+  .t1 { color: #cc0000; }
+  .t2 { color: #e07800; }
+  .t3 { color: #267326; }
+  .t4 { color: #0044cc; }
+  .t0 { color: #888888; }
+
+  .pattern-tag {
+    display: inline-block;
+    background: #e8f0fe;
+    color: #1565c0;
+    font-size: 0.82em;
+    padding: 1px 8px;
+    border-radius: 10px;
+    margin-top: 4px;
+  }
+
+  .correct-mark { color: #267326; font-weight: bold; }
+  .wrong-mark { color: #cc0000; }
+
+  .nav-toc {
+    background: #f9f9f9;
+    border-left: 3px solid #ccc;
+    padding: 8px 14px;
+    margin-bottom: 20px;
+  }
+  .nav-toc a { color: #1565c0; text-decoration: none; margin-right: 16px; font-size: 0.93em; }
+  .nav-toc a:hover { text-decoration: underline; }
+
+  .footer { text-align: center; color: #aaa; font-size: 0.8em; margin-top: 30px; padding-top: 10px; border-top: 1px solid #eee; }
+
+
+  .pinyin-block {
+    font-size: 1.05em; line-height: 2.2; padding: 12px 16px;
+    background: #f9f9f9; border-radius: 6px; border-left: 3px solid #ccc; margin-bottom: 10px;
+  }
+
+  /* TTS Controls */
+  .tts-btn {
+    cursor: pointer;
+    font-size: 0.6em;
+    vertical-align: middle;
+    margin-left: 6px;
+    opacity: 0.45;
+    transition: opacity 0.15s;
+    display: inline-block;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .tts-btn:hover { opacity: 1; }
+  .tts-btn.playing { opacity: 1; animation: pulse 0.8s infinite; }
+  @keyframes pulse { 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.15); } }
+/* Voice selector */
+.voice-bar {
+  position: sticky; top: 0; z-index: 100;
+  background: #f4f4f4; border-bottom: 1px solid #ddd;
+  padding: 6px 20px;
+  display: flex; align-items: center; gap: 14px;
+  font-size: 0.85em; color: #555;
+}
+.voice-bar label { cursor: pointer; }
+.voice-bar input[type=radio] { margin-right: 3px; }
+.voice-bar .voice-label { font-weight: 600; white-space: nowrap; }
+@media print { .voice-bar { display: none; } }
+  .tts-bar {
+    position: sticky; top: 34px; z-index: 99;
+    background: #f9f9f9; border-bottom: 1px solid #ddd;
+    padding: 6px 20px;
+    display: flex; align-items: center; gap: 14px;
+    font-size: 0.85em; color: #555;
+  }
+  .tts-bar label { font-weight: 600; white-space: nowrap; }
+  .tts-bar input[type=range] { width: 120px; accent-color: #1155cc; }
+  .tts-bar .speed-val { min-width: 36px; text-align: center; font-variant-numeric: tabular-nums; }
+  @media print { .tts-bar { display: none; } .tts-btn { display: none !important; } }
+</style>
+<script>
+function toggle(id) {
+  var el = document.getElementById(id);
+  var btn = el.previousElementSibling;
+  while (btn && !btn.classList.contains('toggle-btn')) { btn = btn.previousElementSibling; }
+  if (el.classList.contains('show')) {
+    el.classList.remove('show');
+    if (btn) btn.textContent = btn.textContent.replace('▾', '▸').replace('Hide', 'Show');
+  } else {
+    el.classList.add('show');
+    if (btn) btn.textContent = btn.textContent.replace('▸', '▾').replace('Show', 'Hide');
+  }
+}
+
+(function() {
+  const AZURE_KEY = '9FHvN91sOhURXdvTqpspl0D9YlrK0y8fxUmj1jR4aVpHPkN1whmHJQQJ99CDACYeBjFXJ3w3AAAYACOGP37b';
+  const AZURE_REGION = 'eastus';
+  const VOICE = 'zh-CN-YunxiNeural';
+  function getVoice() {
+    var c = document.querySelector('input[name="voice"]:checked');
+    return c ? c.value : 'zh-CN-YunxiNeural';
+  }
+
+  let currentSpeed = 0.70;
+  let currentAudio = null;
+  let currentBtn = null;
+
+  let cachedToken = null;
+  let tokenExpiry = 0;
+
+  async function getToken() {
+    if (cachedToken && Date.now() < tokenExpiry) return cachedToken;
+    const resp = await fetch(
+      `https://${AZURE_REGION}.api.cognitive.microsoft.com/sts/v1.0/issueToken`,
+      { method: 'POST', headers: { 'Ocp-Apim-Subscription-Key': AZURE_KEY, 'Content-Length': '0' } }
+    );
+    if (!resp.ok) throw new Error('Token fetch failed: ' + resp.status);
+    cachedToken = await resp.text();
+    tokenExpiry = Date.now() + 8 * 60 * 1000;
+    return cachedToken;
+  }
+
+  function buildSSML(text, rate) {
+    const pct = Math.round((rate - 1) * 100);
+    const rateStr = (pct >= 0 ? '+' : '') + pct + '%';
+    return `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="zh-CN">
+      <voice name="${getVoice()}">
+        <prosody rate="${rateStr}" pitch="+0%">${escapeXml(text)}</prosody>
+      </voice>
+    </speak>`;
+  }
+
+  function escapeXml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  window.ttsSpeak = async function(btn, text) {
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio = null;
+      if (currentBtn) currentBtn.classList.remove('playing');
+    }
+    btn.classList.add('playing');
+    currentBtn = btn;
+    try {
+      const token = await getToken();
+      const ssml = buildSSML(text, currentSpeed);
+      const resp = await fetch(
+        `https://${AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/ssml+xml',
+            'X-Microsoft-OutputFormat': 'audio-24khz-48kbitrate-mono-mp3'
+          },
+          body: ssml
+        }
+      );
+      if (!resp.ok) throw new Error('TTS failed: ' + resp.status);
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      const audio = new Audio(url);
+      currentAudio = audio;
+      audio.onended = () => { btn.classList.remove('playing'); currentAudio = null; currentBtn = null; URL.revokeObjectURL(url); };
+      audio.onerror = () => { btn.classList.remove('playing'); currentAudio = null; currentBtn = null; };
+      audio.play();
+    } catch(e) {
+      console.error('TTS error:', e);
+      btn.classList.remove('playing');
+      btn.title = 'Error: ' + e.message;
+    }
+  };
+
+  window.ttsSetSpeed = function(val) {
+    currentSpeed = parseFloat(val);
+    document.getElementById('tts-speed-val').textContent = currentSpeed.toFixed(2) + 'x';
+  };
+
+  // Voice change: stop current audio so it re-synthesizes with new voice
+  document.querySelectorAll('input[name="voice"]').forEach(function(r) {
+    r.onchange = function() {
+      if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+      if (currentBtn) { currentBtn.classList.remove('playing'); currentBtn = null; }
+    };
+  });
+})();
+</script>
+</head>
+<body><div class="voice-bar">
+<span class="voice-label">Voice:</span>
+<label><input checked="" name="voice" type="radio" value="zh-CN-YunxiNeural"/> ♂ Yunxi (male)</label>
+<label><input name="voice" type="radio" value="zh-CN-XiaoxiaoNeural"/> ♀ Xiaoxiao (female)</label>
+</div><div class="tts-bar">
+<label>🔊 Audio Speed:</label>
+<input max="1.00" min="0.50" oninput="ttsSetSpeed(this.value)" step="0.05" type="range" value="0.70">
+<span class="speed-val" id="tts-speed-val">0.70x</span>
+<span style="color:#999; font-size:0.85em;">Click any 🔊 to hear pronunciation</span>
+</input></div>
+<h1>语法练习 Grammar Drills — Lesson 5-28-2026 — Directional Complements &amp; More</h1>
+<div class="nav-toc">
+<a href="#fill">Fill-in-the-Blank</a>
+<a href="#translate">Translation</a>
+<a href="#errors">Error Correction</a>
+</div>
+<h2 id="fill">一、Fill-in-the-Blank 填空</h2>
+<p class="section-intro">Choose the word that best completes each sentence. Each item targets one of today's four grammar patterns.</p>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">1.</span>老板说「请<span class="blank">    </span>」。 <span class="tts-btn" onclick="ttsSpeak(this,'老板说「请」。')" title="Play: 老板说「请」。">🔊</span></p>
+<span class="toggle-btn" onclick="toggle('py-1')">▸ Show Pinyin</span>
+<div class="hideable pinyin-block" id="py-1"><span class="t3">Lǎo</span> <span class="t3">bǎn</span> <span class="t1">shuō</span> <span class="t0">「</span> <span class="t3">qǐng</span> ___ <span class="t0">」</span> <span class="t0">。</span></div>
+<div class="options">
+<label><input name="q1" type="radio" value="a"/> A. 进来</label>
+<label><input name="q1" type="radio" value="b"/> B. 进去</label>
+<label><input name="q1" type="radio" value="c"/> C. 出去</label>
+<label><input name="q1" type="radio" value="d"/> D. 走出去</label>
+</div>
+<span class="toggle-btn" onclick="toggle('ans-1')">▸ Show Answer</span>
+<div class="hideable answer-box" id="ans-1">
+<strong class="correct-mark">A. 进来</strong><br/>
+<span class="ex-hanzi">老板说「请进来」。<span class="tts-btn" onclick="ttsSpeak(this,'老板说「请进来」。')" title="Play: 老板说「请进来」。">🔊</span></span>
+<span class="t3">Lǎo</span> <span class="t3">bǎn</span> <span class="t1">shuō</span> <span class="t0">「</span> <span class="t3">qǐng</span> <span class="t4">jìn</span> <span class="t2">lái</span> <span class="t0">」</span> <span class="t0">。</span><br/>
+<em>The boss said, "Please come in."</em><br/>
+<span class="pattern-tag">进去 / 进来 — V + 去/来 Directional Complement</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">2.</span>天气热<span class="blank">    </span>，我不想出去了。 <span class="tts-btn" onclick="ttsSpeak(this,'天气热，我不想出去了。')" title="Play: 天气热，我不想出去了。">🔊</span></p>
+<span class="toggle-btn" onclick="toggle('py-2')">▸ Show Pinyin</span>
+<div class="hideable pinyin-block" id="py-2"><span class="t1">Tiān</span> <span class="t4">qì</span> <span class="t4">rè</span> ___ <span class="t0">，</span> <span class="t3">wǒ</span> <span class="t4">bù</span> <span class="t3">xiǎng</span> <span class="t1">chū</span> <span class="t4">qù</span> <span class="t0">le</span> <span class="t0">。</span></div>
+<div class="options">
+<label><input name="q2" type="radio" value="a"/> A. 了</label>
+<label><input name="q2" type="radio" value="b"/> B. 呢</label>
+<label><input name="q2" type="radio" value="c"/> C. 吗</label>
+<label><input name="q2" type="radio" value="d"/> D. 吧</label>
+</div>
+<span class="toggle-btn" onclick="toggle('ans-2')">▸ Show Answer</span>
+<div class="hideable answer-box" id="ans-2">
+<strong class="correct-mark">A. 了</strong><br/>
+<span class="ex-hanzi">天气热了，我不想出去了。<span class="tts-btn" onclick="ttsSpeak(this,'天气热了，我不想出去了。')" title="Play: 天气热了，我不想出去了。">🔊</span></span>
+<span class="t1">Tiān</span> <span class="t4">qì</span> <span class="t4">rè</span> <span class="t0">le</span> <span class="t0">，</span> <span class="t3">wǒ</span> <span class="t4">bù</span> <span class="t3">xiǎng</span> <span class="t1">chū</span> <span class="t4">qù</span> <span class="t0">le</span> <span class="t0">。</span><br/>
+<em>It's gotten hot; I don't feel like going out anymore.</em><br/>
+<span class="pattern-tag">Adjective + 了 — Change of State</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">3.</span>妹妹和朋友<span class="blank">    </span>去公园了。 <span class="tts-btn" onclick="ttsSpeak(this,'妹妹和朋友去公园了。')" title="Play: 妹妹和朋友去公园了。">🔊</span></p>
+<span class="toggle-btn" onclick="toggle('py-3')">▸ Show Pinyin</span>
+<div class="hideable pinyin-block" id="py-3"><span class="t4">Mèi</span> <span class="t0">mei</span> <span class="t2">hé</span> <span class="t2">péng</span> <span class="t3">yǒu</span> ___ <span class="t4">qù</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t0">le</span> <span class="t0">。</span></div>
+<div class="options">
+<label><input name="q3" type="radio" value="a"/> A. 一起</label>
+<label><input name="q3" type="radio" value="b"/> B. 一下</label>
+<label><input name="q3" type="radio" value="c"/> C. 一些</label>
+<label><input name="q3" type="radio" value="d"/> D. 一直</label>
+</div>
+<span class="toggle-btn" onclick="toggle('ans-3')">▸ Show Answer</span>
+<div class="hideable answer-box" id="ans-3">
+<strong class="correct-mark">A. 一起</strong><br/>
+<span class="ex-hanzi">妹妹和朋友一起去公园了。<span class="tts-btn" onclick="ttsSpeak(this,'妹妹和朋友一起去公园了。')" title="Play: 妹妹和朋友一起去公园了。">🔊</span></span>
+<span class="t4">Mèi</span> <span class="t0">mei</span> <span class="t2">hé</span> <span class="t2">péng</span> <span class="t3">yǒu</span> <span class="t1">yī</span> <span class="t3">qǐ</span> <span class="t4">qù</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t0">le</span> <span class="t0">。</span><br/>
+<em>My younger sister and her friend went to the park together.</em><br/>
+<span class="pattern-tag">A + 和 + B + 一起 — "A and B Together"</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">4.</span>你可以帮我看<span class="blank">    </span>这个问题吗？ <span class="tts-btn" onclick="ttsSpeak(this,'你可以帮我看这个问题吗？')" title="Play: 你可以帮我看这个问题吗？">🔊</span></p>
+<span class="toggle-btn" onclick="toggle('py-4')">▸ Show Pinyin</span>
+<div class="hideable pinyin-block" id="py-4"><span class="t3">Nǐ</span> <span class="t3">kě</span> <span class="t3">yǐ</span> <span class="t1">bāng</span> <span class="t3">wǒ</span> <span class="t4">kàn</span> ___ <span class="t4">zhè</span> <span class="t0">ge</span> <span class="t4">wèn</span> <span class="t2">tí</span> <span class="t0">ma</span> <span class="t0">？</span></div>
+<div class="options">
+<label><input name="q4" type="radio" value="a"/> A. 一下</label>
+<label><input name="q4" type="radio" value="b"/> B. 一起</label>
+<label><input name="q4" type="radio" value="c"/> C. 一些</label>
+<label><input name="q4" type="radio" value="d"/> D. 一直</label>
+</div>
+<span class="toggle-btn" onclick="toggle('ans-4')">▸ Show Answer</span>
+<div class="hideable answer-box" id="ans-4">
+<strong class="correct-mark">A. 一下</strong><br/>
+<span class="ex-hanzi">你可以帮我看一下这个问题吗？<span class="tts-btn" onclick="ttsSpeak(this,'你可以帮我看一下这个问题吗？')" title="Play: 你可以帮我看一下这个问题吗？">🔊</span></span>
+<span class="t3">Nǐ</span> <span class="t3">kě</span> <span class="t3">yǐ</span> <span class="t1">bāng</span> <span class="t3">wǒ</span> <span class="t4">kàn</span> <span class="t1">yī</span> <span class="t4">xià</span> <span class="t4">zhè</span> <span class="t0">ge</span> <span class="t4">wèn</span> <span class="t2">tí</span> <span class="t0">ma</span> <span class="t0">？</span><br/>
+<em>Can you take a look at this problem for me?</em><br/>
+<span class="pattern-tag">G024 — Soften a request: verb + 一下 (briefly / just a bit)</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">5.</span>妈妈把咖啡拿<span class="blank">    </span>了。 <span class="tts-btn" onclick="ttsSpeak(this,'妈妈把咖啡拿了。')" title="Play: 妈妈把咖啡拿了。">🔊</span></p>
+<span class="toggle-btn" onclick="toggle('py-5')">▸ Show Pinyin</span>
+<div class="hideable pinyin-block" id="py-5"><span class="t1">Mā</span> <span class="t0">ma</span> <span class="t3">bǎ</span> <span class="t1">kā</span> <span class="t1">fēi</span> <span class="t2">ná</span> ___ <span class="t0">le</span> <span class="t0">。</span></div>
+<div class="options">
+<label><input name="q5" type="radio" value="a"/> A. 进来</label>
+<label><input name="q5" type="radio" value="b"/> B. 进去</label>
+<label><input name="q5" type="radio" value="c"/> C. 出去</label>
+<label><input name="q5" type="radio" value="d"/> D. 下去</label>
+</div>
+<span class="toggle-btn" onclick="toggle('ans-5')">▸ Show Answer</span>
+<div class="hideable answer-box" id="ans-5">
+<strong class="correct-mark">A. 进来</strong><br/>
+<span class="ex-hanzi">妈妈把咖啡拿进来了。<span class="tts-btn" onclick="ttsSpeak(this,'妈妈把咖啡拿进来了。')" title="Play: 妈妈把咖啡拿进来了。">🔊</span></span>
+<span class="t1">Mā</span> <span class="t0">ma</span> <span class="t3">bǎ</span> <span class="t1">kā</span> <span class="t1">fēi</span> <span class="t2">ná</span> <span class="t4">jìn</span> <span class="t2">lái</span> <span class="t0">le</span> <span class="t0">。</span><br/>
+<em>Mom brought the coffee in.</em><br/>
+<span class="pattern-tag">进去 / 进来 — V + 去/来 Directional Complement</span>
+</div>
+</div>
+<h2 id="translate">二、Translation 翻译 (English → Chinese)</h2>
+<p class="section-intro">Translate each English sentence into Chinese using the grammar pattern shown.</p>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">1.</span>Translate: "The weather has gotten cold."</p>
+<span class="toggle-btn" onclick="toggle('trans-1')">▸ Show Answer</span>
+<div class="hideable answer-box" id="trans-1">
+<span class="ex-hanzi">天气冷了。<span class="tts-btn" onclick="ttsSpeak(this,'天气冷了。')" title="Play: 天气冷了。">🔊</span></span>
+<span class="t1">Tiān</span> <span class="t4">qì</span> <span class="t3">lěng</span> <span class="t0">le</span> <span class="t0">。</span><br/>
+<span class="pattern-tag">Adjective + 了 — Change of State</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">2.</span>Translate: "My friend and I went shopping together."</p>
+<span class="toggle-btn" onclick="toggle('trans-2')">▸ Show Answer</span>
+<div class="hideable answer-box" id="trans-2">
+<span class="ex-hanzi">朋友和我一起去逛了。<span class="tts-btn" onclick="ttsSpeak(this,'朋友和我一起去逛了。')" title="Play: 朋友和我一起去逛了。">🔊</span></span>
+<span class="t2">Péng</span> <span class="t3">yǒu</span> <span class="t2">hé</span> <span class="t3">wǒ</span> <span class="t1">yī</span> <span class="t3">qǐ</span> <span class="t4">qù</span> <span class="t4">guàng</span> <span class="t0">le</span> <span class="t0">。</span><br/>
+<span class="pattern-tag">A + 和 + B + 一起 — "A and B Together"</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">3.</span>Translate: "Can you come help for a moment?"</p>
+<span class="toggle-btn" onclick="toggle('trans-3')">▸ Show Answer</span>
+<div class="hideable answer-box" id="trans-3">
+<span class="ex-hanzi">你可以来帮一下吗？<span class="tts-btn" onclick="ttsSpeak(this,'你可以来帮一下吗？')" title="Play: 你可以来帮一下吗？">🔊</span></span>
+<span class="t3">Nǐ</span> <span class="t3">kě</span> <span class="t3">yǐ</span> <span class="t2">lái</span> <span class="t1">bāng</span> <span class="t1">yī</span> <span class="t4">xià</span> <span class="t0">ma</span> <span class="t0">？</span><br/>
+<span class="pattern-tag">G024 — Soften a request: verb + 一下 (briefly / just a bit)</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">4.</span>Translate: "The child ran inside."</p>
+<span class="toggle-btn" onclick="toggle('trans-4')">▸ Show Answer</span>
+<div class="hideable answer-box" id="trans-4">
+<span class="ex-hanzi">孩子跑进去了。<span class="tts-btn" onclick="ttsSpeak(this,'孩子跑进去了。')" title="Play: 孩子跑进去了。">🔊</span></span>
+<span class="t2">Hái</span> <span class="t0">zi</span> <span class="t3">pǎo</span> <span class="t4">jìn</span> <span class="t4">qù</span> <span class="t0">le</span> <span class="t0">。</span><br/>
+<span class="pattern-tag">进去 / 进来 — V + 去/来 Directional Complement</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">5.</span>Translate: "My older sister has gotten quite busy lately."</p>
+<span class="toggle-btn" onclick="toggle('trans-5')">▸ Show Answer</span>
+<div class="hideable answer-box" id="trans-5">
+<span class="ex-hanzi">姐姐最近忙了。<span class="tts-btn" onclick="ttsSpeak(this,'姐姐最近忙了。')" title="Play: 姐姐最近忙了。">🔊</span></span>
+<span class="t3">Jiě</span> <span class="t0">jie</span> <span class="t4">zuì</span> <span class="t4">jìn</span> <span class="t2">máng</span> <span class="t0">le</span> <span class="t0">。</span><br/>
+<span class="pattern-tag">Adjective + 了 — Change of State</span>
+</div>
+</div>
+<h2 id="errors">三、Error Correction 改错</h2>
+<p class="section-intro">Each sentence below contains a grammar error. Identify the mistake and write the corrected sentence.</p>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">1.</span>Find the error: <span class="error-sentence">孩子跑去进了。<span class="tts-btn" onclick="ttsSpeak(this,'孩子跑去进了。')" title="Play: 孩子跑去进了。">🔊</span></span></p>
+<span class="toggle-btn" onclick="toggle('epy-1')">▸ Show Pinyin</span>
+<div class="hideable pinyin-block" id="epy-1"><span class="t2">Hái</span> <span class="t0">zi</span> <span class="t3">pǎo</span> <span class="t4">qù</span> <span class="t4">jìn</span> <span class="t0">le</span> <span class="t0">。</span></div>
+<span class="toggle-btn" onclick="toggle('err-1')">▸ Show Answer</span>
+<div class="hideable answer-box" id="err-1">
+<strong>Error:</strong> Directional complements follow the main verb: 跑进去 (verb + direction), not 跑去进 (wrong order).<br/>
+<strong>Correct:</strong><br/>
+<span class="ex-hanzi">孩子跑进去了。<span class="tts-btn" onclick="ttsSpeak(this,'孩子跑进去了。')" title="Play: 孩子跑进去了。">🔊</span></span>
+<span class="t2">Hái</span> <span class="t0">zi</span> <span class="t3">pǎo</span> <span class="t4">jìn</span> <span class="t4">qù</span> <span class="t0">le</span> <span class="t0">。</span><br/>
+<em>The child ran inside.</em><br/>
+<span class="pattern-tag">进去 / 进来 — V + 去/来 Directional Complement</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">2.</span>Find the error: <span class="error-sentence">这里的菜很好吃了。<span class="tts-btn" onclick="ttsSpeak(this,'这里的菜很好吃了。')" title="Play: 这里的菜很好吃了。">🔊</span></span></p>
+<span class="toggle-btn" onclick="toggle('epy-2')">▸ Show Pinyin</span>
+<div class="hideable pinyin-block" id="epy-2"><span class="t4">Zhè</span> <span class="t3">lǐ</span> <span class="t0">de</span> <span class="t4">cài</span> <span class="t3">hěn</span> <span class="t3">hǎo</span> <span class="t1">chī</span> <span class="t0">le</span> <span class="t0">。</span></div>
+<span class="toggle-btn" onclick="toggle('err-2')">▸ Show Answer</span>
+<div class="hideable answer-box" id="err-2">
+<strong>Error:</strong> 了 after an adjective signals change of state (e.g. 天气热了 = it got hot). For a plain description with 很, remove 了: 很好吃 alone is correct.<br/>
+<strong>Correct:</strong><br/>
+<span class="ex-hanzi">这里的菜很好吃。<span class="tts-btn" onclick="ttsSpeak(this,'这里的菜很好吃。')" title="Play: 这里的菜很好吃。">🔊</span></span>
+<span class="t4">Zhè</span> <span class="t3">lǐ</span> <span class="t0">de</span> <span class="t4">cài</span> <span class="t3">hěn</span> <span class="t3">hǎo</span> <span class="t1">chī</span> <span class="t0">。</span><br/>
+<em>The food here is delicious.</em><br/>
+<span class="pattern-tag">Adjective + 了 — Change of State</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">3.</span>Find the error: <span class="error-sentence">朋友一起和妹妹去了公园。<span class="tts-btn" onclick="ttsSpeak(this,'朋友一起和妹妹去了公园。')" title="Play: 朋友一起和妹妹去了公园。">🔊</span></span></p>
+<span class="toggle-btn" onclick="toggle('epy-3')">▸ Show Pinyin</span>
+<div class="hideable pinyin-block" id="epy-3"><span class="t2">Péng</span> <span class="t3">yǒu</span> <span class="t1">yī</span> <span class="t3">qǐ</span> <span class="t2">hé</span> <span class="t4">mèi</span> <span class="t0">mei</span> <span class="t4">qù</span> <span class="t0">le</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t0">。</span></div>
+<span class="toggle-btn" onclick="toggle('err-3')">▸ Show Answer</span>
+<div class="hideable answer-box" id="err-3">
+<strong>Error:</strong> The structure is A + 和 + B + 一起 + verb. 一起 must follow the second person (B), not precede 和: 朋友和妹妹一起去了公园。<br/>
+<strong>Correct:</strong><br/>
+<span class="ex-hanzi">朋友和妹妹一起去了公园。<span class="tts-btn" onclick="ttsSpeak(this,'朋友和妹妹一起去了公园。')" title="Play: 朋友和妹妹一起去了公园。">🔊</span></span>
+<span class="t2">Péng</span> <span class="t3">yǒu</span> <span class="t2">hé</span> <span class="t4">mèi</span> <span class="t0">mei</span> <span class="t1">yī</span> <span class="t3">qǐ</span> <span class="t4">qù</span> <span class="t0">le</span> <span class="t1">gōng</span> <span class="t2">yuán</span> <span class="t0">。</span><br/>
+<em>My friend and younger sister went to the park together.</em><br/>
+<span class="pattern-tag">A + 和 + B + 一起 — "A and B Together"</span>
+</div>
+</div>
+<div class="drill-question">
+<p class="question-text"><span class="q-number">4.</span>Find the error: <span class="error-sentence">请你一下帮我看问题。<span class="tts-btn" onclick="ttsSpeak(this,'请你一下帮我看问题。')" title="Play: 请你一下帮我看问题。">🔊</span></span></p>
+<span class="toggle-btn" onclick="toggle('epy-4')">▸ Show Pinyin</span>
+<div class="hideable pinyin-block" id="epy-4"><span class="t3">Qǐng</span> <span class="t3">nǐ</span> <span class="t1">yī</span> <span class="t4">xià</span> <span class="t1">bāng</span> <span class="t3">wǒ</span> <span class="t4">kàn</span> <span class="t4">wèn</span> <span class="t2">tí</span> <span class="t0">。</span></div>
+<span class="toggle-btn" onclick="toggle('err-4')">▸ Show Answer</span>
+<div class="hideable answer-box" id="err-4">
+<strong>Error:</strong> 一下 follows the verb it softens, not precedes it. Correct order: 请你帮我看一下问题。<br/>
+<strong>Correct:</strong><br/>
+<span class="ex-hanzi">请你帮我看一下问题。<span class="tts-btn" onclick="ttsSpeak(this,'请你帮我看一下问题。')" title="Play: 请你帮我看一下问题。">🔊</span></span>
+<span class="t3">Qǐng</span> <span class="t3">nǐ</span> <span class="t1">bāng</span> <span class="t3">wǒ</span> <span class="t4">kàn</span> <span class="t1">yī</span> <span class="t4">xià</span> <span class="t4">wèn</span> <span class="t2">tí</span> <span class="t0">。</span><br/>
+<em>Please help me look at the problem.</em><br/>
+<span class="pattern-tag">G024 — Soften a request: verb + 一下 (briefly / just a bit)</span>
+</div>
+</div>
+<div class="footer">
+  Grammar Drills — Lesson 5-28-2026 — Directional Complements &amp; More · 14 questions · Generated June 1, 2026
+</div>
+</body>
+</html>
