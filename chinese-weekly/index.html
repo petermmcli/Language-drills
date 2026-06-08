@@ -2444,13 +2444,10 @@
       });
     }
 
-    // Use the page's own filename so the saved file can directly replace the original
+    // Canonical filename — embedded at build time so Drive/iOS always gets the right name
+    var LESSON_FILENAME = 'Chinese-weekly-lesson-06-06-2026.html';
     var loc = window.location.pathname;
-    var fname = loc ? decodeURIComponent(loc.split('/').pop()) : null;
-    if (!fname || !fname.match(/\.html?$/i)) {
-      var title = document.title || 'chinese-weekly';
-      fname = title.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9_\-]/g, '') + '.html';
-    }
+    var fname = (loc && loc.match(/\.html?$/i)) ? decodeURIComponent(loc.split('/').pop()) : LESSON_FILENAME;
 
     var html = '<!DOCTYPE html>\n' + clone.outerHTML;
     var blob = new Blob([html], { type: 'text/html;charset=utf-8;' });
