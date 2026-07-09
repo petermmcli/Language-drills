@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="zh"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Chinese-weekly-lesson-07-07-2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chinese-weekly-lesson-07-09-2026</title>
 <style>
   body { background: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; color: #222; font-size: 15px; }
   nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #ddd; padding: 10px 20px; z-index: 100; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 12px 24px; }
@@ -360,593 +359,298 @@
 </style>
 </head>
 <body>
+
 <nav>
-<a href="#vocabulary">Vocabulary</a>
-<a href="#phrases">Phrases</a>
-<a href="#grammar">Grammar</a>
-<div class="nav-tools">
-<span id="cross-count">Vocab: 3 / 36 · Grammar: 6 / 9</span>
-<button id="export-btn" title="Export non-crossed-off words to Anki">Export to Anki</button>
-<button id="download-btn" title="Download this file with crossed-off rows baked in">⬇ Download Marked File</button>
-<button id="flashcard-btn" title="Start vocab flashcard session">🃏 Vocab Flashcards</button>
-<button id="grammar-fc-btn" title="Start grammar flashcard session">🃏 Grammar Flashcards</button>
-<button id="toggle-all-btn" title="Cross off all rows — then un-cross the sections you want to study">✗ Cross Off All</button>
-</div>
+  <a href="#vocabulary">Vocabulary</a>
+  <a href="#phrases">Phrases</a>
+  <a href="#grammar">Grammar</a>
+  <div class="nav-tools">
+    <span id="cross-count">Vocab: 0 / 0 · Grammar: 0 / 0</span>
+    <button id="export-btn" title="Export non-crossed-off words to Anki">Export to Anki</button>
+    <button id="download-btn" title="Download this file with crossed-off rows baked in">⬇ Download Marked File</button>
+    <button id="flashcard-btn" title="Start vocab flashcard session">🃏 Vocab Flashcards</button>
+    <button id="grammar-fc-btn" title="Start grammar flashcard session">🃏 Grammar Flashcards</button>
+    <button id="toggle-all-btn" title="Cross off all rows — then un-cross the sections you want to study">✗ Cross Off All</button>
+  </div>
 </nav>
 <div class="voice-bar">
-<span class="voice-label">Voice:</span>
-<label><input checked="" name="voice" type="radio" value="zh-CN-YunxiNeural"/> ♂ Yunxi (male)</label>
-<label><input name="voice" type="radio" value="zh-CN-XiaoxiaoNeural"/> ♀ Xiaoxiao (female)</label>
+  <span class="voice-label">Voice:</span>
+  <label><input type="radio" name="voice" value="zh-CN-YunxiNeural" checked> ♂ Yunxi (male)</label>
+  <label><input type="radio" name="voice" value="zh-CN-XiaoxiaoNeural"> ♀ Xiaoxiao (female)</label>
 </div>
 <div class="tts-bar">
-<label>🔊 Audio Speed:</label>
-<input max="1.00" min="0.50" oninput="ttsSetSpeed(this.value)" step="0.05" type="range" value="0.70"/>
-<span class="speed-val" id="tts-speed-val">0.70x</span>
-<span style="color:#999; font-size:0.85em;">Click any 🔊 to hear pronunciation</span>
+  <label>🔊 Audio Speed:</label>
+  <input type="range" min="0.50" max="1.00" step="0.05" value="0.70" oninput="ttsSetSpeed(this.value)">
+  <span class="speed-val" id="tts-speed-val">0.70x</span>
+  <span style="color:#999; font-size:0.85em;">Click any 🔊 to hear pronunciation</span>
 </div>
+
 <!-- ═══════════════════════════════════════════════════════════ VOCABULARY -->
 <section id="vocabulary">
-<h2 style="cursor: pointer; user-select: none;">Vocabulary</h2>
+<h2>Vocabulary</h2>
+
 <div class="freq-legend"><b>HSK Level:</b>
-<span class="freq-legend-item"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;"></span>HSK 1–2</span>
-<span class="freq-legend-item"><span class="freq-dot" data-color="#2980b9" style="background:#2980b9;"></span>HSK 3–4</span>
-<span class="freq-legend-item"><span class="freq-dot" data-color="#e67e22" style="background:#e67e22;"></span>HSK 5–6</span>
-<span class="freq-legend-item"><span class="freq-dot" data-color="#c0392b" style="background:#c0392b;"></span>HSK 7–9</span>
+  <span class="freq-legend-item"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;"></span>HSK 1–2</span>
+  <span class="freq-legend-item"><span class="freq-dot" data-color="#2980b9" style="background:#2980b9;"></span>HSK 3–4</span>
+  <span class="freq-legend-item"><span class="freq-dot" data-color="#e67e22" style="background:#e67e22;"></span>HSK 5–6</span>
+  <span class="freq-legend-item"><span class="freq-dot" data-color="#c0392b" style="background:#c0392b;"></span>HSK 7–9</span>
 </div>
+
 <table>
-<thead>
-<tr>
-<th class="freq-col" style="width:18px"></th>
-<th style="width:180px">Hanzi</th>
-<th style="width:240px">Pinyin</th>
-<th style="width:200px">English</th>
-<th>Example Sentence</th>
-</tr>
-</thead>
-<tbody>
-<tr class="cat-row"><td colspan="5">🕐 Nouns — Time</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">前天<span class="tts-btn" onclick="ttsSpeak(this,'前天')" title="Play: 前天">🔊</span></td>
-<td><span class="t2">qián</span><span class="t1">tiān</span></td>
-<td>day before yesterday</td>
-<td>
-<span class="hanzi">前天我去了商场买衣服。<span class="tts-btn" onclick="ttsSpeak(this,'前天我去了商场买衣服。')" title="Play: 前天我去了商场买衣服。">🔊</span></span><br/>
-<span class="t2">Qián</span><span class="t1">tiān</span> <span class="t3">wǒ</span> <span class="t4">qù</span> <span class="t0">le</span> <span class="t1">shāng</span><span class="t3">chǎng</span> <span class="t3">mǎi</span> <span class="t1">yī</span><span class="t0">fu</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">Day before yesterday I went to the mall to buy clothes.</span>
-</td>
-</tr>
+  <thead>
+    <tr>
+      <th class="freq-col" style="width:18px"></th>
+      <th style="width:180px">Hanzi</th>
+      <th style="width:240px">Pinyin</th>
+      <th style="width:200px">English</th>
+      <th>Example Sentence</th>
+    </tr>
+  </thead>
+  <tbody>
 
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">后天<span class="tts-btn" onclick="ttsSpeak(this,'后天')" title="Play: 后天">🔊</span></td>
-<td><span class="t4">hòu</span><span class="t1">tiān</span></td>
-<td>day after tomorrow</td>
-<td>
-<span class="hanzi">后天是我的生日。<span class="tts-btn" onclick="ttsSpeak(this,'后天是我的生日。')" title="Play: 后天是我的生日。">🔊</span></span><br/>
-<span class="t4">Hòu</span><span class="t1">tiān</span> <span class="t4">shì</span> <span class="t3">wǒ</span> <span class="t0">de</span> <span class="t1">shēng</span><span class="t4">rì</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">The day after tomorrow is my birthday.</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">🍵 Nouns — Food &amp; Drink</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">鸡蛋<span class="tts-btn" onclick="ttsSpeak(this,'鸡蛋')" title="Play: 鸡蛋">🔊</span></td>
-<td><span class="t1">jī</span><span class="t4">dàn</span></td>
-<td>egg</td>
-<td>
-<span class="hanzi">我早上吃了两个鸡蛋。<span class="tts-btn" onclick="ttsSpeak(this,'我早上吃了两个鸡蛋。')" title="Play: 我早上吃了两个鸡蛋。">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t3">zǎo</span><span class="t0">shang</span> <span class="t1">chī</span> <span class="t0">le</span> <span class="t3">liǎng</span> <span class="t0">ge</span> <span class="t1">jī</span><span class="t4">dàn</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">I ate two eggs this morning.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">面条儿<span class="tts-btn" onclick="ttsSpeak(this,'面条儿')" title="Play: 面条儿">🔊</span></td>
-<td><span class="t4">miàn</span><span class="t2">tiáor</span></td>
-<td>noodles</td>
-<td>
-<span class="hanzi">我喜欢吃牛肉面条儿。<span class="tts-btn" onclick="ttsSpeak(this,'我喜欢吃牛肉面条儿。')" title="Play: 我喜欢吃牛肉面条儿。">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t3">xǐ</span><span class="t0">huan</span> <span class="t1">chī</span> <span class="t2">niú</span><span class="t4">ròu</span> <span class="t4">miàn</span><span class="t2">tiáor</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">I like eating beef noodles.</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">⛪ Nouns — Places</td></tr>
+    <tr class="cat-row"><td colspan="5">&#x26EA; Nouns &#x2014; Places</td></tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#c0392b" style="background:#c0392b;" title="HSK 9 (via components)"></span></td>
+      <td class="hanzi">红绿灯<span class="tts-btn" onclick="ttsSpeak(this,'红绿灯')" title="Play: 红绿灯">&#x1F50A;</span></td>
+      <td><span class="t2">hóng</span><span class="t4">lǜ</span><span class="t1">dēng</span></td>
+      <td>traffic light</td>
+      <td>
+        <span class="hanzi">到红绿灯那儿右转。<span class="tts-btn" onclick="ttsSpeak(this,'到红绿灯那儿右转。')" title="Play: 到红绿灯那儿右转。">&#x1F50A;</span></span><br>
+        <span class="t4">Dào</span> <span class="t2">hóng</span><span class="t4">lǜ</span><span class="t1">dēng</span> <span class="t4">nàr</span> <span class="t4">yòu</span> <span class="t3">zhuǎn</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">Turn right at the traffic light.</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
+      <td class="hanzi">车站<span class="tts-btn" onclick="ttsSpeak(this,'车站')" title="Play: 车站">&#x1F50A;</span></td>
+      <td><span class="t1">chē</span><span class="t4">zhàn</span></td>
+      <td>station; bus/train stop</td>
+      <td>
+        <span class="hanzi">车站离这儿不远。<span class="tts-btn" onclick="ttsSpeak(this,'车站离这儿不远。')" title="Play: 车站离这儿不远。">&#x1F50A;</span></span><br>
+        <span class="t1">Chē</span><span class="t4">zhàn</span> <span class="t2">lí</span> <span class="t4">zhèr</span> <span class="t4">bù</span> <span class="t3">yuǎn</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">The station isn't far from here.</span>
+      </td>
+    </tr>
+    <tr class="cat-row"><td colspan="5">&#x1F550; Nouns &#x2014; Time</td></tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2"></span></td>
+      <td class="hanzi">分钟<span class="tts-btn" onclick="ttsSpeak(this,'分钟')" title="Play: 分钟">&#x1F50A;</span></td>
+      <td><span class="t1">fēn</span><span class="t1">zhōng</span></td>
+      <td>minute</td>
+      <td>
+        <span class="hanzi">再走两分钟就到了。<span class="tts-btn" onclick="ttsSpeak(this,'再走两分钟就到了。')" title="Play: 再走两分钟就到了。">&#x1F50A;</span></span><br>
+        <span class="t4">Zài</span> <span class="t3">zǒu</span> <span class="t3">liǎng</span> <span class="t1">fēn</span><span class="t1">zhōng</span> <span class="t4">jiù</span> <span class="t4">dào</span> <span class="t0">le</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">Walk two more minutes and you'll be there.</span>
+      </td>
+    </tr>
+    <tr class="cat-row"><td colspan="5">&#x1F3AC; Verbs</td></tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#2980b9" style="background:#2980b9;" title="HSK 4 (via components)"></span></td>
+      <td class="hanzi">直走<span class="tts-btn" onclick="ttsSpeak(this,'直走')" title="Play: 直走">&#x1F50A;</span></td>
+      <td><span class="t2">zhí</span> <span class="t3">zǒu</span></td>
+      <td>go straight</td>
+      <td>
+        <span class="hanzi">从这儿直走两分钟。<span class="tts-btn" onclick="ttsSpeak(this,'从这儿直走两分钟。')" title="Play: 从这儿直走两分钟。">&#x1F50A;</span></span><br>
+        <span class="t2">Cóng</span> <span class="t4">zhèr</span> <span class="t2">zhí</span> <span class="t3">zǒu</span> <span class="t3">liǎng</span> <span class="t1">fēn</span><span class="t1">zhōng</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">Go straight from here for two minutes.</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#2980b9" style="background:#2980b9;" title="HSK 4 (via components)"></span></td>
+      <td class="hanzi">左转<span class="tts-btn" onclick="ttsSpeak(this,'左转')" title="Play: 左转">&#x1F50A;</span></td>
+      <td><span class="t3">zuǒ</span> <span class="t3">zhuǎn</span></td>
+      <td>turn left</td>
+      <td>
+        <span class="hanzi">到路口左转。<span class="tts-btn" onclick="ttsSpeak(this,'到路口左转。')" title="Play: 到路口左转。">&#x1F50A;</span></span><br>
+        <span class="t4">Dào</span> <span class="t4">lù</span><span class="t3">kǒu</span> <span class="t3">zuǒ</span> <span class="t3">zhuǎn</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">Turn left at the intersection.</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#2980b9" style="background:#2980b9;" title="HSK 4 (via components)"></span></td>
+      <td class="hanzi">右转<span class="tts-btn" onclick="ttsSpeak(this,'右转')" title="Play: 右转">&#x1F50A;</span></td>
+      <td><span class="t4">yòu</span> <span class="t3">zhuǎn</span></td>
+      <td>turn right</td>
+      <td>
+        <span class="hanzi">先直走，然后右转。<span class="tts-btn" onclick="ttsSpeak(this,'先直走，然后右转。')" title="Play: 先直走，然后右转。">&#x1F50A;</span></span><br>
+        <span class="t1">Xiān</span> <span class="t2">zhí</span> <span class="t3">zǒu</span><span class="t0">,</span> <span class="t2">rán</span><span class="t4">hòu</span> <span class="t4">yòu</span> <span class="t3">zhuǎn</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">Go straight first, then turn right.</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
+      <td class="hanzi">打电话<span class="tts-btn" onclick="ttsSpeak(this,'打电话')" title="Play: 打电话">&#x1F50A;</span></td>
+      <td><span class="t3">dǎ</span> <span class="t4">diàn</span><span class="t4">huà</span></td>
+      <td>make a phone call</td>
+      <td>
+        <span class="hanzi">到了给我打电话。<span class="tts-btn" onclick="ttsSpeak(this,'到了给我打电话。')" title="Play: 到了给我打电话。">&#x1F50A;</span></span><br>
+        <span class="t4">Dào</span> <span class="t0">le</span> <span class="t3">gěi</span> <span class="t3">wǒ</span> <span class="t3">dǎ</span> <span class="t4">diàn</span><span class="t4">huà</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">Call me when you get there.</span>
+      </td>
+    </tr>
+    <tr class="cat-row"><td colspan="5">&#x1F4AC; Adverbs &amp; Expressions</td></tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2"></span></td>
+      <td class="hanzi">一直<span class="tts-btn" onclick="ttsSpeak(this,'一直')" title="Play: 一直">&#x1F50A;</span></td>
+      <td><span class="t4">yì</span><span class="t2">zhí</span></td>
+      <td>straight; continuously</td>
+      <td>
+        <span class="hanzi">你一直往前走就到了。<span class="tts-btn" onclick="ttsSpeak(this,'你一直往前走就到了。')" title="Play: 你一直往前走就到了。">&#x1F50A;</span></span><br>
+        <span class="t3">Nǐ</span> <span class="t4">yì</span><span class="t2">zhí</span> <span class="t3">wǎng</span> <span class="t2">qián</span> <span class="t3">zǒu</span> <span class="t4">jiù</span> <span class="t4">dào</span> <span class="t0">le</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">Keep walking straight ahead and you&#x27;ll be there.</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
+      <td class="hanzi">那儿<span class="tts-btn" onclick="ttsSpeak(this,'那儿')" title="Play: 那儿">&#x1F50A;</span></td>
+      <td><span class="t4">nàr</span></td>
+      <td>there; over there</td>
+      <td>
+        <span class="hanzi">红绿灯那儿有一家书店。<span class="tts-btn" onclick="ttsSpeak(this,'红绿灯那儿有一家书店。')" title="Play: 红绿灯那儿有一家书店。">&#x1F50A;</span></span><br>
+        <span class="t2">Hóng</span><span class="t4">lǜ</span><span class="t1">dēng</span> <span class="t4">nàr</span> <span class="t3">yǒu</span> <span class="t4">yì</span> <span class="t1">jiā</span> <span class="t1">shū</span><span class="t4">diàn</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">There&#x27;s a bookstore over by the traffic light.</span>
+      </td>
+    </tr>
 
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#e67e22" style="background:#e67e22;" title="HSK 5"></span></td>
-<td class="hanzi">宾馆<span class="tts-btn" onclick="ttsSpeak(this,'宾馆')" title="Play: 宾馆">🔊</span></td>
-<td><span class="t1">bīng</span><span class="t3">uǎn</span></td>
-<td>hotel</td>
-<td>
-<span class="hanzi">我们住在一家很好的宾馆。<span class="tts-btn" onclick="ttsSpeak(this,'我们住在一家很好的宾馆。')" title="Play: 我们住在一家很好的宾馆。">🔊</span></span><br/>
-<span class="t3">Wǒ</span><span class="t0">men</span> <span class="t4">zhù</span> <span class="t4">zài</span> <span class="t4">yì</span> <span class="t1">jiā</span> <span class="t3">hěn</span> <span class="t3">hǎo</span> <span class="t0">de</span> <span class="t1">bīng</span><span class="t3">uǎn</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">We are staying at a very nice hotel.</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">🎁 Nouns — People &amp; Objects</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">机票<span class="tts-btn" onclick="ttsSpeak(this,'机票')" title="Play: 机票">🔊</span></td>
-<td><span class="t1">jī</span><span class="t4">piào</span></td>
-<td>plane ticket</td>
-<td>
-<span class="hanzi">我买了十八号的机票。<span class="tts-btn" onclick="ttsSpeak(this,'我买了十八号的机票。')" title="Play: 我买了十八号的机票。">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t3">mǎi</span> <span class="t0">le</span> <span class="t2">shí</span><span class="t1">bā</span> <span class="t4">hào</span> <span class="t0">de</span> <span class="t1">jī</span><span class="t4">piào</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">I bought a plane ticket for the 18th.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">报纸<span class="tts-btn" onclick="ttsSpeak(this,'报纸')" title="Play: 报纸">🔊</span></td>
-<td><span class="t4">bào</span><span class="t3">zhǐ</span></td>
-<td>newspaper</td>
-<td>
-<span class="hanzi">爷爷每天早上看报纸。<span class="tts-btn" onclick="ttsSpeak(this,'爷爷每天早上看报纸。')" title="Play: 爷爷每天早上看报纸。">🔊</span></span><br/>
-<span class="t2">Yé</span><span class="t0">ye</span> <span class="t3">měi</span><span class="t1">tiān</span> <span class="t3">zǎo</span><span class="t0">shang</span> <span class="t4">kàn</span> <span class="t4">bào</span><span class="t3">zhǐ</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">Grandpa reads the newspaper every morning.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#e74c3c" style="background:#e74c3c;" title="HSK 6"></span></td>
-<td class="hanzi">铅笔<span class="tts-btn" onclick="ttsSpeak(this,'铅笔')" title="Play: 铅笔">🔊</span></td>
-<td><span class="t1">qiān</span><span class="t3">bǐ</span></td>
-<td>pencil</td>
-<td>
-<span class="hanzi">请借我一支铅笔。<span class="tts-btn" onclick="ttsSpeak(this,'请借我一支铅笔。')" title="Play: 请借我一支铅笔。">🔊</span></span><br/>
-<span class="t3">Qǐng</span> <span class="t4">jiè</span> <span class="t3">wǒ</span> <span class="t4">yì</span> <span class="t1">zhī</span> <span class="t1">qiān</span><span class="t3">bǐ</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">Please lend me a pencil.</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">👥 Pronouns &amp; Determiners</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">大家<span class="tts-btn" onclick="ttsSpeak(this,'大家')" title="Play: 大家">🔊</span></td>
-<td><span class="t4">dà</span><span class="t1">jiā</span></td>
-<td>everyone</td>
-<td>
-<span class="hanzi">大家好，我叫李明。<span class="tts-btn" onclick="ttsSpeak(this,'大家好，我叫李明。')" title="Play: 大家好，我叫李明。">🔊</span></span><br/>
-<span class="t4">Dà</span><span class="t1">jiā</span> <span class="t3">hǎo</span><span class="t0">,</span> <span class="t3">wǒ</span> <span class="t4">jiào</span> <span class="t3">Lǐ</span> <span class="t2">Míng</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">Hello everyone, my name is Li Ming.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">它<span class="tts-btn" onclick="ttsSpeak(this,'它')" title="Play: 它">🔊</span></td>
-<td><span class="t1">tā</span></td>
-<td>it (object / animal)</td>
-<td>
-<span class="hanzi">这只猫很可爱，它叫小白。<span class="tts-btn" onclick="ttsSpeak(this,'这只猫很可爱，它叫小白。')" title="Play: 这只猫很可爱，它叫小白。">🔊</span></span><br/>
-<span class="t4">Zhè</span> <span class="t1">zhī</span> <span class="t1">māo</span> <span class="t3">hěn</span> <span class="t3">kě</span><span class="t4">'ài</span><span class="t0">,</span> <span class="t1">tā</span> <span class="t4">jiào</span> <span class="t3">Xiǎo</span><span class="t2">bái</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">This cat is cute; it is called Xiaobai.</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">❓ Question Words</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">为什么<span class="tts-btn" onclick="ttsSpeak(this,'为什么')" title="Play: 为什么">🔊</span></td>
-<td><span class="t4">wèi</span><span class="t2">shén</span><span class="t0">me</span></td>
-<td>why</td>
-<td>
-<span class="hanzi">你为什么不来？<span class="tts-btn" onclick="ttsSpeak(this,'你为什么不来？')" title="Play: 你为什么不来？">🔊</span></span><br/>
-<span class="t3">Nǐ</span> <span class="t4">wèi</span><span class="t2">shén</span><span class="t0">me</span> <span class="t4">bù</span> <span class="t2">lái</span><span class="t0">?</span><br/>
-<span style="color:#555; font-style:italic;">Why aren't you coming?</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">🎬 Verbs</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">报名<span class="tts-btn" onclick="ttsSpeak(this,'报名')" title="Play: 报名">🔊</span></td>
-<td><span class="t4">bào</span><span class="t2">míng</span></td>
-<td>to sign up; register</td>
-<td>
-<span class="hanzi">我想给女儿报名学画画。<span class="tts-btn" onclick="ttsSpeak(this,'我想给女儿报名学画画。')" title="Play: 我想给女儿报名学画画。">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t3">xiǎng</span> <span class="t3">gěi</span> <span class="t3">nǚ</span><span class="t2">'ér</span> <span class="t4">bào</span><span class="t2">míng</span> <span class="t2">xué</span> <span class="t4">huà</span> <span class="t4">huà</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">I want to sign my daughter up for painting lessons.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#3498db" style="background:#3498db;" title="HSK 3 (judgment)"></span></td>
-<td class="hanzi">画画<span class="tts-btn" onclick="ttsSpeak(this,'画画')" title="Play: 画画">🔊</span></td>
-<td><span class="t4">huà</span> <span class="t4">huà</span></td>
-<td>to draw; to paint</td>
-<td>
-<span class="hanzi">我画画画得非常不好。<span class="tts-btn" onclick="ttsSpeak(this,'我画画画得非常不好。')" title="Play: 我画画画得非常不好。">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t4">huà</span> <span class="t4">huà</span> <span class="t4">huà</span> <span class="t0">de</span> <span class="t1">fēi</span><span class="t2">cháng</span> <span class="t4">bù</span> <span class="t3">hǎo</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">I draw very poorly.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">让<span class="tts-btn" onclick="ttsSpeak(this,'让')" title="Play: 让">🔊</span></td>
-<td><span class="t4">ràng</span></td>
-<td>to let; to allow; to make s.o. do</td>
-<td>
-<span class="hanzi">妈妈让我做作业。<span class="tts-btn" onclick="ttsSpeak(this,'妈妈让我做作业。')" title="Play: 妈妈让我做作业。">🔊</span></span><br/>
-<span class="t1">Mā</span><span class="t0">ma</span> <span class="t4">ràng</span> <span class="t3">wǒ</span> <span class="t4">zuò</span> <span class="t4">zuò</span><span class="t4">yè</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">Mom made me do my homework.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">生病<span class="tts-btn" onclick="ttsSpeak(this,'生病')" title="Play: 生病">🔊</span></td>
-<td><span class="t1">shēng</span><span class="t4">bìng</span></td>
-<td>to get sick; fall ill</td>
-<td>
-<span class="hanzi">他昨天生病了，没来上班。<span class="tts-btn" onclick="ttsSpeak(this,'他昨天生病了，没来上班。')" title="Play: 他昨天生病了，没来上班。">🔊</span></span><br/>
-<span class="t1">Tā</span> <span class="t2">zuó</span><span class="t1">tiān</span> <span class="t1">shēng</span><span class="t4">bìng</span> <span class="t0">le</span><span class="t0">,</span> <span class="t2">méi</span> <span class="t2">lái</span> <span class="t4">shàng</span><span class="t1">bān</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">He got sick yesterday and didn't come to work.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">笑<span class="tts-btn" onclick="ttsSpeak(this,'笑')" title="Play: 笑">🔊</span></td>
-<td><span class="t4">xiào</span></td>
-<td>to laugh; to smile</td>
-<td>
-<span class="hanzi">她笑得很开心。<span class="tts-btn" onclick="ttsSpeak(this,'她笑得很开心。')" title="Play: 她笑得很开心。">🔊</span></span><br/>
-<span class="t1">Tā</span> <span class="t4">xiào</span> <span class="t0">de</span> <span class="t3">hěn</span> <span class="t1">kāi</span><span class="t1">xīn</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">She laughed happily.</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">✨ Adjectives</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">晴<span class="tts-btn" onclick="ttsSpeak(this,'晴')" title="Play: 晴">🔊</span></td>
-<td><span class="t2">qíng</span></td>
-<td>sunny; clear (weather)</td>
-<td>
-<span class="hanzi">今天天气很晴。<span class="tts-btn" onclick="ttsSpeak(this,'今天天气很晴。')" title="Play: 今天天气很晴。">🔊</span></span><br/>
-<span class="t1">Jīn</span><span class="t1">tiān</span> <span class="t1">tiān</span><span class="t4">qì</span> <span class="t3">hěn</span> <span class="t2">qíng</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">It's very sunny today.</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">💬 Adverbs &amp; Expressions</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">可能<span class="tts-btn" onclick="ttsSpeak(this,'可能')" title="Play: 可能">🔊</span></td>
-<td><span class="t3">kě</span><span class="t2">néng</span></td>
-<td>maybe; possibly; probable</td>
-<td>
-<span class="hanzi">明天可能下雨。<span class="tts-btn" onclick="ttsSpeak(this,'明天可能下雨。')" title="Play: 明天可能下雨。">🔊</span></span><br/>
-<span class="t2">Míng</span><span class="t1">tiān</span> <span class="t3">kě</span><span class="t2">néng</span> <span class="t4">xià</span> <span class="t3">yǔ</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">It might rain tomorrow.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">已经<span class="tts-btn" onclick="ttsSpeak(this,'已经')" title="Play: 已经">🔊</span></td>
-<td><span class="t3">yǐ</span><span class="t1">jīng</span></td>
-<td>already</td>
-<td>
-<span class="hanzi">我已经吃过晚饭了。<span class="tts-btn" onclick="ttsSpeak(this,'我已经吃过晚饭了。')" title="Play: 我已经吃过晚饭了。">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t3">yǐ</span><span class="t1">jīng</span> <span class="t1">chī</span> <span class="t0">guo</span> <span class="t3">wǎn</span><span class="t4">fàn</span> <span class="t0">le</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">I have already eaten dinner.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">正在<span class="tts-btn" onclick="ttsSpeak(this,'正在')" title="Play: 正在">🔊</span></td>
-<td><span class="t4">zhèng</span><span class="t4">zài</span></td>
-<td>currently; in the process of (progressive)</td>
-<td>
-<span class="hanzi">我正在学中文。<span class="tts-btn" onclick="ttsSpeak(this,'我正在学中文。')" title="Play: 我正在学中文。">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t4">zhèng</span><span class="t4">zài</span> <span class="t2">xué</span> <span class="t1">Zhōng</span><span class="t2">wén</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">I am currently studying Chinese.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">虽然<span class="tts-btn" onclick="ttsSpeak(this,'虽然')" title="Play: 虽然">🔊</span></td>
-<td><span class="t1">suī</span><span class="t2">rán</span></td>
-<td>although; though</td>
-<td>
-<span class="hanzi">虽然下雨，但是我还要去。<span class="tts-btn" onclick="ttsSpeak(this,'虽然下雨，但是我还要去。')" title="Play: 虽然下雨，但是我还要去。">🔊</span></span><br/>
-<span class="t1">Suī</span><span class="t2">rán</span> <span class="t4">xià</span> <span class="t3">yǔ</span><span class="t0">,</span> <span class="t4">dàn</span><span class="t4">shì</span> <span class="t3">wǒ</span> <span class="t2">hái</span> <span class="t4">yào</span> <span class="t4">qù</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">Although it's raining, I still want to go.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2 (judgment)"></span></td>
-<td class="hanzi">拜拜<span class="tts-btn" onclick="ttsSpeak(this,'拜拜')" title="Play: 拜拜">🔊</span></td>
-<td><span class="t2">bái</span><span class="t2">bái</span></td>
-<td>bye-bye (casual, from English)</td>
-<td>
-<span class="hanzi">好，拜拜，明天见！<span class="tts-btn" onclick="ttsSpeak(this,'好，拜拜，明天见！')" title="Play: 好，拜拜，明天见！">🔊</span></span><br/>
-<span class="t3">Hǎo</span><span class="t0">,</span> <span class="t2">bái</span><span class="t2">bái</span><span class="t0">,</span> <span class="t2">míng</span><span class="t1">tiān</span> <span class="t4">jiàn</span><span class="t0">!</span><br/>
-<span style="color:#555; font-style:italic;">OK, bye-bye, see you tomorrow!</span>
-</td>
-</tr>
-<tr>
-  <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-  <td class="hanzi">说话<span class="tts-btn" onclick="ttsSpeak(this,'说话')" title="Play: 说话">🔊</span></td>
-  <td><span class="t1">shuō</span><span class="t4">huà</span></td>
-  <td>to talk; to speak</td>
-  <td>
-    <span class="hanzi">他很会说话。<span class="tts-btn" onclick="ttsSpeak(this,'他很会说话。')" title="Play: 他很会说话。">🔊</span></span><br>
-    <span class="t1">Tā</span> <span class="t3">hěn</span> <span class="t4">huì</span> <span class="t1">shuō</span><span class="t4">huà</span><br>
-    <span style="color:#555; font-style:italic;">He is very good at talking.</span>
-  </td>
-</tr>
-<tr class="cat-row"><td colspan="5">🔢 Measure Words &amp; Particles</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">千<span class="tts-btn" onclick="ttsSpeak(this,'千')" title="Play: 千">🔊</span></td>
-<td><span class="t1">qiān</span></td>
-<td>thousand</td>
-<td>
-<span class="hanzi">这本书有一千页。<span class="tts-btn" onclick="ttsSpeak(this,'这本书有一千页。')" title="Play: 这本书有一千页。">🔊</span></span><br/>
-<span class="t4">Zhè</span> <span class="t3">běn</span> <span class="t1">shū</span> <span class="t3">yǒu</span> <span class="t4">yì</span><span class="t1">qiān</span> <span class="t4">yè</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">This book has a thousand pages.</span>
-</td>
-</tr>
-</tbody>
+  </tbody>
 </table>
 </section>
+
 <!-- ═══════════════════════════════════════════════════════════ PHRASES -->
 <section id="phrases">
-<h2 style="cursor: pointer; user-select: none;">Phrases</h2>
-<table id="phrases-table">
-<thead>
-<tr>
-<th class="freq-col" style="width:18px"></th>
-<th style="width:260px">Hanzi</th>
-<th style="width:280px">Pinyin</th>
-<th style="width:200px">English</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="cat-row"><td colspan="5">📋 Exams &amp; Study</td></tr>
-<tr class="">
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">考HSK<span class="tts-btn" onclick="ttsSpeak(this,'考HSK')" title="Play: 考HSK">🔊</span></td>
-<td><span class="t3">kǎo</span> <span class="t0">HSK</span></td>
-<td>to take the HSK exam</td>
-<td>
-<span class="hanzi">我下个月要考HSK四级。<span class="tts-btn" onclick="ttsSpeak(this,'我下个月要考HSK四级。')" title="Play: 我下个月要考HSK四级。">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t4">xià</span> <span class="t0">ge</span> <span class="t4">yuè</span> <span class="t4">yào</span> <span class="t3">kǎo</span> <span class="t0">HSK</span> <span class="t4">sì</span> <span class="t2">jí</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">Next month I'm going to take HSK level 4.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#3498db" style="background:#3498db;" title="HSK 3"></span></td>
-<td class="hanzi">收到邮件<span class="tts-btn" onclick="ttsSpeak(this,'收到邮件')" title="Play: 收到邮件">🔊</span></td>
-<td><span class="t1">shōu</span><span class="t4">dào</span> <span class="t2">yóu</span><span class="t4">jiàn</span></td>
-<td>to receive an email</td>
-<td>
-<span class="hanzi">我今天早上收到邮件了。<span class="tts-btn" onclick="ttsSpeak(this,'我今天早上收到邮件了。')" title="Play: 我今天早上收到邮件了。">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t1">jīn</span><span class="t1">tiān</span> <span class="t3">zǎo</span><span class="t0">shang</span> <span class="t1">shōu</span><span class="t4">dào</span> <span class="t2">yóu</span><span class="t4">jiàn</span> <span class="t0">le</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">I received an email this morning.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">收到考试的邮件<span class="tts-btn" onclick="ttsSpeak(this,'收到考试的邮件')" title="Play: 收到考试的邮件">🔊</span></td>
-<td><span class="t1">shōu</span><span class="t4">dào</span> <span class="t3">kǎo</span><span class="t4">shì</span> <span class="t0">de</span> <span class="t2">yóu</span><span class="t4">jiàn</span></td>
-<td>to receive an exam-related email</td>
-<td>
-<span class="hanzi">我收到了考试的邮件，星期五考试。<span class="tts-btn" onclick="ttsSpeak(this,'我收到了考试的邮件，星期五考试。')" title="Play: 我收到了考试的邮件，星期五考试。">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t1">shōu</span><span class="t4">dào</span> <span class="t0">le</span> <span class="t3">kǎo</span><span class="t4">shì</span> <span class="t0">de</span> <span class="t2">yóu</span><span class="t4">jiàn</span><span class="t0">,</span> <span class="t1">xīng</span><span class="t1">qī</span><span class="t3">wǔ</span> <span class="t3">kǎo</span><span class="t4">shì</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">I got the exam email — the test is on Friday.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">收到考试的通知<span class="tts-btn" onclick="ttsSpeak(this,'收到考试的通知')" title="Play: 收到考试的通知">🔊</span></td>
-<td><span class="t1">shōu</span><span class="t4">dào</span> <span class="t3">kǎo</span><span class="t4">shì</span> <span class="t0">de</span> <span class="t1">tōng</span><span class="t1">zhī</span></td>
-<td>to receive an exam notice</td>
-<td>
-<span class="hanzi">老师给我们发了考试的通知。<span class="tts-btn" onclick="ttsSpeak(this,'老师给我们发了考试的通知。')" title="Play: 老师给我们发了考试的通知。">🔊</span></span><br/>
-<span class="t3">Lǎo</span><span class="t1">shī</span> <span class="t3">gěi</span> <span class="t3">wǒ</span><span class="t0">men</span> <span class="t1">fā</span> <span class="t0">le</span> <span class="t3">kǎo</span><span class="t4">shì</span> <span class="t0">de</span> <span class="t1">tōng</span><span class="t1">zhī</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">The teacher sent us the exam notice.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">开卷考试<span class="tts-btn" onclick="ttsSpeak(this,'开卷考试')" title="Play: 开卷考试">🔊</span></td>
-<td><span class="t1">kāi</span><span class="t4">juàn</span> <span class="t3">kǎo</span><span class="t4">shì</span></td>
-<td>open-book exam</td>
-<td>
-<span class="hanzi">这次是开卷考试，可以看书。<span class="tts-btn" onclick="ttsSpeak(this,'这次是开卷考试，可以看书。')" title="Play: 这次是开卷考试，可以看书。">🔊</span></span><br/>
-<span class="t4">Zhè</span> <span class="t4">cì</span> <span class="t4">shì</span> <span class="t1">kāi</span><span class="t4">juàn</span> <span class="t3">kǎo</span><span class="t4">shì</span><span class="t0">,</span> <span class="t3">kě</span><span class="t3">yǐ</span> <span class="t4">kàn</span> <span class="t1">shū</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">This is an open-book exam; you can look at the book.</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">🔄 Coming &amp; Going</td></tr>
+<h2>Phrases</h2>
 
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">回来<span class="tts-btn" onclick="ttsSpeak(this,'回来')" title="Play: 回来">🔊</span></td>
-<td><span class="t2">huí</span><span class="t0">lai</span></td>
-<td>to come back (toward speaker)</td>
-<td>
-<span class="hanzi">你回来我们一起吃晚饭。<span class="tts-btn" onclick="ttsSpeak(this,'你回来我们一起吃晚饭。')" title="Play: 你回来我们一起吃晚饭。">🔊</span></span><br/>
-<span class="t3">Nǐ</span> <span class="t2">huí</span><span class="t0">lai</span> <span class="t3">wǒ</span><span class="t0">men</span> <span class="t4">yì</span><span class="t3">qǐ</span> <span class="t1">chī</span> <span class="t3">wǎn</span><span class="t4">fàn</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">When you come back we'll have dinner together.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#2ecc71" style="background:#2ecc71;" title="HSK 2"></span></td>
-<td class="hanzi">回去<span class="tts-btn" onclick="ttsSpeak(this,'回去')" title="Play: 回去">🔊</span></td>
-<td><span class="t2">huí</span><span class="t0">qu</span></td>
-<td>to go back (away from speaker)</td>
-<td>
-<span class="hanzi">时间不早了，我要回去了。<span class="tts-btn" onclick="ttsSpeak(this,'时间不早了，我要回去了。')" title="Play: 时间不早了，我要回去了。">🔊</span></span><br/>
-<span class="t2">Shí</span><span class="t1">jiān</span> <span class="t4">bù</span> <span class="t3">zǎo</span> <span class="t0">le</span><span class="t0">,</span> <span class="t3">wǒ</span> <span class="t4">yào</span> <span class="t2">huí</span><span class="t0">qu</span> <span class="t0">le</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">It's getting late, I need to go back.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">回家<span class="tts-btn" onclick="ttsSpeak(this,'回家')" title="Play: 回家">🔊</span></td>
-<td><span class="t2">huí</span> <span class="t1">jiā</span></td>
-<td>to go home; return home</td>
-<td>
-<span class="hanzi">我送你回家。<span class="tts-btn" onclick="ttsSpeak(this,'我送你回家。')" title="Play: 我送你回家。">🔊</span></span><br>
-<span class="t3">Wǒ</span> <span class="t4">sòng</span> <span class="t3">nǐ</span> <span class="t2">huí</span> <span class="t1">jiā</span><span class="t0">.</span><br>
-<span style="color:#555; font-style:italic;">I'll take you home.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2 (via components)"></span></td>
-<td class="hanzi">送他<span class="tts-btn" onclick="ttsSpeak(this,'送他')" title="Play: 送他">🔊</span></td>
-<td><span class="t4">sòng</span> <span class="t1">tā</span></td>
-<td>to see him off</td>
-<td>
-<span class="hanzi">我去送他。<span class="tts-btn" onclick="ttsSpeak(this,'我去送他。')" title="Play: 我去送他。">🔊</span></span><br>
-<span class="t3">Wǒ</span> <span class="t4">qù</span> <span class="t4">sòng</span> <span class="t1">tā</span><span class="t0">.</span><br>
-<span style="color:#555; font-style:italic;">I'll go see him off.</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">💬 Expressions</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#3498db" style="background:#3498db;" title="HSK 3"></span></td>
-<td class="hanzi">压力越大越好<span class="tts-btn" onclick="ttsSpeak(this,'压力越大越好')" title="Play: 压力越大越好">🔊</span></td>
-<td><span class="t1">yā</span><span class="t4">lì</span> <span class="t4">yuè</span> <span class="t4">dà</span> <span class="t4">yuè</span> <span class="t3">hǎo</span></td>
-<td>the more pressure the better</td>
-<td>
-<span class="hanzi">他觉得压力越大越好，能让他集中。<span class="tts-btn" onclick="ttsSpeak(this,'他觉得压力越大越好，能让他集中。')" title="Play: 他觉得压力越大越好，能让他集中。">🔊</span></span><br/>
-<span class="t1">Tā</span> <span class="t2">jué</span><span class="t0">de</span> <span class="t1">yā</span><span class="t4">lì</span> <span class="t4">yuè</span> <span class="t4">dà</span> <span class="t4">yuè</span> <span class="t3">hǎo</span><span class="t0">,</span> <span class="t2">néng</span> <span class="t4">ràng</span> <span class="t1">tā</span> <span class="t2">jí</span><span class="t1">zhōng</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">He thinks the more pressure the better — it helps him focus.</span>
-</td>
-</tr>
-<tr class="cat-row"><td colspan="5">🗓️ Day Sequence Examples</td></tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">前天去了商场买了一件衣服<span class="tts-btn" onclick="ttsSpeak(this,'前天去了商场买了一件衣服')" title="Play: 前天去了商场买了一件衣服">🔊</span></td>
-<td><span class="t2">Qián</span><span class="t1">tiān</span> <span class="t4">qù</span> <span class="t0">le</span> <span class="t1">shāng</span><span class="t3">chǎng</span> <span class="t3">mǎi</span> <span class="t0">le</span> <span class="t2">yí</span> <span class="t4">jiàn</span> <span class="t1">yī</span><span class="t0">fu</span></td>
-<td>went to the mall the day before yesterday and bought clothes</td>
-<td>
-<span class="hanzi">前天去了商场买了一件衣服，很便宜。<span class="tts-btn" onclick="ttsSpeak(this,'前天去了商场买了一件衣服，很便宜。')" title="Play: 前天去了商场买了一件衣服，很便宜。">🔊</span></span><br/>
-<span class="t2">Qián</span><span class="t1">tiān</span> <span class="t4">qù</span> <span class="t0">le</span> <span class="t1">shāng</span><span class="t3">chǎng</span> <span class="t3">mǎi</span> <span class="t0">le</span> <span class="t2">yí</span> <span class="t4">jiàn</span> <span class="t1">yī</span><span class="t0">fu</span><span class="t0">,</span> <span class="t3">hěn</span> <span class="t2">pián</span><span class="t0">yi</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">The day before yesterday I went to the mall and bought a piece of clothing — it was cheap.</span>
-</td>
-</tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
-<td class="hanzi">昨天她去她的朋友爷爷奶奶家<span class="tts-btn" onclick="ttsSpeak(this,'昨天她去她的朋友爷爷奶奶家')" title="Play: 昨天她去她的朋友爷爷奶奶家">🔊</span></td>
-<td><span class="t2">Zuó</span><span class="t1">tiān</span> <span class="t1">tā</span> <span class="t4">qù</span> <span class="t1">tā</span> <span class="t0">de</span> <span class="t2">péng</span><span class="t0">you</span> <span class="t2">yé</span><span class="t0">ye</span> <span class="t3">nǎi</span><span class="t0">nai</span> <span class="t1">jiā</span></td>
-<td>yesterday she went to her friend's grandparents' house</td>
-<td>
-<span class="hanzi">昨天她去她的朋友爷爷奶奶家吃饭。<span class="tts-btn" onclick="ttsSpeak(this,'昨天她去她的朋友爷爷奶奶家吃饭。')" title="Play: 昨天她去她的朋友爷爷奶奶家吃饭。">🔊</span></span><br/>
-<span class="t2">Zuó</span><span class="t1">tiān</span> <span class="t1">tā</span> <span class="t4">qù</span> <span class="t1">tā</span> <span class="t0">de</span> <span class="t2">péng</span><span class="t0">you</span> <span class="t2">yé</span><span class="t0">ye</span> <span class="t3">nǎi</span><span class="t0">nai</span> <span class="t1">jiā</span> <span class="t1">chī</span><span class="t4">fàn</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">Yesterday she went to her friend's grandparents' house for a meal.</span>
-</td>
-</tr>
-</tbody>
+<table id="phrases-table">
+  <thead>
+    <tr>
+      <th class="freq-col" style="width:18px"></th>
+      <th style="width:260px">Hanzi</th>
+      <th style="width:280px">Pinyin</th>
+      <th style="width:200px">English</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2 (via components)"></span></td>
+      <td class="hanzi">先一直走<span class="tts-btn" onclick="ttsSpeak(this,'先一直走')" title="Play: 先一直走">&#x1F50A;</span></td>
+      <td><span class="t1">xiān</span> <span class="t4">yì</span><span class="t2">zhí</span> <span class="t3">zǒu</span></td>
+      <td>first walk straight ahead</td>
+      <td>
+        <span class="hanzi">先一直走，到红绿灯那儿再右转。<span class="tts-btn" onclick="ttsSpeak(this,'先一直走，到红绿灯那儿再右转。')" title="Play: 先一直走，到红绿灯那儿再右转。">&#x1F50A;</span></span><br>
+        <span class="t1">Xiān</span> <span class="t4">yì</span><span class="t2">zhí</span> <span class="t3">zǒu</span><span class="t0">,</span> <span class="t4">dào</span> <span class="t2">hóng</span><span class="t4">lǜ</span><span class="t1">dēng</span> <span class="t4">nàr</span> <span class="t4">zài</span> <span class="t4">yòu</span> <span class="t3">zhuǎn</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">First walk straight, then turn right at the traffic light.</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#c0392b" style="background:#c0392b;" title="HSK 9 (via components)"></span></td>
+      <td class="hanzi">到红绿灯那儿<span class="tts-btn" onclick="ttsSpeak(this,'到红绿灯那儿')" title="Play: 到红绿灯那儿">&#x1F50A;</span></td>
+      <td><span class="t4">dào</span> <span class="t2">hóng</span><span class="t4">lǜ</span><span class="t1">dēng</span> <span class="t4">nàr</span></td>
+      <td>when you reach the traffic light</td>
+      <td>
+        <span class="hanzi">到红绿灯那儿就左转。<span class="tts-btn" onclick="ttsSpeak(this,'到红绿灯那儿就左转。')" title="Play: 到红绿灯那儿就左转。">&#x1F50A;</span></span><br>
+        <span class="t4">Dào</span> <span class="t2">hóng</span><span class="t4">lǜ</span><span class="t1">dēng</span> <span class="t4">nàr</span> <span class="t4">jiù</span> <span class="t3">zuǒ</span> <span class="t3">zhuǎn</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">Turn left as soon as you reach the traffic light.</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2 (via components)"></span></td>
+      <td class="hanzi">到了车站<span class="tts-btn" onclick="ttsSpeak(this,'到了车站')" title="Play: 到了车站">&#x1F50A;</span></td>
+      <td><span class="t4">dào</span> <span class="t0">le</span> <span class="t1">chē</span><span class="t4">zhàn</span></td>
+      <td>once you reach the station</td>
+      <td>
+        <span class="hanzi">到了车站就给我打电话。<span class="tts-btn" onclick="ttsSpeak(this,'到了车站就给我打电话。')" title="Play: 到了车站就给我打电话。">&#x1F50A;</span></span><br>
+        <span class="t4">Dào</span> <span class="t0">le</span> <span class="t1">chē</span><span class="t4">zhàn</span> <span class="t4">jiù</span> <span class="t3">gěi</span> <span class="t3">wǒ</span> <span class="t3">dǎ</span> <span class="t4">diàn</span><span class="t4">huà</span><span class="t0">.</span><br>
+        <span style="color:#555; font-style:italic;">As soon as you get to the station, call me.</span>
+      </td>
+    </tr>
+
+  </tbody>
 </table>
 </section>
+
 <!-- ═══════════════════════════════════════════════════════════ GRAMMAR -->
 <section id="grammar">
 <h2>Grammar</h2>
 
+<!-- TEMPLATE EXAMPLE — one grammar block with 3 example sentences -->
 <div class="grammar-block">
-<h3>2. 越 + Adj/Verb, 越 + Adj/Verb — "The more X, the more Y" (review)</h3>
-<p>Expresses a proportional relationship. Structure: <strong>(Subject) 越 + Adj/Verb₁, (Subject) 越 + Adj/Verb₂</strong>. Compare with 越来越 + adj (getting more and more…), which describes change over time rather than linking two variables.</p>
-<div class="ex">
-<span class="hanzi">压力越大越好。<span class="tts-btn" onclick="ttsSpeak(this,'压力越大越好。')" title="Play">🔊</span></span><br/>
-<span class="t1">Yā</span><span class="t4">lì</span> <span class="t4">yuè</span> <span class="t4">dà</span> <span class="t4">yuè</span> <span class="t3">hǎo</span><span class="t0">.</span><br/>
-    The greater the pressure, the better.
+  <h3>1. 再 vs 就 &#x2014; Next step vs. immediate reassurance</h3>
+  <p>Both 再 and 就 can link a following action to a condition, but they carry different nuances in directions.
+     Structure: <strong>&#x2026; 再 + Verb (then take the next step) / &#x2026; 就 + Verb (just do this; all you need to do)</strong>.</p>
+  <p>再 (zài) says &#x201C;then proceed to the next step &#x2014; there is still more to do.&#x201D; 就 (jiù) reassures the listener that the action is the only or final thing needed. Use 再直走 in multi-step directions; use 就直走 to reassure someone that going straight is all it takes.</p>
+  <div class="ex">
+    <span class="hanzi">到红绿灯那儿，再直走两分钟。<span class="tts-btn" onclick="ttsSpeak(this,'到红绿灯那儿，再直走两分钟。')" title="Play">&#x1F50A;</span></span><br>
+    <span class="t4">Dào</span> <span class="t2">hóng</span><span class="t4">lǜ</span><span class="t1">dēng</span> <span class="t4">nàr</span><span class="t0">,</span> <span class="t4">zài</span> <span class="t2">zhí</span> <span class="t3">zǒu</span> <span class="t3">liǎng</span> <span class="t1">fēn</span><span class="t1">zhōng</span><span class="t0">.</span><br>
+    When you reach the traffic light, then continue straight for two minutes. (more steps ahead)
   </div>
-<div class="ex">
-<span class="hanzi">我越学中文越觉得有意思。<span class="tts-btn" onclick="ttsSpeak(this,'我越学中文越觉得有意思。')" title="Play">🔊</span></span><br/>
-<span class="t3">Wǒ</span> <span class="t4">yuè</span> <span class="t2">xué</span> <span class="t1">Zhōng</span><span class="t2">wén</span> <span class="t4">yuè</span> <span class="t2">jué</span><span class="t0">de</span> <span class="t3">yǒu</span> <span class="t4">yì</span><span class="t0">si</span><span class="t0">.</span><br/>
-    The more I study Chinese, the more interesting I find it.
+  <div class="ex">
+    <span class="hanzi">到红绿灯那儿，就直走两分钟。<span class="tts-btn" onclick="ttsSpeak(this,'到红绿灯那儿，就直走两分钟。')" title="Play">&#x1F50A;</span></span><br>
+    <span class="t4">Dào</span> <span class="t2">hóng</span><span class="t4">lǜ</span><span class="t1">dēng</span> <span class="t4">nàr</span><span class="t0">,</span> <span class="t4">jiù</span> <span class="t2">zhí</span> <span class="t3">zǒu</span> <span class="t3">liǎng</span> <span class="t1">fēn</span><span class="t1">zhōng</span><span class="t0">.</span><br>
+    Once you reach the traffic light, just keep going straight for two minutes. (that&#x2019;s all)
   </div>
-<div class="ex">
-<span class="hanzi">天气越来越冷了。<span class="tts-btn" onclick="ttsSpeak(this,'天气越来越冷了。')" title="Play">🔊</span></span><br/>
-<span class="t1">Tiān</span><span class="t4">qì</span> <span class="t4">yuè</span><span class="t2">lái</span><span class="t4">yuè</span> <span class="t3">lěng</span> <span class="t0">le</span><span class="t0">.</span><br/>
-    The weather is getting colder and colder.
+  <div class="ex">
+    <span class="hanzi">先左转，再右转，就到了。<span class="tts-btn" onclick="ttsSpeak(this,'先左转，再右转，就到了。')" title="Play">&#x1F50A;</span></span><br>
+    <span class="t1">Xiān</span> <span class="t3">zuǒ</span> <span class="t3">zhuǎn</span><span class="t0">,</span> <span class="t4">zài</span> <span class="t4">yòu</span> <span class="t3">zhuǎn</span><span class="t0">,</span> <span class="t4">jiù</span> <span class="t4">dào</span> <span class="t0">le</span><span class="t0">.</span><br>
+    First turn left, then turn right, and you&#x2019;ll be there.
   </div>
 </div>
 
 <div class="grammar-block">
-  <h3>3. 很会 / 不太会 + Verb — expressing skill or lack of skill at an action</h3>
-  <p>Says that someone is skilled at (or not very good at) a learned action. Structure: <strong>Subject + 很会 + Verb</strong> (skilled) or <strong>Subject + 不太会 + Verb</strong> (not very good at). 会 (huì) alone means "to know how to." 很 upgrades it to "really good at." Don't confuse with 能 (néng, physically able) — 很会 is about acquired skill, not raw capability.</p>
+  <h3>2. 先&#x2026;&#x2026;再&#x2026;&#x2026; &#x2014; First&#x2026; then&#x2026; (sequencing steps)</h3>
+  <p>The standard frame for giving directions or explaining a step-by-step procedure.
+     Structure: <strong>先 + Verb1，再 + Verb2</strong>.</p>
+  <p>先 (xiān) marks the first action and 再 (zài) marks the following one, giving a clear &#x201C;first this, then that&#x201D; ordering. The default pattern in navigation. Contrast 然后: more narrative. Contrast 就: adds immediacy, not sequence.</p>
   <div class="ex">
-    <span class="hanzi">她很会做饭。<span class="tts-btn" onclick="ttsSpeak(this,'她很会做饭。')" title="Play">🔊</span></span><br>
-    <span class="t1">Tā</span> <span class="t3">hěn</span> <span class="t4">huì</span> <span class="t4">zuò</span> <span class="t4">fàn</span><br>
-    She is very good at cooking.
+    <span class="hanzi">先左转，再右转。<span class="tts-btn" onclick="ttsSpeak(this,'先左转，再右转。')" title="Play">&#x1F50A;</span></span><br>
+    <span class="t1">Xiān</span> <span class="t3">zuǒ</span> <span class="t3">zhuǎn</span><span class="t0">,</span> <span class="t4">zài</span> <span class="t4">yòu</span> <span class="t3">zhuǎn</span><span class="t0">.</span><br>
+    First turn left, then turn right.
   </div>
   <div class="ex">
-    <span class="hanzi">我不太会唱歌。<span class="tts-btn" onclick="ttsSpeak(this,'我不太会唱歌。')" title="Play">🔊</span></span><br>
-    <span class="t3">Wǒ</span> <span class="t2">bú</span> <span class="t4">tài</span> <span class="t4">huì</span> <span class="t4">chàng</span> <span class="t1">gē</span><br>
-    I'm not very good at singing.
-  </div>
-</div>
-<div class="grammar-block">
-  <h3>4. Stronger 比 comparison — A + 比 + B + adjective + 多了</h3>
-  <p>Emphasizes that the gap between A and B is large — "much more X than." Structure: <strong>A + 比 + B + adjective + 多了</strong>. Append 多了 after the adjective to intensify the comparison. The 了 is required as part of the fixed 多了 chunk.</p>
-  <div class="ex">
-    <span class="hanzi">这个比那个贵多了。<span class="tts-btn" onclick="ttsSpeak(this,'这个比那个贵多了。')" title="Play">🔊</span></span><br>
-    <span class="t4">Zhè</span><span class="t0">ge</span> <span class="t3">bǐ</span> <span class="t4">nà</span><span class="t0">ge</span> <span class="t4">guì</span> <span class="t1">duō</span> <span class="t0">le</span><br>
-    This is much more expensive than that.
+    <span class="hanzi">先一直走，再到红绿灯那儿右转。<span class="tts-btn" onclick="ttsSpeak(this,'先一直走，再到红绿灯那儿右转。')" title="Play">&#x1F50A;</span></span><br>
+    <span class="t1">Xiān</span> <span class="t4">yì</span><span class="t2">zhí</span> <span class="t3">zǒu</span><span class="t0">,</span> <span class="t4">zài</span> <span class="t4">dào</span> <span class="t2">hóng</span><span class="t4">lǜ</span><span class="t1">dēng</span> <span class="t4">nàr</span> <span class="t4">yòu</span> <span class="t3">zhuǎn</span><span class="t0">.</span><br>
+    First walk straight, then turn right at the traffic light.
   </div>
   <div class="ex">
-    <span class="hanzi">你的中文比以前好很多了。<span class="tts-btn" onclick="ttsSpeak(this,'你的中文比以前好很多了。')" title="Play">🔊</span></span><br>
-    <span class="t3">Nǐ</span> <span class="t0">de</span> <span class="t1">Zhōng</span><span class="t2">wén</span> <span class="t3">bǐ</span> <span class="t3">yǐ</span><span class="t2">qián</span> <span class="t3">hǎo</span> <span class="t3">hěn</span> <span class="t1">duō</span> <span class="t0">le</span><br>
-    Your Chinese is much better than before.
+    <span class="hanzi">先吃饭，再看电视。<span class="tts-btn" onclick="ttsSpeak(this,'先吃饭，再看电视。')" title="Play">&#x1F50A;</span></span><br>
+    <span class="t1">Xiān</span> <span class="t1">chī</span> <span class="t4">fàn</span><span class="t0">,</span> <span class="t4">zài</span> <span class="t4">kàn</span> <span class="t4">diàn</span><span class="t4">shì</span><span class="t0">.</span><br>
+    First eat, then watch TV.
   </div>
 </div>
-<div class="grammar-block">
-  <h3>5. 比 comparison with a quantity — A + 比 + B + adjective + measure phrase</h3>
-  <p>Specifies exactly how much greater the difference is. Structure: <strong>A + 比 + B + adjective + (quantity / measure phrase)</strong>. The adjective stays bare — no 了 at the end. Typical quantities: ages (三岁), money (二十块钱), heights, weights.</p>
-  <div class="ex">
-    <span class="hanzi">我比他大三岁。<span class="tts-btn" onclick="ttsSpeak(this,'我比他大三岁。')" title="Play">🔊</span></span><br>
-    <span class="t3">Wǒ</span> <span class="t3">bǐ</span> <span class="t1">tā</span> <span class="t4">dà</span> <span class="t1">sān</span> <span class="t4">suì</span><br>
-    I am three years older than him.
-  </div>
-  <div class="ex">
-    <span class="hanzi">这个比那个便宜二十块钱。<span class="tts-btn" onclick="ttsSpeak(this,'这个比那个便宜二十块钱。')" title="Play">🔊</span></span><br>
-    <span class="t4">Zhè</span><span class="t0">ge</span> <span class="t3">bǐ</span> <span class="t4">nà</span><span class="t0">ge</span> <span class="t2">pián</span><span class="t0">yi</span> <span class="t4">èr</span><span class="t2">shí</span> <span class="t4">kuài</span> <span class="t2">qián</span><br>
-    This is 20 yuan cheaper than that.
-  </div>
-</div>
-<div class="grammar-block">
-  <h3>6. 送 used alone — seeing someone off</h3>
-  <p>When 送 has no destination complement, it means to see someone off or escort them as they depart. Structure: <strong>Subject + (去/来) + 送 + person</strong>. The destination is understood from context. Often combines with 去 (qù) or 来 (lái) to show direction of the see-off. Contrast: 送 + 到/去 + place names an explicit destination.</p>
-  <div class="ex">
-    <span class="hanzi">我去送他。<span class="tts-btn" onclick="ttsSpeak(this,'我去送他。')" title="Play">🔊</span></span><br>
-    <span class="t3">Wǒ</span> <span class="t4">qù</span> <span class="t4">sòng</span> <span class="t1">tā</span><span class="t0">.</span><br>
-    I'll go see him off.
-  </div>
-  <div class="ex">
-    <span class="hanzi">她来送我。<span class="tts-btn" onclick="ttsSpeak(this,'她来送我。')" title="Play">🔊</span></span><br>
-    <span class="t1">Tā</span> <span class="t2">lái</span> <span class="t4">sòng</span> <span class="t3">wǒ</span><span class="t0">.</span><br>
-    She came to see me off.
-  </div>
-</div>
+
 </section>
+
 <!-- ══════════════════════════════════ FREQ PICKER MODAL -->
 <div id="fc-freq-picker" style="display: none;">
-<div class="fc-picker-box">
-<h3>🃏 Vocab Flashcards</h3>
-<p>Select HSK levels to study:</p>
-<div class="fc-freq-circles">
-<div class="fc-freq-toggle selected" data-color="#27ae60">
-<span class="fc-dot" style="background:#27ae60;"></span>HSK 1–2
+  <div class="fc-picker-box">
+    <h3>🃏 Vocab Flashcards</h3>
+    <p>Select HSK levels to study:</p>
+    <div class="fc-freq-circles">
+      <div class="fc-freq-toggle selected" data-color="#27ae60">
+        <span class="fc-dot" style="background:#27ae60;"></span>HSK 1–2
       </div>
-<div class="fc-freq-toggle selected" data-color="#2980b9">
-<span class="fc-dot" style="background:#2980b9;"></span>HSK 3–4
+      <div class="fc-freq-toggle selected" data-color="#2980b9">
+        <span class="fc-dot" style="background:#2980b9;"></span>HSK 3–4
       </div>
-<div class="fc-freq-toggle selected" data-color="#e67e22">
-<span class="fc-dot" style="background:#e67e22;"></span>HSK 5–6
+      <div class="fc-freq-toggle selected" data-color="#e67e22">
+        <span class="fc-dot" style="background:#e67e22;"></span>HSK 5–6
       </div>
-<div class="fc-freq-toggle selected" data-color="#c0392b">
-<span class="fc-dot" style="background:#c0392b;"></span>HSK 7–9
+      <div class="fc-freq-toggle selected" data-color="#c0392b">
+        <span class="fc-dot" style="background:#c0392b;"></span>HSK 7–9
       </div>
-<div class="fc-freq-toggle selected" data-color="#bdc3c7">
-<span class="fc-dot" style="background:#bdc3c7;"></span>Not on HSK
+      <div class="fc-freq-toggle selected" data-color="#bdc3c7">
+        <span class="fc-dot" style="background:#bdc3c7;"></span>Not on HSK
       </div>
+    </div>
+    <div class="fc-picker-actions">
+      <span id="fc-picker-count">0 words</span>
+      <button id="fc-picker-cancel">Cancel</button>
+      <button id="fc-picker-start">Start Flashcards</button>
+    </div>
+  </div>
 </div>
-<div class="fc-picker-actions">
-<span id="fc-picker-count">0 words</span>
-<button id="fc-picker-cancel">Cancel</button>
-<button id="fc-picker-start">Start Flashcards</button>
-</div>
-</div>
-</div>
+
 <script>
 (function() {
   const AZURE_KEY = '9FHvN91sOhURXdvTqpspl0D9YlrK0y8fxUmj1jR4aVpHPkN1whmHJQQJ99CDACYeBjFXJ3w3AAAYACOGP37b';
@@ -1582,8 +1286,8 @@
     }
 
     // Canonical filename — embedded at build time so Drive/iOS always gets the right name
-    // SKILL: replace Chinese-weekly-lesson-07-02-2026.html with the actual filename e.g. Chinese-weekly-lesson-06-06-2026.html
-    var LESSON_FILENAME = 'Chinese-weekly-lesson-07-02-2026.html';
+    // SKILL: replace Chinese-weekly-lesson-07-09-2026.html with the actual filename e.g. Chinese-weekly-lesson-06-06-2026.html
+    var LESSON_FILENAME = 'Chinese-weekly-lesson-07-09-2026.html';
     // Only use URL-derived name when served over HTTP (GitHub Pages etc.)
     // For local/Drive files always use canonical LESSON_FILENAME.
     var loc = window.location.href;
@@ -1600,57 +1304,69 @@
   });
 })();
 </script>
+
+
 <!-- ═════════════════════════════════════════════ FLASHCARD MODAL -->
 <div id="fc-modal">
-<div class="fc-box">
-<div class="fc-header">
-<div class="fc-mode-btns">
-<button class="fc-mode-btn active" id="fc-mode-h2e">Hanzi → English</button>
-<button class="fc-mode-btn" id="fc-mode-e2h">English → Hanzi</button>
-</div>
-<span class="fc-deck-label" id="fc-deck-label"></span>
-<span class="fc-progress" id="fc-progress"></span>
-<button class="fc-close" id="fc-close-btn" title="Close">✕</button>
-</div>
-<div class="fc-voice-bar" id="fc-voice-bar">
-<span style="font-weight:600;">Voice:</span>
-<label><input name="voice" type="radio" value="zh-CN-YunxiNeural"/> ♂ Male</label>
-<label><input name="voice" type="radio" value="zh-CN-XiaoxiaoNeural"/> ♀ Female</label>
-</div>
-<div class="fc-speed-bar" id="fc-speed-bar">
-<span style="font-weight:600;">Speed:</span>
-<input id="fc-speed-slider" max="1.00" min="0.50" step="0.05" type="range" value="0.70"/>
-<span class="fc-speed-val" id="fc-speed-val">0.70x</span>
-<label style="margin-left:auto; display:flex; align-items:center; gap:4px; cursor:pointer; font-weight:600;">
-<input checked="" id="fc-autoplay-toggle" type="checkbox"/> Auto-play
+  <div class="fc-box">
+
+    <div class="fc-header">
+      <div class="fc-mode-btns">
+        <button class="fc-mode-btn active" id="fc-mode-h2e">Hanzi → English</button>
+        <button class="fc-mode-btn" id="fc-mode-e2h">English → Hanzi</button>
+      </div>
+      <span class="fc-deck-label" id="fc-deck-label"></span>
+      <span class="fc-progress" id="fc-progress"></span>
+      <button class="fc-close" id="fc-close-btn" title="Close">✕</button>
+    </div>
+
+    <div class="fc-voice-bar" id="fc-voice-bar">
+      <span style="font-weight:600;">Voice:</span>
+      <label><input type="radio" name="voice" value="zh-CN-YunxiNeural"> ♂ Male</label>
+      <label><input type="radio" name="voice" value="zh-CN-XiaoxiaoNeural"> ♀ Female</label>
+    </div>
+
+    <div class="fc-speed-bar" id="fc-speed-bar">
+      <span style="font-weight:600;">Speed:</span>
+      <input type="range" id="fc-speed-slider" min="0.50" max="1.00" step="0.05" value="0.70">
+      <span class="fc-speed-val" id="fc-speed-val">0.70x</span>
+      <label style="margin-left:auto; display:flex; align-items:center; gap:4px; cursor:pointer; font-weight:600;">
+        <input type="checkbox" id="fc-autoplay-toggle" checked> Auto-play
       </label>
+    </div>
+
+    <div id="fc-study-area">
+
+      <div class="fc-card" id="fc-card">
+        <div class="fc-front-label" id="fc-front-label"></div>
+        <div id="fc-front-content"></div>
+        <span class="fc-tts-btn" id="fc-tts-btn" title="Play pronunciation">🔊</span>
+        <button class="fc-pinyin-toggle" id="fc-pinyin-toggle" style="display:none">Show Pinyin</button>
+        <div class="fc-reveal-hint" id="fc-reveal-hint" style="display:none"></div>
+      </div>
+
+      <div class="fc-answer-area" id="fc-answer-area">
+        <hr class="fc-divider">
+        <div class="fc-answer-content" id="fc-answer-content"></div>
+        <div class="fc-example" id="fc-example" style="display:none"></div>
+        <div class="fc-btns">
+          <button id="fc-wrong-btn">✗ Review Again</button>
+          <button id="fc-correct-btn">✓ Got It</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fc-complete" id="fc-complete">
+      <div class="fc-complete-icon">🎉</div>
+      <h3>Session complete!</h3>
+      <p id="fc-complete-msg"></p>
+      <button id="fc-restart-btn">Study Again</button>
+    </div>
+
+  </div>
 </div>
-<div id="fc-study-area">
-<div class="fc-card" id="fc-card">
-<div class="fc-front-label" id="fc-front-label"></div>
-<div id="fc-front-content"></div>
-<span class="fc-tts-btn" id="fc-tts-btn" title="Play pronunciation">🔊</span>
-<button class="fc-pinyin-toggle" id="fc-pinyin-toggle" style="display:none">Show Pinyin</button>
-<div class="fc-reveal-hint" id="fc-reveal-hint" style="display:none"></div>
-</div>
-<div class="fc-answer-area" id="fc-answer-area">
-<hr class="fc-divider"/>
-<div class="fc-answer-content" id="fc-answer-content"></div>
-<div class="fc-example" id="fc-example" style="display:none"></div>
-<div class="fc-btns">
-<button id="fc-wrong-btn">✗ Review Again</button>
-<button id="fc-correct-btn">✓ Got It</button>
-</div>
-</div>
-</div>
-<div class="fc-complete" id="fc-complete">
-<div class="fc-complete-icon">🎉</div>
-<h3>Session complete!</h3>
-<p id="fc-complete-msg"></p>
-<button id="fc-restart-btn">Study Again</button>
-</div>
-</div>
-</div>
+
 <script>
 // ── Flashcard Logic ──
 (function(){
@@ -2146,4 +1862,8 @@
   document.getElementById('flashcard-btn').addEventListener('click', openFreqPicker);
 
 </script>
-</body></html>
+
+
+
+</body>
+</html>
