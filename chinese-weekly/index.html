@@ -358,14 +358,113 @@
     margin-bottom: 4px;
   }
 </style>
-</head>
-<body>
+<style type="text/css">
+.vfm--fixed[data-v-2836fdb5] {
+  position: fixed;
+}
+.vfm--absolute[data-v-2836fdb5] {
+  position: absolute;
+}
+.vfm--inset[data-v-2836fdb5] {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.vfm--overlay[data-v-2836fdb5] {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.vfm--prevent-none[data-v-2836fdb5] {
+  pointer-events: none;
+}
+.vfm--prevent-auto[data-v-2836fdb5] {
+  pointer-events: auto;
+}
+.vfm--outline-none[data-v-2836fdb5]:focus {
+  outline: none;
+}
+.vfm-enter-active[data-v-2836fdb5],
+.vfm-leave-active[data-v-2836fdb5] {
+  transition: opacity 0.2s;
+}
+.vfm-enter-from[data-v-2836fdb5],
+.vfm-leave-to[data-v-2836fdb5] {
+  opacity: 0;
+}
+.vfm--touch-none[data-v-2836fdb5] {
+  touch-action: none;
+}
+.vfm--select-none[data-v-2836fdb5] {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.vfm--resize-tr[data-v-2836fdb5],
+.vfm--resize-br[data-v-2836fdb5],
+.vfm--resize-bl[data-v-2836fdb5],
+.vfm--resize-tl[data-v-2836fdb5] {
+  width: 12px;
+  height: 12px;
+  z-index: 10;
+}
+.vfm--resize-t[data-v-2836fdb5] {
+  top: -6px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  cursor: ns-resize;
+}
+.vfm--resize-tr[data-v-2836fdb5] {
+  top: -6px;
+  right: -6px;
+  cursor: nesw-resize;
+}
+.vfm--resize-r[data-v-2836fdb5] {
+  top: 0;
+  right: -6px;
+  width: 12px;
+  height: 100%;
+  cursor: ew-resize;
+}
+.vfm--resize-br[data-v-2836fdb5] {
+  bottom: -6px;
+  right: -6px;
+  cursor: nwse-resize;
+}
+.vfm--resize-b[data-v-2836fdb5] {
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  cursor: ns-resize;
+}
+.vfm--resize-bl[data-v-2836fdb5] {
+  bottom: -6px;
+  left: -6px;
+  cursor: nesw-resize;
+}
+.vfm--resize-l[data-v-2836fdb5] {
+  top: 0;
+  left: -6px;
+  width: 12px;
+  height: 100%;
+  cursor: ew-resize;
+}
+.vfm--resize-tl[data-v-2836fdb5] {
+  top: -6px;
+  left: -6px;
+  cursor: nwse-resize;
+}
+</style><style type="text/css">x-vue-echarts{display:block;width:100%;height:100%;min-width:0}
+</style><link href="chrome-extension://lkhiljgmbeecmljiogckofcalncmfnfo/assets/browser.css" rel="stylesheet"/><link crossorigin="anonymous" href="https://migaku-public-data.migaku.com" rel="preconnect"/><link as="font" crossorigin="anonymous" href="https://migaku-public-data.migaku.com/fonts/inter/InterVariable.woff2?v=4.0" rel="preload" type="font/woff"/><link as="font" crossorigin="anonymous" href="https://migaku-public-data.migaku.com/fonts/gt-maru/GT-Maru-Black.woff2" rel="preload" type="font/woff"/></head>
+<body><div data-mgk-app-open="false" data-mgk-interface-lang="en" data-mgk-lang-selected="" data-mgk-ready="false" id="MigakuShadowDom"></div>
 <nav>
 <a href="#vocabulary">Vocabulary</a>
 <a href="#phrases">Phrases</a>
 <a href="#grammar">Grammar</a>
 <div class="nav-tools">
-<span id="cross-count">Vocab: 18 / 55 · Grammar: 5 / 10</span>
+<span id="cross-count">Vocab: 3 / 37 · Grammar: 0 / 5</span>
 <button id="export-btn" title="Export non-crossed-off words to Anki">Export to Anki</button>
 <button id="download-btn" title="Download this file with crossed-off rows baked in">⬇ Download Marked File</button>
 <button id="flashcard-btn" title="Start vocab flashcard session">🃏 Vocab Flashcards</button>
@@ -449,18 +548,8 @@
 <span style="color:#555; font-style:italic;">Winter in Beijing is very cold.</span>
 </td>
 </tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2"></span></td>
-<td class="hanzi">分钟<span class="tts-btn" onclick="ttsSpeak(this,'分钟')" title="Play: 分钟">🔊</span></td>
-<td><span class="t1">fēn</span><span class="t1">zhōng</span></td>
-<td>minute</td>
-<td>
-<span class="hanzi">请等我五分钟。<span class="tts-btn" onclick="ttsSpeak(this,'请等我五分钟。')" title="Play: 请等我五分钟。">🔊</span></span><br/>
-<span class="t3">Qǐng</span> <span class="t3">děng</span> <span class="t3">wǒ</span> <span class="t3">wǔ</span> <span class="t1">fēn</span><span class="t1">zhōng</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">Please wait five minutes for me.</span>
-</td>
-</tr>
-<tr>
+
+<tr class="">
 <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 1"></span></td>
 <td class="hanzi">小时<span class="tts-btn" onclick="ttsSpeak(this,'小时')" title="Play: 小时">🔊</span></td>
 <td><span class="t3">xiǎo</span><span class="t2">shí</span></td>
@@ -495,7 +584,6 @@
 </td>
 </tr>
 <tr class="cat-row"><td colspan="5">🎁 Nouns — People &amp; Objects</td></tr>
-
 <tr>
 <td class="freq-col"><span class="freq-dot" data-color="#2980b9" style="background:#2980b9;" title="HSK 4"></span></td>
 <td class="hanzi">虫子<span class="tts-btn" onclick="ttsSpeak(this,'虫子')" title="Play: 虫子">🔊</span></td>
@@ -541,10 +629,7 @@
 <span style="color:#555; font-style:italic;">The food at that restaurant is delicious.</span>
 </td>
 </tr>
-
-
 <tr class="cat-row"><td colspan="5">✨ Adjectives</td></tr>
-
 <tr class="">
 <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2"></span></td>
 <td class="hanzi">舒服<span class="tts-btn" onclick="ttsSpeak(this,'舒服')" title="Play: 舒服">🔊</span></td>
@@ -590,9 +675,6 @@
 </td>
 </tr>
 <tr class="cat-row"><td colspan="5">💬 Adverbs &amp; Expressions</td></tr>
-
-
-
 <tr>
 <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2"></span></td>
 <td class="hanzi">差不多<span class="tts-btn" onclick="ttsSpeak(this,'差不多')" title="Play: 差不多">🔊</span></td>
@@ -615,10 +697,6 @@
 <span style="color:#555; font-style:italic;">I will never forget that day.</span>
 </td>
 </tr>
-
-
-
-
 <tr class="cat-row"><td colspan="5">🌧️ Nouns — Weather</td></tr>
 <tr>
 <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2 (via components)"></span></td>
@@ -716,13 +794,7 @@
 <span style="color:#555; font-style:italic;">He'll come in just half an hour.</span>
 </td>
 </tr>
-
-
-
-
 <tr class="cat-row"><td colspan="5">💬 Useful Sentences — 得, 怎么, 一样/差不多, 时候</td></tr>
-
-
 <tr>
 <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2 (via components)"></span></td>
 <td class="hanzi">天阴了<span class="tts-btn" onclick="ttsSpeak(this,'天阴了')" title="Play: 天阴了">🔊</span></td>
@@ -734,7 +806,6 @@
 <span style="color:#555; font-style:italic;">It's clouded over — it might rain.</span>
 </td>
 </tr>
-
 <tr>
 <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2 (via components)"></span></td>
 <td class="hanzi">走路五分钟就到<span class="tts-btn" onclick="ttsSpeak(this,'走路五分钟就到')" title="Play: 走路五分钟就到">🔊</span></td>
@@ -768,17 +839,6 @@
 <span style="color:#555; font-style:italic;">How do you get home after work?</span>
 </td>
 </tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2 (via components)"></span></td>
-<td class="hanzi">我开车回家<span class="tts-btn" onclick="ttsSpeak(this,'我开车回家')" title="Play: 我开车回家">🔊</span></td>
-<td><span class="t3">wǒ</span> <span class="t1">kāi</span><span class="t1">chē</span> <span class="t2">huí</span> <span class="t1">jiā</span></td>
-<td>I drive home</td>
-<td>
-<span class="hanzi">每天晚上我开车回家。<span class="tts-btn" onclick="ttsSpeak(this,'每天晚上我开车回家。')" title="Play: 每天晚上我开车回家。">🔊</span></span><br/>
-<span class="t3">Měi</span><span class="t1">tiān</span> <span class="t3">wǎn</span><span class="t0">shang</span> <span class="t3">wǒ</span> <span class="t1">kāi</span><span class="t1">chē</span> <span class="t2">huí</span> <span class="t1">jiā</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">I drive home every evening.</span>
-</td>
-</tr>
 
 <tr>
 <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2 (via components)"></span></td>
@@ -802,17 +862,7 @@
 <span style="color:#555; font-style:italic;">Summer in Shanghai is about the same as in Hong Kong.</span>
 </td>
 </tr>
-<tr>
-<td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2 (via components)"></span></td>
-<td class="hanzi">春天下一点儿雨<span class="tts-btn" onclick="ttsSpeak(this,'春天下一点儿雨')" title="Play: 春天下一点儿雨">🔊</span></td>
-<td><span class="t1">chūn</span><span class="t1">tiān</span> <span class="t4">xià</span> <span class="t4">yì</span><span class="t3">diǎn</span><span class="t0">r</span> <span class="t3">yǔ</span></td>
-<td>it rains a little in spring</td>
-<td>
-<span class="hanzi">这里春天下一点儿雨，不太多。<span class="tts-btn" onclick="ttsSpeak(this,'这里春天下一点儿雨，不太多。')" title="Play: 这里春天下一点儿雨，不太多。">🔊</span></span><br/>
-<span class="t4">Zhè</span><span class="t3">lǐ</span> <span class="t1">chūn</span><span class="t1">tiān</span> <span class="t4">xià</span> <span class="t4">yì</span><span class="t3">diǎn</span><span class="t0">r</span> <span class="t3">yǔ</span><span class="t0">,</span> <span class="t2">bú</span> <span class="t4">tài</span> <span class="t1">duō</span><span class="t0">.</span><br/>
-<span style="color:#555; font-style:italic;">It rains a little here in spring, not much.</span>
-</td>
-</tr>
+
 <tr>
 <td class="freq-col"><span class="freq-dot" data-color="#27ae60" style="background:#27ae60;" title="HSK 2 (via components)"></span></td>
 <td class="hanzi">春天下小雨<span class="tts-btn" onclick="ttsSpeak(this,'春天下小雨')" title="Play: 春天下小雨">🔊</span></td>
@@ -877,12 +927,9 @@
     My home is right next to the restaurant.
   </div>
 </div>
-
-
 <div class="grammar-block">
 <h3>4. Degree modifiers with adjectives (不 / 不太 / 很 / 非常)</h3>
 <p>Structure: 不 / 不太 / 很 / 非常 + Adjective. Function: Scales an adjective from full negation up to a strong positive. The four degrees run 不 (not) → 不太 (not very, a softened negative) → 很 (very, often just a neutral connector before adjectives) → 非常 (extremely). 不太 is the polite way to express a mild complaint. Watch the tone sandhi: 不 is bù before 舒服 (first tone) but bú before 太 (fourth tone). Note that a bare adjective without any modifier usually implies comparison, which is why 很 is added even when no real emphasis is intended. Structure: <strong>不 / 不太 / 很 / 非常 + Adjective</strong>.</p>
-
 <div class="ex">
 <span class="hanzi">这个房间非常舒服。<span class="tts-btn" onclick="ttsSpeak(this,'这个房间非常舒服。')" title="Play: 这个房间非常舒服。">🔊</span></span><br/>
 <span class="t4">Zhè</span><span class="t0">ge</span> <span class="t2">fáng</span><span class="t1">jiān</span> <span class="t1">fēi</span><span class="t2">cháng</span> <span class="t1">shū</span><span class="t0">fu</span><span class="t0">.</span><br/>
