@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greek Vocabulary — Weekly (October 2, 2026)</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Greek weekly 10-02-2026</title>
 <style>
   body { background: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; color: #222; font-size: 15px; }
   nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #ddd; padding: 10px 20px; z-index: 100; display: flex; gap: 24px; flex-wrap: wrap; }
@@ -186,127 +187,127 @@ section.nsec h2.nsec-title { cursor:pointer; user-select:none; -webkit-user-sele
 </head>
 <body>
 <nav>
-  <a href="#verbs">Verbs</a>
-  <a href="#nouns">Nouns</a>
-  <a href="#adjectives">Adjectives</a>
-  <a href="#adverbs">Adverbs &amp; Particles</a>
-  <a href="#phrases">Phrases &amp; Expressions</a>
-  <a href="#notes">Lesson Notes</a>
-  <span style="flex:1"></span>
-  <span id="cross-count">0 / 32 crossed off</span>
-  <button id="export-btn" title="Export non-crossed-off words to Anki">Export to Anki</button>
-  <button id="download-btn" title="Download this file with crossed-off rows baked in, ready to upload to Claude">⬇ Download Marked File</button>
-  <button id="flashcard-btn" title="Start flashcard session">🃏 Flashcards</button>
-  <button id="grammar-fc-btn" title="Flashcards of the grammar example sentences">🃏 Grammar Flashcards</button>
-  <button id="toggle-all-btn" title="Cross off all rows — then un-cross the sections you want to study">✗ Cross Off All</button>
+<a href="#verbs">Verbs</a>
+<a href="#nouns">Nouns</a>
+<a href="#adjectives">Adjectives</a>
+<a href="#adverbs">Adverbs &amp; Particles</a>
+<a href="#phrases">Phrases &amp; Expressions</a>
+<a href="#notes">Lesson Notes</a>
+<span style="flex:1"></span>
+<span id="cross-count">11 / 32 crossed off</span>
+<button id="export-btn" title="Export non-crossed-off words to Anki">Export to Anki</button>
+<button id="download-btn" title="Download this file with crossed-off rows baked in, ready to upload to Claude">⬇ Download Marked File</button>
+<button id="flashcard-btn" title="Start flashcard session">🃏 Flashcards</button>
+<button id="grammar-fc-btn" title="Flashcards of the grammar example sentences">🃏 Grammar Flashcards</button>
+<button id="toggle-all-btn" title="Cross off all rows — then un-cross the sections you want to study">✗ Cross Off All</button>
 </nav>
 <div id="speed-bar">
-  <div class="voice-toggle">
-    <label>Voice:</label>
-    <input type="radio" name="voice" id="voice-male" value="el-GR-NestorasNeural" checked="">
-    <label for="voice-male" style="font-weight:normal;color:#222">♂ Nestoras</label>
-    <input type="radio" name="voice" id="voice-female" value="el-GR-AthinaNeural">
-    <label for="voice-female" style="font-weight:normal;color:#222">♀ Athina</label>
-  </div>
-  <label for="speed-slider">Speed:</label>
-  <input type="range" id="speed-slider" min="0.50" max="1.00" step="0.05" value="0.80">
-  <span id="speed-val">0.80x</span>
+<div class="voice-toggle">
+<label>Voice:</label>
+<input checked="" id="voice-male" name="voice" type="radio" value="el-GR-NestorasNeural"/>
+<label for="voice-male" style="font-weight:normal;color:#222">♂ Nestoras</label>
+<input id="voice-female" name="voice" type="radio" value="el-GR-AthinaNeural"/>
+<label for="voice-female" style="font-weight:normal;color:#222">♀ Athina</label>
 </div>
-<div id="mini-player">
-  <button id="mp-rew" title="Rewind 5s">⏪</button>
-  <button id="mp-pp" title="Play/Pause">⏸</button>
-  <input type="range" id="mp-seek" min="0" max="100" value="0">
-  <span class="mp-time" id="mp-time">0:00 / 0:00</span>
-  <span class="mp-text" id="mp-text"></span>
+<label for="speed-slider">Speed:</label>
+<input id="speed-slider" max="1.00" min="0.50" step="0.05" type="range" value="0.80"/>
+<span id="speed-val">0.80x</span>
+</div>
+<div id="mini-player" style="display: flex;">
+<button id="mp-rew" title="Rewind 5s">⏪</button>
+<button id="mp-pp" title="Play/Pause">▶</button>
+<input id="mp-seek" max="100" min="0" type="range" value="0"/>
+<span class="mp-time" id="mp-time">0:05 / 0:05</span>
+<span class="mp-text" id="mp-text">παραδοσιακός, παραδοσιακή, παραδοσιακό</span>
 </div>
 <section id="verbs">
-<h2>Verbs</h2>
+<h2 style="cursor: pointer; user-select: none;">Verbs</h2>
 <div class="freq-legend"><b>Frequency:</b>
-  <span class="freq-legend-item"><span class="freq-dot" style="background:#27ae60;"></span>top 3k</span>
-  <span class="freq-legend-item"><span class="freq-dot" style="background:#2980b9;"></span>3k–8k</span>
-  <span class="freq-legend-item"><span class="freq-dot" style="background:#e67e22;"></span>8k–15k</span>
-  <span class="freq-legend-item"><span class="freq-dot" style="background:#c0392b;"></span>15k+</span>
-  <span class="freq-legend-item"><span class="freq-dot" style="background:#bdc3c7;"></span>not in corpus</span>
+<span class="freq-legend-item"><span class="freq-dot" style="background:#27ae60;"></span>top 3k</span>
+<span class="freq-legend-item"><span class="freq-dot" style="background:#2980b9;"></span>3k–8k</span>
+<span class="freq-legend-item"><span class="freq-dot" style="background:#e67e22;"></span>8k–15k</span>
+<span class="freq-legend-item"><span class="freq-dot" style="background:#c0392b;"></span>15k+</span>
+<span class="freq-legend-item"><span class="freq-dot" style="background:#bdc3c7;"></span>not in corpus</span>
 </div>
 <table>
 <thead><tr><th style="width:18px;min-width:18px;border-right:none;"></th><th style="width:200px">Greek</th><th style="width:200px">English</th><th>Example Sentence</th></tr></thead>
 <tbody>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">⚙️ Actions &amp; Processes</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>πονάω <button class="tts-btn" onclick="ttsSpeak(this,&quot;πονάω&quot;)">🔊</button></td><td>to hurt, ache</td><td><span class="el">Πονάει λίγο το δεξί πόδι μου.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πονάει λίγο το δεξί πόδι μου.&quot;)">🔊</button><br><span class="en">My right leg hurts a little.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>κλείνω <button class="tts-btn" onclick="ttsSpeak(this,&quot;κλείνω&quot;)">🔊</button></td><td>to shut, close, turn off</td><td><span class="el">Κλείνουν, εννοείς.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Κλείνουν, εννοείς.&quot;)">🔊</button><br><span class="en">They shut off, you mean.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ανάβω <button class="tts-btn" onclick="ttsSpeak(this,&quot;ανάβω&quot;)">🔊</button></td><td>to turn on (lights), light</td><td><span class="el">Ανάβω τα φώτα όταν μπαίνω στο σπίτι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ανάβω τα φώτα όταν μπαίνω στο σπίτι.&quot;)">🔊</button><br><span class="en">I turn on the lights when I come into the house.</span></td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>νοικιάζω <button class="tts-btn" onclick="ttsSpeak(this,&quot;νοικιάζω&quot;)">🔊</button></td><td>to rent (out)</td><td><span class="el">Έχω σπίτια άλλα που νοικιάζω.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχω σπίτια άλλα που νοικιάζω.&quot;)">🔊</button><br><span class="en">I have other houses that I rent out.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>πονάω <button class="tts-btn" onclick='ttsSpeak(this,"πονάω")'>🔊</button></td><td>to hurt, ache</td><td><span class="el">Πονάει λίγο το δεξί πόδι μου.</span><button class="tts-btn" onclick='ttsSpeak(this,"Πονάει λίγο το δεξί πόδι μου.")'>🔊</button><br/><span class="en">My right leg hurts a little.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>κλείνω <button class="tts-btn" onclick='ttsSpeak(this,"κλείνω")'>🔊</button></td><td>to shut, close, turn off</td><td><span class="el">Κλείνουν, εννοείς.</span><button class="tts-btn" onclick='ttsSpeak(this,"Κλείνουν, εννοείς.")'>🔊</button><br/><span class="en">They shut off, you mean.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ανάβω <button class="tts-btn" onclick='ttsSpeak(this,"ανάβω")'>🔊</button></td><td>to turn on (lights), light</td><td><span class="el">Ανάβω τα φώτα όταν μπαίνω στο σπίτι.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ανάβω τα φώτα όταν μπαίνω στο σπίτι.")'>🔊</button><br/><span class="en">I turn on the lights when I come into the house.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="15k+"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>νοικιάζω <button class="tts-btn" onclick='ttsSpeak(this,"νοικιάζω")'>🔊</button></td><td>to rent (out)</td><td><span class="el">Έχω σπίτια άλλα που νοικιάζω.</span><button class="tts-btn" onclick='ttsSpeak(this,"Έχω σπίτια άλλα που νοικιάζω.")'>🔊</button><br/><span class="en">I have other houses that I rent out.</span></td></tr>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🧠 Thought &amp; Decision</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>εμπιστεύομαι <button class="tts-btn" onclick="ttsSpeak(this,&quot;εμπιστεύομαι&quot;)">🔊</button></td><td>to trust</td><td><span class="el">Εμπιστεύομαι τον γιατρό μου.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Εμπιστεύομαι τον γιατρό μου.&quot;)">🔊</button><br><span class="en">I trust my doctor.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>εμπιστεύομαι <button class="tts-btn" onclick='ttsSpeak(this,"εμπιστεύομαι")'>🔊</button></td><td>to trust</td><td><span class="el">Εμπιστεύομαι τον γιατρό μου.</span><button class="tts-btn" onclick='ttsSpeak(this,"Εμπιστεύομαι τον γιατρό μου.")'>🔊</button><br/><span class="en">I trust my doctor.</span></td></tr>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">❤️ Emotion &amp; Feeling</td></tr>
-<tr><td class="freq-col" title="top 3k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#27ae60;"></span></td><td>ελπίζω <button class="tts-btn" onclick="ttsSpeak(this,&quot;ελπίζω&quot;)">🔊</button></td><td>to hope</td><td><span class="el">Ελπίζω ότι το Bitcoin θα πάει στο 100.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ελπίζω ότι το Bitcoin θα πάει στο 100.&quot;)">🔊</button><br><span class="en">I hope the Bitcoin will go to 100 (thousand).</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="top 3k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#27ae60;"></span></td><td>ελπίζω <button class="tts-btn" onclick='ttsSpeak(this,"ελπίζω")'>🔊</button></td><td>to hope</td><td><span class="el">Ελπίζω ότι το Bitcoin θα πάει στο 100.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ελπίζω ότι το Bitcoin θα πάει στο 100.")'>🔊</button><br/><span class="en">I hope the Bitcoin will go to 100 (thousand).</span></td></tr>
 </tbody>
 </table>
 </section>
 <section id="nouns">
-<h2>Nouns</h2>
+<h2 style="cursor: pointer; user-select: none;">Nouns</h2>
 <table>
 <thead><tr><th style="width:18px;min-width:18px;border-right:none;"></th><th style="width:200px">Greek</th><th style="width:200px">English</th><th>Example Sentence</th></tr></thead>
 <tbody>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🏥 Medical / Body</td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>η αρθρίτιδα <button class="tts-btn" onclick="ttsSpeak(this,&quot;η αρθρίτιδα&quot;)">🔊</button></td><td>arthritis</td><td><span class="el">Α, είναι αρθρίτιδα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Α, είναι αρθρίτιδα.&quot;)">🔊</button><br><span class="en">Ah, it's arthritis.</span></td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>η άρθρωση <button class="tts-btn" onclick="ttsSpeak(this,&quot;η άρθρωση&quot;)">🔊</button></td><td>joint (body)</td><td><span class="el">Αρθρίτιδα στην άρθρωση.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αρθρίτιδα στην άρθρωση.&quot;)">🔊</button><br><span class="en">Arthritis in the joint.</span></td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>ο ορθοπεδικός <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο ορθοπεδικός&quot;)">🔊</button></td><td>orthopedist</td><td><span class="el">Ο ορθοπεδικός είναι χειρουργός.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ο ορθοπεδικός είναι χειρουργός.&quot;)">🔊</button><br><span class="en">The orthopedist is a surgeon.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η εγχείρηση <button class="tts-btn" onclick="ttsSpeak(this,&quot;η εγχείρηση&quot;)">🔊</button></td><td>surgery, operation</td><td><span class="el">Έκανα εγχείρηση πριν από 4 χρόνια.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έκανα εγχείρηση πριν από 4 χρόνια.&quot;)">🔊</button><br><span class="en">I had surgery 4 years ago.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το πόδι <button class="tts-btn" onclick="ttsSpeak(this,&quot;το πόδι&quot;)">🔊</button></td><td>leg, foot</td><td><span class="el">Το δεξί πόδι μου πονάει.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το δεξί πόδι μου πονάει.&quot;)">🔊</button><br><span class="en">My right leg hurts.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>ο γιατρός <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο γιατρός&quot;)">🔊</button></td><td>doctor</td><td><span class="el">Έχω ραντεβού με γιατρό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχω ραντεβού με γιατρό.&quot;)">🔊</button><br><span class="en">I have a doctor's appointment.</span></td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>η παιδίατρος <button class="tts-btn" onclick="ttsSpeak(this,&quot;η παιδίατρος&quot;)">🔊</button></td><td>pediatrician</td><td><span class="el">Θα πάμε στην παιδίατρο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θα πάμε στην παιδίατρο.&quot;)">🔊</button><br><span class="en">We will go to the pediatrician.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="15k+"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>η αρθρίτιδα <button class="tts-btn" onclick='ttsSpeak(this,"η αρθρίτιδα")'>🔊</button></td><td>arthritis</td><td><span class="el">Α, είναι αρθρίτιδα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Α, είναι αρθρίτιδα.")'>🔊</button><br/><span class="en">Ah, it's arthritis.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="15k+"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>η άρθρωση <button class="tts-btn" onclick='ttsSpeak(this,"η άρθρωση")'>🔊</button></td><td>joint (body)</td><td><span class="el">Αρθρίτιδα στην άρθρωση.</span><button class="tts-btn" onclick='ttsSpeak(this,"Αρθρίτιδα στην άρθρωση.")'>🔊</button><br/><span class="en">Arthritis in the joint.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="15k+"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>ο ορθοπεδικός <button class="tts-btn" onclick='ttsSpeak(this,"ο ορθοπεδικός")'>🔊</button></td><td>orthopedist</td><td><span class="el">Ο ορθοπεδικός είναι χειρουργός.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ο ορθοπεδικός είναι χειρουργός.")'>🔊</button><br/><span class="en">The orthopedist is a surgeon.</span></td></tr>
+
+
+
+
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🏠 Home &amp; Objects</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η στέγη <button class="tts-btn" onclick="ttsSpeak(this,&quot;η στέγη&quot;)">🔊</button></td><td>roof</td><td><span class="el">Η στέγη έχει πρόβλημα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Η στέγη έχει πρόβλημα.&quot;)">🔊</button><br><span class="en">The roof has a problem.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η αυλή <button class="tts-btn" onclick="ttsSpeak(this,&quot;η αυλή&quot;)">🔊</button></td><td>yard, courtyard</td><td><span class="el">Η αυλή μας έχει λίγο προβλήματα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Η αυλή μας έχει λίγο προβλήματα.&quot;)">🔊</button><br><span class="en">Our yard has a few problems.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το κλιματιστικό <button class="tts-btn" onclick="ttsSpeak(this,&quot;το κλιματιστικό&quot;)">🔊</button></td><td>air conditioner</td><td><span class="el">Τα κλιματιστικά να ανάβουν με το Claude.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Τα κλιματιστικά να ανάβουν με το Claude.&quot;)">🔊</button><br><span class="en">The air conditioners turn on with Claude.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η συσκευή <button class="tts-btn" onclick="ttsSpeak(this,&quot;η συσκευή&quot;)">🔊</button></td><td>device, appliance</td><td><span class="el">Θέλω να ελέγχω όλες τις συσκευές.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να ελέγχω όλες τις συσκευές.&quot;)">🔊</button><br><span class="en">I want to control all the devices.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η στέγη <button class="tts-btn" onclick='ttsSpeak(this,"η στέγη")'>🔊</button></td><td>roof</td><td><span class="el">Η στέγη έχει πρόβλημα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Η στέγη έχει πρόβλημα.")'>🔊</button><br/><span class="en">The roof has a problem.</span></td></tr>
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το κλιματιστικό <button class="tts-btn" onclick='ttsSpeak(this,"το κλιματιστικό")'>🔊</button></td><td>air conditioner</td><td><span class="el">Τα κλιματιστικά να ανάβουν με το Claude.</span><button class="tts-btn" onclick='ttsSpeak(this,"Τα κλιματιστικά να ανάβουν με το Claude.")'>🔊</button><br/><span class="en">The air conditioners turn on with Claude.</span></td></tr>
+
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">💭 Abstract Concepts</td></tr>
-<tr><td class="freq-col" title="top 3k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#27ae60;"></span></td><td>το πρόβλημα <button class="tts-btn" onclick="ttsSpeak(this,&quot;το πρόβλημα&quot;)">🔊</button></td><td>problem</td><td><span class="el">Το πρόβλημα είναι η διαθεσιμότητα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το πρόβλημα είναι η διαθεσιμότητα.&quot;)">🔊</button><br><span class="en">The problem is the availability.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>η διαθεσιμότητα <button class="tts-btn" onclick="ttsSpeak(this,&quot;η διαθεσιμότητα&quot;)">🔊</button></td><td>availability</td><td><span class="el">Για να έχει πολλή διαθεσιμότητα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Για να έχει πολλή διαθεσιμότητα.&quot;)">🔊</button><br><span class="en">So that there is a lot of availability.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>η ορθογραφία <button class="tts-btn" onclick="ttsSpeak(this,&quot;η ορθογραφία&quot;)">🔊</button></td><td>spelling</td><td><span class="el">Η άσκηση 15 είναι ορθογραφία.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Η άσκηση 15 είναι ορθογραφία.&quot;)">🔊</button><br><span class="en">Exercise 15 is spelling.</span></td></tr>
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>η διαθεσιμότητα <button class="tts-btn" onclick='ttsSpeak(this,"η διαθεσιμότητα")'>🔊</button></td><td>availability</td><td><span class="el">Για να έχει πολλή διαθεσιμότητα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Για να έχει πολλή διαθεσιμότητα.")'>🔊</button><br/><span class="en">So that there is a lot of availability.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>η ορθογραφία <button class="tts-btn" onclick='ttsSpeak(this,"η ορθογραφία")'>🔊</button></td><td>spelling</td><td><span class="el">Η άσκηση 15 είναι ορθογραφία.</span><button class="tts-btn" onclick='ttsSpeak(this,"Η άσκηση 15 είναι ορθογραφία.")'>🔊</button><br/><span class="en">Exercise 15 is spelling.</span></td></tr>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">👤 People &amp; Social</td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>ο επενδυτής <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο επενδυτής&quot;)">🔊</button></td><td>investor</td><td><span class="el">Οι επενδυτές εμπιστεύονται τις αγορές.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Οι επενδυτές εμπιστεύονται τις αγορές.&quot;)">🔊</button><br><span class="en">Investors trust the markets.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="15k+"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>ο επενδυτής <button class="tts-btn" onclick='ttsSpeak(this,"ο επενδυτής")'>🔊</button></td><td>investor</td><td><span class="el">Οι επενδυτές εμπιστεύονται τις αγορές.</span><button class="tts-btn" onclick='ttsSpeak(this,"Οι επενδυτές εμπιστεύονται τις αγορές.")'>🔊</button><br/><span class="en">Investors trust the markets.</span></td></tr>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🏢 Places &amp; Spaces</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η τοποθεσία <button class="tts-btn" onclick="ttsSpeak(this,&quot;η τοποθεσία&quot;)">🔊</button></td><td>location</td><td><span class="el">Ποια είναι η τοποθεσία σου;</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ποια είναι η τοποθεσία σου;&quot;)">🔊</button><br><span class="en">What is your location?</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η τοποθεσία <button class="tts-btn" onclick='ttsSpeak(this,"η τοποθεσία")'>🔊</button></td><td>location</td><td><span class="el">Ποια είναι η τοποθεσία σου;</span><button class="tts-btn" onclick='ttsSpeak(this,"Ποια είναι η τοποθεσία σου;")'>🔊</button><br/><span class="en">What is your location?</span></td></tr>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🕐 Time &amp; Periods</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το ραντεβού <button class="tts-btn" onclick="ttsSpeak(this,&quot;το ραντεβού&quot;)">🔊</button></td><td>appointment</td><td><span class="el">Έχω ραντεβού με γιατρό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχω ραντεβού με γιατρό.&quot;)">🔊</button><br><span class="en">I have a doctor's appointment.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η συνάντηση <button class="tts-btn" onclick="ttsSpeak(this,&quot;η συνάντηση&quot;)">🔊</button></td><td>meeting (Zoom, work)</td><td><span class="el">Έχουμε συνάντηση στις δέκα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχουμε συνάντηση στις δέκα.&quot;)">🔊</button><br><span class="en">We have a meeting at ten.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το φθινόπωρο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το φθινόπωρο&quot;)">🔊</button></td><td>autumn</td><td><span class="el">Το φθινόπωρο είναι Σεπτέμβρης και Οκτώβρης.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το φθινόπωρο είναι Σεπτέμβρης και Οκτώβρης.&quot;)">🔊</button><br><span class="en">Autumn is September and October.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το ραντεβού <button class="tts-btn" onclick='ttsSpeak(this,"το ραντεβού")'>🔊</button></td><td>appointment</td><td><span class="el">Έχω ραντεβού με γιατρό.</span><button class="tts-btn" onclick='ttsSpeak(this,"Έχω ραντεβού με γιατρό.")'>🔊</button><br/><span class="en">I have a doctor's appointment.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η συνάντηση <button class="tts-btn" onclick='ttsSpeak(this,"η συνάντηση")'>🔊</button></td><td>meeting (Zoom, work)</td><td><span class="el">Έχουμε συνάντηση στις δέκα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Έχουμε συνάντηση στις δέκα.")'>🔊</button><br/><span class="en">We have a meeting at ten.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το φθινόπωρο <button class="tts-btn" onclick='ttsSpeak(this,"το φθινόπωρο")'>🔊</button></td><td>autumn</td><td><span class="el">Το φθινόπωρο είναι Σεπτέμβρης και Οκτώβρης.</span><button class="tts-btn" onclick='ttsSpeak(this,"Το φθινόπωρο είναι Σεπτέμβρης και Οκτώβρης.")'>🔊</button><br/><span class="en">Autumn is September and October.</span></td></tr>
 </tbody>
 </table>
 </section>
 <section id="adjectives">
-<h2>Adjectives</h2>
+<h2 style="cursor: pointer; user-select: none;">Adjectives</h2>
 <table>
 <thead><tr><th style="width:18px;min-width:18px;border-right:none;"></th><th style="width:200px">Greek</th><th style="width:200px">English</th><th>Example Sentence</th></tr></thead>
 <tbody>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🎭 Character &amp; State</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>έξυπνος, έξυπνη, έξυπνο <button class="tts-btn" onclick="ttsSpeak(this,&quot;έξυπνος, έξυπνη, έξυπνο&quot;)">🔊</button></td><td>smart, clever</td><td><span class="el">Θέλω ένα έξυπνο σπίτι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω ένα έξυπνο σπίτι.&quot;)">🔊</button><br><span class="en">I want a smart home.</span></td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>παραδοσιακός, παραδοσιακή, παραδοσιακό <button class="tts-btn" onclick="ttsSpeak(this,&quot;παραδοσιακός, παραδοσιακή, παραδοσιακό&quot;)">🔊</button></td><td>traditional</td><td><span class="el">Τα παραδοσιακά σπίτια είναι ωραία.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Τα παραδοσιακά σπίτια είναι ωραία.&quot;)">🔊</button><br><span class="en">Traditional houses are nice.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>διάσημος, διάσημη, διάσημο <button class="tts-btn" onclick="ttsSpeak(this,&quot;διάσημος, διάσημη, διάσημο&quot;)">🔊</button></td><td>famous</td><td><span class="el">Διάσημο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Διάσημο.&quot;)">🔊</button><br><span class="en">Famous.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ενδιαφέρων, ενδιαφέρουσα, ενδιαφέρον <button class="tts-btn" onclick="ttsSpeak(this,&quot;ενδιαφέρων, ενδιαφέρουσα, ενδιαφέρον&quot;)">🔊</button></td><td>interesting</td><td><span class="el">Έχουμε ενδιαφέροντα πράγματα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχουμε ενδιαφέροντα πράγματα.&quot;)">🔊</button><br><span class="en">We have interesting things.</span></td></tr>
+
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>διάσημος, διάσημη, διάσημο <button class="tts-btn" onclick='ttsSpeak(this,"διάσημος, διάσημη, διάσημο")'>🔊</button></td><td>famous</td><td><span class="el">Διάσημο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Διάσημο.")'>🔊</button><br/><span class="en">Famous.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ενδιαφέρων, ενδιαφέρουσα, ενδιαφέρον <button class="tts-btn" onclick='ttsSpeak(this,"ενδιαφέρων, ενδιαφέρουσα, ενδιαφέρον")'>🔊</button></td><td>interesting</td><td><span class="el">Έχουμε ενδιαφέροντα πράγματα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Έχουμε ενδιαφέροντα πράγματα.")'>🔊</button><br/><span class="en">We have interesting things.</span></td></tr>
 </tbody>
 </table>
 </section>
 <section id="adverbs">
-<h2>Adverbs &amp; Particles</h2>
+<h2 style="cursor: pointer; user-select: none; text-decoration: line-through; color: rgb(187, 187, 187);">Adverbs &amp; Particles</h2>
 <table>
 <thead><tr><th style="width:18px;min-width:18px;border-right:none;"></th><th style="width:200px">Greek</th><th style="width:200px">English</th><th>Example Sentence</th></tr></thead>
 <tbody>
-<tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">📌 Manner &amp; Degree</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>μακάρι <button class="tts-btn" onclick="ttsSpeak(this,&quot;μακάρι&quot;)">🔊</button></td><td>I wish / hopefully</td><td><span class="el">Ναι, μακάρι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ναι, μακάρι.&quot;)">🔊</button><br><span class="en">Yes, I wish (hopefully).</span></td></tr>
+
+
 </tbody>
 </table>
 </section>
 <section id="phrases">
-<h2>Phrases &amp; Expressions</h2>
+<h2 style="cursor: pointer; user-select: none;">Phrases &amp; Expressions</h2>
 <table>
 <thead><tr><th style="width:18px;min-width:18px;border-right:none;"></th><th style="width:200px">Greek</th><th style="width:200px">English</th><th>Example Sentence</th></tr></thead>
 <tbody>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">💡 General Expressions</td></tr>
-<tr><td class="freq-col" title="not in corpus" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#bdc3c7;"></span></td><td>πάω πάνω / πάω κάτω <button class="tts-btn" onclick="ttsSpeak(this,&quot;πάω πάνω / πάω κάτω&quot;)">🔊</button></td><td>to go up / to go down (prices)</td><td><span class="el">Όταν πάει κάτω, θα αγοράσω πάλι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Όταν πάει κάτω, θα αγοράσω πάλι.&quot;)">🔊</button><br><span class="en">When it goes down, I will buy again.</span></td></tr>
-<tr><td class="freq-col" title="not in corpus" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#bdc3c7;"></span></td><td>το μάθημα επενδυτικής <button class="tts-btn" onclick="ttsSpeak(this,&quot;το μάθημα επενδυτικής&quot;)">🔊</button></td><td>investment class</td><td><span class="el">Ένα μάθημα επενδυτικής.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ένα μάθημα επενδυτικής.&quot;)">🔊</button><br><span class="en">An investment class.</span></td></tr>
+
+<tr class=""><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="not in corpus"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#bdc3c7;"></span></td><td>το μάθημα επενδυτικής <button class="tts-btn" onclick='ttsSpeak(this,"το μάθημα επενδυτικής")'>🔊</button></td><td>investment class</td><td><span class="el">Ένα μάθημα επενδυτικής.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ένα μάθημα επενδυτικής.")'>🔊</button><br/><span class="en">An investment class.</span></td></tr>
 </tbody>
 </table>
 </section>
@@ -315,8 +316,8 @@ section.nsec h2.nsec-title { cursor:pointer; user-select:none; -webkit-user-sele
 <p class="notes-sub">47-minute lesson. Teaching focus: simple vs continuous subjunctive, plus vocabulary corrections.</p>
 <div class="notes-toc"><a href="#n2">2. Grammar — Priority</a><a href="#n3">3. Grammar that was not taught</a><a href="#n4">4. Word order worth reviewing</a><a href="#n5">5. Must learn / worth recognizing / lower priority</a><a href="#n6">6. Best sentences to memorize</a><a href="#n7">7. Short review plan</a><a href="#n8">8. My recurring mistakes in this lesson</a></div>
 <section class="nsec" id="n2">
-<h2 class="nsec-title">2. Grammar — Priority</h2>
-<div class="nsub"><h4>A. Simple vs continuous subjunctive (απλή / συνεχής υποτακτική)<span class="ntag taught">Taught</span></h4>
+<h2 class="nsec-title n-allcrossed" style="cursor: pointer; user-select: none;">2. Grammar — Priority</h2>
+<div class="nsub"><h4 class="n-allcrossed">A. Simple vs continuous subjunctive (απλή / συνεχής υποτακτική)<span class="ntag taught">Taught</span></h4>
 <p class="ntext">Pattern
 να + verb in the aorist stem = simple subjunctive (απλή υποτακτική)
 να + verb in the present stem = continuous subjunctive (συνεχής υποτακτική)
@@ -330,24 +331,24 @@ Greek verbs have two stems that express a point of view, not a time. The aorist 
 Practical test: can you picture it as one finished event? Use the aorist. Is it a habit, a general truth, or an ongoing activity? Use the present stem.
 English translation hides the difference. "I want to buy / I like to play" both use "to + verb". Greek must choose.</p>
 <p class="ntext">Examples from the lesson</p>
-<div class="nsent nitem" data-gr="Θέλω να αγοράσω ένα καινούριο βιβλίο." data-en="I want to buy a new book."><span class="el">Θέλω να αγοράσω ένα καινούριο βιβλίο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να αγοράσω ένα καινούριο βιβλίο.&quot;)">🔊</button><br><span class="en">I want to buy a new book.</span></div>
-<div class="nsent nitem" data-gr="Μου αρέσει να παίζω κιθάρα." data-en="I like to play (be playing) the guitar."><span class="el">Μου αρέσει να παίζω κιθάρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μου αρέσει να παίζω κιθάρα.&quot;)">🔊</button><br><span class="en">I like to play (be playing) the guitar.</span></div>
+<div class="nsent nitem ncrossed" data-en="I want to buy a new book." data-gr="Θέλω να αγοράσω ένα καινούριο βιβλίο."><span class="el">Θέλω να αγοράσω ένα καινούριο βιβλίο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να αγοράσω ένα καινούριο βιβλίο.")'>🔊</button><br/><span class="en">I want to buy a new book.</span></div>
+<div class="nsent nitem ncrossed" data-en="I like to play (be playing) the guitar." data-gr="Μου αρέσει να παίζω κιθάρα."><span class="el">Μου αρέσει να παίζω κιθάρα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Μου αρέσει να παίζω κιθάρα.")'>🔊</button><br/><span class="en">I like to play (be playing) the guitar.</span></div>
 <p class="ntext">Examples from the teacher's own conversation (taught by use, not explained)</p>
-<div class="nsent nitem" data-gr="Δεν πρέπει να τρώει το βράδυ." data-en="He/she shouldn&#x27;t eat at night."><span class="el">Δεν πρέπει να τρώει το βράδυ.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν πρέπει να τρώει το βράδυ.&quot;)">🔊</button><br><span class="en">He/she shouldn't eat at night.</span></div>
-<div class="nsent nitem" data-gr="Θα πρέπει να πάω Αυστρία." data-en="I will have to go to Austria."><span class="el">Θα πρέπει να πάω Αυστρία.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θα πρέπει να πάω Αυστρία.&quot;)">🔊</button><br><span class="en">I will have to go to Austria.</span></div>
-<div class="nsent nitem" data-gr="Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι." data-en="I want you to be able to get in, click, and find something."><span class="el">Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι.&quot;)">🔊</button><br><span class="en">I want you to be able to get in, click, and find something.</span></div>
-<div class="nsent nitem" data-gr="Θέλω να δω αν μπορώ να κάνω τώρα." data-en="I want to see whether I can do it now."><span class="el">Θέλω να δω αν μπορώ να κάνω τώρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να δω αν μπορώ να κάνω τώρα.&quot;)">🔊</button><br><span class="en">I want to see whether I can do it now.</span></div>
+<div class="nsent nitem ncrossed" data-en="He/she shouldn't eat at night." data-gr="Δεν πρέπει να τρώει το βράδυ."><span class="el">Δεν πρέπει να τρώει το βράδυ.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν πρέπει να τρώει το βράδυ.")'>🔊</button><br/><span class="en">He/she shouldn't eat at night.</span></div>
+<div class="nsent nitem ncrossed" data-en="I will have to go to Austria." data-gr="Θα πρέπει να πάω Αυστρία."><span class="el">Θα πρέπει να πάω Αυστρία.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θα πρέπει να πάω Αυστρία.")'>🔊</button><br/><span class="en">I will have to go to Austria.</span></div>
+<div class="nsent nitem ncrossed" data-en="I want you to be able to get in, click, and find something." data-gr="Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι."><span class="el">Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι.")'>🔊</button><br/><span class="en">I want you to be able to get in, click, and find something.</span></div>
+<div class="nsent nitem ncrossed" data-en="I want to see whether I can do it now." data-gr="Θέλω να δω αν μπορώ να κάνω τώρα."><span class="el">Θέλω να δω αν μπορώ να κάνω τώρα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να δω αν μπορώ να κάνω τώρα.")'>🔊</button><br/><span class="en">I want to see whether I can do it now.</span></div>
 <p class="ntext">...ό,τι πρέπει για να πάω στο Grand. — ...whatever is needed in order for me to get to Graz. (one journey: aorist πάω; the transcript heard "Grand", so the exact wording is approximate)</p>
-<div class="nsent nitem" data-gr="Το πρόβλημα είναι λίγο να έχουμε πολλούς καθηγητές, για να έχει πολλή διαθεσιμότητα." data-en="The problem is, a bit, having many teachers so that there is a lot of availability."><span class="el">Το πρόβλημα είναι λίγο να έχουμε πολλούς καθηγητές, για να έχει πολλή διαθεσιμότητα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το πρόβλημα είναι λίγο να έχουμε πολλούς καθηγητές, για να έχει πολλή διαθεσιμότητα.&quot;)">🔊</button><br><span class="en">The problem is, a bit, having many teachers so that there is a lot of availability.</span></div>
+<div class="nsent nitem ncrossed" data-en="The problem is, a bit, having many teachers so that there is a lot of availability." data-gr="Το πρόβλημα είναι λίγο να έχουμε πολλούς καθηγητές, για να έχει πολλή διαθεσιμότητα."><span class="el">Το πρόβλημα είναι λίγο να έχουμε πολλούς καθηγητές, για να έχει πολλή διαθεσιμότητα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Το πρόβλημα είναι λίγο να έχουμε πολλούς καθηγητές, για να έχει πολλή διαθεσιμότητα.")'>🔊</button><br/><span class="en">The problem is, a bit, having many teachers so that there is a lot of availability.</span></div>
 <p class="ntext">Additional simple examples (added, not from the lesson)</p>
-<div class="nsent nitem" data-gr="Θέλω να φάω τώρα." data-en="I want to eat now."><span class="el">Θέλω να φάω τώρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να φάω τώρα.&quot;)">🔊</button><br><span class="en">I want to eat now.</span></div>
-<div class="nsent nitem" data-gr="Θέλω να τρώω πιο υγιεινά." data-en="I want to eat more healthily (as a habit)."><span class="el">Θέλω να τρώω πιο υγιεινά.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να τρώω πιο υγιεινά.&quot;)">🔊</button><br><span class="en">I want to eat more healthily (as a habit).</span></div>
-<div class="nsent nitem" data-gr="Πρέπει να πάρω φάρμακο σήμερα." data-en="I have to take medicine today."><span class="el">Πρέπει να πάρω φάρμακο σήμερα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πρέπει να πάρω φάρμακο σήμερα.&quot;)">🔊</button><br><span class="en">I have to take medicine today.</span></div>
-<div class="nsent nitem" data-gr="Πρέπει να παίρνω φάρμακο κάθε μέρα." data-en="I have to take medicine every day."><span class="el">Πρέπει να παίρνω φάρμακο κάθε μέρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πρέπει να παίρνω φάρμακο κάθε μέρα.&quot;)">🔊</button><br><span class="en">I have to take medicine every day.</span></div>
+<div class="nsent nitem ncrossed" data-en="I want to eat now." data-gr="Θέλω να φάω τώρα."><span class="el">Θέλω να φάω τώρα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να φάω τώρα.")'>🔊</button><br/><span class="en">I want to eat now.</span></div>
+<div class="nsent nitem ncrossed" data-en="I want to eat more healthily (as a habit)." data-gr="Θέλω να τρώω πιο υγιεινά."><span class="el">Θέλω να τρώω πιο υγιεινά.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να τρώω πιο υγιεινά.")'>🔊</button><br/><span class="en">I want to eat more healthily (as a habit).</span></div>
+<div class="nsent nitem ncrossed" data-en="I have to take medicine today." data-gr="Πρέπει να πάρω φάρμακο σήμερα."><span class="el">Πρέπει να πάρω φάρμακο σήμερα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Πρέπει να πάρω φάρμακο σήμερα.")'>🔊</button><br/><span class="en">I have to take medicine today.</span></div>
+<div class="nsent nitem ncrossed" data-en="I have to take medicine every day." data-gr="Πρέπει να παίρνω φάρμακο κάθε μέρα."><span class="el">Πρέπει να παίρνω φάρμακο κάθε μέρα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Πρέπει να παίρνω φάρμακο κάθε μέρα.")'>🔊</button><br/><span class="en">I have to take medicine every day.</span></div>
 <p class="ntext">Compare / contrast
 Same main verb, different stem, different picture:</p>
-<div class="nsent nitem" data-gr="Θέλω να παίξω κιθάρα." data-en="I want to play guitar (now, a session)."><span class="el">Θέλω να παίξω κιθάρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να παίξω κιθάρα.&quot;)">🔊</button><br><span class="en">I want to play guitar (now, a session).</span></div>
-<div class="nsent nitem" data-gr="Θέλω να παίζω κιθάρα." data-en="I want to play guitar (as an ongoing thing)."><span class="el">Θέλω να παίζω κιθάρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να παίζω κιθάρα.&quot;)">🔊</button><br><span class="en">I want to play guitar (as an ongoing thing).</span></div>
+<div class="nsent nitem ncrossed" data-en="I want to play guitar (now, a session)." data-gr="Θέλω να παίξω κιθάρα."><span class="el">Θέλω να παίξω κιθάρα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να παίξω κιθάρα.")'>🔊</button><br/><span class="en">I want to play guitar (now, a session).</span></div>
+<div class="nsent nitem ncrossed" data-en="I want to play guitar (as an ongoing thing)." data-gr="Θέλω να παίζω κιθάρα."><span class="el">Θέλω να παίζω κιθάρα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να παίζω κιθάρα.")'>🔊</button><br/><span class="en">I want to play guitar (as an ongoing thing).</span></div>
 <p class="ntext">Verbs of liking and habit (μου αρέσει να..., συνήθως, πάντα, κάθε μέρα) lean toward the continuous. Verbs of wanting a specific result (θέλω να αγοράσω, θα πρέπει να πάω) lean toward the simple.
 Time words help: τώρα / αύριο / μία φορά → simple; πάντα / κάθε μέρα / συχνά → continuous.
 Some verbs look the same in both stems. κάνω gives να κάνω in both forms, so you cannot hear the difference (your question "μπορώ να κάνω τίποτα;"). Other verbs do change (αγοράζω → αγοράσω; τρώω → φάω; παίζω → παίξω; βλέπω → δω; βρίσκω → βρω; πηγαίνω → πάω).</p>
@@ -355,7 +356,7 @@ Some verbs look the same in both stems. κάνω gives να κάνω in both for
 No mistake was made in your two example sentences; the teacher accepted both. The usual trap for English speakers is using the present stem everywhere because the English "to + verb" looks the same. A good check: after θέλω, πρέπει, μπορώ, ask "one event or ongoing?".
 Homework from the lesson: exercises 12, 13, 14 and 15 from the book, and extra exercises with Claude on simple vs continuous subjunctive.</p>
 </div>
-<div class="nsub"><h4>B. Πριν από + time expression — "4 years ago"<span class="ntag ">Self-correction</span></h4>
+<div class="nsub"><h4 class="n-allcrossed">B. Πριν από + time expression — "4 years ago"<span class="ntag">Self-correction</span></h4>
 <p class="ntext">Pattern
 πριν από + number + noun in the accusative = "X ago / X before"</p>
 <p class="ntext">Meaning
@@ -364,16 +365,16 @@ Homework from the lesson: exercises 12, 13, 14 and 15 from the book, and extra e
 Πριν από, like many prepositions, takes the accusative. The plural χρόνια (years) is the same in the nominative and accusative, so it is the form you want after πριν από.</p>
 <p class="ntext">Examples from the lesson
 Πριν από 4... 4 χρόνων. Χρόνια. — 4 years ago (you started with the genitive χρόνων, then corrected yourself; the teacher echoed "Χρόνια.")</p>
-<div class="nsent nitem" data-gr="Έκανα εγχείρηση." data-en="I had surgery."><span class="el">Έκανα εγχείρηση.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έκανα εγχείρηση.&quot;)">🔊</button><br><span class="en">I had surgery.</span></div>
+<div class="nsent nitem ncrossed" data-en="I had surgery." data-gr="Έκανα εγχείρηση."><span class="el">Έκανα εγχείρηση.</span><button class="tts-btn" onclick='ttsSpeak(this,"Έκανα εγχείρηση.")'>🔊</button><br/><span class="en">I had surgery.</span></div>
 <p class="ntext">Additional simple examples</p>
-<div class="nsent nitem" data-gr="Πριν από δύο μέρες πήγα στον γιατρό." data-en="Two days ago I went to the doctor."><span class="el">Πριν από δύο μέρες πήγα στον γιατρό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πριν από δύο μέρες πήγα στον γιατρό.&quot;)">🔊</button><br><span class="en">Two days ago I went to the doctor.</span></div>
-<div class="nsent nitem" data-gr="Πριν από έναν μήνα ήμουν στην Κύπρο." data-en="A month ago I was in Cyprus."><span class="el">Πριν από έναν μήνα ήμουν στην Κύπρο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πριν από έναν μήνα ήμουν στην Κύπρο.&quot;)">🔊</button><br><span class="en">A month ago I was in Cyprus.</span></div>
+<div class="nsent nitem ncrossed" data-en="Two days ago I went to the doctor." data-gr="Πριν από δύο μέρες πήγα στον γιατρό."><span class="el">Πριν από δύο μέρες πήγα στον γιατρό.</span><button class="tts-btn" onclick='ttsSpeak(this,"Πριν από δύο μέρες πήγα στον γιατρό.")'>🔊</button><br/><span class="en">Two days ago I went to the doctor.</span></div>
+<div class="nsent nitem ncrossed" data-en="A month ago I was in Cyprus." data-gr="Πριν από έναν μήνα ήμουν στην Κύπρο."><span class="el">Πριν από έναν μήνα ήμουν στην Κύπρο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Πριν από έναν μήνα ήμουν στην Κύπρο.")'>🔊</button><br/><span class="en">A month ago I was in Cyprus.</span></div>
 <p class="ntext">Compare / contrast
 Later in the lesson you said "μετά από 2 χρόνων". The teacher did not correct it. After μετά από, the accusative is also standard, so "μετά από 2 χρόνια" is the form to aim for. (This is an observation, not a teacher correction.)</p>
 <p class="ntext">Common learner mistake
 Putting the noun in the genitive (χρόνων) after the preposition. You caught it yourself in the lesson.</p>
 </div>
-<div class="nsub"><h4>C. Choosing the right word (corrections and contrasts the teacher made)<span class="ntag fix">Fix</span></h4>
+<div class="nsub"><h4 class="n-allcrossed">C. Choosing the right word (corrections and contrasts the teacher made)<span class="ntag fix">Fix</span></h4>
 <p class="ntext">Pattern
 Word-choice corrections rather than a grammar rule.</p>
 <p class="ntext">Meaning and logic
@@ -383,40 +384,40 @@ Word-choice corrections rather than a grammar rule.</p>
 επέμβαση vs επενδυτική: επέμβαση is an intervention or surgical procedure; the investment class is "μάθημα επενδυτικής".
 τελειώνουν vs κλείνουν: τελειώνω = finish/end; κλείνω = shut (off). Internet being "cut" for a device is κλείνει.</p>
 <p class="ntext">Examples from the lesson</p>
-<div class="nsent nitem" data-gr="Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;" data-en="I have a doctor&#x27;s appointment. Can we do Friday?"><span class="el">Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;&quot;)">🔊</button><br><span class="en">I have a doctor's appointment. Can we do Friday?</span></div>
+<div class="nsent nitem ncrossed" data-en="I have a doctor's appointment. Can we do Friday?" data-gr="Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;"><span class="el">Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;</span><button class="tts-btn" onclick='ttsSpeak(this,"Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;")'>🔊</button><br/><span class="en">I have a doctor's appointment. Can we do Friday?</span></div>
 <p class="ntext">Συνάντηση. — Meeting. (answer to your question about a Zoom meeting)</p>
-<div class="nsent nitem" data-gr="Κλείνουν, εννοείς." data-en="They shut off, you mean."><span class="el">Κλείνουν, εννοείς.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Κλείνουν, εννοείς.&quot;)">🔊</button><br><span class="en">They shut off, you mean.</span></div>
+<div class="nsent nitem ncrossed" data-en="They shut off, you mean." data-gr="Κλείνουν, εννοείς."><span class="el">Κλείνουν, εννοείς.</span><button class="tts-btn" onclick='ttsSpeak(this,"Κλείνουν, εννοείς.")'>🔊</button><br/><span class="en">They shut off, you mean.</span></div>
 <p class="ntext">Additional simple examples</p>
-<div class="nsent nitem" data-gr="Έχουμε συνάντηση στις δέκα." data-en="We have a meeting at ten."><span class="el">Έχουμε συνάντηση στις δέκα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχουμε συνάντηση στις δέκα.&quot;)">🔊</button><br><span class="en">We have a meeting at ten.</span></div>
-<div class="nsent nitem" data-gr="Έχω ραντεβού στον οδοντίατρο." data-en="I have an appointment at the dentist."><span class="el">Έχω ραντεβού στον οδοντίατρο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχω ραντεβού στον οδοντίατρο.&quot;)">🔊</button><br><span class="en">I have an appointment at the dentist.</span></div>
+<div class="nsent nitem ncrossed" data-en="We have a meeting at ten." data-gr="Έχουμε συνάντηση στις δέκα."><span class="el">Έχουμε συνάντηση στις δέκα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Έχουμε συνάντηση στις δέκα.")'>🔊</button><br/><span class="en">We have a meeting at ten.</span></div>
+<div class="nsent nitem ncrossed" data-en="I have an appointment at the dentist." data-gr="Έχω ραντεβού στον οδοντίατρο."><span class="el">Έχω ραντεβού στον οδοντίατρο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Έχω ραντεβού στον οδοντίατρο.")'>🔊</button><br/><span class="en">I have an appointment at the dentist.</span></div>
 <p class="ntext">Common learner mistake
 Using the English-looking word. ραντεβού/συνάντηση and πρόβλημα/ζήτημα are the main traps from this lesson.</p>
 </div>
 </section>
 <section class="nsec" id="n3">
-<h2 class="nsec-title">3. Grammar that was not taught</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">3. Grammar that was not taught</h2>
 <ul class="nlist"><li>Tenses and aspect: only the aspect contrast inside the subjunctive was taught (2A). Future θα + aorist (θα πουλήσω, θα αγοράσω, θα δούμε) was used in conversation but not explained. Past tense was used by you (έκανα, πήγα) with no explanation.</li><li>Passive voice: did not appear.</li><li>The subjunctive and να constructions: taught (simple vs continuous only). Used in conversation without explanation: πρέπει να, θέλω να, για να, ώστε να, να μην ήταν (a wish/doubt with the past tense, "Ίσως δεν ήταν καλή εγχείρηση. Να μην ήταν καλή."), and να + είμαι.</li><li>Participles: did not appear.</li><li>Cases: not taught. Only your self-correction (χρόνων → χρόνια) and the teacher's "Επενδυτών" (genitive plural).</li><li>Pronouns: not taught. The teacher's line "Η Μαρία... την Μαρία αρέσουν όμως τα παλιά σπίτια" has a false start, so the intended structure is ambiguous (the natural form is "στη Μαρία αρέσουν τα παλιά σπίτια"); it is not treated as a taught point.</li><li>Conditionals: used in conversation only (αν δεν τρώει το βράδυ, αν έχεις κανένα κλασικό κλιματιστικό, πρέπει να αλλάξεις); not taught.</li><li>Connectors: used in conversation only (επειδή, γιατί, ώστε, αλλά, όμως, αν); not taught.</li></ul>
 </section>
 <section class="nsec" id="n4">
-<h2 class="nsec-title">4. Word order worth reviewing</h2>
-<div class="nsub"><h4>1. θέλω να + aorist verb + object</h4>
-<div class="nsent nitem" data-gr="Θέλω να αγοράσω ένα καινούριο βιβλίο." data-en="I want to buy a new book."><span class="el">Θέλω να αγοράσω ένα καινούριο βιβλίο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να αγοράσω ένα καινούριο βιβλίο.&quot;)">🔊</button><br><span class="en">I want to buy a new book.</span></div>
+<h2 class="nsec-title n-allcrossed" style="cursor: pointer; user-select: none;">4. Word order worth reviewing</h2>
+<div class="nsub"><h4 class="n-allcrossed">1. θέλω να + aorist verb + object</h4>
+<div class="nsent nitem ncrossed" data-en="I want to buy a new book." data-gr="Θέλω να αγοράσω ένα καινούριο βιβλίο."><span class="el">Θέλω να αγοράσω ένα καινούριο βιβλίο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να αγοράσω ένα καινούριο βιβλίο.")'>🔊</button><br/><span class="en">I want to buy a new book.</span></div>
 </div>
-<div class="nsub"><h4>2. μου αρέσει να + present-stem verb + object</h4>
-<div class="nsent nitem" data-gr="Μου αρέσει να παίζω κιθάρα." data-en="I like to play the guitar."><span class="el">Μου αρέσει να παίζω κιθάρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μου αρέσει να παίζω κιθάρα.&quot;)">🔊</button><br><span class="en">I like to play the guitar.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">2. μου αρέσει να + present-stem verb + object</h4>
+<div class="nsent nitem ncrossed" data-en="I like to play the guitar." data-gr="Μου αρέσει να παίζω κιθάρα."><span class="el">Μου αρέσει να παίζω κιθάρα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Μου αρέσει να παίζω κιθάρα.")'>🔊</button><br/><span class="en">I like to play the guitar.</span></div>
 </div>
-<div class="nsub"><h4>3. Verb first, no subject pronoun</h4>
-<div class="nsent nitem" data-gr="Πονάει λίγο." data-en="It hurts a little."><span class="el">Πονάει λίγο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πονάει λίγο.&quot;)">🔊</button><br><span class="en">It hurts a little.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">3. Verb first, no subject pronoun</h4>
+<div class="nsent nitem ncrossed" data-en="It hurts a little." data-gr="Πονάει λίγο."><span class="el">Πονάει λίγο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Πονάει λίγο.")'>🔊</button><br/><span class="en">It hurts a little.</span></div>
 </div>
-<div class="nsub"><h4>4. πρέπει + να + verb</h4>
-<div class="nsent nitem" data-gr="Θα πρέπει να πάω Αυστρία." data-en="I will have to go to Austria."><span class="el">Θα πρέπει να πάω Αυστρία.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θα πρέπει να πάω Αυστρία.&quot;)">🔊</button><br><span class="en">I will have to go to Austria.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">4. πρέπει + να + verb</h4>
+<div class="nsent nitem ncrossed" data-en="I will have to go to Austria." data-gr="Θα πρέπει να πάω Αυστρία."><span class="el">Θα πρέπει να πάω Αυστρία.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θα πρέπει να πάω Αυστρία.")'>🔊</button><br/><span class="en">I will have to go to Austria.</span></div>
 </div>
-<div class="nsub"><h4>5. Place or time word at the end</h4>
-<div class="nsent nitem" data-gr="Μπορούμε Παρασκευή;" data-en="Can we do Friday?"><span class="el">Μπορούμε Παρασκευή;</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μπορούμε Παρασκευή;&quot;)">🔊</button><br><span class="en">Can we do Friday?</span></div>
+<div class="nsub"><h4 class="n-allcrossed">5. Place or time word at the end</h4>
+<div class="nsent nitem ncrossed" data-en="Can we do Friday?" data-gr="Μπορούμε Παρασκευή;"><span class="el">Μπορούμε Παρασκευή;</span><button class="tts-btn" onclick='ttsSpeak(this,"Μπορούμε Παρασκευή;")'>🔊</button><br/><span class="en">Can we do Friday?</span></div>
 </div>
 </section>
 <section class="nsec" id="n5">
-<h2 class="nsec-title">5. Must learn / worth recognizing / lower priority</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">5. Must learn / worth recognizing / lower priority</h2>
 <div class="nsub"><h4>Must learn (study and practice actively)<span class="ntag fix">Fix</span></h4>
 <ul class="nlist"><li>The simple vs continuous subjunctive: aorist stem = one finished event; present stem = ongoing or habitual.</li><li>Your two model sentences: Θέλω να αγοράσω ένα καινούριο βιβλίο. / Μου αρέσει να παίζω κιθάρα.</li><li>ραντεβού vs συνάντηση; πρόβλημα (not ζήτημα); κλείνω for switching off.</li><li>πριν από + accusative (πριν από 4 χρόνια).</li><li>The aorist subjunctive stems for common verbs: αγοράσω, πάω, δω, βρω, φάω, παίξω.</li></ul>
 </div>
@@ -428,61 +429,61 @@ Using the English-looking word. ραντεβού/συνάντηση and πρόβ
 </div>
 </section>
 <section class="nsec" id="n6">
-<h2 class="nsec-title">6. Best sentences to memorize</h2>
-<div class="nsub"><h4>1. Simple subjunctive model</h4>
-<div class="nsent nitem" data-gr="Θέλω να αγοράσω ένα καινούριο βιβλίο." data-en="I want to buy a new book."><span class="el">Θέλω να αγοράσω ένα καινούριο βιβλίο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να αγοράσω ένα καινούριο βιβλίο.&quot;)">🔊</button><br><span class="en">I want to buy a new book.</span></div>
+<h2 class="nsec-title n-allcrossed" style="cursor: pointer; user-select: none;">6. Best sentences to memorize</h2>
+<div class="nsub"><h4 class="n-allcrossed">1. Simple subjunctive model</h4>
+<div class="nsent nitem ncrossed" data-en="I want to buy a new book." data-gr="Θέλω να αγοράσω ένα καινούριο βιβλίο."><span class="el">Θέλω να αγοράσω ένα καινούριο βιβλίο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να αγοράσω ένα καινούριο βιβλίο.")'>🔊</button><br/><span class="en">I want to buy a new book.</span></div>
 <p class="ntext">Why useful: The model sentence for the simple subjunctive (single completed action).</p>
 </div>
-<div class="nsub"><h4>2. Continuous subjunctive model</h4>
-<div class="nsent nitem" data-gr="Μου αρέσει να παίζω κιθάρα." data-en="I like to play the guitar."><span class="el">Μου αρέσει να παίζω κιθάρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μου αρέσει να παίζω κιθάρα.&quot;)">🔊</button><br><span class="en">I like to play the guitar.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">2. Continuous subjunctive model</h4>
+<div class="nsent nitem ncrossed" data-en="I like to play the guitar." data-gr="Μου αρέσει να παίζω κιθάρα."><span class="el">Μου αρέσει να παίζω κιθάρα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Μου αρέσει να παίζω κιθάρα.")'>🔊</button><br/><span class="en">I like to play the guitar.</span></div>
 <p class="ntext">Why useful: The model sentence for the continuous subjunctive (ongoing habit); also the "μου αρέσει να" pattern.</p>
 </div>
-<div class="nsub"><h4>3. πρέπει να — habit</h4>
-<div class="nsent nitem" data-gr="Δεν πρέπει να τρώει το βράδυ." data-en="He/she shouldn&#x27;t eat at night."><span class="el">Δεν πρέπει να τρώει το βράδυ.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν πρέπει να τρώει το βράδυ.&quot;)">🔊</button><br><span class="en">He/she shouldn't eat at night.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">3. πρέπει να — habit</h4>
+<div class="nsent nitem ncrossed" data-en="He/she shouldn't eat at night." data-gr="Δεν πρέπει να τρώει το βράδυ."><span class="el">Δεν πρέπει να τρώει το βράδυ.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν πρέπει να τρώει το βράδυ.")'>🔊</button><br/><span class="en">He/she shouldn't eat at night.</span></div>
 <p class="ntext">Why useful: A teacher-spoken example of πρέπει να with the present stem for a habit.</p>
 </div>
-<div class="nsub"><h4>4. πρέπει να — one trip</h4>
-<div class="nsent nitem" data-gr="Θα πρέπει να πάω Αυστρία." data-en="I will have to go to Austria."><span class="el">Θα πρέπει να πάω Αυστρία.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θα πρέπει να πάω Αυστρία.&quot;)">🔊</button><br><span class="en">I will have to go to Austria.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">4. πρέπει να — one trip</h4>
+<div class="nsent nitem ncrossed" data-en="I will have to go to Austria." data-gr="Θα πρέπει να πάω Αυστρία."><span class="el">Θα πρέπει να πάω Αυστρία.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θα πρέπει να πάω Αυστρία.")'>🔊</button><br/><span class="en">I will have to go to Austria.</span></div>
 <p class="ntext">Why useful: The same πρέπει να with the aorist stem for one trip. Compare with sentence 3.</p>
 </div>
-<div class="nsub"><h4>5. Chain of aorists</h4>
-<div class="nsent nitem" data-gr="Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι." data-en="I want you to be able to get in, click, and find something."><span class="el">Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι.&quot;)">🔊</button><br><span class="en">I want you to be able to get in, click, and find something.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">5. Chain of aorists</h4>
+<div class="nsent nitem ncrossed" data-en="I want you to be able to get in, click, and find something." data-gr="Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι."><span class="el">Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να μπορείς να μπεις, να κάνεις κλικ, να βρεις κάτι.")'>🔊</button><br/><span class="en">I want you to be able to get in, click, and find something.</span></div>
 <p class="ntext">Why useful: A chain of aorist subjunctives, natural spoken Greek from the teacher.</p>
 </div>
-<div class="nsub"><h4>6. "Ago" with πριν από</h4>
-<div class="nsent nitem" data-gr="Έκανα εγχείρηση πριν από 4 χρόνια." data-en="I had surgery 4 years ago."><span class="el">Έκανα εγχείρηση πριν από 4 χρόνια.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έκανα εγχείρηση πριν από 4 χρόνια.&quot;)">🔊</button><br><span class="en">I had surgery 4 years ago.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">6. "Ago" with πριν από</h4>
+<div class="nsent nitem ncrossed" data-en="I had surgery 4 years ago." data-gr="Έκανα εγχείρηση πριν από 4 χρόνια."><span class="el">Έκανα εγχείρηση πριν από 4 χρόνια.</span><button class="tts-btn" onclick='ttsSpeak(this,"Έκανα εγχείρηση πριν από 4 χρόνια.")'>🔊</button><br/><span class="en">I had surgery 4 years ago.</span></div>
 <p class="ntext">Why useful: πριν από + accusative for "ago", plus the surgery vocabulary.</p>
 </div>
-<div class="nsub"><h4>7. Pain, no pronoun</h4>
-<div class="nsent nitem" data-gr="Πονάει λίγο." data-en="It hurts a little."><span class="el">Πονάει λίγο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πονάει λίγο.&quot;)">🔊</button><br><span class="en">It hurts a little.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">7. Pain, no pronoun</h4>
+<div class="nsent nitem ncrossed" data-en="It hurts a little." data-gr="Πονάει λίγο."><span class="el">Πονάει λίγο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Πονάει λίγο.")'>🔊</button><br/><span class="en">It hurts a little.</span></div>
 <p class="ntext">Why useful: The one-word, no-pronoun way to talk about pain.</p>
 </div>
-<div class="nsub"><h4>8. Appointment</h4>
-<div class="nsent nitem" data-gr="Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;" data-en="I have a doctor&#x27;s appointment. Can we do Friday?"><span class="el">Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;&quot;)">🔊</button><br><span class="en">I have a doctor's appointment. Can we do Friday?</span></div>
+<div class="nsub"><h4 class="n-allcrossed">8. Appointment</h4>
+<div class="nsent nitem ncrossed" data-en="I have a doctor's appointment. Can we do Friday?" data-gr="Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;"><span class="el">Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;</span><button class="tts-btn" onclick='ttsSpeak(this,"Έχω ραντεβού με γιατρό. Μπορούμε Παρασκευή;")'>🔊</button><br/><span class="en">I have a doctor's appointment. Can we do Friday?</span></div>
 <p class="ntext">Why useful: ραντεβού in a real scheduling sentence; useful for moving lessons.</p>
 </div>
 <div class="nsub"><h4>9. Meeting</h4>
 <p class="ntext">Why useful: Συνάντηση. — Meeting. The word for a Zoom or work meeting, distinct from ραντεβού (appointment).</p>
 </div>
-<div class="nsub"><h4>10. Roof / πρόβλημα</h4>
-<div class="nsent nitem" data-gr="Η στέγη έχει πρόβλημα." data-en="The roof has a problem."><span class="el">Η στέγη έχει πρόβλημα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Η στέγη έχει πρόβλημα.&quot;)">🔊</button><br><span class="en">The roof has a problem.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">10. Roof / πρόβλημα</h4>
+<div class="nsent nitem ncrossed" data-en="The roof has a problem." data-gr="Η στέγη έχει πρόβλημα."><span class="el">Η στέγη έχει πρόβλημα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Η στέγη έχει πρόβλημα.")'>🔊</button><br/><span class="en">The roof has a problem.</span></div>
 <p class="ntext">Why useful: Everyday home vocabulary and the corrected word πρόβλημα (not ζήτημα).</p>
 </div>
-<div class="nsub"><h4>11. Turning things off</h4>
-<div class="nsent nitem" data-gr="Κλείνουν, εννοείς." data-en="They shut off, you mean."><span class="el">Κλείνουν, εννοείς.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Κλείνουν, εννοείς.&quot;)">🔊</button><br><span class="en">They shut off, you mean.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">11. Turning things off</h4>
+<div class="nsent nitem ncrossed" data-en="They shut off, you mean." data-gr="Κλείνουν, εννοείς."><span class="el">Κλείνουν, εννοείς.</span><button class="tts-btn" onclick='ttsSpeak(this,"Κλείνουν, εννοείς.")'>🔊</button><br/><span class="en">They shut off, you mean.</span></div>
 <p class="ntext">Why useful: The correction for turning internet or lights off; also the polite "you mean" (εννοείς).</p>
 </div>
-<div class="nsub"><h4>12. όταν + θα + aorist</h4>
-<div class="nsent nitem" data-gr="Μόνο όταν πάει 200.000 θα πουλήσω." data-en="I will sell only when it reaches 200,000."><span class="el">Μόνο όταν πάει 200.000 θα πουλήσω.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μόνο όταν πάει 200.000 θα πουλήσω.&quot;)">🔊</button><br><span class="en">I will sell only when it reaches 200,000.</span></div>
+<div class="nsub"><h4 class="n-allcrossed">12. όταν + θα + aorist</h4>
+<div class="nsent nitem ncrossed" data-en="I will sell only when it reaches 200,000." data-gr="Μόνο όταν πάει 200.000 θα πουλήσω."><span class="el">Μόνο όταν πάει 200.000 θα πουλήσω.</span><button class="tts-btn" onclick='ttsSpeak(this,"Μόνο όταν πάει 200.000 θα πουλήσω.")'>🔊</button><br/><span class="en">I will sell only when it reaches 200,000.</span></div>
 <p class="ntext">Why useful: όταν with an aorist-style clause plus θα + aorist for a one-time future action (teacher's sentence).</p>
 </div>
-<div class="nsub"><h4>13. ελπίζω ότι + future</h4>
-<div class="nsent nitem" data-gr="Ελπίζω ότι το Bitcoin θα πάει στο 100." data-en="I hope the Bitcoin will go to 100 (thousand)."><span class="el">Ελπίζω ότι το Bitcoin θα πάει στο 100.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ελπίζω ότι το Bitcoin θα πάει στο 100.&quot;)">🔊</button><br><span class="en">I hope the Bitcoin will go to 100 (thousand).</span></div>
+<div class="nsub"><h4 class="n-allcrossed">13. ελπίζω ότι + future</h4>
+<div class="nsent nitem ncrossed" data-en="I hope the Bitcoin will go to 100 (thousand)." data-gr="Ελπίζω ότι το Bitcoin θα πάει στο 100."><span class="el">Ελπίζω ότι το Bitcoin θα πάει στο 100.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ελπίζω ότι το Bitcoin θα πάει στο 100.")'>🔊</button><br/><span class="en">I hope the Bitcoin will go to 100 (thousand).</span></div>
 <p class="ntext">Why useful: ελπίζω ότι + future; contrast with Ναι, μακάρι.</p>
 </div>
 </section>
 <section class="nsec" id="n7">
-<h2 class="nsec-title">7. Short review plan</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">7. Short review plan</h2>
 <div class="nsub"><h4>Session 1 (10 minutes): Stems</h4>
 <p class="ntext">Write 10 verbs with present stem and aorist stem side by side. Say each with "θέλω να ...".</p>
 <div class="ngrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)"><div class="nh">Present stem</div><div class="nh">Aorist stem</div><div class="nc">αγοράζω</div><div class="nc">αγοράσω</div><div class="nc alt">παίζω</div><div class="nc alt">παίξω</div><div class="nc">τρώω</div><div class="nc">φάω</div><div class="nc alt">βλέπω</div><div class="nc alt">δω</div><div class="nc">βρίσκω</div><div class="nc">βρω</div><div class="nc alt">πηγαίνω</div><div class="nc alt">πάω</div><div class="nc">κάνω</div><div class="nc">κάνω</div><div class="nc alt">μπαίνω</div><div class="nc alt">μπω</div><div class="nc">πίνω</div><div class="nc">πιω</div><div class="nc alt">μένω</div><div class="nc alt">μείνω</div></div>
@@ -501,18 +502,18 @@ Using the English-looking word. ραντεβού/συνάντηση and πρόβ
 </div>
 </section>
 <section class="nsec" id="n8">
-<h2 class="nsec-title">8. My recurring mistakes in this lesson</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">8. My recurring mistakes in this lesson</h2>
 <p class="nsec-intro">From the transcript. The transcript is automatic, so a few items may be transcription errors, not mistakes. "Teacher corrected" means the teacher gave the right form in the lesson. "Not corrected" means the teacher did not flag it; the fix is an observation.
 
 Most frequent pattern: you switch to English when a Greek word is missing (about 20 times, e.g. orthopedic, location, issues, popular, availability, trust, interesting, roof). The teacher supplied the Greek each time. This is a vocabulary gap, not a grammar problem.</p>
-<div class="nsub"><h4>A. Wrong word choice<span class="ntag ">Teacher corrected</span></h4>
+<div class="nsub"><h4>A. Wrong word choice<span class="ntag">Teacher corrected</span></h4>
 <div class="ngrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.6fr)"><div class="nh">Wrong / English</div><div class="nh">Right</div><div class="nh">Note</div><div class="nc"><span class="wrong">ζητήματα</span></div><div class="nc"><span class="right">προβλήματα</span></div><div class="nc">Teacher: "Καλύτερα 'προβλήματα'." Everyday word for problem.</div><div class="nc alt"><span class="wrong">τελειώνουν (internet cut off)</span></div><div class="nc alt"><span class="right">κλείνουν</span></div><div class="nc alt">τελειώνω = finish; κλείνω = shut off.</div><div class="nc"><span class="wrong">Ερευνητών</span></div><div class="nc"><span class="right">Επενδυτών</span></div><div class="nc">researchers vs investors.</div><div class="nc alt"><span class="wrong">τάξη στις επενδύσεις</span></div><div class="nc alt"><span class="right">μάθημα επενδυτικής</span></div><div class="nc alt">Teacher: "όχι επέμβαση. Ένα μάθημα επενδυτικής."</div><div class="nc"><span class="wrong">Όστρια</span></div><div class="nc"><span class="right">Αυστρία</span></div><div class="nc">Teacher repeated the correct word.</div><div class="nc alt"><span class="wrong">"popular"</span></div><div class="nc alt"><span class="right">διάσημο</span></div><div class="nc alt">Teacher offered διάσημος for "famous".</div><div class="nc"><span class="wrong">"orthopedic"</span></div><div class="nc"><span class="right">ορθοπεδικός</span></div><div class="nc">Teacher gave "Ορθοπεδικό."</div><div class="nc alt"><span class="wrong">"location"</span></div><div class="nc alt"><span class="right">η τοποθεσία</span></div><div class="nc alt">Teacher gave τοποθεσία and ο τόπος.</div></div>
 </div>
-<div class="nsub"><h4>B. Endings and cases (mostly NOT corrected, so easy to miss)<span class="ntag ">Not corrected</span></h4>
+<div class="nsub"><h4>B. Endings and cases (mostly NOT corrected, so easy to miss)<span class="ntag">Not corrected</span></h4>
 <div class="ngrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.6fr)"><div class="nh">Wrong</div><div class="nh">Right</div><div class="nh">Note</div><div class="nc"><span class="wrong">πριν από 4 χρόνων</span></div><div class="nc"><span class="right">πριν από 4 χρόνια</span></div><div class="nc">You fixed this yourself. Accusative after πριν από.</div><div class="nc alt"><span class="wrong">μετά από 2 χρόνων</span></div><div class="nc alt"><span class="right">μετά από 2 χρόνια</span></div><div class="nc alt">Same mistake again, later. Not corrected.</div><div class="nc"><span class="wrong">στις Ελένη, στις Αθηνά</span></div><div class="nc"><span class="right">στην Ελένη, στην Αθηνά</span></div><div class="nc">Singular feminine name = στην, not στις.</div><div class="nc alt"><span class="wrong">η Αθήνα (your daughter)</span></div><div class="nc alt"><span class="right">η Αθηνά</span></div><div class="nc alt">Αθήνα is the city; Αθηνά is the name.</div><div class="nc"><span class="wrong">τα φώτια</span></div><div class="nc"><span class="right">τα φώτα</span></div><div class="nc">φώτα is the standard plural of το φως.</div><div class="nc alt"><span class="wrong">Τα παιδιά και η Ελένη βγαίνουν όλες</span></div><div class="nc alt">check agreement (όλοι for a mixed group)</div><div class="nc alt">Lower confidence: depends on who you meant.</div></div>
 </div>
-<div class="nsub"><h4>C. Verb forms (NOT corrected)<span class="ntag ">Not corrected</span></h4>
-<div class="ngrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.6fr)"><div class="nh">Wrong</div><div class="nh">Right</div><div class="nh">Note</div><div class="nc"><span class="wrong">Έχεις χρησιμοποιεί;</span></div><div class="nc"><span class="right">Έχεις χρησιμοποιήσει;</span></div><div class="nc">After έχω, the verb is the invariable -ει form (έχω + aorist stem + ει). "Have you used...?"</div><div class="nc alt"><span class="wrong">Α, περάστε στις εξετάσεις της</span></div><div class="nc alt"><span class="nitem" data-gr="Πέρασε τις εξετάσεις της" data-en="She passed her exams"><span class="right">Πέρασε τις εξετάσεις της</span> <button class="tts-btn" onclick="ttsSpeak(this,&quot;Πέρασε τις εξετάσεις της&quot;)">🔊</button></span></div><div class="nc alt">περάστε is a plural/polite command, not "she passed".</div><div class="nc"><span class="wrong">όταν μιλάνε με τους δάσκαλούς μου</span></div><div class="nc"><span class="nitem" data-gr="όταν μιλάω με τους δασκάλους μου" data-en="when I speak with my teachers"><span class="right">όταν μιλάω με τους δασκάλους μου</span> <button class="tts-btn" onclick="ttsSpeak(this,&quot;όταν μιλάω με τους δασκάλους μου&quot;)">🔊</button></span></div><div class="nc">Wrong person (they speak vs I speak); also δασκάλους after με.</div><div class="nc alt"><span class="wrong">πώς σταματήσει / σταματήσα (reading the book title)</span></div><div class="nc alt"><span class="nitem" data-gr="πώς σταμάτησα να καπνίζω" data-en="how I stopped smoking"><span class="right">πώς σταμάτησα να καπνίζω</span> <button class="tts-btn" onclick="ttsSpeak(this,&quot;πώς σταμάτησα να καπνίζω&quot;)">🔊</button></span></div><div class="nc alt">Past tense of σταματάω is σταμάτησα.</div></div>
+<div class="nsub"><h4>C. Verb forms (NOT corrected)<span class="ntag">Not corrected</span></h4>
+<div class="ngrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.6fr)"><div class="nh">Wrong</div><div class="nh">Right</div><div class="nh">Note</div><div class="nc"><span class="wrong">Έχεις χρησιμοποιεί;</span></div><div class="nc"><span class="right">Έχεις χρησιμοποιήσει;</span></div><div class="nc">After έχω, the verb is the invariable -ει form (έχω + aorist stem + ει). "Have you used...?"</div><div class="nc alt"><span class="wrong">Α, περάστε στις εξετάσεις της</span></div><div class="nc alt"><span class="nitem" data-en="She passed her exams" data-gr="Πέρασε τις εξετάσεις της"><span class="right">Πέρασε τις εξετάσεις της</span> <button class="tts-btn" onclick='ttsSpeak(this,"Πέρασε τις εξετάσεις της")'>🔊</button></span></div><div class="nc alt">περάστε is a plural/polite command, not "she passed".</div><div class="nc"><span class="wrong">όταν μιλάνε με τους δάσκαλούς μου</span></div><div class="nc"><span class="nitem" data-en="when I speak with my teachers" data-gr="όταν μιλάω με τους δασκάλους μου"><span class="right">όταν μιλάω με τους δασκάλους μου</span> <button class="tts-btn" onclick='ttsSpeak(this,"όταν μιλάω με τους δασκάλους μου")'>🔊</button></span></div><div class="nc">Wrong person (they speak vs I speak); also δασκάλους after με.</div><div class="nc alt"><span class="wrong">πώς σταματήσει / σταματήσα (reading the book title)</span></div><div class="nc alt"><span class="nitem" data-en="how I stopped smoking" data-gr="πώς σταμάτησα να καπνίζω"><span class="right">πώς σταμάτησα να καπνίζω</span> <button class="tts-btn" onclick='ttsSpeak(this,"πώς σταμάτησα να καπνίζω")'>🔊</button></span></div><div class="nc alt">Past tense of σταματάω is σταμάτησα.</div></div>
 </div>
 <div class="nsub"><h4>D. What to ask the teacher for</h4>
 <ul class="nlist"><li>The teacher corrected mostly vocabulary (group A) and very little grammar. Groups B and C passed without comment.</li><li>Ask the teacher to flag every ending, preposition and verb-form error during the next lesson, not just word choice.</li><li>Practice order: (1) στην/στις with names, (2) πριν από / μετά από + accusative, (3) έχω + -ει form, (4) matching the verb person to who is speaking.</li></ul>
@@ -522,7 +523,6 @@ Most frequent pattern: you switch to English when a Greek word is missing (about
 </div>
 </section>
 </div><!-- /notes -->
-
 <script>
 (function(){
   function getVoice() {
@@ -905,78 +905,77 @@ Most frequent pattern: you switch to English when a Greek word is missing (about
 </script>
 <!-- ══════════════════════════════════ FREQ PICKER MODAL -->
 <div id="fc-freq-picker" style="display: none;">
-  <div class="fc-picker-box">
-    <h3>🃏 Flashcard Filter</h3>
-    <p>Select which frequency groups to include:</p>
-    <div class="fc-freq-circles">
-      <div class="fc-freq-toggle selected" data-color="#27ae60">
-        <span class="fc-dot" style="background:#27ae60;"></span>top 3k
+<div class="fc-picker-box">
+<h3>🃏 Flashcard Filter</h3>
+<p>Select which frequency groups to include:</p>
+<div class="fc-freq-circles">
+<div class="fc-freq-toggle selected" data-color="#27ae60">
+<span class="fc-dot" style="background:#27ae60;"></span>top 3k
       </div>
-      <div class="fc-freq-toggle selected" data-color="#2980b9">
-        <span class="fc-dot" style="background:#2980b9;"></span>3k–8k
+<div class="fc-freq-toggle selected" data-color="#2980b9">
+<span class="fc-dot" style="background:#2980b9;"></span>3k–8k
       </div>
-      <div class="fc-freq-toggle selected" data-color="#e67e22">
-        <span class="fc-dot" style="background:#e67e22;"></span>8k–15k
+<div class="fc-freq-toggle selected" data-color="#e67e22">
+<span class="fc-dot" style="background:#e67e22;"></span>8k–15k
       </div>
-      <div class="fc-freq-toggle selected" data-color="#c0392b">
-        <span class="fc-dot" style="background:#c0392b;"></span>15k+
+<div class="fc-freq-toggle selected" data-color="#c0392b">
+<span class="fc-dot" style="background:#c0392b;"></span>15k+
       </div>
-      <div class="fc-freq-toggle selected" data-color="#bdc3c7">
-        <span class="fc-dot" style="background:#bdc3c7;"></span>unknown
+<div class="fc-freq-toggle selected" data-color="#bdc3c7">
+<span class="fc-dot" style="background:#bdc3c7;"></span>unknown
       </div>
-    </div>
-    <div class="fc-picker-actions">
-      <span id="fc-picker-count">0 words</span>
-      <button id="fc-picker-cancel">Cancel</button>
-      <button id="fc-picker-start">Start Flashcards</button>
-    </div>
-  </div>
+</div>
+<div class="fc-picker-actions">
+<span id="fc-picker-count">0 words</span>
+<button id="fc-picker-cancel">Cancel</button>
+<button id="fc-picker-start">Start Flashcards</button>
+</div>
+</div>
 </div>
 <!-- ═════════════════════════════════════════════ FLASHCARD MODAL -->
 <div id="fc-modal" style="display: none;">
-  <div class="fc-box">
-    <div class="fc-header">
-      <div class="fc-mode-btns">
-        <button class="fc-mode-btn active" id="fc-mode-g2e">Ελληνικά → English</button>
-        <button class="fc-mode-btn" id="fc-mode-e2g">English → Ελληνικά</button>
-      </div>
-      <span class="fc-progress" id="fc-progress">0 / 0 mastered  ·  0 remaining</span>
-      <button class="fc-close" id="fc-close-btn" title="Close">✕</button>
-    </div>
-    <div class="fc-voice-bar" id="fc-voice-bar">
-      <span style="font-weight:600;">Voice:</span>
-      <label><input type="radio" name="voice" value="el-GR-NestorasNeural"> ♂ Nestoras</label>
-      <label><input type="radio" name="voice" value="el-GR-AthinaNeural"> ♀ Athina</label>
-      <label for="fc-speed-slider" style="margin-left:8px;">Speed:</label>
-      <input type="range" id="fc-speed-slider" min="0.50" max="1.00" step="0.05" value="0.80" style="width:100px;">
-      <span id="fc-speed-val">0.80x</span>
-      <label style="margin-left:8px;" title="Automatically play Greek audio when a card is shown or its answer revealed"><input type="checkbox" id="fc-autoplay" checked> 🔈 Auto</label>
-    </div>
-    <div id="fc-study-area">
-      <div class="fc-card" id="fc-card">
-        <div id="fc-front-content"><div class="fc-greek"></div></div>
-        <span class="fc-tts-btn" id="fc-tts-btn" title="Play pronunciation">🔊</span>
-        <div class="fc-inline-answer" id="fc-inline-answer" style="display:none;"></div>
-        <div class="fc-reveal-hint" id="fc-reveal-hint"></div>
-      </div>
-      <div class="fc-answer-area" id="fc-answer-area" style="display: none;">
-        <hr class="fc-divider">
-        <div class="fc-answer-content" id="fc-answer-content"></div>
-        <div class="fc-btns">
-          <button id="fc-wrong-btn">✗ Review Again</button>
-          <button id="fc-correct-btn">✓ Got It</button>
-        </div>
-      </div>
-    </div>
-    <div class="fc-complete" id="fc-complete" style="display: none;">
-      <div class="fc-complete-icon">🎉</div>
-      <h3>Session complete!</h3>
-      <p id="fc-complete-msg">You worked through all 0 cards.</p>
-      <button id="fc-restart-btn">Study Again</button>
-    </div>
-  </div>
+<div class="fc-box">
+<div class="fc-header">
+<div class="fc-mode-btns">
+<button class="fc-mode-btn active" id="fc-mode-g2e">Ελληνικά → English</button>
+<button class="fc-mode-btn" id="fc-mode-e2g">English → Ελληνικά</button>
 </div>
-
+<span class="fc-progress" id="fc-progress">0 / 0 mastered  ·  0 remaining</span>
+<button class="fc-close" id="fc-close-btn" title="Close">✕</button>
+</div>
+<div class="fc-voice-bar" id="fc-voice-bar">
+<span style="font-weight:600;">Voice:</span>
+<label><input name="voice" type="radio" value="el-GR-NestorasNeural"/> ♂ Nestoras</label>
+<label><input name="voice" type="radio" value="el-GR-AthinaNeural"/> ♀ Athina</label>
+<label for="fc-speed-slider" style="margin-left:8px;">Speed:</label>
+<input id="fc-speed-slider" max="1.00" min="0.50" step="0.05" style="width:100px;" type="range" value="0.80"/>
+<span id="fc-speed-val">0.80x</span>
+<label style="margin-left:8px;" title="Automatically play Greek audio when a card is shown or its answer revealed"><input checked="" id="fc-autoplay" type="checkbox"/> 🔈 Auto</label>
+</div>
+<div id="fc-study-area">
+<div class="fc-card" id="fc-card">
+<div id="fc-front-content"><div class="fc-greek"></div></div>
+<span class="fc-tts-btn" id="fc-tts-btn" title="Play pronunciation">🔊</span>
+<div class="fc-inline-answer" id="fc-inline-answer" style="display:none;"></div>
+<div class="fc-reveal-hint" id="fc-reveal-hint"></div>
+</div>
+<div class="fc-answer-area" id="fc-answer-area" style="display: none;">
+<hr class="fc-divider"/>
+<div class="fc-answer-content" id="fc-answer-content"></div>
+<div class="fc-btns">
+<button id="fc-wrong-btn">✗ Review Again</button>
+<button id="fc-correct-btn">✓ Got It</button>
+</div>
+</div>
+</div>
+<div class="fc-complete" id="fc-complete" style="display: none;">
+<div class="fc-complete-icon">🎉</div>
+<h3>Session complete!</h3>
+<p id="fc-complete-msg">You worked through all 0 cards.</p>
+<button id="fc-restart-btn">Study Again</button>
+</div>
+</div>
+</div>
 <script>
 // ── Flashcard Logic (Greek) ──
 (function(){
@@ -1304,50 +1303,48 @@ Most frequent pattern: you switch to English when a Greek word is missing (about
   });
 })();
 </script>
-
-
 <!-- ═════════════ GRAMMAR FLASHCARD MODAL -->
 <div id="gc-modal" style="display: none;">
-  <div class="fc-box">
-    <div class="fc-header">
-      <div class="fc-mode-btns">
-        <button class="fc-mode-btn active" id="gc-mode-g2e">Ελληνικά → English</button>
-        <button class="fc-mode-btn" id="gc-mode-e2g">English → Ελληνικά</button>
-      </div>
-      <span class="fc-progress" id="gc-progress">0 / 0 mastered  ·  0 remaining</span>
-      <button class="fc-close" id="gc-close-btn" title="Close">✕</button>
-    </div>
-    <div class="fc-voice-bar" id="gc-voice-bar">
-      <span style="font-weight:600;">Voice:</span>
-      <label><input type="radio" name="gvoice" value="el-GR-NestorasNeural" checked> ♂ Nestoras</label>
-      <label><input type="radio" name="gvoice" value="el-GR-AthinaNeural"> ♀ Athina</label>
-      <label for="gc-speed-slider" style="margin-left:8px;">Speed:</label>
-      <input type="range" id="gc-speed-slider" min="0.50" max="1.00" step="0.05" value="0.80" style="width:100px;">
-      <span id="gc-speed-val">0.80x</span>
-      <label style="margin-left:8px;" title="Automatically play Greek audio"><input type="checkbox" id="gc-autoplay" checked> 🔈 Auto</label>
-    </div>
-    <div id="gc-study-area">
-      <div class="fc-card" id="gc-card">
-        <div id="gc-front-content"><div class="fc-greek"></div></div>
-        <span class="fc-tts-btn" id="gc-tts-btn" title="Play pronunciation">🔊</span>
-        <div class="fc-inline-answer" id="gc-inline-answer" style="display:none;"></div>
-      </div>
-      <div class="fc-answer-area" id="gc-answer-area" style="display: none;">
-        <hr class="fc-divider">
-        <div class="fc-answer-content" id="gc-answer-content"></div>
-        <div class="fc-btns">
-          <button id="gc-wrong-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#b94040;color:#fff;">✗ Review Again</button>
-          <button id="gc-correct-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#3a7d44;color:#fff;">✓ Got It</button>
-        </div>
-      </div>
-    </div>
-    <div class="fc-complete" id="gc-complete" style="display: none;">
-      <div class="fc-complete-icon">🎉</div>
-      <h3>Session complete!</h3>
-      <p id="gc-complete-msg"></p>
-      <button id="gc-restart-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#4a6a9c;color:#fff;margin-top:8px;">Study Again</button>
-    </div>
-  </div>
+<div class="fc-box">
+<div class="fc-header">
+<div class="fc-mode-btns">
+<button class="fc-mode-btn active" id="gc-mode-g2e">Ελληνικά → English</button>
+<button class="fc-mode-btn" id="gc-mode-e2g">English → Ελληνικά</button>
+</div>
+<span class="fc-progress" id="gc-progress">0 / 0 mastered  ·  0 remaining</span>
+<button class="fc-close" id="gc-close-btn" title="Close">✕</button>
+</div>
+<div class="fc-voice-bar" id="gc-voice-bar">
+<span style="font-weight:600;">Voice:</span>
+<label><input checked="" name="gvoice" type="radio" value="el-GR-NestorasNeural"/> ♂ Nestoras</label>
+<label><input name="gvoice" type="radio" value="el-GR-AthinaNeural"/> ♀ Athina</label>
+<label for="gc-speed-slider" style="margin-left:8px;">Speed:</label>
+<input id="gc-speed-slider" max="1.00" min="0.50" step="0.05" style="width:100px;" type="range" value="0.80"/>
+<span id="gc-speed-val">0.80x</span>
+<label style="margin-left:8px;" title="Automatically play Greek audio"><input checked="" id="gc-autoplay" type="checkbox"/> 🔈 Auto</label>
+</div>
+<div id="gc-study-area">
+<div class="fc-card" id="gc-card">
+<div id="gc-front-content"><div class="fc-greek"></div></div>
+<span class="fc-tts-btn" id="gc-tts-btn" title="Play pronunciation">🔊</span>
+<div class="fc-inline-answer" id="gc-inline-answer" style="display:none;"></div>
+</div>
+<div class="fc-answer-area" id="gc-answer-area" style="display: none;">
+<hr class="fc-divider"/>
+<div class="fc-answer-content" id="gc-answer-content"></div>
+<div class="fc-btns">
+<button id="gc-wrong-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#b94040;color:#fff;">✗ Review Again</button>
+<button id="gc-correct-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#3a7d44;color:#fff;">✓ Got It</button>
+</div>
+</div>
+</div>
+<div class="fc-complete" id="gc-complete" style="display: none;">
+<div class="fc-complete-icon">🎉</div>
+<h3>Session complete!</h3>
+<p id="gc-complete-msg"></p>
+<button id="gc-restart-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#4a6a9c;color:#fff;margin-top:8px;">Study Again</button>
+</div>
+</div>
 </div>
 <script>
 // ── Lesson Notes: cross-off + Grammar Flashcards (separate from vocab flashcards / Anki export) ──
@@ -1484,5 +1481,4 @@ Most frequent pattern: you switch to English when a Greek word is missing (about
   });
 })();
 </script>
-
 </body></html>
