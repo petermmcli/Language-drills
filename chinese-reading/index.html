@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Graded Reading Practice — 09-22-2026</title>
+<title>Graded Reading Practice — 10-13-2026</title>
 <style>
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -77,12 +77,16 @@ h1 {
   background: #f8f8ff;
   transition: background 0.15s;
 }
-.toggle-btn:hover { background: #eef0ff; }
+.toggle-btn:hover {
+  background: #eef0ff;
+}
 .hideable {
   display: none;
   margin-top: 10px;
 }
-.hideable.show { display: block; }
+.hideable.show {
+  display: block;
+}
 .pinyin-block {
   font-size: 1.05em;
   line-height: 2.2;
@@ -118,7 +122,9 @@ h1 {
   color: #555;
   margin-bottom: 10px;
 }
-.questions ol { padding-left: 20px; }
+.questions ol {
+  padding-left: 20px;
+}
 .questions li {
   margin-bottom: 10px;
   font-size: 1.1em;
@@ -130,7 +136,9 @@ h1 {
   font-weight: 500;
   margin-left: 4px;
 }
-.answer.show { display: inline; }
+.answer.show {
+  display: inline;
+}
 .ans-btn {
   cursor: pointer;
   color: #0066cc;
@@ -143,8 +151,11 @@ h1 {
 }
 .ans-btn:hover { background: #eef0ff; }
 
-.new-word { border-bottom: 2px dotted #e07800; }
+.new-word {
+  border-bottom: 2px dotted #e07800;
+}
 
+/* TTS Controls */
 .tts-btn {
   cursor: pointer;
   font-size: 0.6em;
@@ -159,7 +170,7 @@ h1 {
 .tts-btn:hover { opacity: 1; }
 .tts-btn.playing { opacity: 1; animation: pulse 0.8s infinite; }
 @keyframes pulse { 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.15); } }
-
+/* Voice selector */
 .voice-bar {
   position: sticky; top: 0; z-index: 100;
   background: #f4f4f4; border-bottom: 1px solid #ddd;
@@ -171,7 +182,6 @@ h1 {
 .voice-bar input[type=radio] { margin-right: 3px; }
 .voice-bar .voice-label { font-weight: 600; white-space: nowrap; }
 @media print { .voice-bar { display: none; } }
-
 .tts-bar {
   position: sticky; top: 34px; z-index: 99;
   background: #f9f9f9; border-bottom: 1px solid #ddd;
@@ -182,7 +192,7 @@ h1 {
 .tts-bar label { font-weight: 600; white-space: nowrap; }
 .tts-bar input[type=range] { width: 120px; accent-color: #1155cc; }
 .tts-bar .speed-val { min-width: 36px; text-align: center; font-variant-numeric: tabular-nums; }
-
+/* Mini-player bar */
 .mini-player {
   position: sticky; top: 76px; z-index: 98;
   background: #fff; border-bottom: 1px solid #ddd;
@@ -192,39 +202,77 @@ h1 {
 }
 .mini-player.active { display: flex; }
 .mini-player .mp-btn {
-  cursor: pointer; font-size: 1.3em; user-select: none;
-  -webkit-user-select: none; padding: 2px 6px;
-  border: none; background: none; opacity: 0.7; transition: opacity 0.15s;
+  cursor: pointer;
+  font-size: 1.3em;
+  user-select: none;
+  -webkit-user-select: none;
+  padding: 2px 6px;
+  border: none;
+  background: none;
+  opacity: 0.7;
+  transition: opacity 0.15s;
 }
 .mini-player .mp-btn:hover { opacity: 1; }
 .mini-player .mp-seek {
-  flex: 1; height: 6px; accent-color: #0044cc; cursor: pointer;
+  flex: 1;
+  height: 6px;
+  accent-color: #0044cc;
+  cursor: pointer;
 }
 .mini-player .mp-time {
-  font-size: 0.85em; color: #888; min-width: 70px;
-  text-align: center; font-variant-numeric: tabular-nums;
+  font-size: 0.85em;
+  color: #888;
+  min-width: 70px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 .mini-player .mp-text {
-  font-size: 0.8em; color: #777; max-width: 200px;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-size: 0.8em;
+  color: #777;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @media print { .tts-bar { display: none; } .mini-player { display: none !important; } .tts-btn { display: none !important; } }
 
-.sentence-hz, .sentence-py, .sentence-en { display: block; }
+/* Sentence-sync styles */
+.sentence-hz, .sentence-py, .sentence-en {
+  display: block;
+}
 .sentence-hz.active-sentence {
-  background: #fff3b0; border-radius: 4px; padding: 2px 4px; margin: -2px -4px;
+  background: #fff3b0;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: -2px -4px;
 }
 .sentence-py.active-sentence {
-  background: #fff3b0; border-radius: 4px; padding: 2px 4px; margin: -2px -4px;
+  background: #fff3b0;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: -2px -4px;
 }
 .sentence-en.active-sentence {
-  background: #e8f0fe; color: #333; border-radius: 4px; padding: 2px 4px; margin: -2px -4px;
+  background: #e8f0fe;
+  color: #333;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: -2px -4px;
 }
 .play-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: #0055cc; color: #fff; border: none; border-radius: 8px;
-  padding: 10px 20px; font-size: 1.05em; font-weight: 600;
-  cursor: pointer; transition: background 0.15s; margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0055cc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1.05em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 8px;
 }
 .play-btn:hover { background: #0044aa; }
 .play-btn.playing { background: #cc4400; }
@@ -241,7 +289,6 @@ function toggle(id) {
   const AZURE_REGION = 'eastus';
   const VOICE_MALE = 'zh-CN-YunxiNeural';
   const VOICE_FEMALE = 'zh-CN-XiaoxiaoNeural';
-
   function getVoice() {
     var c = document.querySelector('input[name="voice"]:checked');
     return c ? c.value : 'zh-CN-YunxiNeural';
@@ -253,6 +300,7 @@ function toggle(id) {
   let currentObjUrl = null;
   let seekDragging = false;
   let rafId = null;
+
   let cachedToken = null;
   let tokenExpiry = 0;
 
@@ -458,33 +506,34 @@ function toggle(id) {
     'P1': {
       type: 'narrative',
       sentences: [
-        '我明天要坐飞机去北京。',
-        '我已经买好了机票，也准备好了护照。',
-        '去机场要很早起床，因为飞机七点就飞了。',
-        '我很开心，这是我第一次坐飞机。'
+        '下个星期是我好朋友的生日。',
+        '我想送花给她，所以找了一家花店。',
+        '花店可以送到家，十五块一只。',
+        '我同意了，在网上付钱给花店。',
+        '我希望她收到花会很开心。'
       ]
     },
     'P2': {
       type: 'dialogue',
       sentences: [
-        {voice: 'male', text: '你这个假期有什么计划？'},
-        {voice: 'female', text: '我想去上海旅游，但是还没决定住哪个酒店。'},
-        {voice: 'male', text: '上海很有意思！你知道什么季节去最好吗？'},
-        {voice: 'female', text: '不太知道。你以前去过吗？'},
-        {voice: 'male', text: '我去过一次。我觉得秋天最好，不冷也不热，很舒服。'},
-        {voice: 'female', text: '好主意！那我们可以一起去！'}
+        {voice: 'male', text: '你下个星期有什么计划？'},
+        {voice: 'female', text: '还没想好。你有好主意吗？'},
+        {voice: 'male', text: '我们在网上买票去看电影，你同意吧？'},
+        {voice: 'female', text: '同意！但是我有点儿紧张，会听不懂吗？'},
+        {voice: 'male', text: '别紧张！普通话和我们学的是一样的。'},
+        {voice: 'female', text: '好啊！下个星期六见！'}
       ]
     },
     'P3': {
       type: 'narrative',
       sentences: [
-        '上个周末，我先去书店看书，然后去朋友家吃饭。',
-        '朋友做的饭非常好吃，我们都吃得很舒服。',
-        '吃完饭以后，我们一起看了一部电影，很有意思。',
-        '我觉得和朋友一起过周末比一个人在家有意思多了。',
-        '回家的时候，我才想起来还有一个作业没做完。',
-        '虽然很累，我还是坐在桌子旁边把作业写完了。',
-        '太晚了！我下次一定要早一点儿做作业。'
+        '每天早上，我先起床，然后去厨房做早饭。',
+        '吃完早饭以后，我坐地铁去医院看妈妈。',
+        '她上个月住院了，所以我每天都去看她。',
+        '到了医院，我先买了花送给她。',
+        '花是从云南来的，非常好看，我还买了一个花盆给她。',
+        '妈妈开心地说，她在网上看到加州也有这种花，和云南的一样的。',
+        '我们聊了很久，我觉得她比以前好多了，真的太好了！'
       ]
     }
   };
@@ -535,6 +584,7 @@ function toggle(id) {
       await new Promise(function(resolve) {
         cleanupAudio();
         showMiniPlayer(text);
+
         getToken().then(function(token) {
           const ssml = buildSSML(text, currentSpeed, voice);
           fetch(
@@ -616,6 +666,7 @@ function toggle(id) {
 
     btn.textContent = '⏹ Stop';
     btn.classList.add('playing');
+
     playSentenceSequence(level, data.sentences, 0, btn);
   };
 
@@ -646,20 +697,21 @@ function toggle(id) {
 </div>
 
 <h1>Graded Reading Practice</h1>
-<p class="subtitle">09-22-2026 — Topics: airport · travel planning · weekend. New vocabulary underlined in orange.</p>
+<p class="subtitle">October 13, 2026 · Batch: 2026-10-09 · New vocabulary underlined in orange.</p>
 
-<!-- ==================== PASSAGE 1: EASY — 在机场 ==================== -->
+<!-- ==================== PASSAGE 1: EASY ==================== -->
 <div class="passage-card" id="exercise-P1" data-type="narrative">
   <div class="passage-header">
     <span class="badge badge-easy">Easy</span>
-    <span class="passage-title">在机场</span>
+    <span class="passage-title">生日礼物</span>
   </div>
 
   <div class="hanzi-text">
-    <span class="sentence-hz" data-level="P1" data-i="0">我明天要坐飞机去北京。<span class="tts-btn" onclick="ttsSpeak(this,'我明天要坐飞机去北京。')" title="Play">🔊</span></span>
-    <span class="sentence-hz" data-level="P1" data-i="1">我已经买好了机票，也准备好了<span class="new-word">护照</span>。<span class="tts-btn" onclick="ttsSpeak(this,'我已经买好了机票，也准备好了护照。')" title="Play">🔊</span></span>
-    <span class="sentence-hz" data-level="P1" data-i="2">去机场要很早起床，因为飞机七点就飞了。<span class="tts-btn" onclick="ttsSpeak(this,'去机场要很早起床，因为飞机七点就飞了。')" title="Play">🔊</span></span>
-    <span class="sentence-hz" data-level="P1" data-i="3">我很开心，这是我第一次坐飞机。<span class="tts-btn" onclick="ttsSpeak(this,'我很开心，这是我第一次坐飞机。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P1" data-i="0"><span class="new-word">下个星期</span>是我好朋友的生日。<span class="tts-btn" onclick="ttsSpeak(this,'下个星期是我好朋友的生日。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P1" data-i="1">我想<span class="new-word">送花</span>给她，所以找了一家花店。<span class="tts-btn" onclick="ttsSpeak(this,'我想送花给她，所以找了一家花店。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P1" data-i="2">花店可以<span class="new-word">送到家</span>，<span class="new-word">十五块一只</span>。<span class="tts-btn" onclick="ttsSpeak(this,'花店可以送到家，十五块一只。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P1" data-i="3">我<span class="new-word">同意</span>了，<span class="new-word">在网上</span><span class="new-word">付钱给</span>花店。<span class="tts-btn" onclick="ttsSpeak(this,'我同意了，在网上付钱给花店。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P1" data-i="4">我希望她收到花会很开心。<span class="tts-btn" onclick="ttsSpeak(this,'我希望她收到花会很开心。')" title="Play">🔊</span></span>
   </div>
 
   <button class="play-btn" id="play-P1" onclick="startExercise('P1')">▶ Play Passage</button>
@@ -667,63 +719,65 @@ function toggle(id) {
   <span class="toggle-btn" onclick="toggle('p1-english')">▸ English</span>
 
   <div id="p1-pinyin" class="hideable pinyin-block">
-    <span class="sentence-py" data-level="P1" data-i="0"><span class="t3">Wǒ</span> <span class="t2">míng</span><span class="t1">tiān</span> <span class="t4">yào</span> <span class="t4">zuò</span> <span class="t1">fēi</span><span class="t1">jī</span> <span class="t4">qù</span> <span class="t3">Běi</span><span class="t1">jīng</span>.</span>
-    <span class="sentence-py" data-level="P1" data-i="1"><span class="t3">Wǒ</span> <span class="t3">yǐ</span><span class="t1">jīng</span> <span class="t3">mǎi</span> <span class="t3">hǎo</span> <span class="tn">le</span> <span class="t1">jī</span><span class="t4">piào</span>，<span class="t3">yě</span> <span class="t3">zhǔn</span><span class="t4">bèi</span> <span class="t3">hǎo</span> <span class="tn">le</span> <span class="t4">hù</span><span class="t4">zhào</span>.</span>
-    <span class="sentence-py" data-level="P1" data-i="2"><span class="t4">Qù</span> <span class="t1">jī</span><span class="t3">chǎng</span> <span class="t4">yào</span> <span class="t3">hěn</span> <span class="t3">zǎo</span> <span class="t3">qǐ</span><span class="t2">chuáng</span>，<span class="t1">yīn</span><span class="t4">wèi</span> <span class="t1">fēi</span><span class="t1">jī</span> <span class="t1">qī</span> <span class="t3">diǎn</span> <span class="t4">jiù</span> <span class="t1">fēi</span> <span class="tn">le</span>.</span>
-    <span class="sentence-py" data-level="P1" data-i="3"><span class="t3">Wǒ</span> <span class="t3">hěn</span> <span class="t1">kāi</span><span class="t1">xīn</span>，<span class="t4">zhè</span> <span class="t4">shì</span> <span class="t3">wǒ</span> <span class="t4">dì</span> <span class="t1">yī</span> <span class="t4">cì</span> <span class="t4">zuò</span> <span class="t1">fēi</span><span class="t1">jī</span>.</span>
+    <span class="sentence-py" data-level="P1" data-i="0"><span class="t4">Xià</span> <span class="t0">ge</span> <span class="t1">xīng</span><span class="t1">qī</span> <span class="t4">shì</span> <span class="t3">wǒ</span> <span class="t3">hǎo</span> <span class="t2">péng</span><span class="t3">yǒu</span> <span class="t0">de</span> <span class="t1">shēng</span><span class="t4">rì</span>.</span>
+    <span class="sentence-py" data-level="P1" data-i="1"><span class="t3">Wǒ</span> <span class="t3">xiǎng</span> <span class="t4">sòng</span> <span class="t1">huā</span> <span class="t3">gěi</span> <span class="t1">tā</span>, <span class="t3">suǒ</span><span class="t3">yǐ</span> <span class="t3">zhǎo</span> <span class="t0">le</span> <span class="t4">yì</span> <span class="t1">jiā</span> <span class="t1">huā</span><span class="t4">diàn</span>.</span>
+    <span class="sentence-py" data-level="P1" data-i="2"><span class="t1">Huā</span><span class="t4">diàn</span> <span class="t3">kě</span><span class="t3">yǐ</span> <span class="t4">sòng</span><span class="t4">dào</span><span class="t1">jiā</span>, <span class="t2">shí</span> <span class="t3">wǔ</span> <span class="t4">kuài</span> <span class="t4">yì</span> <span class="t1">zhī</span>.</span>
+    <span class="sentence-py" data-level="P1" data-i="3"><span class="t3">Wǒ</span> <span class="t2">tóng</span><span class="t4">yì</span> <span class="t0">le</span>, <span class="t4">zài</span> <span class="t3">wǎng</span><span class="t4">shàng</span> <span class="t4">fù</span> <span class="t2">qián</span> <span class="t3">gěi</span> <span class="t1">huā</span><span class="t4">diàn</span>.</span>
+    <span class="sentence-py" data-level="P1" data-i="4"><span class="t3">Wǒ</span> <span class="t1">xī</span><span class="t4">wàng</span> <span class="t1">tā</span> <span class="t1">shōu</span><span class="t4">dào</span> <span class="t1">huā</span> <span class="t4">huì</span> <span class="t3">hěn</span> <span class="t1">kāi</span><span class="t1">xīn</span>.</span>
   </div>
 
   <div id="p1-english" class="hideable english-block">
-    <span class="sentence-en" data-level="P1" data-i="0">Tomorrow I'm taking a plane to Beijing.</span>
-    <span class="sentence-en" data-level="P1" data-i="1">I've already bought the plane ticket and prepared my passport.</span>
-    <span class="sentence-en" data-level="P1" data-i="2">I need to wake up very early to get to the airport, because the plane leaves at seven.</span>
-    <span class="sentence-en" data-level="P1" data-i="3">I'm very happy — this is my first time flying.</span>
+    <span class="sentence-en" data-level="P1" data-i="0">Next week is my good friend's birthday.</span>
+    <span class="sentence-en" data-level="P1" data-i="1">I want to send her flowers, so I found a flower shop.</span>
+    <span class="sentence-en" data-level="P1" data-i="2">The flower shop can deliver to your home — fifteen yuan per stem.</span>
+    <span class="sentence-en" data-level="P1" data-i="3">I agreed, and paid the flower shop online.</span>
+    <span class="sentence-en" data-level="P1" data-i="4">I hope she'll be very happy when she receives the flowers.</span>
   </div>
 
   <div class="questions">
     <h4>Comprehension Questions</h4>
     <span class="toggle-btn" onclick="toggle('p1-qpy')">▸ Question Pinyin</span>
     <ol>
-      <li>他明天要去哪儿？
+      <li>他下个星期要做什么？
         <span class="ans-btn" onclick="toggle('a1-1')">▸ answer</span>
-        <span id="a1-1" class="hideable answer"> → 他要去北京。</span>
+        <span id="a1-1" class="hideable answer"> → 他要送花给朋友。</span>
       </li>
-      <li>他准备好了什么？
+      <li>花店可以怎么送花？
         <span class="ans-btn" onclick="toggle('a1-2')">▸ answer</span>
-        <span id="a1-2" class="hideable answer"> → 他买好了机票，也准备好了护照。</span>
+        <span id="a1-2" class="hideable answer"> → 花店可以送到家。</span>
       </li>
-      <li>飞机几点飞？
+      <li>一只花多少钱？
         <span class="ans-btn" onclick="toggle('a1-3')">▸ answer</span>
-        <span id="a1-3" class="hideable answer"> → 飞机七点就飞了。</span>
+        <span id="a1-3" class="hideable answer"> → 十五块一只。</span>
       </li>
-      <li>他为什么开心？
+      <li>他在哪儿付钱？
         <span class="ans-btn" onclick="toggle('a1-4')">▸ answer</span>
-        <span id="a1-4" class="hideable answer"> → 因为这是他第一次坐飞机。</span>
+        <span id="a1-4" class="hideable answer"> → 他在网上付钱给花店。</span>
       </li>
     </ol>
     <div id="p1-qpy" class="hideable pinyin-block">
-      1. <span class="t1">Tā</span> <span class="t2">míng</span><span class="t1">tiān</span> <span class="t4">yào</span> <span class="t4">qù</span> <span class="t3">nǎ</span><span class="tn">er</span>？ → <span class="t1">Tā</span> <span class="t4">yào</span> <span class="t4">qù</span> <span class="t3">Běi</span><span class="t1">jīng</span>。<br/>
-      2. <span class="t1">Tā</span> <span class="t3">zhǔn</span><span class="t4">bèi</span> <span class="t3">hǎo</span> <span class="tn">le</span> <span class="t2">shén</span><span class="tn">me</span>？ → <span class="t1">Tā</span> <span class="t3">mǎi</span> <span class="t3">hǎo</span> <span class="tn">le</span> <span class="t1">jī</span><span class="t4">piào</span>，<span class="t3">yě</span> <span class="t3">zhǔn</span><span class="t4">bèi</span> <span class="t3">hǎo</span> <span class="tn">le</span> <span class="t4">hù</span><span class="t4">zhào</span>。<br/>
-      3. <span class="t1">Fēi</span><span class="t1">jī</span> <span class="t3">jǐ</span> <span class="t3">diǎn</span> <span class="t1">fēi</span>？ → <span class="t1">Fēi</span><span class="t1">jī</span> <span class="t1">qī</span> <span class="t3">diǎn</span> <span class="t4">jiù</span> <span class="t1">fēi</span> <span class="tn">le</span>。<br/>
-      4. <span class="t1">Tā</span> <span class="t4">wèi</span><span class="t2">shén</span><span class="tn">me</span> <span class="t1">kāi</span><span class="t1">xīn</span>？ → <span class="t1">Yīn</span><span class="t4">wèi</span> <span class="t4">zhè</span> <span class="t4">shì</span> <span class="t1">tā</span> <span class="t4">dì</span> <span class="t1">yī</span> <span class="t4">cì</span> <span class="t4">zuò</span> <span class="t1">fēi</span><span class="t1">jī</span>。
+      1. <span class="t1">Tā</span> <span class="t4">xià</span> <span class="t0">ge</span> <span class="t1">xīng</span><span class="t1">qī</span> <span class="t4">yào</span> <span class="t4">zuò</span> <span class="t2">shén</span><span class="t0">me</span>？ → <span class="t1">Tā</span> <span class="t4">yào</span> <span class="t4">sòng</span> <span class="t1">huā</span> <span class="t3">gěi</span> <span class="t2">péng</span><span class="t3">yǒu</span>。<br/>
+      2. <span class="t1">Huā</span><span class="t4">diàn</span> <span class="t3">kě</span><span class="t3">yǐ</span> <span class="t3">zěn</span><span class="t0">me</span> <span class="t4">sòng</span> <span class="t1">huā</span>？ → <span class="t1">Huā</span><span class="t4">diàn</span> <span class="t3">kě</span><span class="t3">yǐ</span> <span class="t4">sòng</span><span class="t4">dào</span><span class="t1">jiā</span>。<br/>
+      3. <span class="t4">Yì</span> <span class="t1">zhī</span> <span class="t1">huā</span> <span class="t1">duō</span><span class="t3">shǎo</span> <span class="t2">qián</span>？ → <span class="t2">Shí</span> <span class="t3">wǔ</span> <span class="t4">kuài</span> <span class="t4">yì</span> <span class="t1">zhī</span>。<br/>
+      4. <span class="t1">Tā</span> <span class="t4">zài</span> <span class="t3">nǎ</span><span class="t2">er</span> <span class="t4">fù</span> <span class="t2">qián</span>？ → <span class="t1">Tā</span> <span class="t4">zài</span> <span class="t3">wǎng</span><span class="t4">shàng</span> <span class="t4">fù</span> <span class="t2">qián</span> <span class="t3">gěi</span> <span class="t1">huā</span><span class="t4">diàn</span>。
     </div>
   </div>
 </div>
 
-<!-- ==================== PASSAGE 2: MEDIUM — 旅游计划 ==================== -->
+<!-- ==================== PASSAGE 2: MEDIUM ==================== -->
 <div class="passage-card" id="exercise-P2" data-type="dialogue">
   <div class="passage-header">
     <span class="badge badge-medium">Medium</span>
-    <span class="passage-title">旅游计划</span>
+    <span class="passage-title">买票看电影</span>
   </div>
 
   <div class="hanzi-text">
-    <span class="sentence-hz" data-level="P2" data-i="0" data-voice="zh-CN-YunxiNeural">小明：你这个<span class="new-word">假期</span>有什么计划？<span class="tts-btn" onclick="ttsSpeak(this,'你这个假期有什么计划？','zh-CN-YunxiNeural')" title="Play: 小明">🔊</span></span>
-    <span class="sentence-hz" data-level="P2" data-i="1" data-voice="zh-CN-XiaoxiaoNeural">小红：我想去上海旅游，但是还没决定住哪个酒店。<span class="tts-btn" onclick="ttsSpeak(this,'我想去上海旅游，但是还没决定住哪个酒店。','zh-CN-XiaoxiaoNeural')" title="Play: 小红">🔊</span></span>
-    <span class="sentence-hz" data-level="P2" data-i="2" data-voice="zh-CN-YunxiNeural">小明：上海很有意思！你知道什么<span class="new-word">季节</span>去最好吗？<span class="tts-btn" onclick="ttsSpeak(this,'上海很有意思！你知道什么季节去最好吗？','zh-CN-YunxiNeural')" title="Play: 小明">🔊</span></span>
-    <span class="sentence-hz" data-level="P2" data-i="3" data-voice="zh-CN-XiaoxiaoNeural">小红：不太知道。你以前去过吗？<span class="tts-btn" onclick="ttsSpeak(this,'不太知道。你以前去过吗？','zh-CN-XiaoxiaoNeural')" title="Play: 小红">🔊</span></span>
-    <span class="sentence-hz" data-level="P2" data-i="4" data-voice="zh-CN-YunxiNeural">小明：我去过一次。我觉得秋天最好，不冷也不热，很<span class="new-word">舒服</span>。<span class="tts-btn" onclick="ttsSpeak(this,'我去过一次。我觉得秋天最好，不冷也不热，很舒服。','zh-CN-YunxiNeural')" title="Play: 小明">🔊</span></span>
-    <span class="sentence-hz" data-level="P2" data-i="5" data-voice="zh-CN-XiaoxiaoNeural"><span class="new-word">好主意</span>！那我们可以一起去！<span class="tts-btn" onclick="ttsSpeak(this,'好主意！那我们可以一起去！','zh-CN-XiaoxiaoNeural')" title="Play: 小红">🔊</span></span>
+    <span class="sentence-hz" data-level="P2" data-i="0" data-voice="zh-CN-YunxiNeural">男：你<span class="new-word">下个星期</span>有什么计划？<span class="tts-btn" onclick="ttsSpeak(this,'你下个星期有什么计划？','zh-CN-YunxiNeural')" title="Play: 男">🔊</span></span>
+    <span class="sentence-hz" data-level="P2" data-i="1" data-voice="zh-CN-XiaoxiaoNeural">女：还没想好。你有好主意吗？<span class="tts-btn" onclick="ttsSpeak(this,'还没想好。你有好主意吗？','zh-CN-XiaoxiaoNeural')" title="Play: 女">🔊</span></span>
+    <span class="sentence-hz" data-level="P2" data-i="2" data-voice="zh-CN-YunxiNeural">男：我们<span class="new-word">在网上</span>买票去看电影，你<span class="new-word">同意</span>吧？<span class="tts-btn" onclick="ttsSpeak(this,'我们在网上买票去看电影，你同意吧？','zh-CN-YunxiNeural')" title="Play: 男">🔊</span></span>
+    <span class="sentence-hz" data-level="P2" data-i="3" data-voice="zh-CN-XiaoxiaoNeural">女：<span class="new-word">同意</span>！但是我有点儿紧张，会<span class="new-word">听不懂</span>吗？<span class="tts-btn" onclick="ttsSpeak(this,'同意！但是我有点儿紧张，会听不懂吗？','zh-CN-XiaoxiaoNeural')" title="Play: 女">🔊</span></span>
+    <span class="sentence-hz" data-level="P2" data-i="4" data-voice="zh-CN-YunxiNeural">男：别紧张！普通话和我们学的是<span class="new-word">一样的</span>。<span class="tts-btn" onclick="ttsSpeak(this,'别紧张！普通话和我们学的是一样的。','zh-CN-YunxiNeural')" title="Play: 男">🔊</span></span>
+    <span class="sentence-hz" data-level="P2" data-i="5" data-voice="zh-CN-XiaoxiaoNeural">女：好啊！<span class="new-word">下个星期</span>六见！<span class="tts-btn" onclick="ttsSpeak(this,'好啊！下个星期六见！','zh-CN-XiaoxiaoNeural')" title="Play: 女">🔊</span></span>
   </div>
 
   <button class="play-btn" id="play-P2" onclick="startExercise('P2')">▶ Play Dialogue</button>
@@ -731,68 +785,73 @@ function toggle(id) {
   <span class="toggle-btn" onclick="toggle('p2-english')">▸ English</span>
 
   <div id="p2-pinyin" class="hideable pinyin-block">
-    <span class="sentence-py" data-level="P2" data-i="0"><span class="t3">Xiǎo</span> <span class="t2">Míng</span>: <span class="t3">Nǐ</span> <span class="t4">zhè</span><span class="tn">ge</span> <span class="t4">jià</span><span class="t1">qī</span> <span class="t3">yǒu</span> <span class="t2">shén</span><span class="tn">me</span> <span class="t4">jì</span><span class="t4">huà</span>？</span>
-    <span class="sentence-py" data-level="P2" data-i="1"><span class="t3">Xiǎo</span> <span class="t2">Hóng</span>: <span class="t3">Wǒ</span> <span class="t3">xiǎng</span> <span class="t4">qù</span> <span class="t4">Shàng</span><span class="t3">hǎi</span> <span class="t3">lǚ</span><span class="t2">yóu</span>，<span class="t4">dàn</span><span class="t4">shì</span> <span class="t2">hái</span> <span class="t2">méi</span> <span class="t2">jué</span><span class="t4">dìng</span> <span class="t4">zhù</span> <span class="t3">nǎ</span><span class="tn">ge</span> <span class="t3">jiǔ</span><span class="t4">diàn</span>.</span>
-    <span class="sentence-py" data-level="P2" data-i="2"><span class="t3">Xiǎo</span> <span class="t2">Míng</span>: <span class="t4">Shàng</span><span class="t3">hǎi</span> <span class="t3">hěn</span> <span class="t3">yǒu</span><span class="t4">yì</span><span class="tn">si</span>！<span class="t3">Nǐ</span> <span class="t1">zhī</span><span class="t4">dào</span> <span class="t2">shén</span><span class="tn">me</span> <span class="t4">jì</span><span class="t2">jié</span> <span class="t4">qù</span> <span class="t4">zuì</span> <span class="t3">hǎo</span> <span class="tn">ma</span>？</span>
-    <span class="sentence-py" data-level="P2" data-i="3"><span class="t3">Xiǎo</span> <span class="t2">Hóng</span>: <span class="t4">Bú</span> <span class="t4">tài</span> <span class="t1">zhī</span><span class="t4">dào</span>。<span class="t3">Nǐ</span> <span class="t3">yǐ</span><span class="t2">qián</span> <span class="t4">qù</span> <span class="t4">guò</span> <span class="tn">ma</span>？</span>
-    <span class="sentence-py" data-level="P2" data-i="4"><span class="t3">Xiǎo</span> <span class="t2">Míng</span>: <span class="t3">Wǒ</span> <span class="t4">qù</span> <span class="t4">guò</span> <span class="t1">yī</span> <span class="t4">cì</span>。<span class="t3">Wǒ</span> <span class="t2">jué</span><span class="tn">de</span> <span class="t1">qiū</span><span class="t1">tiān</span> <span class="t4">zuì</span> <span class="t3">hǎo</span>，<span class="t4">bù</span> <span class="t3">lěng</span> <span class="t3">yě</span> <span class="t4">bú</span> <span class="t4">rè</span>，<span class="t3">hěn</span> <span class="t1">shū</span><span class="tn">fu</span>.</span>
-    <span class="sentence-py" data-level="P2" data-i="5"><span class="t3">Hǎo</span> <span class="t3">zhǔ</span><span class="tn">yi</span>！<span class="t4">Nà</span> <span class="t3">wǒ</span><span class="tn">men</span> <span class="t3">kě</span><span class="t3">yǐ</span> <span class="t4">yì</span><span class="t3">qǐ</span> <span class="t4">qù</span>！</span>
+    <span class="sentence-py" data-level="P2" data-i="0"><span class="t2">Nán</span>: <span class="t3">Nǐ</span> <span class="t4">xià</span> <span class="t0">ge</span> <span class="t1">xīng</span><span class="t1">qī</span> <span class="t3">yǒu</span> <span class="t2">shén</span><span class="t0">me</span> <span class="t4">jì</span><span class="t4">huà</span>?</span>
+    <span class="sentence-py" data-level="P2" data-i="1"><span class="t3">Nǚ</span>: <span class="t2">Hái</span> <span class="t2">méi</span> <span class="t3">xiǎng</span><span class="t3">hǎo</span>. <span class="t3">Nǐ</span> <span class="t3">yǒu</span> <span class="t3">hǎo</span> <span class="t3">zhǔ</span><span class="t4">yì</span> <span class="t0">ma</span>?</span>
+    <span class="sentence-py" data-level="P2" data-i="2"><span class="t2">Nán</span>: <span class="t3">Wǒ</span><span class="t0">men</span> <span class="t4">zài</span> <span class="t3">wǎng</span><span class="t4">shàng</span> <span class="t3">mǎi</span> <span class="t4">piào</span> <span class="t4">qù</span> <span class="t4">kàn</span> <span class="t4">diàn</span><span class="t3">yǐng</span>, <span class="t3">nǐ</span> <span class="t2">tóng</span><span class="t4">yì</span> <span class="t0">ba</span>?</span>
+    <span class="sentence-py" data-level="P2" data-i="3"><span class="t3">Nǚ</span>: <span class="t2">Tóng</span><span class="t4">yì</span>! <span class="t4">Dàn</span><span class="t4">shì</span> <span class="t3">wǒ</span> <span class="t3">yǒu</span> <span class="t3">diǎn</span><span class="t2">r</span> <span class="t3">jǐn</span><span class="t1">zhāng</span>, <span class="t4">huì</span> <span class="t1">tīng</span><span class="t4">bu</span><span class="t3">dǒng</span> <span class="t0">ma</span>?</span>
+    <span class="sentence-py" data-level="P2" data-i="4"><span class="t2">Nán</span>: <span class="t2">Bié</span> <span class="t3">jǐn</span><span class="t1">zhāng</span>! <span class="t3">Pǔ</span><span class="t1">tōng</span><span class="t4">huà</span> <span class="t2">hé</span> <span class="t3">wǒ</span><span class="t0">men</span> <span class="t2">xué</span> <span class="t0">de</span> <span class="t4">shì</span> <span class="t2">yí</span><span class="t4">yàng</span> <span class="t0">de</span>.</span>
+    <span class="sentence-py" data-level="P2" data-i="5"><span class="t3">Nǚ</span>: <span class="t3">Hǎo</span> <span class="t0">a</span>! <span class="t4">Xià</span> <span class="t0">ge</span> <span class="t1">xīng</span><span class="t1">qī</span><span class="t4">liù</span> <span class="t4">jiàn</span>!</span>
   </div>
 
   <div id="p2-english" class="hideable english-block">
-    <span class="sentence-en" data-level="P2" data-i="0">Xiao Ming: What are your plans for this holiday?</span>
-    <span class="sentence-en" data-level="P2" data-i="1">Xiao Hong: I want to travel to Shanghai, but I haven't decided which hotel to stay at yet.</span>
-    <span class="sentence-en" data-level="P2" data-i="2">Xiao Ming: Shanghai is really interesting! Do you know which season is the best time to go?</span>
-    <span class="sentence-en" data-level="P2" data-i="3">Xiao Hong: Not really. Have you been there before?</span>
-    <span class="sentence-en" data-level="P2" data-i="4">Xiao Ming: I've been once. I think autumn is the best — not cold, not hot, very comfortable.</span>
-    <span class="sentence-en" data-level="P2" data-i="5">Xiao Hong: Great idea! Then we can go together!</span>
+    <span class="sentence-en" data-level="P2" data-i="0">M: What are your plans for next week?</span>
+    <span class="sentence-en" data-level="P2" data-i="1">F: Haven't decided yet. Do you have any good ideas?</span>
+    <span class="sentence-en" data-level="P2" data-i="2">M: How about we buy tickets online to go see a movie — you agree, right?</span>
+    <span class="sentence-en" data-level="P2" data-i="3">F: Agreed! But I'm a bit nervous — what if I can't understand it?</span>
+    <span class="sentence-en" data-level="P2" data-i="4">M: Don't be nervous! Mandarin is the same as what we've been studying.</span>
+    <span class="sentence-en" data-level="P2" data-i="5">F: Great! See you next Saturday!</span>
   </div>
 
   <div class="questions">
     <h4>Comprehension Questions</h4>
     <span class="toggle-btn" onclick="toggle('p2-qpy')">▸ Question Pinyin</span>
     <ol>
-      <li>小红这个假期想去哪儿旅游？
+      <li>她说下个星期有什么计划？
         <span class="ans-btn" onclick="toggle('a2-1')">▸ answer</span>
-        <span id="a2-1" class="hideable answer"> → 她想去上海旅游。</span>
+        <span id="a2-1" class="hideable answer"> → 她还没想好。</span>
       </li>
-      <li>小红还没决定什么？
+      <li>他想去做什么？
         <span class="ans-btn" onclick="toggle('a2-2')">▸ answer</span>
-        <span id="a2-2" class="hideable answer"> → 她还没决定住哪个酒店。</span>
+        <span id="a2-2" class="hideable answer"> → 他想在网上买票去看电影。</span>
       </li>
-      <li>小明觉得什么季节去上海最好？
+      <li>她为什么有点儿紧张？
         <span class="ans-btn" onclick="toggle('a2-3')">▸ answer</span>
-        <span id="a2-3" class="hideable answer"> → 他觉得秋天最好。</span>
+        <span id="a2-3" class="hideable answer"> → 因为她担心会听不懂。</span>
       </li>
-      <li>秋天的天气怎么样？
+      <li>他说普通话和什么一样的？
         <span class="ans-btn" onclick="toggle('a2-4')">▸ answer</span>
-        <span id="a2-4" class="hideable answer"> → 不冷也不热，很舒服。</span>
+        <span id="a2-4" class="hideable answer"> → 普通话和我们学的是一样的。</span>
+      </li>
+      <li>他们什么时候见面？
+        <span class="ans-btn" onclick="toggle('a2-5')">▸ answer</span>
+        <span id="a2-5" class="hideable answer"> → 下个星期六见。</span>
       </li>
     </ol>
     <div id="p2-qpy" class="hideable pinyin-block">
-      1. <span class="t3">Xiǎo</span> <span class="t2">Hóng</span> <span class="t4">zhè</span><span class="tn">ge</span> <span class="t4">jià</span><span class="t1">qī</span> <span class="t3">xiǎng</span> <span class="t4">qù</span> <span class="t3">nǎ</span><span class="tn">er</span> <span class="t3">lǚ</span><span class="t2">yóu</span>？ → <span class="t1">Tā</span> <span class="t3">xiǎng</span> <span class="t4">qù</span> <span class="t4">Shàng</span><span class="t3">hǎi</span> <span class="t3">lǚ</span><span class="t2">yóu</span>。<br/>
-      2. <span class="t3">Xiǎo</span> <span class="t2">Hóng</span> <span class="t2">hái</span> <span class="t2">méi</span> <span class="t2">jué</span><span class="t4">dìng</span> <span class="t2">shén</span><span class="tn">me</span>？ → <span class="t1">Tā</span> <span class="t2">hái</span> <span class="t2">méi</span> <span class="t2">jué</span><span class="t4">dìng</span> <span class="t4">zhù</span> <span class="t3">nǎ</span><span class="tn">ge</span> <span class="t3">jiǔ</span><span class="t4">diàn</span>。<br/>
-      3. <span class="t3">Xiǎo</span> <span class="t2">Míng</span> <span class="t2">jué</span><span class="tn">de</span> <span class="t2">shén</span><span class="tn">me</span> <span class="t4">jì</span><span class="t2">jié</span> <span class="t4">qù</span> <span class="t4">Shàng</span><span class="t3">hǎi</span> <span class="t4">zuì</span> <span class="t3">hǎo</span>？ → <span class="t1">Tā</span> <span class="t2">jué</span><span class="tn">de</span> <span class="t1">qiū</span><span class="t1">tiān</span> <span class="t4">zuì</span> <span class="t3">hǎo</span>。<br/>
-      4. <span class="t1">Qiū</span><span class="t1">tiān</span> <span class="t0">de</span> <span class="t1">tiān</span><span class="t4">qì</span> <span class="t3">zěn</span><span class="tn">me</span><span class="t4">yàng</span>？ → <span class="t4">Bù</span> <span class="t3">lěng</span> <span class="t3">yě</span> <span class="t4">bú</span> <span class="t4">rè</span>，<span class="t3">hěn</span> <span class="t1">shū</span><span class="tn">fu</span>。
+      1. <span class="t1">Tā</span> <span class="t1">shuō</span> <span class="t4">xià</span> <span class="t0">ge</span> <span class="t1">xīng</span><span class="t1">qī</span> <span class="t3">yǒu</span> <span class="t2">shén</span><span class="t0">me</span> <span class="t4">jì</span><span class="t4">huà</span>？ → <span class="t1">Tā</span> <span class="t2">hái</span> <span class="t2">méi</span> <span class="t3">xiǎng</span><span class="t3">hǎo</span>。<br/>
+      2. <span class="t1">Tā</span> <span class="t3">xiǎng</span> <span class="t4">qù</span> <span class="t4">zuò</span> <span class="t2">shén</span><span class="t0">me</span>？ → <span class="t1">Tā</span> <span class="t3">xiǎng</span> <span class="t4">zài</span> <span class="t3">wǎng</span><span class="t4">shàng</span> <span class="t3">mǎi</span> <span class="t4">piào</span> <span class="t4">qù</span> <span class="t4">kàn</span> <span class="t4">diàn</span><span class="t3">yǐng</span>。<br/>
+      3. <span class="t1">Tā</span> <span class="t4">wèi</span><span class="t2">shén</span><span class="t0">me</span> <span class="t3">yǒu</span> <span class="t3">diǎn</span><span class="t2">r</span> <span class="t3">jǐn</span><span class="t1">zhāng</span>？ → <span class="t1">Yīn</span><span class="t4">wèi</span> <span class="t1">tā</span> <span class="t1">dān</span><span class="t1">xīn</span> <span class="t4">huì</span> <span class="t1">tīng</span><span class="t4">bu</span><span class="t3">dǒng</span>。<br/>
+      4. <span class="t1">Tā</span> <span class="t1">shuō</span> <span class="t3">pǔ</span><span class="t1">tōng</span><span class="t4">huà</span> <span class="t2">hé</span> <span class="t2">shén</span><span class="t0">me</span> <span class="t2">yí</span><span class="t4">yàng</span> <span class="t0">de</span>？ → <span class="t3">Pǔ</span><span class="t1">tōng</span><span class="t4">huà</span> <span class="t2">hé</span> <span class="t3">wǒ</span><span class="t0">men</span> <span class="t2">xué</span> <span class="t0">de</span> <span class="t4">shì</span> <span class="t2">yí</span><span class="t4">yàng</span> <span class="t0">de</span>。<br/>
+      5. <span class="t1">Tā</span><span class="t0">men</span> <span class="t2">shén</span><span class="t0">me</span> <span class="t2">shí</span><span class="t0">hou</span> <span class="t4">jiàn</span><span class="t4">miàn</span>？ → <span class="t4">Xià</span> <span class="t0">ge</span> <span class="t1">xīng</span><span class="t1">qī</span><span class="t4">liù</span> <span class="t4">jiàn</span>。
     </div>
   </div>
 </div>
 
-<!-- ==================== PASSAGE 3: HARDER — 周末的一天 ==================== -->
+<!-- ==================== PASSAGE 3: HARDER ==================== -->
 <div class="passage-card" id="exercise-P3" data-type="narrative">
   <div class="passage-header">
     <span class="badge badge-harder">Harder</span>
-    <span class="passage-title">周末的一天</span>
+    <span class="passage-title">每天早上</span>
   </div>
 
   <div class="hanzi-text">
-    <span class="sentence-hz" data-level="P3" data-i="0">上个周末，我先去书店看书，然后去朋友家吃饭。<span class="tts-btn" onclick="ttsSpeak(this,'上个周末，我先去书店看书，然后去朋友家吃饭。')" title="Play">🔊</span></span>
-    <span class="sentence-hz" data-level="P3" data-i="1">朋友做的饭非常好吃，我们都吃得很<span class="new-word">舒服</span>。<span class="tts-btn" onclick="ttsSpeak(this,'朋友做的饭非常好吃，我们都吃得很舒服。')" title="Play">🔊</span></span>
-    <span class="sentence-hz" data-level="P3" data-i="2">吃完饭以后，我们一起看了一部电影，很有意思。<span class="tts-btn" onclick="ttsSpeak(this,'吃完饭以后，我们一起看了一部电影，很有意思。')" title="Play">🔊</span></span>
-    <span class="sentence-hz" data-level="P3" data-i="3">我觉得和朋友一起过周末比一个人在家有意思多了。<span class="tts-btn" onclick="ttsSpeak(this,'我觉得和朋友一起过周末比一个人在家有意思多了。')" title="Play">🔊</span></span>
-    <span class="sentence-hz" data-level="P3" data-i="4">回家的时候，我才想起来还有一个作业没做完。<span class="tts-btn" onclick="ttsSpeak(this,'回家的时候，我才想起来还有一个作业没做完。')" title="Play">🔊</span></span>
-    <span class="sentence-hz" data-level="P3" data-i="5">虽然很累，我还是坐在桌子旁边把作业写完了。<span class="tts-btn" onclick="ttsSpeak(this,'虽然很累，我还是坐在桌子旁边把作业写完了。')" title="Play">🔊</span></span>
-    <span class="sentence-hz" data-level="P3" data-i="6">太晚了！我下次一定要早一点儿做作业。<span class="tts-btn" onclick="ttsSpeak(this,'太晚了！我下次一定要早一点儿做作业。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P3" data-i="0">每天早上，我先起床，然后去厨房做早饭。<span class="tts-btn" onclick="ttsSpeak(this,'每天早上，我先起床，然后去厨房做早饭。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P3" data-i="1">吃完早饭以后，我坐地铁去医院看妈妈。<span class="tts-btn" onclick="ttsSpeak(this,'吃完早饭以后，我坐地铁去医院看妈妈。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P3" data-i="2">她上个月<span class="new-word">住院</span>了，所以我每天都去看她。<span class="tts-btn" onclick="ttsSpeak(this,'她上个月住院了，所以我每天都去看她。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P3" data-i="3">到了医院，我先买了花送给她。<span class="tts-btn" onclick="ttsSpeak(this,'到了医院，我先买了花送给她。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P3" data-i="4">花是从<span class="new-word">云南</span>来的，非常好看，我还买了一个<span class="new-word">花盆</span>给她。<span class="tts-btn" onclick="ttsSpeak(this,'花是从云南来的，非常好看，我还买了一个花盆给她。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P3" data-i="5">妈妈开心地说，她<span class="new-word">在网上</span>看到<span class="new-word">加州</span>也有这种花，和<span class="new-word">云南</span>的<span class="new-word">一样的</span>。<span class="tts-btn" onclick="ttsSpeak(this,'妈妈开心地说，她在网上看到加州也有这种花，和云南的一样的。')" title="Play">🔊</span></span>
+    <span class="sentence-hz" data-level="P3" data-i="6">我们聊了很久，我觉得她比以前好多了，真的太好了！<span class="tts-btn" onclick="ttsSpeak(this,'我们聊了很久，我觉得她比以前好多了，真的太好了！')" title="Play">🔊</span></span>
   </div>
 
   <button class="play-btn" id="play-P3" onclick="startExercise('P3')">▶ Play Passage</button>
@@ -800,56 +859,56 @@ function toggle(id) {
   <span class="toggle-btn" onclick="toggle('p3-english')">▸ English</span>
 
   <div id="p3-pinyin" class="hideable pinyin-block">
-    <span class="sentence-py" data-level="P3" data-i="0"><span class="t4">Shàng</span><span class="tn">ge</span> <span class="t1">zhōu</span><span class="t4">mò</span>，<span class="t3">wǒ</span> <span class="t1">xiān</span> <span class="t4">qù</span> <span class="t1">shū</span><span class="t4">diàn</span> <span class="t4">kàn</span> <span class="t1">shū</span>，<span class="t2">rán</span><span class="t4">hòu</span> <span class="t4">qù</span> <span class="t2">péng</span><span class="t3">yǒu</span> <span class="t1">jiā</span> <span class="t1">chī</span><span class="t4">fàn</span>.</span>
-    <span class="sentence-py" data-level="P3" data-i="1"><span class="t2">Péng</span><span class="t3">yǒu</span> <span class="t4">zuò</span><span class="tn">de</span> <span class="t4">fàn</span> <span class="t1">fēi</span><span class="t2">cháng</span> <span class="t3">hǎo</span><span class="t1">chī</span>，<span class="t3">wǒ</span><span class="tn">men</span> <span class="t1">dōu</span> <span class="t1">chī</span><span class="tn">de</span> <span class="t3">hěn</span> <span class="t1">shū</span><span class="tn">fu</span>.</span>
-    <span class="sentence-py" data-level="P3" data-i="2"><span class="t1">Chī</span><span class="t2">wán</span> <span class="t4">fàn</span> <span class="t3">yǐ</span><span class="t4">hòu</span>，<span class="t3">wǒ</span><span class="tn">men</span> <span class="t4">yì</span><span class="t3">qǐ</span> <span class="t4">kàn</span> <span class="tn">le</span> <span class="t2">yì</span> <span class="t4">bù</span> <span class="t4">diàn</span><span class="t3">yǐng</span>，<span class="t3">hěn</span> <span class="t3">yǒu</span><span class="t4">yì</span><span class="tn">si</span>.</span>
-    <span class="sentence-py" data-level="P3" data-i="3"><span class="t3">Wǒ</span> <span class="t2">jué</span><span class="tn">de</span> <span class="t2">hé</span> <span class="t2">péng</span><span class="t3">yǒu</span> <span class="t4">yì</span><span class="t3">qǐ</span> <span class="t4">guò</span> <span class="t1">zhōu</span><span class="t4">mò</span> <span class="t3">bǐ</span> <span class="t4">yī</span> <span class="tn">ge</span> <span class="t2">rén</span> <span class="t4">zài</span><span class="t1">jiā</span> <span class="t3">yǒu</span><span class="t4">yì</span><span class="tn">si</span> <span class="t1">duō</span> <span class="tn">le</span>.</span>
-    <span class="sentence-py" data-level="P3" data-i="4"><span class="t2">Huí</span><span class="t1">jiā</span><span class="tn">de</span> <span class="t2">shí</span><span class="tn">hou</span>，<span class="t3">wǒ</span> <span class="t2">cái</span> <span class="t3">xiǎng</span> <span class="t3">qǐ</span><span class="tn">lai</span> <span class="t2">hái</span> <span class="t3">yǒu</span> <span class="t4">yī</span> <span class="tn">ge</span> <span class="t4">zuò</span><span class="t4">yè</span> <span class="t2">méi</span> <span class="t4">zuò</span><span class="t2">wán</span>.</span>
-    <span class="sentence-py" data-level="P3" data-i="5"><span class="t1">Suī</span><span class="t2">rán</span> <span class="t3">hěn</span> <span class="t4">lèi</span>，<span class="t3">wǒ</span> <span class="t2">hái</span><span class="t4">shi</span> <span class="t4">zuò</span> <span class="t4">zài</span> <span class="t1">zhuō</span><span class="tn">zi</span> <span class="t2">páng</span><span class="tn">biān</span> <span class="t3">bǎ</span> <span class="t4">zuò</span><span class="t4">yè</span> <span class="t3">xiě</span><span class="t2">wán</span> <span class="tn">le</span>.</span>
-    <span class="sentence-py" data-level="P3" data-i="6"><span class="t4">Tài</span> <span class="t3">wǎn</span> <span class="tn">le</span>！<span class="t3">Wǒ</span> <span class="t4">xià</span><span class="t4">cì</span> <span class="t4">yī</span><span class="t4">dìng</span> <span class="t4">yào</span> <span class="t3">zǎo</span> <span class="t4">yì</span><span class="t3">diǎn</span><span class="tn">r</span> <span class="t4">zuò</span> <span class="t4">zuò</span><span class="t4">yè</span>.</span>
+    <span class="sentence-py" data-level="P3" data-i="0"><span class="t3">Měi</span> <span class="t1">tiān</span> <span class="t3">zǎo</span><span class="t0">shang</span>, <span class="t3">wǒ</span> <span class="t1">xiān</span> <span class="t3">qǐ</span><span class="t2">chuáng</span>, <span class="t2">rán</span><span class="t4">hòu</span> <span class="t4">qù</span> <span class="t2">chú</span><span class="t2">fáng</span> <span class="t4">zuò</span> <span class="t3">zǎo</span><span class="t4">fàn</span>.</span>
+    <span class="sentence-py" data-level="P3" data-i="1"><span class="t1">Chī</span> <span class="t2">wán</span> <span class="t3">zǎo</span><span class="t4">fàn</span> <span class="t3">yǐ</span><span class="t4">hòu</span>, <span class="t3">wǒ</span> <span class="t4">zuò</span> <span class="t4">dì</span><span class="t3">tiě</span> <span class="t4">qù</span> <span class="t1">yī</span><span class="t4">yuàn</span> <span class="t4">kàn</span> <span class="t1">mā</span><span class="t0">ma</span>.</span>
+    <span class="sentence-py" data-level="P3" data-i="2"><span class="t1">Tā</span> <span class="t4">shàng</span> <span class="t0">ge</span> <span class="t4">yuè</span> <span class="t4">zhù</span><span class="t4">yuàn</span> <span class="t0">le</span>, <span class="t3">suǒ</span><span class="t3">yǐ</span> <span class="t3">wǒ</span> <span class="t3">měi</span> <span class="t1">tiān</span> <span class="t1">dōu</span> <span class="t4">qù</span> <span class="t4">kàn</span> <span class="t1">tā</span>.</span>
+    <span class="sentence-py" data-level="P3" data-i="3"><span class="t4">Dào</span> <span class="t0">le</span> <span class="t1">yī</span><span class="t4">yuàn</span>, <span class="t3">wǒ</span> <span class="t1">xiān</span> <span class="t3">mǎi</span> <span class="t0">le</span> <span class="t1">huā</span> <span class="t4">sòng</span> <span class="t3">gěi</span> <span class="t1">tā</span>.</span>
+    <span class="sentence-py" data-level="P3" data-i="4"><span class="t1">Huā</span> <span class="t4">shì</span> <span class="t2">cóng</span> <span class="t2">Yún</span><span class="t2">nán</span> <span class="t2">lái</span> <span class="t0">de</span>, <span class="t1">fēi</span><span class="t2">cháng</span> <span class="t3">hǎo</span><span class="t4">kàn</span>, <span class="t3">wǒ</span> <span class="t2">hái</span> <span class="t3">mǎi</span> <span class="t0">le</span> <span class="t2">yí</span> <span class="t0">ge</span> <span class="t1">huā</span><span class="t2">pén</span> <span class="t3">gěi</span> <span class="t1">tā</span>.</span>
+    <span class="sentence-py" data-level="P3" data-i="5"><span class="t1">Mā</span><span class="t0">ma</span> <span class="t1">kāi</span><span class="t1">xīn</span> <span class="t0">de</span> <span class="t1">shuō</span>, <span class="t1">tā</span> <span class="t4">zài</span> <span class="t3">wǎng</span><span class="t4">shàng</span> <span class="t4">kàn</span><span class="t4">dào</span> <span class="t1">Jiā</span><span class="t1">zhōu</span> <span class="t3">yě</span> <span class="t3">yǒu</span> <span class="t4">zhè</span> <span class="t3">zhǒng</span> <span class="t1">huā</span>, <span class="t2">hé</span> <span class="t2">Yún</span><span class="t2">nán</span> <span class="t0">de</span> <span class="t2">yí</span><span class="t4">yàng</span> <span class="t0">de</span>.</span>
+    <span class="sentence-py" data-level="P3" data-i="6"><span class="t3">Wǒ</span><span class="t0">men</span> <span class="t2">liáo</span> <span class="t0">le</span> <span class="t3">hěn</span> <span class="t3">jiǔ</span>, <span class="t3">wǒ</span> <span class="t2">jué</span><span class="t0">de</span> <span class="t1">tā</span> <span class="t3">bǐ</span> <span class="t3">yǐ</span><span class="t2">qián</span> <span class="t3">hǎo</span> <span class="t1">duō</span> <span class="t0">le</span>, <span class="t1">zhēn</span> <span class="t0">de</span> <span class="t4">tài</span> <span class="t3">hǎo</span> <span class="t0">le</span>!</span>
   </div>
 
   <div id="p3-english" class="hideable english-block">
-    <span class="sentence-en" data-level="P3" data-i="0">Last weekend, I first went to the bookstore to read, then went to a friend's house for dinner.</span>
-    <span class="sentence-en" data-level="P3" data-i="1">My friend's cooking was delicious — we all ate very comfortably.</span>
-    <span class="sentence-en" data-level="P3" data-i="2">After eating, we watched a movie together — it was really interesting.</span>
-    <span class="sentence-en" data-level="P3" data-i="3">I think spending the weekend with friends is much more interesting than being home alone.</span>
-    <span class="sentence-en" data-level="P3" data-i="4">On the way home, I suddenly remembered there was still some homework I hadn't finished.</span>
-    <span class="sentence-en" data-level="P3" data-i="5">Even though I was very tired, I still sat down at the table and finished writing the homework.</span>
-    <span class="sentence-en" data-level="P3" data-i="6">It was so late! Next time I'll definitely do my homework earlier.</span>
+    <span class="sentence-en" data-level="P3" data-i="0">Every morning, I first get up and then go to the kitchen to make breakfast.</span>
+    <span class="sentence-en" data-level="P3" data-i="1">After finishing breakfast, I take the subway to the hospital to see my mom.</span>
+    <span class="sentence-en" data-level="P3" data-i="2">She was hospitalized last month, so I go to see her every day.</span>
+    <span class="sentence-en" data-level="P3" data-i="3">When I got to the hospital, I first bought flowers to give to her.</span>
+    <span class="sentence-en" data-level="P3" data-i="4">The flowers were from Yunnan, very beautiful — I also bought her a flower pot.</span>
+    <span class="sentence-en" data-level="P3" data-i="5">Mom said happily that she had seen online that California also has this kind of flower, the same as the ones from Yunnan.</span>
+    <span class="sentence-en" data-level="P3" data-i="6">We chatted for a long time. I feel she is much better than before — truly wonderful!</span>
   </div>
 
   <div class="questions">
     <h4>Comprehension Questions</h4>
     <span class="toggle-btn" onclick="toggle('p3-qpy')">▸ Question Pinyin</span>
     <ol>
-      <li>上个周末，他先去哪儿？
+      <li>她每天早上先做什么？
         <span class="ans-btn" onclick="toggle('a3-1')">▸ answer</span>
-        <span id="a3-1" class="hideable answer"> → 他先去书店看书。</span>
+        <span id="a3-1" class="hideable answer"> → 她先起床，然后去厨房做早饭。</span>
       </li>
-      <li>他们一起看了什么？
+      <li>妈妈上个月怎么了？
         <span class="ans-btn" onclick="toggle('a3-2')">▸ answer</span>
-        <span id="a3-2" class="hideable answer"> → 他们一起看了一部电影。</span>
+        <span id="a3-2" class="hideable answer"> → 她上个月住院了。</span>
       </li>
-      <li>他觉得什么比一个人在家有意思？
+      <li>她去医院买了什么送给妈妈？
         <span class="ans-btn" onclick="toggle('a3-3')">▸ answer</span>
-        <span id="a3-3" class="hideable answer"> → 和朋友一起过周末比一个人在家有意思多了。</span>
+        <span id="a3-3" class="hideable answer"> → 她买了花，还买了一个花盆。</span>
       </li>
-      <li>回家的时候，他才想起来什么？
+      <li>妈妈说加州有什么？
         <span class="ans-btn" onclick="toggle('a3-4')">▸ answer</span>
-        <span id="a3-4" class="hideable answer"> → 还有一个作业没做完。</span>
+        <span id="a3-4" class="hideable answer"> → 加州也有这种花，和云南的一样的。</span>
       </li>
-      <li>他最后怎么做的？
+      <li>她觉得妈妈怎么样了？
         <span class="ans-btn" onclick="toggle('a3-5')">▸ answer</span>
-        <span id="a3-5" class="hideable answer"> → 虽然很累，他还是把作业写完了。</span>
+        <span id="a3-5" class="hideable answer"> → 她觉得妈妈比以前好多了。</span>
       </li>
     </ol>
     <div id="p3-qpy" class="hideable pinyin-block">
-      1. <span class="t4">Shàng</span><span class="tn">ge</span> <span class="t1">zhōu</span><span class="t4">mò</span>，<span class="t1">tā</span> <span class="t1">xiān</span> <span class="t4">qù</span> <span class="t3">nǎ</span><span class="tn">er</span>？ → <span class="t1">Tā</span> <span class="t1">xiān</span> <span class="t4">qù</span> <span class="t1">shū</span><span class="t4">diàn</span> <span class="t4">kàn</span> <span class="t1">shū</span>。<br/>
-      2. <span class="t1">Tā</span><span class="tn">men</span> <span class="t4">yì</span><span class="t3">qǐ</span> <span class="t4">kàn</span> <span class="tn">le</span> <span class="t2">shén</span><span class="tn">me</span>？ → <span class="t1">Tā</span><span class="tn">men</span> <span class="t4">yì</span><span class="t3">qǐ</span> <span class="t4">kàn</span> <span class="tn">le</span> <span class="t2">yì</span> <span class="t4">bù</span> <span class="t4">diàn</span><span class="t3">yǐng</span>。<br/>
-      3. <span class="t1">Tā</span> <span class="t2">jué</span><span class="tn">de</span> <span class="t2">shén</span><span class="tn">me</span> <span class="t3">bǐ</span> <span class="t4">yī</span> <span class="tn">ge</span> <span class="t2">rén</span> <span class="t4">zài</span><span class="t1">jiā</span> <span class="t3">yǒu</span><span class="t4">yì</span><span class="tn">si</span>？ → <span class="t2">Hé</span> <span class="t2">péng</span><span class="t3">yǒu</span> <span class="t4">yì</span><span class="t3">qǐ</span> <span class="t4">guò</span> <span class="t1">zhōu</span><span class="t4">mò</span>。<br/>
-      4. <span class="t2">Huí</span><span class="t1">jiā</span><span class="tn">de</span> <span class="t2">shí</span><span class="tn">hou</span>，<span class="t1">tā</span> <span class="t2">cái</span> <span class="t3">xiǎng</span> <span class="t3">qǐ</span><span class="tn">lai</span> <span class="t2">shén</span><span class="tn">me</span>？ → <span class="t2">Hái</span> <span class="t3">yǒu</span> <span class="t4">yī</span> <span class="tn">ge</span> <span class="t4">zuò</span><span class="t4">yè</span> <span class="t2">méi</span> <span class="t4">zuò</span><span class="t2">wán</span>。<br/>
-      5. <span class="t1">Tā</span> <span class="t4">zuì</span><span class="t4">hòu</span> <span class="t3">zěn</span><span class="tn">me</span> <span class="t4">zuò</span><span class="tn">de</span>？ → <span class="t1">Suī</span><span class="t2">rán</span> <span class="t3">hěn</span> <span class="t4">lèi</span>，<span class="t1">tā</span> <span class="t2">hái</span><span class="t4">shi</span> <span class="t3">bǎ</span> <span class="t4">zuò</span><span class="t4">yè</span> <span class="t3">xiě</span><span class="t2">wán</span> <span class="tn">le</span>。
+      1. <span class="t1">Tā</span> <span class="t3">měi</span> <span class="t1">tiān</span> <span class="t3">zǎo</span><span class="t0">shang</span> <span class="t1">xiān</span> <span class="t4">zuò</span> <span class="t2">shén</span><span class="t0">me</span>？ → <span class="t1">Tā</span> <span class="t1">xiān</span> <span class="t3">qǐ</span><span class="t2">chuáng</span>, <span class="t2">rán</span><span class="t4">hòu</span> <span class="t4">qù</span> <span class="t2">chú</span><span class="t2">fáng</span> <span class="t4">zuò</span> <span class="t3">zǎo</span><span class="t4">fàn</span>。<br/>
+      2. <span class="t1">Mā</span><span class="t0">ma</span> <span class="t4">shàng</span> <span class="t0">ge</span> <span class="t4">yuè</span> <span class="t3">zěn</span><span class="t0">me</span> <span class="t0">le</span>？ → <span class="t1">Tā</span> <span class="t4">shàng</span> <span class="t0">ge</span> <span class="t4">yuè</span> <span class="t4">zhù</span><span class="t4">yuàn</span> <span class="t0">le</span>。<br/>
+      3. <span class="t1">Tā</span> <span class="t4">qù</span> <span class="t1">yī</span><span class="t4">yuàn</span> <span class="t3">mǎi</span> <span class="t0">le</span> <span class="t2">shén</span><span class="t0">me</span> <span class="t4">sòng</span> <span class="t3">gěi</span> <span class="t1">mā</span><span class="t0">ma</span>？ → <span class="t1">Tā</span> <span class="t3">mǎi</span> <span class="t0">le</span> <span class="t1">huā</span>, <span class="t2">hái</span> <span class="t3">mǎi</span> <span class="t0">le</span> <span class="t2">yí</span> <span class="t0">ge</span> <span class="t1">huā</span><span class="t2">pén</span>。<br/>
+      4. <span class="t1">Mā</span><span class="t0">ma</span> <span class="t1">shuō</span> <span class="t1">Jiā</span><span class="t1">zhōu</span> <span class="t3">yǒu</span> <span class="t2">shén</span><span class="t0">me</span>？ → <span class="t1">Jiā</span><span class="t1">zhōu</span> <span class="t3">yě</span> <span class="t3">yǒu</span> <span class="t4">zhè</span> <span class="t3">zhǒng</span> <span class="t1">huā</span>, <span class="t2">hé</span> <span class="t2">Yún</span><span class="t2">nán</span> <span class="t0">de</span> <span class="t2">yí</span><span class="t4">yàng</span> <span class="t0">de</span>。<br/>
+      5. <span class="t1">Tā</span> <span class="t2">jué</span><span class="t0">de</span> <span class="t1">mā</span><span class="t0">ma</span> <span class="t3">zěn</span><span class="t0">me</span><span class="t4">yàng</span> <span class="t0">le</span>？ → <span class="t1">Tā</span> <span class="t2">jué</span><span class="t0">de</span> <span class="t1">mā</span><span class="t0">ma</span> <span class="t3">bǐ</span> <span class="t3">yǐ</span><span class="t2">qián</span> <span class="t3">hǎo</span> <span class="t1">duō</span> <span class="t0">le</span>。
     </div>
   </div>
 </div>
