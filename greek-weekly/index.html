@@ -137,6 +137,49 @@
   #fc-speed-val { white-space: nowrap; font-size: 11px; }
 }
 
+/* === Lesson Notes — styled like the vocab sections === */
+#notes { padding: 0 20px; }
+#notes > h2.notes-title { margin-top: 36px; }
+.notes-sub { font-size: 13px; color: #666; margin: 0 0 8px; }
+.notes-toc { display:flex; flex-wrap:wrap; gap:6px 16px; margin:0 0 4px; font-size:13px; }
+.notes-toc a { color:#445; text-decoration:none; font-weight:bold; }
+.notes-toc a:hover { color:#000; text-decoration:underline; }
+section.nsec { padding: 20px 0 6px; scroll-margin-top: 130px; }
+section.nsec h2.nsec-title { cursor:pointer; user-select:none; -webkit-user-select:none; }
+.nsec-intro { color:#444; font-size:14px; margin:0 0 12px; line-height:1.5; white-space:pre-line; }
+.nsub { margin:0 0 18px; }
+.nsub h4 { font-size:13px; font-weight:bold; color:#445; background:#f0f4ff; margin:0 0 6px; padding:8px 10px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; cursor:pointer; user-select:none; -webkit-user-select:none; }
+.nsub h4:hover { background:#dde4f4; }
+.nsub h4.n-allcrossed, section.nsec h2.nsec-title.n-allcrossed { text-decoration: line-through; color:#aaa; }
+.nsub h4.n-allcrossed { background:#eee; }
+.ntag { font-size:11px; font-weight:bold; padding:1px 8px; border-radius:10px; background:#e8eaed; color:#555; text-decoration:none; }
+.ntag.taught { background:#dff3e4; color:#1e6b34; }
+.ntag.nottaught { background:#fdebd0; color:#9a5b00; }
+.ntag.fix { background:#fadbd8; color:#a93226; }
+.ntag.good { background:#d6eaf8; color:#1f5f8b; }
+.nsec p.ntext { margin:6px 10px 10px; line-height:1.55; font-size:14px; color:#222; white-space:pre-line; }
+.nsec ul.nlist, .nsec ol.nlist { margin:6px 10px 12px 30px; padding:0; line-height:1.6; font-size:14px; }
+.nsent { padding:7px 10px; border:1px solid #eee; border-bottom:none; font-size:14px; }
+.nsent + .nsent, .nsent:last-child { border-bottom:1px solid #eee; }
+.nsent:nth-of-type(even) { background:#fafafa; }
+.nsent .en { color:#666; font-size:13px; }
+.ngrid { display:grid; margin:6px 0 14px; border:1px solid #ddd; font-size:14px; }
+.ngrid .nh { background:#f5f5f5; font-weight:bold; font-size:13px; padding:8px 10px; border-bottom:1px solid #ddd; }
+.ngrid .nc { padding:7px 10px; border-top:1px solid #eee; line-height:1.45; }
+.ngrid .nc.alt { background:#fafafa; }
+.ngrid .wrong { color:#c0392b; }
+.ngrid .right { color:#1e6b34; font-weight:600; }
+.nitem { cursor: pointer; }
+.nitem:hover { outline: 2px solid #cde; }
+.nitem.ncrossed, .nitem.ncrossed .el, .nitem.ncrossed .en, .nitem.ncrossed .wrong, .nitem.ncrossed .right { text-decoration: line-through; color: #bbb !important; }
+.nitem.ncrossed { background:#f8f8f8; }
+.nitem.ncrossed .tts-btn { opacity:.2; }
+#grammar-fc-btn { background:#1f7a7a; color:#fff; border:none; border-radius:4px; padding:6px 14px; font-size:13px; font-weight:bold; cursor:pointer; white-space:nowrap; }
+#grammar-fc-btn:hover { background:#17605f; }
+#gc-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:2100; align-items:center; justify-content:center; }
+@media (max-width:600px){ .ngrid { font-size:13px; } #notes { padding: 0 12px; } }
+@media print { .nsent .tts-btn, #grammar-fc-btn { display:none !important; } }
+
 /* === Mini-player slider width === */
 #mini-player input[type=range] { max-width: 160px; }
 </style>
@@ -148,11 +191,13 @@
   <a href="#adjectives">Adjectives</a>
   <a href="#adverbs">Adverbs &amp; Particles</a>
   <a href="#phrases">Phrases &amp; Expressions</a>
+  <a href="#notes">Lesson Notes</a>
   <span style="flex:1"></span>
   <span id="cross-count">0 / 37 crossed off</span>
   <button id="export-btn" title="Export non-crossed-off words to Anki">Export to Anki</button>
   <button id="download-btn" title="Download this file with crossed-off rows baked in, ready to upload to Claude">⬇ Download Marked File</button>
   <button id="flashcard-btn" title="Start flashcard session">🃏 Flashcards</button>
+  <button id="grammar-fc-btn" title="Flashcards of the grammar example sentences">🃏 Grammar Flashcards</button>
   <button id="toggle-all-btn" title="Cross off all rows — then un-cross the sections you want to study">✗ Cross Off All</button>
 </nav>
 <div id="speed-bar">
@@ -271,6 +316,177 @@
 </tbody>
 </table>
 </section>
+<div id="notes">
+<h2 class="notes-title">Lesson Notes</h2>
+<p class="notes-sub">Lesson of October 15, 2026</p>
+<div class="notes-toc"><a href="#n2">2. Grammar — Priority</a><a href="#n3">3. Grammar that was not taught</a><a href="#n4">4. Word order worth reviewing</a><a href="#n5">5. Must learn / worth recognizing / lower priority</a><a href="#n6">6. Best sentences to memorize</a><a href="#n7">7. Where to focus next (teacher's diagnosis)</a><a href="#n8">8. Short review plan</a></div>
+<section class="nsec" id="n2">
+<h2 class="nsec-title">2. Grammar — Priority</h2>
+<div class="nsub"><h4>A. Imperative: bare imperative vs να + 2nd person<span class="ntag taught">taught</span></h4>
+<p class="ntext">Bare imperative: πίνε! (sg.)  ·  να-command: να πίνεις!  ·  Negative: μην πίνεις OR να μην πίνεις.</p>
+<p class="ntext">Taught: «πίνε» and «να πίνεις» mean the same; the bare «πίνε» is a little stronger. For passive/middle verbs the teacher said only «να» is used (e.g. να σηκώνεσαι). In the negative, «να» is optional: «να μην πίνεις» and «μην πίνεις» are both fine.</p>
+<p class="ntext">Why it works (my explanation): the «να + you-form» command borrows the ordinary 2nd person present forms you already know (πίνεις, σηκώνεσαι, οδηγείς), so you don't need irregular imperative endings. That is why it is the safe choice. The bare imperative exists only for some verbs and forms, and sounds more direct/abrupt.</p>
+<p class="ntext">Rule of thumb from the teacher: when unsure, use «να».</p>
+<div class="nsent nitem" data-gr="Να μην πίνεις." data-en="Don&#x27;t drink."><span class="el">Να μην πίνεις.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Να μην πίνεις.&quot;)">🔊</button><br><span class="en">Don't drink.</span></div>
+<div class="nsent nitem" data-gr="Να μην περπατάς." data-en="Don&#x27;t walk."><span class="el">Να μην περπατάς.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Να μην περπατάς.&quot;)">🔊</button><br><span class="en">Don't walk.</span></div>
+<div class="nsent nitem" data-gr="Να μην σηκώνεσαι." data-en="Don&#x27;t get up."><span class="el">Να μην σηκώνεσαι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Να μην σηκώνεσαι.&quot;)">🔊</button><br><span class="en">Don't get up.</span></div>
+<div class="nsent nitem" data-gr="Να μην κοιμάσαι." data-en="Don&#x27;t sleep."><span class="el">Να μην κοιμάσαι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Να μην κοιμάσαι.&quot;)">🔊</button><br><span class="en">Don't sleep.</span></div>
+<div class="nsent nitem" data-gr="Μην πίνεις, μην σηκώνεσαι, μην κοιμάσαι." data-en="Don&#x27;t drink, don&#x27;t get up, don&#x27;t sleep (without «να»)."><span class="el">Μην πίνεις, μην σηκώνεσαι, μην κοιμάσαι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μην πίνεις, μην σηκώνεσαι, μην κοιμάσαι.&quot;)">🔊</button><br><span class="en">Don't drink, don't get up, don't sleep (without «να»).</span></div>
+<div class="nsent nitem" data-gr="Να μην οδηγείς." data-en="Don&#x27;t drive."><span class="el">Να μην οδηγείς.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Να μην οδηγείς.&quot;)">🔊</button><br><span class="en">Don't drive.</span></div>
+<div class="nsent nitem" data-gr="Να πίνεις νερό." data-en="Drink water. (Keep drinking water.)"><span class="el">Να πίνεις νερό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Να πίνεις νερό.&quot;)">🔊</button><br><span class="en">Drink water. (Keep drinking water.)</span></div>
+<div class="nsent nitem" data-gr="Μην μιλάς δυνατά." data-en="Don&#x27;t talk loudly."><span class="el">Μην μιλάς δυνατά.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μην μιλάς δυνατά.&quot;)">🔊</button><br><span class="en">Don't talk loudly.</span></div>
+<div class="nsent nitem" data-gr="Να μην ξυπνάς αργά." data-en="Don&#x27;t wake up late."><span class="el">Να μην ξυπνάς αργά.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Να μην ξυπνάς αργά.&quot;)">🔊</button><br><span class="en">Don't wake up late.</span></div>
+<p class="ntext">Compare: πίνε (bare, slightly stronger) = να πίνεις (softer, universal). Negative: μην or να μην, free choice («εσύ αποφασίζεις»). Passive/middle verbs: να only.</p>
+<p class="ntext">Common mistake: I said «οδηγά»; the teacher said it is better to say «να οδηγείς» (a stress/form problem with the bare imperative of a verb in -ώ — skip it and use να οδηγείς).</p>
+<p class="ntext">Aspect note: every command taught here used the present stem. Commands with the aorist stem were not taught.</p>
+</div>
+<div class="nsub"><h4>B. γουστάρω: a verb with no aorist<span class="ntag taught">taught</span></h4>
+<p class="ntext">Pattern: γουστάρω (present) / γούσταρα (past). That is all.</p>
+<p class="ntext">Meaning: to really like something/someone — a person, a food, an adventure/experience. Informal, "μου αρέσει πολύ"; can be romantic or just "he's a cool guy".</p>
+<p class="ntext">Teacher: there is no aorist «γουστάρισα», no «γουστάρωσα», no «έχω γουσταρέψει». Reason: «δεν μπορείς να πεις γουστάρισα μία φορά» — it is a state/attitude, not an event, so there is no one-time (aorist) form. So «γούσταρα» covers both "I liked it" and "I used to like it".</p>
+<p class="ntext">It takes a direct object in the accusative (τον, τη), unlike «μου αρέσει», where the thing liked is the subject.</p>
+<div class="nsent nitem" data-gr="Τη γουστάρω αυτή." data-en="I fancy her."><span class="el">Τη γουστάρω αυτή.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Τη γουστάρω αυτή.&quot;)">🔊</button><br><span class="en">I fancy her.</span></div>
+<div class="nsent nitem" data-gr="Τον γουστάρω αυτόν." data-en="I fancy him / I like him (as a guy)."><span class="el">Τον γουστάρω αυτόν.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Τον γουστάρω αυτόν.&quot;)">🔊</button><br><span class="en">I fancy him / I like him (as a guy).</span></div>
+<div class="nsent nitem" data-gr="Πω, γουστάρω!" data-en="Wow, I really like it!"><span class="el">Πω, γουστάρω!</span><br><span class="en">Wow, I really like it!</span></div>
+<div class="nsent nitem" data-gr="Τον γούσταρα." data-en="I liked him (back then)."><span class="el">Τον γούσταρα.</span><br><span class="en">I liked him (back then).</span></div>
+<div class="nsent nitem" data-gr="Γουστάρω αυτό το φαγητό." data-en="I really like this food."><span class="el">Γουστάρω αυτό το φαγητό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Γουστάρω αυτό το φαγητό.&quot;)">🔊</button><br><span class="en">I really like this food.</span></div>
+<div class="nsent nitem" data-gr="Γούσταρα πολύ αυτή την ταινία." data-en="I really liked that film (back then)."><span class="el">Γούσταρα πολύ αυτή την ταινία.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Γούσταρα πολύ αυτή την ταινία.&quot;)">🔊</button><br><span class="en">I really liked that film (back then).</span></div>
+<p class="ntext">Common mistake: I asked about «γιοστάρισα» then «γουστάρωσα» and called it the "imperfect". Neither exists; only «γούσταρα». Note: «γουστάρωσα» would be an aorist form; imperfect = γούσταρα.</p>
+</div>
+<div class="nsub"><h4>C. Light-verb collocations: παίρνω συνέντευξη, έχει να κάνει με<span class="ntag taught">taught</span></h4>
+<p class="ntext">Pattern: παίρνω + συνέντευξη; έχει να κάνει με + accusative. Greek picks a specific verb for the noun: English "do an interview" is "take an interview". These are fixed — learn the noun with its verb as one chunk.</p>
+<div class="nsent nitem" data-gr="Παίρνουν συνέντευξη με κάποιον." data-en="They are interviewing someone."><span class="el">Παίρνουν συνέντευξη με κάποιον.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Παίρνουν συνέντευξη με κάποιον.&quot;)">🔊</button><br><span class="en">They are interviewing someone.</span></div>
+<div class="nsent nitem" data-gr="Έχει να κάνει με τη μουσική, με τη νοσταλγία, με το συναίσθημα." data-en="It has to do with the music, the nostalgia, the emotion."><span class="el">Έχει να κάνει με τη μουσική, με τη νοσταλγία, με το συναίσθημα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχει να κάνει με τη μουσική, με τη νοσταλγία, με το συναίσθημα.&quot;)">🔊</button><br><span class="en">It has to do with the music, the nostalgia, the emotion.</span></div>
+<div class="nsent nitem" data-gr="Ο δημοσιογράφος παίρνει συνέντευξη από τον πρόεδρο." data-en="The journalist interviews the president."><span class="el">Ο δημοσιογράφος παίρνει συνέντευξη από τον πρόεδρο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ο δημοσιογράφος παίρνει συνέντευξη από τον πρόεδρο.&quot;)">🔊</button><br><span class="en">The journalist interviews the president.</span></div>
+<div class="nsent nitem" data-gr="Αυτό δεν έχει να κάνει με σένα." data-en="This has nothing to do with you."><span class="el">Αυτό δεν έχει να κάνει με σένα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αυτό δεν έχει να κάνει με σένα.&quot;)">🔊</button><br><span class="en">This has nothing to do with you.</span></div>
+<p class="ntext">Teacher: «Συνήθως δεν λέμε «κάνω»». Common mistake: «κάνουν συνέντευξη» → «παίρνουν συνέντευξη».</p>
+</div>
+<div class="nsub"><h4>D. Idiom with fixed feminine pronoun: φτηνά τη γλίτωσα<span class="ntag taught">taught</span></h4>
+<p class="ntext">Pattern: φτηνά + τη(ν) + γλιτώνω (aorist γλίτωσα). Meaning (teacher): I made a big mistake but did not pay for it; no consequences. Not "cheap".</p>
+<p class="ntext">The «τη(ν)» does not refer to a specific noun; it is a fixed feminine pronoun in the idiom ("got away with it"). You cannot swap its gender — learn the whole phrase. The teacher says it often.</p>
+<div class="nsent nitem" data-gr="Φτηνά τη γλίτωσα." data-en="I got off lightly."><span class="el">Φτηνά τη γλίτωσα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Φτηνά τη γλίτωσα.&quot;)">🔊</button><br><span class="en">I got off lightly.</span></div>
+<div class="nsent nitem" data-gr="Προσπαθώ στα λάθη μου φτηνά να τη γλιτώσω." data-en="I try to get off lightly with my mistakes (lyric)."><span class="el">Προσπαθώ στα λάθη μου φτηνά να τη γλιτώσω.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Προσπαθώ στα λάθη μου φτηνά να τη γλιτώσω.&quot;)">🔊</button><br><span class="en">I try to get off lightly with my mistakes (lyric).</span></div>
+<div class="nsent nitem" data-gr="Φτηνά την γλίτωσε ο οδηγός." data-en="The driver got off lightly."><span class="el">Φτηνά την γλίτωσε ο οδηγός.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Φτηνά την γλίτωσε ο οδηγός.&quot;)">🔊</button><br><span class="en">The driver got off lightly.</span></div>
+<p class="ntext">Compare: γλιτώνω κάποιον από κάτι (save someone from something) vs the idiom «τη γλιτώνω» (get away with it). Mistake: I translated «φτηνά» as "cheap" and «γλίτωσα» as "save from my mistakes"; it is about not paying for the mistake.</p>
+</div>
+<div class="nsub"><h4>E. Comparative with πιο; neuter agreement<span class="ntag good">good</span></h4>
+<p class="ntext">Pattern: πιο + adjective (agrees with the noun). Meaning: more … / …er.</p>
+<div class="nsent nitem" data-gr="Το «πίνε» είναι λίγο πιο δυνατό." data-en="&quot;Πίνε&quot; is a bit stronger."><span class="el">Το «πίνε» είναι λίγο πιο δυνατό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το «πίνε» είναι λίγο πιο δυνατό.&quot;)">🔊</button><br><span class="en">"Πίνε" is a bit stronger.</span></div>
+<div class="nsent nitem" data-gr="Είναι πιο εύκολο." data-en="It is easier."><span class="el">Είναι πιο εύκολο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Είναι πιο εύκολο.&quot;)">🔊</button><br><span class="en">It is easier.</span></div>
+<div class="nsent nitem" data-gr="Δεν είναι πολύ βολικό." data-en="It is not very convenient."><span class="el">Δεν είναι πολύ βολικό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν είναι πολύ βολικό.&quot;)">🔊</button><br><span class="en">It is not very convenient.</span></div>
+<div class="nsent nitem" data-gr="Αυτό είναι το πιο σημαντικό νέα... τα πιο σημαντικά νέα." data-en="(Self-correction: «τα νέα» is plural neuter, so «τα πιο σημαντικά».)"><span class="el">Αυτό είναι το πιο σημαντικό νέα... τα πιο σημαντικά νέα.</span><br><span class="en">(Self-correction: «τα νέα» is plural neuter, so «τα πιο σημαντικά».)</span></div>
+<div class="nsent nitem" data-gr="Αυτό το περιοδικό είναι πιο μικρό." data-en="This magazine is smaller."><span class="el">Αυτό το περιοδικό είναι πιο μικρό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αυτό το περιοδικό είναι πιο μικρό.&quot;)">🔊</button><br><span class="en">This magazine is smaller.</span></div>
+<p class="ntext">Mistake to watch: forgetting plural/gender agreement in the adjective.</p>
+</div>
+<div class="nsub"><h4>F. Cases and prepositions<span class="ntag taught">taught</span></h4>
+<p class="ntext">Used in the lesson (taught only through use): στο εξωτερικό (σε + acc.), συμφωνούν με τον πρόεδρο (με + acc.), δένει στα παλιά (δένω σε + acc.).</p>
+<div class="nsent nitem" data-gr="Στο εξωτερικό το κοινό προτιμά περισσότερο την τηλεόραση." data-en="Abroad, the public prefers television."><span class="el">Στο εξωτερικό το κοινό προτιμά περισσότερο την τηλεόραση.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Στο εξωτερικό το κοινό προτιμά περισσότερο την τηλεόραση.&quot;)">🔊</button><br><span class="en">Abroad, the public prefers television.</span></div>
+<div class="nsent nitem" data-gr="Συμφωνούν με τον πρόεδρο." data-en="They agree with the president."><span class="el">Συμφωνούν με τον πρόεδρο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Συμφωνούν με τον πρόεδρο.&quot;)">🔊</button><br><span class="en">They agree with the president.</span></div>
+<p class="ntext">Mistake: «στο τσάντα μου» (twice) — «τσάντα» is feminine: «στην τσάντα μου».</p>
+</div>
+<div class="nsub"><h4>G. Subject-verb agreement by meaning (collective subject)<span class="ntag fix">fix</span></h4>
+<p class="ntext">Pattern: μισή της χώρας → plural verb (συμφωνούν). "Half of the country" is singular in form but plural in sense. I said «συμφωνεί»; the teacher corrected: «συμφωνούν».</p>
+<div class="nsent nitem" data-gr="Μισή της χώρας συμφωνούν με τον πρόεδρο." data-en="Half of the country agrees with the president."><span class="el">Μισή της χώρας συμφωνούν με τον πρόεδρο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μισή της χώρας συμφωνούν με τον πρόεδρο.&quot;)">🔊</button><br><span class="en">Half of the country agrees with the president.</span></div>
+<div class="nsent nitem" data-gr="Οι μισοί φοιτητές έφυγαν." data-en="Half the students left."><span class="el">Οι μισοί φοιτητές έφυγαν.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Οι μισοί φοιτητές έφυγαν.&quot;)">🔊</button><br><span class="en">Half the students left.</span></div>
+</div>
+<div class="nsub"><h4>H. Weak pronouns and doubling (used, not drilled)<span class="ntag taught">taught</span></h4>
+<p class="ntext">Weak pronoun (μου, σου, τον, τη, μας) goes before the verb. Doubling: «τον … αυτόν» repeats the object (weak + strong pronoun) — normal in speech, for emphasis.</p>
+<div class="nsent nitem" data-gr="Ό,τι μας δένει στα παλιά." data-en="Whatever ties us to the past."><span class="el">Ό,τι μας δένει στα παλιά.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ό,τι μας δένει στα παλιά.&quot;)">🔊</button><br><span class="en">Whatever ties us to the past.</span></div>
+<div class="nsent nitem" data-gr="Ο Michael Caine μου διαβάζει τα νέα." data-en="Michael Caine reads me the news."><span class="el">Ο Michael Caine μου διαβάζει τα νέα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ο Michael Caine μου διαβάζει τα νέα.&quot;)">🔊</button><br><span class="en">Michael Caine reads me the news.</span></div>
+<div class="nsent nitem" data-gr="Τον γουστάρω αυτόν." data-en="I fancy him."><span class="el">Τον γουστάρω αυτόν.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Τον γουστάρω αυτόν.&quot;)">🔊</button><br><span class="en">I fancy him.</span></div>
+</div>
+</section>
+<section class="nsec" id="n3">
+<h2 class="nsec-title">3. Grammar that was not taught</h2>
+<ul class="nlist"><li>Tenses and aspect: not taught in general. Only one point: γουστάρω has no aorist (B). The imperative was taught only with present-stem forms; aorist-stem commands (e.g. «να πιεις») did not appear.</li><li>Passive voice: only mentioned in passing (for passive verbs only «να» in commands).</li><li>Subjunctive and να constructions: να-commands were taught (A). General να-clauses were only used in conversation (θέλω να, πρέπει να, μπορείς να).</li><li>Participles: did not appear (I used «κοιτάζοντας», a gerund, once; not taught).</li><li>Cases: not taught; used in conversation, with a few errors (see section 7).</li><li>Pronouns: used in conversation (τον/τη γουστάρω); the meaning was explained, not the placement rules.</li><li>Conditionals: not taught. I used «αν + present» naturally.</li><li>Connectors: not taught. The reading text had ενώ, ωστόσο, αντίθετα, εξάλλου; no explanation.</li></ul>
+</section>
+<section class="nsec" id="n4">
+<h2 class="nsec-title">4. Word order worth reviewing</h2>
+<div class="nsent nitem" data-gr="Να μην πίνεις." data-en="1. να μην + verb: Don&#x27;t drink."><span class="el">Να μην πίνεις.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Να μην πίνεις.&quot;)">🔊</button><br><span class="en">1. να μην + verb: Don't drink.</span></div>
+<div class="nsent nitem" data-gr="Μην σηκώνεσαι." data-en="2. μην + verb: Don&#x27;t get up."><span class="el">Μην σηκώνεσαι.</span><br><span class="en">2. μην + verb: Don't get up.</span></div>
+<div class="nsent nitem" data-gr="Τη γουστάρω αυτή." data-en="3. Weak pronoun before the verb: I fancy her."><span class="el">Τη γουστάρω αυτή.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Τη γουστάρω αυτή.&quot;)">🔊</button><br><span class="en">3. Weak pronoun before the verb: I fancy her.</span></div>
+<div class="nsent nitem" data-gr="Φτηνά τη γλίτωσα." data-en="4. Adverb in front of pronoun and verb in an idiom: I got off lightly."><span class="el">Φτηνά τη γλίτωσα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Φτηνά τη γλίτωσα.&quot;)">🔊</button><br><span class="en">4. Adverb in front of pronoun and verb in an idiom: I got off lightly.</span></div>
+<div class="nsent nitem" data-gr="Ό,τι μας δένει στα παλιά είναι οι κακές συνήθειες." data-en="5. ό,τι-clause as the subject: What ties us to the past is the bad habits."><span class="el">Ό,τι μας δένει στα παλιά είναι οι κακές συνήθειες.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ό,τι μας δένει στα παλιά είναι οι κακές συνήθειες.&quot;)">🔊</button><br><span class="en">5. ό,τι-clause as the subject: What ties us to the past is the bad habits.</span></div>
+<div class="nsent nitem" data-gr="Παίρνουν συνέντευξη." data-en="6. Verb + noun collocation: They interview."><span class="el">Παίρνουν συνέντευξη.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Παίρνουν συνέντευξη.&quot;)">🔊</button><br><span class="en">6. Verb + noun collocation: They interview.</span></div>
+<div class="nsent nitem" data-gr="Στο εξωτερικό το κοινό προτιμά την τηλεόραση." data-en="7. Fronted place phrase: Abroad, the public prefers television."><span class="el">Στο εξωτερικό το κοινό προτιμά την τηλεόραση.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Στο εξωτερικό το κοινό προτιμά την τηλεόραση.&quot;)">🔊</button><br><span class="en">7. Fronted place phrase: Abroad, the public prefers television.</span></div>
+<div class="nsent nitem" data-gr="Δεν είναι πολύ βολικό." data-en="8. Negation inside a statement: It is not very convenient."><span class="el">Δεν είναι πολύ βολικό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν είναι πολύ βολικό.&quot;)">🔊</button><br><span class="en">8. Negation inside a statement: It is not very convenient.</span></div>
+</section>
+<section class="nsec" id="n5">
+<h2 class="nsec-title">5. Must learn / worth recognizing / lower priority</h2>
+<div class="nsub"><h4>Must learn (study and practise)</h4>
+<ul class="nlist"><li>να + 2nd person command, negative να μην / μην (A).</li><li>γουστάρω / γούσταρα, and that there is no aorist (B).</li><li>παίρνω συνέντευξη; έχει να κάνει με (C).</li><li>Articles/gender: ένας άντρας, έναν άντρα; η τσάντα → στην τσάντα.</li><li>ενημερώνομαι, η ενημέρωση, οι ειδήσεις, τα νέα, βολικός, το εξωτερικό, η έρευνα.</li></ul>
+</div>
+<div class="nsub"><h4>Worth recognizing</h4>
+<ul class="nlist"><li>Φτηνά τη γλίτωσα (D); τα βάζω στα πόδια; δένω στα παλιά; οι κακές συνήθειες.</li><li>το διαδίκτυο, το περιοδικό, η εφημερίδα, το ραδιόφωνο, το μυθιστόρημα, τα ακουστικά βιβλία.</li><li>ψεύτικα νέα; η εκτέλεση.</li></ul>
+</div>
+<div class="nsub"><h4>Lower priority</h4>
+<ul class="nlist"><li>Lyrics: το βάζο, ξύλινα σπαθιά, αθώα βλέμματα.</li><li>Reading-text phrases: διαφοροποιήσεις, προκαλεί εντύπωση, μερίδα ανθρώπων.</li><li>Tech/English words (Eleven Reader, Claude Academy, LibGen, ZLibrary, Revolut).</li></ul>
+</div>
+</section>
+<section class="nsec" id="n6">
+<h2 class="nsec-title">6. Best sentences to memorize</h2>
+<div class="nsent nitem" data-gr="Να μην πίνεις. / Μην πίνεις." data-en="Don&#x27;t drink."><span class="el">Να μην πίνεις. / Μην πίνεις.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Να μην πίνεις. / Μην πίνεις.&quot;)">🔊</button><br><span class="en">Don't drink.</span></div>
+<p class="ntext">Why useful: Both negative command forms; «να» is optional.</p>
+<div class="nsent nitem" data-gr="Είναι καλύτερο να πεις «να οδηγείς»." data-en="It is better to say &quot;να οδηγείς&quot;."><span class="el">Είναι καλύτερο να πεις «να οδηγείς».</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Είναι καλύτερο να πεις «να οδηγείς».&quot;)">🔊</button><br><span class="en">It is better to say "να οδηγείς".</span></div>
+<p class="ntext">Why useful: The teacher's correction of «οδηγά»; shows why να is the safe choice.</p>
+<div class="nsent nitem" data-gr="Όταν είσαι μπερδεμένος, πρέπει να χρησιμοποιείς το «να»." data-en="When you&#x27;re confused, you should use &quot;να&quot;."><span class="el">Όταν είσαι μπερδεμένος, πρέπει να χρησιμοποιείς το «να».</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Όταν είσαι μπερδεμένος, πρέπει να χρησιμοποιείς το «να».&quot;)">🔊</button><br><span class="en">When you're confused, you should use "να".</span></div>
+<p class="ntext">Why useful: My own correct sentence: όταν + present, πρέπει να + present stem.</p>
+<div class="nsent nitem" data-gr="Αν είσαι νέος, προτιμάς το διαδίκτυο." data-en="If you&#x27;re young, you prefer the internet."><span class="el">Αν είσαι νέος, προτιμάς το διαδίκτυο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αν είσαι νέος, προτιμάς το διαδίκτυο.&quot;)">🔊</button><br><span class="en">If you're young, you prefer the internet.</span></div>
+<p class="ntext">Why useful: Simple αν + present conditional.</p>
+<div class="nsent nitem" data-gr="Φτηνά τη γλίτωσα." data-en="I got off lightly."><span class="el">Φτηνά τη γλίτωσα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Φτηνά τη γλίτωσα.&quot;)">🔊</button><br><span class="en">I got off lightly.</span></div>
+<p class="ntext">Why useful: A natural idiom the teacher says is common.</p>
+<div class="nsent nitem" data-gr="Όταν σου αρέσει κάτι πολύ, λες «πω, γουστάρω»." data-en="When you like something a lot, you say &quot;wow, I love it&quot;."><span class="el">Όταν σου αρέσει κάτι πολύ, λες «πω, γουστάρω».</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Όταν σου αρέσει κάτι πολύ, λες «πω, γουστάρω».&quot;)">🔊</button><br><span class="en">When you like something a lot, you say "wow, I love it".</span></div>
+<p class="ntext">Why useful: Natural spoken Greek; context for γουστάρω.</p>
+<div class="nsent nitem" data-gr="Τον γουστάρω αυτόν." data-en="I fancy him."><span class="el">Τον γουστάρω αυτόν.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Τον γουστάρω αυτόν.&quot;)">🔊</button><br><span class="en">I fancy him.</span></div>
+<p class="ntext">Why useful: Weak pronoun plus doubled strong pronoun; accusative with γουστάρω.</p>
+<div class="nsent nitem" data-gr="Δεν υπάρχει αόριστος «γουστάρισα»· μόνο «γούσταρα»." data-en="There&#x27;s no aorist &quot;γουστάρισα&quot;; only &quot;γούσταρα&quot;."><span class="el">Δεν υπάρχει αόριστος «γουστάρισα»· μόνο «γούσταρα».</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν υπάρχει αόριστος «γουστάρισα»· μόνο «γούσταρα».&quot;)">🔊</button><br><span class="en">There's no aorist "γουστάρισα"; only "γούσταρα".</span></div>
+<p class="ntext">Why useful: The rule for a verb with no one-time form.</p>
+<div class="nsent nitem" data-gr="Συνήθως δεν λέμε «κάνω» συνέντευξη. Παίρνω συνέντευξη." data-en="We don&#x27;t usually say &quot;do&quot; an interview. We say &quot;take&quot;."><span class="el">Συνήθως δεν λέμε «κάνω» συνέντευξη. Παίρνω συνέντευξη.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Συνήθως δεν λέμε «κάνω» συνέντευξη. Παίρνω συνέντευξη.&quot;)">🔊</button><br><span class="en">We don't usually say "do" an interview. We say "take".</span></div>
+<p class="ntext">Why useful: Collocation, where English literal translation fails.</p>
+<div class="nsent nitem" data-gr="Ό,τι μας δένει στα παλιά είναι οι κακές συνήθειες." data-en="Whatever ties us to the past is the bad habits."><span class="el">Ό,τι μας δένει στα παλιά είναι οι κακές συνήθειες.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ό,τι μας δένει στα παλιά είναι οι κακές συνήθειες.&quot;)">🔊</button><br><span class="en">Whatever ties us to the past is the bad habits.</span></div>
+<p class="ntext">Why useful: ό,τι-clause as subject; the song's central line.</p>
+<div class="nsent nitem" data-gr="Έχει να κάνει με τη μουσική, με τη νοσταλγία, με το συναίσθημα." data-en="It has to do with the music, the nostalgia, the emotion."><span class="el">Έχει να κάνει με τη μουσική, με τη νοσταλγία, με το συναίσθημα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχει να κάνει με τη μουσική, με τη νοσταλγία, με το συναίσθημα.&quot;)">🔊</button><br><span class="en">It has to do with the music, the nostalgia, the emotion.</span></div>
+<p class="ntext">Why useful: έχει να κάνει με — very common spoken pattern.</p>
+<div class="nsent nitem" data-gr="Πώς ενημερώνεσαι; Πώς μαθαίνεις τα νέα;" data-en="How do you stay informed? How do you get the news?"><span class="el">Πώς ενημερώνεσαι; Πώς μαθαίνεις τα νέα;</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πώς ενημερώνεσαι; Πώς μαθαίνεις τα νέα;&quot;)">🔊</button><br><span class="en">How do you stay informed? How do you get the news?</span></div>
+<p class="ntext">Why useful: Lesson topic; two natural questions.</p>
+<div class="nsent nitem" data-gr="Δεν είναι πολύ βολικό." data-en="It&#x27;s not very convenient."><span class="el">Δεν είναι πολύ βολικό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν είναι πολύ βολικό.&quot;)">🔊</button><br><span class="en">It's not very convenient.</span></div>
+<p class="ntext">Why useful: βολικός is a B1–B2 everyday word.</p>
+<div class="nsent nitem" data-gr="Σήμερα έχω σχέδιο να πάω στο YouTube και να βλέπω τα βίντεο." data-en="Today I plan to go on YouTube and watch the videos."><span class="el">Σήμερα έχω σχέδιο να πάω στο YouTube και να βλέπω τα βίντεο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Σήμερα έχω σχέδιο να πάω στο YouTube και να βλέπω τα βίντεο.&quot;)">🔊</button><br><span class="en">Today I plan to go on YouTube and watch the videos.</span></div>
+<p class="ntext">Why useful: «έχω σχέδιο να + subjunctive»; two να-verbs (one-time, then ongoing).</p>
+<div class="nsent nitem" data-gr="Στο εξωτερικό το κοινό επιλέγει περισσότερο την τηλεόραση για την ενημέρωσή του." data-en="Abroad, the public chooses television more for its information."><span class="el">Στο εξωτερικό το κοινό επιλέγει περισσότερο την τηλεόραση για την ενημέρωσή του.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Στο εξωτερικό το κοινό επιλέγει περισσότερο την τηλεόραση για την ενημέρωσή του.&quot;)">🔊</button><br><span class="en">Abroad, the public chooses television more for its information.</span></div>
+<p class="ntext">Why useful: Formal register of the exercise text.</p>
+</section>
+<section class="nsec" id="n7">
+<h2 class="nsec-title">7. Where to focus next (teacher's diagnosis)</h2>
+<p class="nsec-intro">Evidence is limited: one 48-minute lesson, and much of my speech was English. Only teacher corrections/recasts or clear errors are counted.</p>
+<div class="nsub"><h4>1. Article and noun gender/case (ένα, στο vs ένας, έναν, στην)<span class="ntag fix">fix</span></h4>
+<p class="ntext">Showed up about 5 times (clear). Rule: ένα/το/στο is only for neuter nouns; check the noun's gender, then the case.</p>
+<div class="ngrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)"><div class="nh">Said</div><div class="nh">Correct</div><div class="nh">Meaning</div><div class="nc"><span class="wrong">υπάρχει ένα άντρας</span></div><div class="nc"><span class="nitem" data-gr="υπάρχει ένας άντρας" data-en=""><span class="right">υπάρχει ένας άντρας</span> <button class="tts-btn" onclick="ttsSpeak(this,&quot;υπάρχει ένας άντρας&quot;)">🔊</button></span></div><div class="nc">There is a man.</div><div class="nc alt"><span class="wrong">ένα άντρα με το κινητό</span></div><div class="nc alt"><span class="nitem" data-gr="έναν άντρα με το κινητό" data-en=""><span class="right">έναν άντρα με το κινητό</span> <button class="tts-btn" onclick="ttsSpeak(this,&quot;έναν άντρα με το κινητό&quot;)">🔊</button></span></div><div class="nc alt">a man with a phone</div><div class="nc"><span class="wrong">στο τσάντα μου (twice)</span></div><div class="nc"><span class="nitem" data-gr="στην τσάντα μου" data-en=""><span class="right">στην τσάντα μου</span> <button class="tts-btn" onclick="ttsSpeak(this,&quot;στην τσάντα μου&quot;)">🔊</button></span></div><div class="nc">in my bag</div><div class="nc alt"><span class="wrong">σε δεύτερο φωτογραφία</span></div><div class="nc alt"><span class="nitem" data-gr="στη δεύτερη φωτογραφία" data-en=""><span class="right">στη δεύτερη φωτογραφία</span> <button class="tts-btn" onclick="ttsSpeak(this,&quot;στη δεύτερη φωτογραφία&quot;)">🔊</button></span></div><div class="nc alt">in the second photo</div></div>
+<p class="ntext">Unsure (possible hesitation/transcript): «Ο- η ραδιοφωνο» — ραδιόφωνο is neuter: το ραδιόφωνο.</p>
+</div>
+<div class="nsub"><h4>2. Verb form: mood, person and number<span class="ntag fix">fix</span></h4>
+<p class="ntext">3 times, all corrected or recast by the teacher. Rule: a bare verb form needs να or θα or a clear tense, and the verb agrees with the meaning (a group = plural).</p>
+<div class="ngrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)"><div class="nh">Said</div><div class="nh">Correct</div><div class="nh">Meaning</div><div class="nc"><span class="wrong">οδηγά</span></div><div class="nc"><span class="right">να οδηγείς</span></div><div class="nc">drive!</div><div class="nc alt"><span class="wrong">Πάρω τα παιδιά στο σχολείο και πίσω.</span></div><div class="nc alt"><span class="nitem" data-gr="Πήγα τα παιδιά στο σχολείο και πίσω." data-en=""><span class="right">Πήγα τα παιδιά στο σχολείο και πίσω.</span> <button class="tts-btn" onclick="ttsSpeak(this,&quot;Πήγα τα παιδιά στο σχολείο και πίσω.&quot;)">🔊</button></span></div><div class="nc alt">I took the kids to school and back. (my version; the teacher recast with «Α, τα πήρες τώρα;»)</div><div class="nc"><span class="wrong">μισή της χώρας ... συμφωνεί</span></div><div class="nc"><span class="right">μισή της χώρας ... συμφωνούν</span></div><div class="nc">half the country agrees</div></div>
+</div>
+<div class="nsub"><h4>3. Collocation (the verb that goes with the noun)<span class="ntag fix">fix</span></h4>
+<p class="ntext">1 clear time (thin evidence). Learn nouns with their verbs; do not translate "do".</p>
+<div class="ngrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)"><div class="nh">Said</div><div class="nh">Correct</div><div class="nh">Meaning</div><div class="nc"><span class="wrong">κάνουν συνέντευξη</span></div><div class="nc"><span class="right">παίρνουν συνέντευξη</span></div><div class="nc">they interview</div></div>
+</div>
+<div class="nsub"><h4>What I did well<span class="ntag good">good</span></h4>
+<ul class="nlist"><li>Self-correction of agreement: «το πιο σημαντικό νέα... τα πιο σημαντικά νέα».</li><li>Clitic doubling used correctly: «τον γουστάρω αυτόν».</li><li>Natural connectors above B1: «επειδή η κόρη μου θέλει να κοιμάται λίγο αργά», «αν δεν μου αρέσει το Claude, είναι δύσκολο να αλλάξω».</li><li>Good grammar questions (aspect of γουστάρω), which got a real explanation.</li></ul>
+</div>
+<div class="nsub"><h4>What I avoided (B2 structures I went around)</h4>
+<ul class="nlist"><li>I switched to English at a difficulty point many times. Try: «Πώς το λένε αυτό στα ελληνικά;» or describe the word in Greek.</li><li>Past narration: I described my routine only in present. Could say: «Χθες άκουσα τα νέα με τη φωνή του Michael Caine.»</li><li>Contrast connectors (ενώ, αν και, παρόλο που): I used simple «αλλά». Could say: «Αν και δεν έχω χρόνο, θα το κάνω.»</li><li>Relative clauses (που, ό,τι): barely used. Could say: «Είναι ένα site που έχει όλα τα βιβλία που θέλω.»</li></ul>
+</div>
+<div class="nsub"><h4>Practice suggestions for this week</h4>
+<ol class="nlist"><li>Gender drill: write 10 nouns from this lesson (τσάντα, φωτογραφία, εφημερίδα, άντρας, περιοδικό, ραδιόφωνο...) with ένα/μια/ένας and στο/στη(ν) and say each in a sentence («Έχω μια τσάντα. Βάζω το περιοδικό στην τσάντα μου.»).</li><li>Say 10 commands about your day with να + present and 10 with μην, e.g. «Να μην ξεχνάς το στυλό. Μην ξεχνάς το στυλό.» Use πίνω, οδηγώ, σηκώνομαι, κοιμάμαι, περπατάω.</li><li>Collocations: write 5 sentences with παίρνω συνέντευξη, έχει να κάνει με, πληρώνω για, συμφωνώ με, ενημερώνομαι από.</li></ol>
+</div>
+</section>
+<section class="nsec" id="n8">
+<h2 class="nsec-title">8. Short review plan</h2>
+<ol class="nlist"><li>Session 1 (10 min), gender and articles: take the nouns from vocabulary, say ένας/μια/ένα + noun, then στο/στη(ν) + noun. Fix any that sound wrong.</li><li>Session 2 (10 min), να-commands: 10 positive and 10 negative (να μην / μην). Then redo οδηγώ, σηκώνομαι, κοιμάμαι, περπατάω.</li><li>Session 3 (10 min), γουστάρω and idioms: 5 sentences with γουστάρω / γούσταρα (person, food, experience). Say «φτηνά τη γλίτωσα» in a short story from your life.</li><li>Session 4 (10 min), collocations: sentences with παίρνω συνέντευξη, έχει να κάνει με, συμφωνώ με, ενημερώνομαι, and a plural verb after μισοί/μισή.</li><li>Final speaking challenge (3–4 min, recorded): the teacher's homework (exercise 3). Speak or write about how you keep informed and what Americans usually do: which medium (Claude routine, Eleven Reader, The Week), which age groups prefer what, and whether you'd like to be a journalist. Use at least two commands (να μην...), one γουστάρω sentence, one «αν + present», and check the gender of every noun.</li></ol>
+</section>
+</div><!-- /notes -->
 
 <script>
 (function(){
@@ -1054,5 +1270,184 @@
 })();
 </script>
 
-</body></html>
+
+<!-- ═════════════ GRAMMAR FLASHCARD MODAL -->
+<div id="gc-modal" style="display: none;">
+  <div class="fc-box">
+    <div class="fc-header">
+      <div class="fc-mode-btns">
+        <button class="fc-mode-btn active" id="gc-mode-g2e">Ελληνικά → English</button>
+        <button class="fc-mode-btn" id="gc-mode-e2g">English → Ελληνικά</button>
+      </div>
+      <span class="fc-progress" id="gc-progress">0 / 0 mastered  ·  0 remaining</span>
+      <button class="fc-close" id="gc-close-btn" title="Close">✕</button>
+    </div>
+    <div class="fc-voice-bar" id="gc-voice-bar">
+      <span style="font-weight:600;">Voice:</span>
+      <label><input type="radio" name="gvoice" value="el-GR-NestorasNeural" checked> ♂ Nestoras</label>
+      <label><input type="radio" name="gvoice" value="el-GR-AthinaNeural"> ♀ Athina</label>
+      <label for="gc-speed-slider" style="margin-left:8px;">Speed:</label>
+      <input type="range" id="gc-speed-slider" min="0.50" max="1.00" step="0.05" value="0.80" style="width:100px;">
+      <span id="gc-speed-val">0.80x</span>
+      <label style="margin-left:8px;" title="Automatically play Greek audio"><input type="checkbox" id="gc-autoplay" checked> 🔈 Auto</label>
+    </div>
+    <div id="gc-study-area">
+      <div class="fc-card" id="gc-card">
+        <div id="gc-front-content"><div class="fc-greek"></div></div>
+        <span class="fc-tts-btn" id="gc-tts-btn" title="Play pronunciation">🔊</span>
+        <div class="fc-inline-answer" id="gc-inline-answer" style="display:none;"></div>
+      </div>
+      <div class="fc-answer-area" id="gc-answer-area" style="display: none;">
+        <hr class="fc-divider">
+        <div class="fc-answer-content" id="gc-answer-content"></div>
+        <div class="fc-btns">
+          <button id="gc-wrong-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#b94040;color:#fff;">✗ Review Again</button>
+          <button id="gc-correct-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#3a7d44;color:#fff;">✓ Got It</button>
+        </div>
+      </div>
+    </div>
+    <div class="fc-complete" id="gc-complete" style="display: none;">
+      <div class="fc-complete-icon">🎉</div>
+      <h3>Session complete!</h3>
+      <p id="gc-complete-msg"></p>
+      <button id="gc-restart-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#4a6a9c;color:#fff;margin-top:8px;">Study Again</button>
+    </div>
+  </div>
+</div>
+<script>
+// ── Lesson Notes: cross-off + Grammar Flashcards (separate from vocab flashcards / Anki export) ──
+(function(){
+  var notes = document.getElementById('notes');
+  if(!notes) return;
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  // ---- cross-off ----
+  function syncHeads(){
+    notes.querySelectorAll('.nsub, .nsec').forEach(function(box){
+      var items = box.querySelectorAll('.nitem');
+      var h = box.querySelector(box.classList.contains('nsub') ? 'h4' : 'h2.nsec-title');
+      if(!h) return;
+      var all = items.length > 0 && Array.prototype.every.call(items, function(i){ return i.classList.contains('ncrossed'); });
+      h.classList.toggle('n-allcrossed', all);
+    });
+  }
+  notes.addEventListener('click', function(e){
+    if(e.target.closest('button')) return;
+    var item = e.target.closest('.nitem');
+    if(item){ item.classList.toggle('ncrossed'); syncHeads(); return; }
+    var head = e.target.closest('.nsub > h4, .nsec > h2.nsec-title');
+    if(head){
+      var box = head.parentElement;
+      var items = box.querySelectorAll('.nitem');
+      var all = items.length > 0 && Array.prototype.every.call(items, function(i){ return i.classList.contains('ncrossed'); });
+      items.forEach(function(i){ i.classList.toggle('ncrossed', !all); });
+      syncHeads();
+    }
+  });
+  syncHeads();
+
+  // ---- grammar flashcards ----
+  function buildDeck(){
+    var cards = [];
+    notes.querySelectorAll('.nitem').forEach(function(it){
+      if(it.classList.contains('ncrossed')) return;
+      var gr = it.getAttribute('data-gr') || '', en = it.getAttribute('data-en') || '';
+      if(gr && en) cards.push({greek: gr, english: en});
+    });
+    return cards;
+  }
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+
+  var modal = document.getElementById('gc-modal');
+  var progressEl = document.getElementById('gc-progress');
+  var frontContent = document.getElementById('gc-front-content');
+  var answerArea = document.getElementById('gc-answer-area');
+  var studyArea = document.getElementById('gc-study-area');
+  var completeDiv = document.getElementById('gc-complete');
+  var completeMsg = document.getElementById('gc-complete-msg');
+  var ttsBtn = document.getElementById('gc-tts-btn');
+  var inlineAns = document.getElementById('gc-inline-answer');
+  var remaining = [], totalCount = 0, masteredCount = 0, mode = 'g2e', revealed = false;
+  window.gcSpeed = 0.80;
+
+  function autoOn(){ var c = document.getElementById('gc-autoplay'); return c ? c.checked : true; }
+  function setVoice(v){
+    var pv = document.querySelector('input[name="voice"][id="' + (v.indexOf('Nestoras') > -1 ? 'voice-male' : 'voice-female') + '"]');
+    if(pv) pv.checked = true;
+  }
+  function updateProgress(){ progressEl.textContent = masteredCount + ' / ' + totalCount + ' mastered  ·  ' + remaining.length + ' remaining'; }
+
+  function renderCard(){
+    if(remaining.length === 0){ updateProgress(); studyArea.style.display='none'; completeDiv.style.display='flex';
+      completeMsg.textContent = 'You worked through all ' + totalCount + ' sentence' + (totalCount !== 1 ? 's' : '') + '.'; return; }
+    revealed = false;
+    answerArea.style.display = 'none';
+    inlineAns.innerHTML = ''; inlineAns.style.display = 'none';
+    ttsBtn.classList.remove('playing');
+    var card = remaining[0];
+    if(mode === 'g2e'){
+      frontContent.innerHTML = '<div class="fc-greek" style="font-size:26px;">' + esc(card.greek) + '</div>';
+      ttsBtn.style.display = '';
+    } else {
+      frontContent.innerHTML = '<div class="fc-english" style="font-size:24px;">' + esc(card.english) + '</div>';
+      ttsBtn.style.display = 'none';
+    }
+    updateProgress();
+    if(mode === 'g2e' && autoOn() && window.ttsSpeak){
+      setTimeout(function(){ if(remaining[0] === card) window.ttsSpeak(ttsBtn, card.greek, window.gcSpeed); }, 150);
+    }
+  }
+  function revealAnswer(){
+    if(revealed || remaining.length === 0) return;
+    revealed = true;
+    var card = remaining[0];
+    if(mode === 'g2e'){
+      inlineAns.innerHTML = '<span class="fc-english" style="font-size:22px;">' + esc(card.english) + '</span>';
+      inlineAns.style.display = 'flex';
+    } else {
+      inlineAns.innerHTML = '<span class="fc-greek" style="font-size:24px;">' + esc(card.greek) + '</span><span class="fc-tts-btn gc-tts-ans" title="Play pronunciation">🔊</span>';
+      inlineAns.style.display = 'flex';
+      var ab = inlineAns.querySelector('.gc-tts-ans');
+      ab.addEventListener('click', function(e){ e.stopPropagation(); if(window.ttsSpeak) window.ttsSpeak(ab, card.greek, window.gcSpeed); });
+      if(autoOn() && window.ttsSpeak) setTimeout(function(){ window.ttsSpeak(ab, card.greek, window.gcSpeed); }, 200);
+    }
+    answerArea.style.display = 'flex';
+  }
+  function gotIt(){ if(!remaining.length) return; remaining.shift(); masteredCount++; renderCard(); }
+  function reviewAgain(){ if(!remaining.length) return; var c = remaining.shift(); remaining.splice(Math.min(3, remaining.length), 0, c); renderCard(); }
+  function start(){
+    var deck = buildDeck();
+    if(deck.length === 0){ alert('No grammar sentences to study! Un-cross some sentences first.'); return; }
+    remaining = shuffle(deck); totalCount = remaining.length; masteredCount = 0;
+    studyArea.style.display = ''; completeDiv.style.display = 'none';
+    modal.style.display = 'flex';
+    var cur = document.querySelector('input[name="voice"]:checked');
+    if(cur) document.querySelectorAll('input[name="gvoice"]').forEach(function(r){ r.checked = (r.value === cur.value); });
+    renderCard();
+  }
+
+  document.getElementById('grammar-fc-btn').addEventListener('click', start);
+  document.getElementById('gc-close-btn').addEventListener('click', function(){ modal.style.display = 'none'; });
+  document.getElementById('gc-restart-btn').addEventListener('click', start);
+  document.getElementById('gc-card').addEventListener('click', function(e){
+    if(e.target === ttsBtn || ttsBtn.contains(e.target) || e.target.closest('.gc-tts-ans')) return;
+    revealAnswer();
+  });
+  ttsBtn.addEventListener('click', function(e){ e.stopPropagation(); if(remaining.length && window.ttsSpeak) window.ttsSpeak(ttsBtn, remaining[0].greek, window.gcSpeed); });
+  document.getElementById('gc-mode-g2e').addEventListener('click', function(){ if(mode==='g2e') return; mode='g2e'; this.classList.add('active'); document.getElementById('gc-mode-e2g').classList.remove('active'); renderCard(); });
+  document.getElementById('gc-mode-e2g').addEventListener('click', function(){ if(mode==='e2g') return; mode='e2g'; this.classList.add('active'); document.getElementById('gc-mode-g2e').classList.remove('active'); renderCard(); });
+  document.getElementById('gc-correct-btn').addEventListener('click', gotIt);
+  document.getElementById('gc-wrong-btn').addEventListener('click', reviewAgain);
+  document.querySelectorAll('input[name="gvoice"]').forEach(function(r){ r.addEventListener('change', function(){ setVoice(r.value); }); });
+  var sl = document.getElementById('gc-speed-slider'), sv = document.getElementById('gc-speed-val');
+  sl.oninput = function(){ window.gcSpeed = parseFloat(sl.value); sv.textContent = window.gcSpeed.toFixed(2) + 'x'; };
+  document.addEventListener('keydown', function(e){
+    if(modal.style.display !== 'flex') return;
+    if(e.key === 'Escape'){ modal.style.display = 'none'; return; }
+    if(!revealed){ if(e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); revealAnswer(); } }
+    else { if(e.key === 'ArrowRight' || e.key === '2'){ e.preventDefault(); gotIt(); } if(e.key === 'ArrowLeft' || e.key === '1'){ e.preventDefault(); reviewAgain(); } }
+  });
+})();
+</script>
+
 </body></html>
