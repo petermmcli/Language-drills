@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greek Vocabulary — Weekly (10-29-2026)</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Greek weekly 10-29-2026</title>
 <style>
   body { background: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; color: #222; font-size: 15px; }
   nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #ddd; padding: 10px 20px; z-index: 100; display: flex; gap: 24px; flex-wrap: wrap; }
@@ -186,170 +187,170 @@ section.nsec h2.nsec-title { cursor:pointer; user-select:none; -webkit-user-sele
 </head>
 <body>
 <nav>
-  <a href="#verbs">Verbs</a>
-  <a href="#nouns">Nouns</a>
-  <a href="#adjectives">Adjectives</a>
-  <a href="#adverbs">Adverbs &amp; Particles</a>
-  <a href="#phrases">Phrases &amp; Expressions</a>
-  <a href="#notes">Lesson Notes</a>
-  <span style="flex:1"></span>
-  <span id="cross-count">0 / 70 crossed off</span>
-  <button id="export-btn" title="Export non-crossed-off words to Anki">Export to Anki</button>
-  <button id="download-btn" title="Download this file with crossed-off rows baked in, ready to upload to Claude">⬇ Download Marked File</button>
-  <button id="flashcard-btn" title="Start flashcard session">🃏 Flashcards</button>
-  <button id="grammar-fc-btn" title="Flashcards of the grammar example sentences">🃏 Grammar Flashcards</button>
-  <button id="toggle-all-btn" title="Cross off all rows — then un-cross the sections you want to study">✗ Cross Off All</button>
+<a href="#verbs">Verbs</a>
+<a href="#nouns">Nouns</a>
+<a href="#adjectives">Adjectives</a>
+<a href="#adverbs">Adverbs &amp; Particles</a>
+<a href="#phrases">Phrases &amp; Expressions</a>
+<a href="#notes">Lesson Notes</a>
+<span style="flex:1"></span>
+<span id="cross-count">43 / 70 crossed off</span>
+<button id="export-btn" title="Export non-crossed-off words to Anki">Export to Anki</button>
+<button id="download-btn" title="Download this file with crossed-off rows baked in, ready to upload to Claude">⬇ Download Marked File</button>
+<button id="flashcard-btn" title="Start flashcard session">🃏 Flashcards</button>
+<button id="grammar-fc-btn" title="Flashcards of the grammar example sentences">🃏 Grammar Flashcards</button>
+<button id="toggle-all-btn" title="Cross off all rows — then un-cross the sections you want to study">✗ Cross Off All</button>
 </nav>
 <div id="speed-bar">
-  <div class="voice-toggle">
-    <label>Voice:</label>
-    <input type="radio" name="voice" id="voice-male" value="el-GR-NestorasNeural" checked="">
-    <label for="voice-male" style="font-weight:normal;color:#222">♂ Nestoras</label>
-    <input type="radio" name="voice" id="voice-female" value="el-GR-AthinaNeural">
-    <label for="voice-female" style="font-weight:normal;color:#222">♀ Athina</label>
-  </div>
-  <label for="speed-slider">Speed:</label>
-  <input type="range" id="speed-slider" min="0.50" max="1.00" step="0.05" value="0.80">
-  <span id="speed-val">0.80x</span>
+<div class="voice-toggle">
+<label>Voice:</label>
+<input checked="" id="voice-male" name="voice" type="radio" value="el-GR-NestorasNeural"/>
+<label for="voice-male" style="font-weight:normal;color:#222">♂ Nestoras</label>
+<input id="voice-female" name="voice" type="radio" value="el-GR-AthinaNeural"/>
+<label for="voice-female" style="font-weight:normal;color:#222">♀ Athina</label>
 </div>
-<div id="mini-player">
-  <button id="mp-rew" title="Rewind 5s">⏪</button>
-  <button id="mp-pp" title="Play/Pause">⏸</button>
-  <input type="range" id="mp-seek" min="0" max="100" value="0">
-  <span class="mp-time" id="mp-time">0:00 / 0:00</span>
-  <span class="mp-text" id="mp-text"></span>
+<label for="speed-slider">Speed:</label>
+<input id="speed-slider" max="1.00" min="0.50" step="0.05" type="range" value="0.80"/>
+<span id="speed-val">1.00x</span>
+</div>
+<div id="mini-player" style="display: flex;">
+<button id="mp-rew" title="Rewind 5s">⏪</button>
+<button id="mp-pp" title="Play/Pause">▶</button>
+<input id="mp-seek" max="100" min="0" type="range" value="0"/>
+<span class="mp-time" id="mp-time">0:02 / 0:02</span>
+<span class="mp-text" id="mp-text">Αυτό είναι ίσως λιγότερο σημαντικό.</span>
 </div>
 <section id="verbs">
-<h2>Verbs</h2>
+<h2 style="cursor: pointer; user-select: none;">Verbs</h2>
 <div class="freq-legend"><b>Frequency:</b>
-  <span class="freq-legend-item"><span class="freq-dot" style="background:#27ae60;"></span>top 3k</span>
-  <span class="freq-legend-item"><span class="freq-dot" style="background:#2980b9;"></span>3k–8k</span>
-  <span class="freq-legend-item"><span class="freq-dot" style="background:#e67e22;"></span>8k–15k</span>
-  <span class="freq-legend-item"><span class="freq-dot" style="background:#c0392b;"></span>15k+</span>
-  <span class="freq-legend-item"><span class="freq-dot" style="background:#bdc3c7;"></span>not in corpus</span>
+<span class="freq-legend-item"><span class="freq-dot" style="background:#27ae60;"></span>top 3k</span>
+<span class="freq-legend-item"><span class="freq-dot" style="background:#2980b9;"></span>3k–8k</span>
+<span class="freq-legend-item"><span class="freq-dot" style="background:#e67e22;"></span>8k–15k</span>
+<span class="freq-legend-item"><span class="freq-dot" style="background:#c0392b;"></span>15k+</span>
+<span class="freq-legend-item"><span class="freq-dot" style="background:#bdc3c7;"></span>not in corpus</span>
 </div>
 <table>
 <thead><tr><th style="width:18px;min-width:18px;border-right:none;"></th><th style="width:200px">Greek</th><th style="width:200px">English</th><th>Example Sentence</th></tr></thead>
 <tbody>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">⚙️ Actions &amp; Processes</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>μοιάζω <button class="tts-btn" onclick="ttsSpeak(this,&quot;μοιάζω&quot;)">🔊</button></td><td>to seem, to look (like)</td><td><span class="el">Μοιάζουν μικρότερες.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μοιάζουν μικρότερες.&quot;)">🔊</button><br><span class="en">They (the days) seem shorter.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>αλλάζω <button class="tts-btn" onclick="ttsSpeak(this,&quot;αλλάζω&quot;)">🔊</button></td><td>to change</td><td><span class="el">Άλλαξαν ήδη.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Άλλαξαν ήδη.&quot;)">🔊</button><br><span class="en">They already changed.</span></td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>νοικιάζω <button class="tts-btn" onclick="ttsSpeak(this,&quot;νοικιάζω&quot;)">🔊</button></td><td>to rent (out or in)</td><td><span class="el">Έχω σπίτια που νοικιάζω, αλλά εγώ νοικιάζω.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχω σπίτια που νοικιάζω, αλλά εγώ νοικιάζω.&quot;)">🔊</button><br><span class="en">I have houses that I rent out, but I rent.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>πουλάω <button class="tts-btn" onclick="ttsSpeak(this,&quot;πουλάω&quot;)">🔊</button></td><td>to sell</td><td><span class="el">Στην Αμερική είναι πολύ εύκολο να πουλήσεις.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Στην Αμερική είναι πολύ εύκολο να πουλήσεις.&quot;)">🔊</button><br><span class="en">In America it's very easy to sell.</span></td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>ολοκληρώνω <button class="tts-btn" onclick="ttsSpeak(this,&quot;ολοκληρώνω&quot;)">🔊</button></td><td>to finish, complete (it isn't finished)</td><td><span class="el">Το διαμέρισμα δεν έχει ολοκληρωθεί ακόμη.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το διαμέρισμα δεν έχει ολοκληρωθεί ακόμη.&quot;)">🔊</button><br><span class="en">The apartment hasn't been finished yet.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>αγοράζω <button class="tts-btn" onclick="ttsSpeak(this,&quot;αγοράζω&quot;)">🔊</button></td><td>to buy</td><td><span class="el">Θέλει να αγοράσω διαμέρισμα στην Αθήνα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλει να αγοράσω διαμέρισμα στην Αθήνα.&quot;)">🔊</button><br><span class="en">He wants me to buy an apartment in Athens.</span></td></tr>
-<tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🚶 Movement &amp; Position</td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>μετακομίζω <button class="tts-btn" onclick="ttsSpeak(this,&quot;μετακομίζω&quot;)">🔊</button></td><td>to move house</td><td><span class="el">Αυτός μετακόμισε τώρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αυτός μετακόμισε τώρα.&quot;)">🔊</button><br><span class="en">He moved in just now.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>πέφτω <button class="tts-btn" onclick="ttsSpeak(this,&quot;πέφτω&quot;)">🔊</button></td><td>to fall</td><td><span class="el">Το μωρό μπορεί να πέσει από τη σκάλα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το μωρό μπορεί να πέσει από τη σκάλα.&quot;)">🔊</button><br><span class="en">The baby could fall down the stairs.</span></td></tr>
-<tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">💬 Speech &amp; Communication</td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>μαλώνω <button class="tts-btn" onclick="ttsSpeak(this,&quot;μαλώνω&quot;)">🔊</button></td><td>to quarrel, argue</td><td><span class="el">Μάλωσα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μάλωσα.&quot;)">🔊</button><br><span class="en">I quarrelled / we quarrelled.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>συμφωνώ <button class="tts-btn" onclick="ttsSpeak(this,&quot;συμφωνώ&quot;)">🔊</button></td><td>to agree</td><td><span class="el">Δεν μπορούν να συμφωνήσουν.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν μπορούν να συμφωνήσουν.&quot;)">🔊</button><br><span class="en">They can't agree.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>λέγομαι <button class="tts-btn" onclick="ttsSpeak(this,&quot;λέγομαι&quot;)">🔊</button></td><td>to be called</td><td><span class="el">Πώς λέγεται το τρυπάνι;</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πώς λέγεται το τρυπάνι;&quot;)">🔊</button><br><span class="en">What is the drill called?</span></td></tr>
-<tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🧠 Thought &amp; Decision</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>εμπιστεύομαι <button class="tts-btn" onclick="ttsSpeak(this,&quot;εμπιστεύομαι&quot;)">🔊</button></td><td>to trust</td><td><span class="el">Δεν εμπιστεύονται ο ένας τον άλλον.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν εμπιστεύονται ο ένας τον άλλον.&quot;)">🔊</button><br><span class="en">They don't trust each other.</span></td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>λύνω <button class="tts-btn" onclick="ttsSpeak(this,&quot;λύνω&quot;)">🔊</button></td><td>to solve, sort out</td><td><span class="el">Γιατί δεν μπορούμε να το λύσουμε;</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Γιατί δεν μπορούμε να το λύσουμε;&quot;)">🔊</button><br><span class="en">Why can't we sort it out?</span></td></tr>
+
+
+
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="15k+"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>ολοκληρώνω <button class="tts-btn" onclick='ttsSpeak(this,"ολοκληρώνω")'>🔊</button></td><td>to finish, complete (it isn't finished)</td><td><span class="el">Το διαμέρισμα δεν έχει ολοκληρωθεί ακόμη.</span><button class="tts-btn" onclick='ttsSpeak(this,"Το διαμέρισμα δεν έχει ολοκληρωθεί ακόμη.")'>🔊</button><br/><span class="en">The apartment hasn't been finished yet.</span></td></tr>
+
+
+
+
+
+
+
+
+
+
+
 </tbody>
 </table>
 </section>
 <section id="nouns">
-<h2>Nouns</h2>
+<h2 style="cursor: pointer; user-select: none;">Nouns</h2>
 <table>
 <thead><tr><th style="width:18px;min-width:18px;border-right:none;"></th><th style="width:200px">Greek</th><th style="width:200px">English</th><th>Example Sentence</th></tr></thead>
 <tbody>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">💭 Abstract Concepts</td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>το ρόφημα <button class="tts-btn" onclick="ttsSpeak(this,&quot;το ρόφημα&quot;)">🔊</button></td><td>hot drink (tea, coffee)</td><td><span class="el">Ρόφημα είναι το τσάι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ρόφημα είναι το τσάι.&quot;)">🔊</button><br><span class="en">A hot drink is tea.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το ποτό <button class="tts-btn" onclick="ttsSpeak(this,&quot;το ποτό&quot;)">🔊</button></td><td>drink; alcoholic drink</td><td><span class="el">Ποτά είναι αλκοόλ.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ποτά είναι αλκοόλ.&quot;)">🔊</button><br><span class="en">'Ποτά' means alcohol.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το ενοίκιο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το ενοίκιο&quot;)">🔊</button></td><td>rent</td><td><span class="el">Είναι πιο εύκολο να είμαι σε ενοίκιο, γιατί είναι πιο γρήγορο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Είναι πιο εύκολο να είμαι σε ενοίκιο, γιατί είναι πιο γρήγορο.&quot;)">🔊</button><br><span class="en">It's easier to be renting, because it's quicker.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η αρχική τιμή <button class="tts-btn" onclick="ttsSpeak(this,&quot;η αρχική τιμή&quot;)">🔊</button></td><td>starting (list) price</td><td><span class="el">Αρχική τιμή.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αρχική τιμή.&quot;)">🔊</button><br><span class="en">Starting price.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το συμβόλαιο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το συμβόλαιο&quot;)">🔊</button></td><td>contract</td><td><span class="el">Ο δικηγόρος μας έχει πρόβλημα με το συμβόλαιο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ο δικηγόρος μας έχει πρόβλημα με το συμβόλαιο.&quot;)">🔊</button><br><span class="en">Our lawyer has a problem with the contract.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η δόση <button class="tts-btn" onclick="ttsSpeak(this,&quot;η δόση&quot;)">🔊</button></td><td>instalment</td><td><span class="el">Ναι, σε δόσεις.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ναι, σε δόσεις.&quot;)">🔊</button><br><span class="en">Yes, in instalments.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το πρόστιμο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το πρόστιμο&quot;)">🔊</button></td><td>fine, penalty</td><td><span class="el">Υπάρχει ένα πρόστιμο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Υπάρχει ένα πρόστιμο.&quot;)">🔊</button><br><span class="en">There is a penalty.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο φόρος <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο φόρος&quot;)">🔊</button></td><td>tax</td><td><span class="el">Επειδή ο φόρος.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Επειδή ο φόρος.&quot;)">🔊</button><br><span class="en">Because of the tax.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>η συντήρηση <button class="tts-btn" onclick="ttsSpeak(this,&quot;η συντήρηση&quot;)">🔊</button></td><td>maintenance, upkeep</td><td><span class="el">Δεν θέλω συντήρηση κάθε μέρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν θέλω συντήρηση κάθε μέρα.&quot;)">🔊</button><br><span class="en">I don't want maintenance every day.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το ποσό <button class="tts-btn" onclick="ttsSpeak(this,&quot;το ποσό&quot;)">🔊</button></td><td>amount, sum</td><td><span class="el">Δεν συμφώνησαν στο ποσό του προστίμου.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν συμφώνησαν στο ποσό του προστίμου.&quot;)">🔊</button><br><span class="en">They didn't agree on the amount of the fine.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο νομικός όρος <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο νομικός όρος&quot;)">🔊</button></td><td>legal term</td><td><span class="el">Το συμβόλαιο έχει πολλούς νομικούς όρους.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το συμβόλαιο έχει πολλούς νομικούς όρους.&quot;)">🔊</button><br><span class="en">The contract has many legal terms.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>ο κανόνας <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο κανόνας&quot;)">🔊</button></td><td>rule</td><td><span class="el">Οι κανόνες επιτρέπουν εργασίες από τις 8 το πρωί.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Οι κανόνες επιτρέπουν εργασίες από τις 8 το πρωί.&quot;)">🔊</button><br><span class="en">The rules allow work from 8 in the morning.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η αλλαγή <button class="tts-btn" onclick="ttsSpeak(this,&quot;η αλλαγή&quot;)">🔊</button></td><td>change</td><td><span class="el">Δεν μου αρέσει πολύ η αλλαγή της ώρας.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν μου αρέσει πολύ η αλλαγή της ώρας.&quot;)">🔊</button><br><span class="en">I don't much like the time change.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το μυαλό <button class="tts-btn" onclick="ttsSpeak(this,&quot;το μυαλό&quot;)">🔊</button></td><td>mind, brain</td><td><span class="el">Το μυαλό μου είναι λίγο αργό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το μυαλό μου είναι λίγο αργό.&quot;)">🔊</button><br><span class="en">My mind is a bit slow.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η επιλογή <button class="tts-btn" onclick="ttsSpeak(this,&quot;η επιλογή&quot;)">🔊</button></td><td>choice, option</td><td><span class="el">Έχω πολλές επιλογές.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχω πολλές επιλογές.&quot;)">🔊</button><br><span class="en">I have many options.</span></td></tr>
-<tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🌍 Environment &amp; Nature</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το φως <button class="tts-btn" onclick="ttsSpeak(this,&quot;το φως&quot;)">🔊</button></td><td>light, daylight</td><td><span class="el">Εδώ φως.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Εδώ φως.&quot;)">🔊</button><br><span class="en">Here, light.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="15k+"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>το ρόφημα <button class="tts-btn" onclick='ttsSpeak(this,"το ρόφημα")'>🔊</button></td><td>hot drink (tea, coffee)</td><td><span class="el">Ρόφημα είναι το τσάι.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ρόφημα είναι το τσάι.")'>🔊</button><br/><span class="en">A hot drink is tea.</span></td></tr>
+
+<tr class=""><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το ενοίκιο <button class="tts-btn" onclick='ttsSpeak(this,"το ενοίκιο")'>🔊</button></td><td>rent</td><td><span class="el">Είναι πιο εύκολο να είμαι σε ενοίκιο, γιατί είναι πιο γρήγορο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Είναι πιο εύκολο να είμαι σε ενοίκιο, γιατί είναι πιο γρήγορο.")'>🔊</button><br/><span class="en">It's easier to be renting, because it's quicker.</span></td></tr>
+<tr class=""><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η αρχική τιμή <button class="tts-btn" onclick='ttsSpeak(this,"η αρχική τιμή")'>🔊</button></td><td>starting (list) price</td><td><span class="el">Αρχική τιμή.</span><button class="tts-btn" onclick='ttsSpeak(this,"Αρχική τιμή.")'>🔊</button><br/><span class="en">Starting price.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το συμβόλαιο <button class="tts-btn" onclick='ttsSpeak(this,"το συμβόλαιο")'>🔊</button></td><td>contract</td><td><span class="el">Ο δικηγόρος μας έχει πρόβλημα με το συμβόλαιο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ο δικηγόρος μας έχει πρόβλημα με το συμβόλαιο.")'>🔊</button><br/><span class="en">Our lawyer has a problem with the contract.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η δόση <button class="tts-btn" onclick='ttsSpeak(this,"η δόση")'>🔊</button></td><td>instalment</td><td><span class="el">Ναι, σε δόσεις.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ναι, σε δόσεις.")'>🔊</button><br/><span class="en">Yes, in instalments.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το πρόστιμο <button class="tts-btn" onclick='ttsSpeak(this,"το πρόστιμο")'>🔊</button></td><td>fine, penalty</td><td><span class="el">Υπάρχει ένα πρόστιμο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Υπάρχει ένα πρόστιμο.")'>🔊</button><br/><span class="en">There is a penalty.</span></td></tr>
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>η συντήρηση <button class="tts-btn" onclick='ttsSpeak(this,"η συντήρηση")'>🔊</button></td><td>maintenance, upkeep</td><td><span class="el">Δεν θέλω συντήρηση κάθε μέρα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν θέλω συντήρηση κάθε μέρα.")'>🔊</button><br/><span class="en">I don't want maintenance every day.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το ποσό <button class="tts-btn" onclick='ttsSpeak(this,"το ποσό")'>🔊</button></td><td>amount, sum</td><td><span class="el">Δεν συμφώνησαν στο ποσό του προστίμου.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν συμφώνησαν στο ποσό του προστίμου.")'>🔊</button><br/><span class="en">They didn't agree on the amount of the fine.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο νομικός όρος <button class="tts-btn" onclick='ttsSpeak(this,"ο νομικός όρος")'>🔊</button></td><td>legal term</td><td><span class="el">Το συμβόλαιο έχει πολλούς νομικούς όρους.</span><button class="tts-btn" onclick='ttsSpeak(this,"Το συμβόλαιο έχει πολλούς νομικούς όρους.")'>🔊</button><br/><span class="en">The contract has many legal terms.</span></td></tr>
+
+
+
+
+
+
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🕐 Time &amp; Periods</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το ρολόι <button class="tts-btn" onclick="ttsSpeak(this,&quot;το ρολόι&quot;)">🔊</button></td><td>clock, watch</td><td><span class="el">Τα ρολόγια μας θα αλλάξουν.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Τα ρολόγια μας θα αλλάξουν.&quot;)">🔊</button><br><span class="en">Our clocks will change.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το στάδιο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το στάδιο&quot;)">🔊</button></td><td>stage, phase</td><td><span class="el">Πληρώνουμε λίγα μετά από κάθε στάδιο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πληρώνουμε λίγα μετά από κάθε στάδιο.&quot;)">🔊</button><br><span class="en">We pay a bit after each stage.</span></td></tr>
+
+<tr class=""><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το στάδιο <button class="tts-btn" onclick='ttsSpeak(this,"το στάδιο")'>🔊</button></td><td>stage, phase</td><td><span class="el">Πληρώνουμε λίγα μετά από κάθε στάδιο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Πληρώνουμε λίγα μετά από κάθε στάδιο.")'>🔊</button><br/><span class="en">We pay a bit after each stage.</span></td></tr>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🏢 Places &amp; Spaces</td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>η πολυκατοικία <button class="tts-btn" onclick="ttsSpeak(this,&quot;η πολυκατοικία&quot;)">🔊</button></td><td>apartment building</td><td><span class="el">Είναι νέος, καινούργιος στην πολυκατοικία.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Είναι νέος, καινούργιος στην πολυκατοικία.&quot;)">🔊</button><br><span class="en">He's new in the apartment building.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο όροφος <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο όροφος&quot;)">🔊</button></td><td>floor, storey</td><td><span class="el">Εδώ είναι 3 ορόφοι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Εδώ είναι 3 ορόφοι.&quot;)">🔊</button><br><span class="en">Here there are 3 floors.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το ισόγειο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το ισόγειο&quot;)">🔊</button></td><td>ground floor, lobby level</td><td><span class="el">Ναι, στο ισόγειο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ναι, στο ισόγειο.&quot;)">🔊</button><br><span class="en">Yes, on the ground floor.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το ρετιρέ <button class="tts-btn" onclick="ttsSpeak(this,&quot;το ρετιρέ&quot;)">🔊</button></td><td>penthouse, top floor</td><td><span class="el">Ρετιρέ, ναι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ρετιρέ, ναι.&quot;)">🔊</button><br><span class="en">Penthouse, yes.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το διαμέρισμα <button class="tts-btn" onclick="ttsSpeak(this,&quot;το διαμέρισμα&quot;)">🔊</button></td><td>apartment</td><td><span class="el">Κάθε όροφος έχει 2 διαμερίσματα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Κάθε όροφος έχει 2 διαμερίσματα.&quot;)">🔊</button><br><span class="en">Every floor has 2 apartments.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το γραφείο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το γραφείο&quot;)">🔊</button></td><td>office; desk</td><td><span class="el">Έχω το γραφείο στον κάτω όροφο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχω το γραφείο στον κάτω όροφο.&quot;)">🔊</button><br><span class="en">I have the office on the lower floor.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το εργοτάξιο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το εργοτάξιο&quot;)">🔊</button></td><td>construction site</td><td><span class="el">Το διαμέρισμα είναι ακόμη εργοτάξιο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το διαμέρισμα είναι ακόμη εργοτάξιο.&quot;)">🔊</button><br><span class="en">The apartment is still a construction site.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η τάξη <button class="tts-btn" onclick="ttsSpeak(this,&quot;η τάξη&quot;)">🔊</button></td><td>class, classroom</td><td><span class="el">Στην τάξη μιλάω μόνο κινέζικα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Στην τάξη μιλάω μόνο κινέζικα.&quot;)">🔊</button><br><span class="en">In class I only speak Chinese.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>η πολυκατοικία <button class="tts-btn" onclick='ttsSpeak(this,"η πολυκατοικία")'>🔊</button></td><td>apartment building</td><td><span class="el">Είναι νέος, καινούργιος στην πολυκατοικία.</span><button class="tts-btn" onclick='ttsSpeak(this,"Είναι νέος, καινούργιος στην πολυκατοικία.")'>🔊</button><br/><span class="en">He's new in the apartment building.</span></td></tr>
+<tr class=""><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο όροφος <button class="tts-btn" onclick='ttsSpeak(this,"ο όροφος")'>🔊</button></td><td>floor, storey</td><td><span class="el">Εδώ είναι 3 ορόφοι.</span><button class="tts-btn" onclick='ttsSpeak(this,"Εδώ είναι 3 ορόφοι.")'>🔊</button><br/><span class="en">Here there are 3 floors.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το ισόγειο <button class="tts-btn" onclick='ttsSpeak(this,"το ισόγειο")'>🔊</button></td><td>ground floor, lobby level</td><td><span class="el">Ναι, στο ισόγειο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ναι, στο ισόγειο.")'>🔊</button><br/><span class="en">Yes, on the ground floor.</span></td></tr>
+
+
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το εργοτάξιο <button class="tts-btn" onclick='ttsSpeak(this,"το εργοτάξιο")'>🔊</button></td><td>construction site</td><td><span class="el">Το διαμέρισμα είναι ακόμη εργοτάξιο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Το διαμέρισμα είναι ακόμη εργοτάξιο.")'>🔊</button><br/><span class="en">The apartment is still a construction site.</span></td></tr>
+
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">👤 People &amp; Social</td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>ο κλητήρας <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο κλητήρας&quot;)">🔊</button></td><td>porter, doorman</td><td><span class="el">Ε, κλητήρας.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ε, κλητήρας.&quot;)">🔊</button><br><span class="en">Um, κλητήρας (porter).</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>ο δικηγόρος <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο δικηγόρος&quot;)">🔊</button></td><td>lawyer</td><td><span class="el">Οι δικηγόροι του πωλητή και οι δικηγόροι σου;</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Οι δικηγόροι του πωλητή και οι δικηγόροι σου;&quot;)">🔊</button><br><span class="en">The seller's lawyers and your lawyers?</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο εργολάβος <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο εργολάβος&quot;)">🔊</button></td><td>developer, contractor</td><td><span class="el">Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.&quot;)">🔊</button><br><span class="en">The developer wants the money upfront because he takes the money and builds.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο προηγούμενος ιδιοκτήτης <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο προηγούμενος ιδιοκτήτης&quot;)">🔊</button></td><td>previous owner</td><td><span class="el">Δεν θέλω προηγούμενο ιδιοκτήτη.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν θέλω προηγούμενο ιδιοκτήτη.&quot;)">🔊</button><br><span class="en">I don't want a previous owner.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο πωλητής <button class="tts-btn" onclick="ttsSpeak(this,&quot;ο πωλητής&quot;)">🔊</button></td><td>seller</td><td><span class="el">Οι δικηγόροι του πωλητή δεν συμφώνησαν.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Οι δικηγόροι του πωλητή δεν συμφώνησαν.&quot;)">🔊</button><br><span class="en">The seller's lawyers didn't agree.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="15k+"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>ο κλητήρας <button class="tts-btn" onclick='ttsSpeak(this,"ο κλητήρας")'>🔊</button></td><td>porter, doorman</td><td><span class="el">Ε, κλητήρας.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ε, κλητήρας.")'>🔊</button><br/><span class="en">Um, κλητήρας (porter).</span></td></tr>
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο εργολάβος <button class="tts-btn" onclick='ttsSpeak(this,"ο εργολάβος")'>🔊</button></td><td>developer, contractor</td><td><span class="el">Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.")'>🔊</button><br/><span class="en">The developer wants the money upfront because he takes the money and builds.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο προηγούμενος ιδιοκτήτης <button class="tts-btn" onclick='ttsSpeak(this,"ο προηγούμενος ιδιοκτήτης")'>🔊</button></td><td>previous owner</td><td><span class="el">Δεν θέλω προηγούμενο ιδιοκτήτη.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν θέλω προηγούμενο ιδιοκτήτη.")'>🔊</button><br/><span class="en">I don't want a previous owner.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ο πωλητής <button class="tts-btn" onclick='ttsSpeak(this,"ο πωλητής")'>🔊</button></td><td>seller</td><td><span class="el">Οι δικηγόροι του πωλητή δεν συμφώνησαν.</span><button class="tts-btn" onclick='ttsSpeak(this,"Οι δικηγόροι του πωλητή δεν συμφώνησαν.")'>🔊</button><br/><span class="en">The seller's lawyers didn't agree.</span></td></tr>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🏠 Home &amp; Objects</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το δωμάτιο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το δωμάτιο&quot;)">🔊</button></td><td>room</td><td><span class="el">Δωμάτια.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δωμάτια.&quot;)">🔊</button><br><span class="en">Rooms.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το τρυπάνι <button class="tts-btn" onclick="ttsSpeak(this,&quot;το τρυπάνι&quot;)">🔊</button></td><td>drill (power tool)</td><td><span class="el">Ο γείτονας χρησιμοποιεί το τρυπάνι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ο γείτονας χρησιμοποιεί το τρυπάνι.&quot;)">🔊</button><br><span class="en">The neighbour is using the drill.</span></td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>το κιγκλίδωμα <button class="tts-btn" onclick="ttsSpeak(this,&quot;το κιγκλίδωμα&quot;)">🔊</button></td><td>railing, banister</td><td><span class="el">Η σκάλα δεν έχει κιγκλίδωμα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Η σκάλα δεν έχει κιγκλίδωμα.&quot;)">🔊</button><br><span class="en">The staircase has no railing.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το υπνοδωμάτιο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το υπνοδωμάτιο&quot;)">🔊</button></td><td>bedroom</td><td><span class="el">Θέλω διαμέρισμα με τρία υπνοδωμάτια.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω διαμέρισμα με τρία υπνοδωμάτια.&quot;)">🔊</button><br><span class="en">I want an apartment with three bedrooms.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>η τρύπα <button class="tts-btn" onclick="ttsSpeak(this,&quot;η τρύπα&quot;)">🔊</button></td><td>hole</td><td><span class="el">Η σκάλα είναι σαν τρύπα, μπορείς να πέσεις.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Η σκάλα είναι σαν τρύπα, μπορείς να πέσεις.&quot;)">🔊</button><br><span class="en">The staircase is like a hole, you can fall.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το δωμάτιο παιχνιδιού <button class="tts-btn" onclick="ttsSpeak(this,&quot;το δωμάτιο παιχνιδιού&quot;)">🔊</button></td><td>playroom</td><td><span class="el">Το σπίτι έχει δωμάτιο παιχνιδιού για τα παιδιά.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το σπίτι έχει δωμάτιο παιχνιδιού για τα παιδιά.&quot;)">🔊</button><br><span class="en">The house has a playroom for the children.</span></td></tr>
-<tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">⚙️ Actions &amp; Processes</td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>η επισκευή / η επιδιόρθωση <button class="tts-btn" onclick="ttsSpeak(this,&quot;η επισκευή / η επιδιόρθωση&quot;)">🔊</button></td><td>repair (deep) / repair (one fix)</td><td><span class="el">Επιδιορθώσεις.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Επιδιορθώσεις.&quot;)">🔊</button><br><span class="en">Repairs (specific fixes).</span></td></tr>
-<tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">💬 Speech &amp; Communication</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>το μήνυμα <button class="tts-btn" onclick="ttsSpeak(this,&quot;το μήνυμα&quot;)">🔊</button></td><td>message (to text)</td><td><span class="el">Η Ελένη μου στέλνει μήνυμα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Η Ελένη μου στέλνει μήνυμα.&quot;)">🔊</button><br><span class="en">Eleni is texting me.</span></td></tr>
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το τρυπάνι <button class="tts-btn" onclick='ttsSpeak(this,"το τρυπάνι")'>🔊</button></td><td>drill (power tool)</td><td><span class="el">Ο γείτονας χρησιμοποιεί το τρυπάνι.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ο γείτονας χρησιμοποιεί το τρυπάνι.")'>🔊</button><br/><span class="en">The neighbour is using the drill.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="15k+"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>το κιγκλίδωμα <button class="tts-btn" onclick='ttsSpeak(this,"το κιγκλίδωμα")'>🔊</button></td><td>railing, banister</td><td><span class="el">Η σκάλα δεν έχει κιγκλίδωμα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Η σκάλα δεν έχει κιγκλίδωμα.")'>🔊</button><br/><span class="en">The staircase has no railing.</span></td></tr>
+
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>το δωμάτιο παιχνιδιού <button class="tts-btn" onclick='ttsSpeak(this,"το δωμάτιο παιχνιδιού")'>🔊</button></td><td>playroom</td><td><span class="el">Το σπίτι έχει δωμάτιο παιχνιδιού για τα παιδιά.</span><button class="tts-btn" onclick='ttsSpeak(this,"Το σπίτι έχει δωμάτιο παιχνιδιού για τα παιδιά.")'>🔊</button><br/><span class="en">The house has a playroom for the children.</span></td></tr>
+
+
+
+
 </tbody>
 </table>
 </section>
 <section id="adjectives">
-<h2>Adjectives</h2>
+<h2 style="cursor: pointer; user-select: none;">Adjectives</h2>
 <table>
 <thead><tr><th style="width:18px;min-width:18px;border-right:none;"></th><th style="width:200px">Greek</th><th style="width:200px">English</th><th>Example Sentence</th></tr></thead>
 <tbody>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">📏 Physical Qualities</td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>μικρότερος <button class="tts-btn" onclick="ttsSpeak(this,&quot;μικρότερος&quot;)">🔊</button></td><td>shorter, smaller</td><td><span class="el">Μοιάζουν μικρότερες.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μοιάζουν μικρότερες.&quot;)">🔊</button><br><span class="en">They seem shorter.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ολοκαίνουργιο <button class="tts-btn" onclick="ttsSpeak(this,&quot;ολοκαίνουργιο&quot;)">🔊</button></td><td>brand new</td><td><span class="el">Θέλει ένα ολοκαίνουργιο διαμέρισμα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλει ένα ολοκαίνουργιο διαμέρισμα.&quot;)">🔊</button><br><span class="en">She wants a brand-new apartment.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>αρκετός <button class="tts-btn" onclick="ttsSpeak(this,&quot;αρκετός&quot;)">🔊</button></td><td>enough, quite a lot of</td><td><span class="el">Δεν έχουμε αρκετό φως.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν έχουμε αρκετό φως.&quot;)">🔊</button><br><span class="en">We don't have enough light.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>μισός <button class="tts-btn" onclick="ttsSpeak(this,&quot;μισός&quot;)">🔊</button></td><td>half</td><td><span class="el">Πληρώνουμε τα μισά τώρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πληρώνουμε τα μισά τώρα.&quot;)">🔊</button><br><span class="en">We pay half now.</span></td></tr>
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ολοκαίνουργιο <button class="tts-btn" onclick='ttsSpeak(this,"ολοκαίνουργιο")'>🔊</button></td><td>brand new</td><td><span class="el">Θέλει ένα ολοκαίνουργιο διαμέρισμα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλει ένα ολοκαίνουργιο διαμέρισμα.")'>🔊</button><br/><span class="en">She wants a brand-new apartment.</span></td></tr>
+
+
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">🎭 Character &amp; State</td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>ασφαλής <button class="tts-btn" onclick="ttsSpeak(this,&quot;ασφαλής&quot;)">🔊</button></td><td>safe</td><td><span class="el">Είναι ασφαλή.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Είναι ασφαλή.&quot;)">🔊</button><br><span class="en">They are safe.</span></td></tr>
-<tr><td class="freq-col" title="15k+" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>εξοικειωμένος <button class="tts-btn" onclick="ttsSpeak(this,&quot;εξοικειωμένος&quot;)">🔊</button></td><td>familiar (with)</td><td><span class="el">Είμαι εξοικειωμένος με αυτόν τον ήχο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Είμαι εξοικειωμένος με αυτόν τον ήχο.&quot;)">🔊</button><br><span class="en">I'm familiar with this sound.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>τρομερός <button class="tts-btn" onclick="ttsSpeak(this,&quot;τρομερός&quot;)">🔊</button></td><td>terrible, awful (also tremendous)</td><td><span class="el">Είναι τρομερό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Είναι τρομερό.&quot;)">🔊</button><br><span class="en">It's terrible.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>σημαντικός <button class="tts-btn" onclick="ttsSpeak(this,&quot;σημαντικός&quot;)">🔊</button></td><td>important</td><td><span class="el">Αυτό είναι ίσως λιγότερο σημαντικό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αυτό είναι ίσως λιγότερο σημαντικό.&quot;)">🔊</button><br><span class="en">That is maybe less important.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="3k–8k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>ασφαλής <button class="tts-btn" onclick='ttsSpeak(this,"ασφαλής")'>🔊</button></td><td>safe</td><td><span class="el">Είναι ασφαλή.</span><button class="tts-btn" onclick='ttsSpeak(this,"Είναι ασφαλή.")'>🔊</button><br/><span class="en">They are safe.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="15k+"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c0392b;"></span></td><td>εξοικειωμένος <button class="tts-btn" onclick='ttsSpeak(this,"εξοικειωμένος")'>🔊</button></td><td>familiar (with)</td><td><span class="el">Είμαι εξοικειωμένος με αυτόν τον ήχο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Είμαι εξοικειωμένος με αυτόν τον ήχο.")'>🔊</button><br/><span class="en">I'm familiar with this sound.</span></td></tr>
+
+
 </tbody>
 </table>
 </section>
 <section id="adverbs">
-<h2>Adverbs &amp; Particles</h2>
+<h2 style="cursor: pointer; user-select: none;">Adverbs &amp; Particles</h2>
 <table>
 <thead><tr><th style="width:18px;min-width:18px;border-right:none;"></th><th style="width:200px">Greek</th><th style="width:200px">English</th><th>Example Sentence</th></tr></thead>
 <tbody>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">⏳ Time &amp; Sequence</td></tr>
-<tr><td class="freq-col" title="top 3k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#27ae60;"></span></td><td>πιο νωρίς <button class="tts-btn" onclick="ttsSpeak(this,&quot;πιο νωρίς&quot;)">🔊</button></td><td>earlier</td><td><span class="el">Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα.&quot;)">🔊</button><br><span class="en">This week we're doing it an hour earlier for me.</span></td></tr>
-<tr><td class="freq-col" title="top 3k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#27ae60;"></span></td><td>μπροστά <button class="tts-btn" onclick="ttsSpeak(this,&quot;μπροστά&quot;)">🔊</button></td><td>upfront, in advance</td><td><span class="el">Θέλει όλα τα λεφτά μπροστά.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλει όλα τα λεφτά μπροστά.&quot;)">🔊</button><br><span class="en">He wants all the money upfront.</span></td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>επειγόντως <button class="tts-btn" onclick="ttsSpeak(this,&quot;επειγόντως&quot;)">🔊</button></td><td>urgently</td><td><span class="el">Η Ελένη θέλει να μου μιλήσει επειγόντως.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Η Ελένη θέλει να μου μιλήσει επειγόντως.&quot;)">🔊</button><br><span class="en">Eleni wants to talk to me urgently.</span></td></tr>
+
+
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>επειγόντως <button class="tts-btn" onclick='ttsSpeak(this,"επειγόντως")'>🔊</button></td><td>urgently</td><td><span class="el">Η Ελένη θέλει να μου μιλήσει επειγόντως.</span><button class="tts-btn" onclick='ttsSpeak(this,"Η Ελένη θέλει να μου μιλήσει επειγόντως.")'>🔊</button><br/><span class="en">Eleni wants to talk to me urgently.</span></td></tr>
 <tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">📌 Manner &amp; Degree</td></tr>
-<tr><td class="freq-col" title="8k–15k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ιδανικά <button class="tts-btn" onclick="ttsSpeak(this,&quot;ιδανικά&quot;)">🔊</button></td><td>ideally</td><td><span class="el">Ιδανικά θέλω θέα, αλλά δεν είναι πολύ σημαντικό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ιδανικά θέλω θέα, αλλά δεν είναι πολύ σημαντικό.&quot;)">🔊</button><br><span class="en">Ideally I want a view, but it's not very important.</span></td></tr>
-<tr><td class="freq-col" title="top 3k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#27ae60;"></span></td><td>κοντά <button class="tts-btn" onclick="ttsSpeak(this,&quot;κοντά&quot;)">🔊</button></td><td>close, near</td><td><span class="el">Ήμασταν πολύ κοντά.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ήμασταν πολύ κοντά.&quot;)">🔊</button><br><span class="en">We were very close.</span></td></tr>
-<tr><td class="freq-col" title="3k–8k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2980b9;"></span></td><td>εντελώς <button class="tts-btn" onclick="ttsSpeak(this,&quot;εντελώς&quot;)">🔊</button></td><td>completely</td><td><span class="el">Θέλει να είναι εντελώς καινούργιο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλει να είναι εντελώς καινούργιο.&quot;)">🔊</button><br><span class="en">She wants it to be completely new.</span></td></tr>
-<tr><td class="freq-col" title="top 3k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#27ae60;"></span></td><td>ίσως <button class="tts-btn" onclick="ttsSpeak(this,&quot;ίσως&quot;)">🔊</button></td><td>maybe, perhaps</td><td><span class="el">Ίσως είναι λιγότερο σημαντικό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ίσως είναι λιγότερο σημαντικό.&quot;)">🔊</button><br><span class="en">Maybe it's less important.</span></td></tr>
-<tr><td class="freq-col" title="top 3k" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#27ae60;"></span></td><td>το ίδιο <button class="tts-btn" onclick="ttsSpeak(this,&quot;το ίδιο&quot;)">🔊</button></td><td>the same</td><td><span class="el">Νομίζω ότι είναι το ίδιο μέρος του μυαλού μου.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Νομίζω ότι είναι το ίδιο μέρος του μυαλού μου.&quot;)">🔊</button><br><span class="en">I think it's the same part of my mind.</span></td></tr>
+<tr><td class="freq-col" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;" title="8k–15k"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e67e22;"></span></td><td>ιδανικά <button class="tts-btn" onclick='ttsSpeak(this,"ιδανικά")'>🔊</button></td><td>ideally</td><td><span class="el">Ιδανικά θέλω θέα, αλλά δεν είναι πολύ σημαντικό.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ιδανικά θέλω θέα, αλλά δεν είναι πολύ σημαντικό.")'>🔊</button><br/><span class="en">Ideally I want a view, but it's not very important.</span></td></tr>
+
+
+
+
 </tbody>
 </table>
 </section>
 <section id="phrases">
-<h2>Phrases &amp; Expressions</h2>
+<h2 style="cursor: pointer; user-select: none; text-decoration: line-through; color: rgb(187, 187, 187);">Phrases &amp; Expressions</h2>
 <table>
 <thead><tr><th style="width:18px;min-width:18px;border-right:none;"></th><th style="width:200px">Greek</th><th style="width:200px">English</th><th>Example Sentence</th></tr></thead>
 <tbody>
-<tr class="cat-row"><td style="width:18px;min-width:18px;padding:4px 6px;border-right:none;"></td><td colspan="3">💡 General Expressions</td></tr>
-<tr><td class="freq-col" title="not in corpus" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#bdc3c7;"></span></td><td>αλλάζω γλώσσα <button class="tts-btn" onclick="ttsSpeak(this,&quot;αλλάζω γλώσσα&quot;)">🔊</button></td><td>to switch language</td><td><span class="el">Δυσκολεύομαι να αλλάξω γλώσσα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δυσκολεύομαι να αλλάξω γλώσσα.&quot;)">🔊</button><br><span class="en">I find it hard to switch language.</span></td></tr>
-<tr><td class="freq-col" title="not in corpus" style="width:18px;min-width:18px;padding:4px 6px 4px 8px;text-align:center;vertical-align:middle;border-right:none;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#bdc3c7;"></span></td><td>πάνω από την αρχική τιμή <button class="tts-btn" onclick="ttsSpeak(this,&quot;πάνω από την αρχική τιμή&quot;)">🔊</button></td><td>above the list price</td><td><span class="el">Η τιμή είναι πάντα πάνω από την αρχική τιμή.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Η τιμή είναι πάντα πάνω από την αρχική τιμή.&quot;)">🔊</button><br><span class="en">The price is always above the starting price.</span></td></tr>
+
+
+
 </tbody>
 </table>
 </section>
@@ -358,94 +359,94 @@ section.nsec h2.nsec-title { cursor:pointer; user-select:none; -webkit-user-sele
 <p class="notes-sub">Lesson of 2026-10-29</p>
 <div class="notes-toc"><a href="#grammar">Grammar: Priority</a><a href="#nottaught">Grammar That Was Not Taught</a><a href="#wordorder">Word Order Worth Reviewing</a><a href="#priorities">Must Learn / Worth Recognizing / Lower Priority</a><a href="#best">Best Sentences to Memorize</a><a href="#focus">Where to Focus Next</a><a href="#switches">English Sentences (said in English)</a><a href="#plan">Short Review Plan</a></div>
 <section class="nsec" id="grammar">
-<h2 class="nsec-title">Grammar: Priority</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">Grammar: Priority</h2>
 <p class="nsec-intro">Grammar explained from the lesson of 2026-10-29. Examples marked 'additional' are not from the lesson.</p>
 <div class="nsub"><h4>A μοιάζω (seem) vs νιώθω (feel), and adjective agreement<span class="ntag taught">taught</span></h4>
 <p class="ntext">Pattern: μοιάζω + adjective that agrees with the subject. Meaning: 'seem / look'. Why it works: I wanted 'the days feel shorter' and used νιώθουν κοντύτερα, then self-corrected to κοντύτερο. The teacher replaced the verb and adjective: μοιάζουν μικρότερες. The adjective is feminine plural because the days (οι μέρες) are feminine plural. νιώθω is for a person's feelings; for how something seems from outside, use μοιάζω.</p>
 <p class="ntext">Examples from the lesson:</p>
-<div class="nsent nitem" data-gr="Όχι, όχι, μοιάζουν μικρότερες." data-en="No, no, they seem shorter."><span class="el">Όχι, όχι, μοιάζουν μικρότερες.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Όχι, όχι, μοιάζουν μικρότερες.&quot;)">🔊</button><br><span class="en">No, no, they seem shorter.</span></div>
+<div class="nsent nitem" data-en="No, no, they seem shorter." data-gr="Όχι, όχι, μοιάζουν μικρότερες."><span class="el">Όχι, όχι, μοιάζουν μικρότερες.</span><button class="tts-btn" onclick='ttsSpeak(this,"Όχι, όχι, μοιάζουν μικρότερες.")'>🔊</button><br/><span class="en">No, no, they seem shorter.</span></div>
 <p class="ntext">Additional simple examples:</p>
-<div class="nsent nitem" data-gr="Η μέρα μοιάζει μικρότερη." data-en="The day seems shorter. (additional)"><span class="el">Η μέρα μοιάζει μικρότερη.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Η μέρα μοιάζει μικρότερη.&quot;)">🔊</button><br><span class="en">The day seems shorter. (additional)</span></div>
-<div class="nsent nitem" data-gr="Τα σπίτια μοιάζουν μικρά." data-en="The houses seem small. (additional)"><span class="el">Τα σπίτια μοιάζουν μικρά.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Τα σπίτια μοιάζουν μικρά.&quot;)">🔊</button><br><span class="en">The houses seem small. (additional)</span></div>
+<div class="nsent nitem" data-en="The day seems shorter. (additional)" data-gr="Η μέρα μοιάζει μικρότερη."><span class="el">Η μέρα μοιάζει μικρότερη.</span><button class="tts-btn" onclick='ttsSpeak(this,"Η μέρα μοιάζει μικρότερη.")'>🔊</button><br/><span class="en">The day seems shorter. (additional)</span></div>
+<div class="nsent nitem" data-en="The houses seem small. (additional)" data-gr="Τα σπίτια μοιάζουν μικρά."><span class="el">Τα σπίτια μοιάζουν μικρά.</span><button class="tts-btn" onclick='ttsSpeak(this,"Τα σπίτια μοιάζουν μικρά.")'>🔊</button><br/><span class="en">The houses seem small. (additional)</span></div>
 <p class="ntext">Compare: μοιάζω με + accusative means 'resemble' (additional, not taught). Common mistake: νιώθω used for things; adjective left in singular or wrong gender.</p>
 </div>
-<div class="nsub"><h4>B ροφήματα vs ποτά: choose the right word for 'drinks'<span class="ntag taught">taught</span></h4>
+<div class="nsub"><h4 class="n-allcrossed">B ροφήματα vs ποτά: choose the right word for 'drinks'<span class="ntag taught">taught</span></h4>
 <p class="ntext">Pattern: ρόφημα for hot drinks you sip (tea, coffee); ποτό mainly for alcohol. Why it matters: I said 'ζεστά ποτά' and the teacher said it sounds like hot alcohol. Both are neuter nouns; ρόφημα makes plural ροφήματα (same -μα pattern as πρόβλημα, προβλήματα, additional).</p>
 <p class="ntext">Examples from the lesson:</p>
-<div class="nsent nitem" data-gr="Ρόφημα είναι το τσάι." data-en="A hot drink is tea."><span class="el">Ρόφημα είναι το τσάι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ρόφημα είναι το τσάι.&quot;)">🔊</button><br><span class="en">A hot drink is tea.</span></div>
-<div class="nsent nitem" data-gr="Ναι, είναι αλκοόλ περισσότερο το ποτό." data-en="Yes, ποτό is more alcohol."><span class="el">Ναι, είναι αλκοόλ περισσότερο το ποτό.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ναι, είναι αλκοόλ περισσότερο το ποτό.&quot;)">🔊</button><br><span class="en">Yes, ποτό is more alcohol.</span></div>
+<div class="nsent nitem ncrossed" data-en="A hot drink is tea." data-gr="Ρόφημα είναι το τσάι."><span class="el">Ρόφημα είναι το τσάι.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ρόφημα είναι το τσάι.")'>🔊</button><br/><span class="en">A hot drink is tea.</span></div>
+<div class="nsent nitem ncrossed" data-en="Yes, ποτό is more alcohol." data-gr="Ναι, είναι αλκοόλ περισσότερο το ποτό."><span class="el">Ναι, είναι αλκοόλ περισσότερο το ποτό.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ναι, είναι αλκοόλ περισσότερο το ποτό.")'>🔊</button><br/><span class="en">Yes, ποτό is more alcohol.</span></div>
 <p class="ntext">Additional simple examples:</p>
-<div class="nsent nitem" data-gr="Το πρωί προτιμώ ζεστά ροφήματα." data-en="In the morning I prefer hot drinks. (additional)"><span class="el">Το πρωί προτιμώ ζεστά ροφήματα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το πρωί προτιμώ ζεστά ροφήματα.&quot;)">🔊</button><br><span class="en">In the morning I prefer hot drinks. (additional)</span></div>
+<div class="nsent nitem ncrossed" data-en="In the morning I prefer hot drinks. (additional)" data-gr="Το πρωί προτιμώ ζεστά ροφήματα."><span class="el">Το πρωί προτιμώ ζεστά ροφήματα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Το πρωί προτιμώ ζεστά ροφήματα.")'>🔊</button><br/><span class="en">In the morning I prefer hot drinks. (additional)</span></div>
 <p class="ntext">Compare: ποτό = drink, usually alcohol; ρόφημα = hot drink. Common mistake: ζεστά ποτά.</p>
 </div>
-<div class="nsub"><h4>C Aorist for a completed event, present for ongoing<span class="ntag fix">fix</span></h4>
+<div class="nsub"><h4 class="n-allcrossed">C Aorist for a completed event, present for ongoing<span class="ntag fix">fix</span></h4>
 <p class="ntext">Pattern: aorist stem for a single finished action (past) or a single future event after να; present stem for ongoing, repeated or background action. In the lesson the teacher used the aorist for completed events: άλλαξαν ήδη, μετακόμισε τώρα, πούλησε. I used the present stem where the event was finished: μαλώνω for 'we quarrelled', and I corrected myself to Μαλώσαμε after the teacher gave Μάλωσα. I also said 'όταν μένω στην Ελλάδα, νόμισα' where the past (έμενα) fits.</p>
 <p class="ntext">Examples from the lesson:</p>
-<div class="nsent nitem" data-gr="Άλλαξαν ήδη." data-en="They already changed."><span class="el">Άλλαξαν ήδη.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Άλλαξαν ήδη.&quot;)">🔊</button><br><span class="en">They already changed.</span></div>
-<div class="nsent nitem" data-gr="Αυτός μετακόμισε τώρα." data-en="He moved in just now."><span class="el">Αυτός μετακόμισε τώρα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αυτός μετακόμισε τώρα.&quot;)">🔊</button><br><span class="en">He moved in just now.</span></div>
-<div class="nsent nitem" data-gr="Μάλωσα." data-en="I quarrelled."><span class="el">Μάλωσα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μάλωσα.&quot;)">🔊</button><br><span class="en">I quarrelled.</span></div>
-<div class="nsent nitem" data-gr="Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα." data-en="I tried many times, but every time I failed. (my correct aorists)"><span class="el">Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα.&quot;)">🔊</button><br><span class="en">I tried many times, but every time I failed. (my correct aorists)</span></div>
+<div class="nsent nitem ncrossed" data-en="They already changed." data-gr="Άλλαξαν ήδη."><span class="el">Άλλαξαν ήδη.</span><button class="tts-btn" onclick='ttsSpeak(this,"Άλλαξαν ήδη.")'>🔊</button><br/><span class="en">They already changed.</span></div>
+<div class="nsent nitem ncrossed" data-en="He moved in just now." data-gr="Αυτός μετακόμισε τώρα."><span class="el">Αυτός μετακόμισε τώρα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Αυτός μετακόμισε τώρα.")'>🔊</button><br/><span class="en">He moved in just now.</span></div>
+<div class="nsent nitem ncrossed" data-en="I quarrelled." data-gr="Μάλωσα."><span class="el">Μάλωσα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Μάλωσα.")'>🔊</button><br/><span class="en">I quarrelled.</span></div>
+<div class="nsent nitem ncrossed" data-en="I tried many times, but every time I failed. (my correct aorists)" data-gr="Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα."><span class="el">Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα.")'>🔊</button><br/><span class="en">I tried many times, but every time I failed. (my correct aorists)</span></div>
 <p class="ntext">Additional simple examples:</p>
-<div class="nsent nitem" data-gr="Χθες μάλωσα με τον αδελφό μου." data-en="Yesterday I argued with my brother. (additional)"><span class="el">Χθες μάλωσα με τον αδελφό μου.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Χθες μάλωσα με τον αδελφό μου.&quot;)">🔊</button><br><span class="en">Yesterday I argued with my brother. (additional)</span></div>
+<div class="nsent nitem ncrossed" data-en="Yesterday I argued with my brother. (additional)" data-gr="Χθες μάλωσα με τον αδελφό μου."><span class="el">Χθες μάλωσα με τον αδελφό μου.</span><button class="tts-btn" onclick='ttsSpeak(this,"Χθες μάλωσα με τον αδελφό μου.")'>🔊</button><br/><span class="en">Yesterday I argued with my brother. (additional)</span></div>
 <p class="ntext">Compare: μένω (I live, now) vs έμενα (I used to live) vs έμεινα (I stayed, once). Common mistake: present tense for finished events; also 'θα μετακομίζεις' for a single future move (teacher did not correct it, but θα μετακομίσεις is the single-event form).</p>
 </div>
-<div class="nsub"><h4>D να-constructions: πρέπει να, μπορεί να, θέλω να, δεν θέλω να<span class="ntag good">good</span></h4>
+<div class="nsub"><h4 class="n-allcrossed">D να-constructions: πρέπει να, μπορεί να, θέλω να, δεν θέλω να<span class="ntag good">good</span></h4>
 <p class="ntext">Pattern: modal word + να + verb in the subjunctive. This was used a lot in conversation but not explained. The stem carries the aspect: present stem (να μένεις) for continuing states, aorist stem (να φύγω, να πουλήσεις, να συμφωνήσουν) for a single action. Negation goes before να: δεν θέλω να έχει.</p>
 <p class="ntext">Examples from the lesson:</p>
-<div class="nsent nitem" data-gr="Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί." data-en="You have to be sure you want to live there."><span class="el">Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί.&quot;)">🔊</button><br><span class="en">You have to be sure you want to live there.</span></div>
-<div class="nsent nitem" data-gr="Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου." data-en="In Cyprus it&#x27;s not easy to sell your house."><span class="el">Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου.&quot;)">🔊</button><br><span class="en">In Cyprus it's not easy to sell your house.</span></div>
-<div class="nsent nitem" data-gr="Δεν θέλω να έχει αυλή." data-en="I don&#x27;t want it to have a yard. (me, correct)"><span class="el">Δεν θέλω να έχει αυλή.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν θέλω να έχει αυλή.&quot;)">🔊</button><br><span class="en">I don't want it to have a yard. (me, correct)</span></div>
-<div class="nsent nitem" data-gr="Δεν μπορούν να συμφωνήσουν." data-en="They can&#x27;t agree. (me, correct)"><span class="el">Δεν μπορούν να συμφωνήσουν.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν μπορούν να συμφωνήσουν.&quot;)">🔊</button><br><span class="en">They can't agree. (me, correct)</span></div>
+<div class="nsent nitem ncrossed" data-en="You have to be sure you want to live there." data-gr="Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί."><span class="el">Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί.</span><button class="tts-btn" onclick='ttsSpeak(this,"Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί.")'>🔊</button><br/><span class="en">You have to be sure you want to live there.</span></div>
+<div class="nsent nitem ncrossed" data-en="In Cyprus it's not easy to sell your house." data-gr="Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου."><span class="el">Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου.</span><button class="tts-btn" onclick='ttsSpeak(this,"Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου.")'>🔊</button><br/><span class="en">In Cyprus it's not easy to sell your house.</span></div>
+<div class="nsent nitem ncrossed" data-en="I don't want it to have a yard. (me, correct)" data-gr="Δεν θέλω να έχει αυλή."><span class="el">Δεν θέλω να έχει αυλή.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν θέλω να έχει αυλή.")'>🔊</button><br/><span class="en">I don't want it to have a yard. (me, correct)</span></div>
+<div class="nsent nitem ncrossed" data-en="They can't agree. (me, correct)" data-gr="Δεν μπορούν να συμφωνήσουν."><span class="el">Δεν μπορούν να συμφωνήσουν.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν μπορούν να συμφωνήσουν.")'>🔊</button><br/><span class="en">They can't agree. (me, correct)</span></div>
 <p class="ntext">Additional simple examples:</p>
-<div class="nsent nitem" data-gr="Θέλω να μένω κοντά στα πεθερικά μου." data-en="I want to live near my in-laws. (additional)"><span class="el">Θέλω να μένω κοντά στα πεθερικά μου.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να μένω κοντά στα πεθερικά μου.&quot;)">🔊</button><br><span class="en">I want to live near my in-laws. (additional)</span></div>
+<div class="nsent nitem ncrossed" data-en="I want to live near my in-laws. (additional)" data-gr="Θέλω να μένω κοντά στα πεθερικά μου."><span class="el">Θέλω να μένω κοντά στα πεθερικά μου.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να μένω κοντά στα πεθερικά μου.")'>🔊</button><br/><span class="en">I want to live near my in-laws. (additional)</span></div>
 <p class="ntext">Compare: δεν θέλω να έχει (a state) vs δεν θέλω να χτίσω (one act, additional). Common mistake: dropping να or using the infinitive from English.</p>
 </div>
-<div class="nsub"><h4>E όροφος: nominative vs accusative plural, and place phrases<span class="ntag taught">taught</span></h4>
+<div class="nsub"><h4 class="n-allcrossed">E όροφος: nominative vs accusative plural, and place phrases<span class="ntag taught">taught</span></h4>
 <p class="ntext">Pattern: nominative after είναι (3 όροφοι); accusative as object of έχει (9 ορόφους). I said 9 πάτωμα/πατώματα; the teacher gave ορόφους and I repeated όροφους. Location uses σε + article: στο ισόγειο, στον πάνω όροφο, στον κάτω όροφο.</p>
 <p class="ntext">Examples from the lesson:</p>
-<div class="nsent nitem" data-gr="Εδώ είναι 3 ορόφοι." data-en="Here there are 3 floors."><span class="el">Εδώ είναι 3 ορόφοι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Εδώ είναι 3 ορόφοι.&quot;)">🔊</button><br><span class="en">Here there are 3 floors.</span></div>
-<div class="nsent nitem" data-gr="Εγώ μένω στον πάνω όροφο." data-en="I live on the upper floor."><span class="el">Εγώ μένω στον πάνω όροφο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Εγώ μένω στον πάνω όροφο.&quot;)">🔊</button><br><span class="en">I live on the upper floor.</span></div>
-<div class="nsent nitem" data-gr="Και έχω το γραφείο στον κάτω όροφο." data-en="And I have the office on the lower floor."><span class="el">Και έχω το γραφείο στον κάτω όροφο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Και έχω το γραφείο στον κάτω όροφο.&quot;)">🔊</button><br><span class="en">And I have the office on the lower floor.</span></div>
+<div class="nsent nitem ncrossed" data-en="Here there are 3 floors." data-gr="Εδώ είναι 3 ορόφοι."><span class="el">Εδώ είναι 3 ορόφοι.</span><button class="tts-btn" onclick='ttsSpeak(this,"Εδώ είναι 3 ορόφοι.")'>🔊</button><br/><span class="en">Here there are 3 floors.</span></div>
+<div class="nsent nitem ncrossed" data-en="I live on the upper floor." data-gr="Εγώ μένω στον πάνω όροφο."><span class="el">Εγώ μένω στον πάνω όροφο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Εγώ μένω στον πάνω όροφο.")'>🔊</button><br/><span class="en">I live on the upper floor.</span></div>
+<div class="nsent nitem ncrossed" data-en="And I have the office on the lower floor." data-gr="Και έχω το γραφείο στον κάτω όροφο."><span class="el">Και έχω το γραφείο στον κάτω όροφο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Και έχω το γραφείο στον κάτω όροφο.")'>🔊</button><br/><span class="en">And I have the office on the lower floor.</span></div>
 <p class="ntext">Additional simple examples:</p>
-<div class="nsent nitem" data-gr="Το διαμέρισμά μου είναι στον τρίτο όροφο." data-en="My apartment is on the third floor. (additional)"><span class="el">Το διαμέρισμά μου είναι στον τρίτο όροφο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Το διαμέρισμά μου είναι στον τρίτο όροφο.&quot;)">🔊</button><br><span class="en">My apartment is on the third floor. (additional)</span></div>
+<div class="nsent nitem ncrossed" data-en="My apartment is on the third floor. (additional)" data-gr="Το διαμέρισμά μου είναι στον τρίτο όροφο."><span class="el">Το διαμέρισμά μου είναι στον τρίτο όροφο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Το διαμέρισμά μου είναι στον τρίτο όροφο.")'>🔊</button><br/><span class="en">My apartment is on the third floor. (additional)</span></div>
 <p class="ntext">Compare: -ος masculine nouns: οι όροφοι (nom.) vs τους ορόφους (acc.), note the accent move. Common mistake: wrong word for 'floor' (πάτωμα is the floor you walk on).</p>
 </div>
-<div class="nsub"><h4>F Masculine -ος nouns need ο / τον, not το<span class="ntag fix">fix</span></h4>
+<div class="nsub"><h4 class="n-allcrossed">F Masculine -ος nouns need ο / τον, not το<span class="ntag fix">fix</span></h4>
 <p class="ntext">Pattern: nouns in -ος such as ήχος, φόρος, άνθρωπος, όροφος are masculine: ο ήχος, ο φόρος, ο άνθρωπος. In my lines I used neuter 'το': 'το ήχος' (twice), 'το φόρος', 'αυτό το άνθρωπο'. I also said 'τα βαλίτσες', where the feminine plural article is τις. The teacher did not stop for these, but they are clearly wrong Greek.</p>
 <p class="ntext">Examples from the lesson:</p>
-<div class="nsent nitem" data-gr="Επειδή ο φόρος." data-en="Because of the tax. (me, correct once)"><span class="el">Επειδή ο φόρος.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Επειδή ο φόρος.&quot;)">🔊</button><br><span class="en">Because of the tax. (me, correct once)</span></div>
+<div class="nsent nitem ncrossed" data-en="Because of the tax. (me, correct once)" data-gr="Επειδή ο φόρος."><span class="el">Επειδή ο φόρος.</span><button class="tts-btn" onclick='ttsSpeak(this,"Επειδή ο φόρος.")'>🔊</button><br/><span class="en">Because of the tax. (me, correct once)</span></div>
 <p class="ntext">Additional simple examples:</p>
-<div class="nsent nitem" data-gr="Αυτός ο ήχος με ενοχλεί." data-en="This sound bothers me. (additional)"><span class="el">Αυτός ο ήχος με ενοχλεί.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αυτός ο ήχος με ενοχλεί.&quot;)">🔊</button><br><span class="en">This sound bothers me. (additional)</span></div>
-<div class="nsent nitem" data-gr="Με τις βαλίτσες." data-en="With the suitcases. (additional)"><span class="el">Με τις βαλίτσες.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Με τις βαλίτσες.&quot;)">🔊</button><br><span class="en">With the suitcases. (additional)</span></div>
+<div class="nsent nitem ncrossed" data-en="This sound bothers me. (additional)" data-gr="Αυτός ο ήχος με ενοχλεί."><span class="el">Αυτός ο ήχος με ενοχλεί.</span><button class="tts-btn" onclick='ttsSpeak(this,"Αυτός ο ήχος με ενοχλεί.")'>🔊</button><br/><span class="en">This sound bothers me. (additional)</span></div>
+<div class="nsent nitem ncrossed" data-en="With the suitcases. (additional)" data-gr="Με τις βαλίτσες."><span class="el">Με τις βαλίτσες.</span><button class="tts-btn" onclick='ttsSpeak(this,"Με τις βαλίτσες.")'>🔊</button><br/><span class="en">With the suitcases. (additional)</span></div>
 <p class="ntext">Compare: -ο nouns (το σπίτι, το διαμέρισμα) are neuter. Common mistake: choosing the article from the English or from similar-sounding neuter nouns.</p>
 </div>
-<div class="nsub"><h4>G επισκευή vs επιδιόρθωση<span class="ntag taught">taught</span></h4>
+<div class="nsub"><h4 class="n-allcrossed">G επισκευή vs επιδιόρθωση<span class="ntag taught">taught</span></h4>
 <p class="ntext">Teacher's distinction: επισκευή is a deeper repair that fixes something from the inside out; επιδιόρθωση fixes a specific thing once. I said επιδόσεις (a slip), the teacher gave επιδιορθώσεις, and I said I meant επισκευές. Also note 'πάρα πολύ επιδιορθώσεις' should be 'πάρα πολλές', because πολύς agrees with the noun.</p>
 <p class="ntext">Examples from the lesson:</p>
-<div class="nsent nitem" data-gr="Θέλει όλα τα λεφτά μπροστά." data-en="He wants all the money upfront."><span class="el">Θέλει όλα τα λεφτά μπροστά.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλει όλα τα λεφτά μπροστά.&quot;)">🔊</button><br><span class="en">He wants all the money upfront.</span></div>
-<div class="nsent nitem" data-gr="Ναι, σε δόσεις." data-en="Yes, in instalments."><span class="el">Ναι, σε δόσεις.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ναι, σε δόσεις.&quot;)">🔊</button><br><span class="en">Yes, in instalments.</span></div>
+<div class="nsent nitem ncrossed" data-en="He wants all the money upfront." data-gr="Θέλει όλα τα λεφτά μπροστά."><span class="el">Θέλει όλα τα λεφτά μπροστά.</span><button class="tts-btn" onclick='ttsSpeak(this,"Θέλει όλα τα λεφτά μπροστά.")'>🔊</button><br/><span class="en">He wants all the money upfront.</span></div>
+<div class="nsent nitem ncrossed" data-en="Yes, in instalments." data-gr="Ναι, σε δόσεις."><span class="el">Ναι, σε δόσεις.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ναι, σε δόσεις.")'>🔊</button><br/><span class="en">Yes, in instalments.</span></div>
 <p class="ntext">Additional simple examples:</p>
-<div class="nsent nitem" data-gr="Δεν θέλω πολλές επισκευές." data-en="I don&#x27;t want many repairs. (additional)"><span class="el">Δεν θέλω πολλές επισκευές.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν θέλω πολλές επισκευές.&quot;)">🔊</button><br><span class="en">I don't want many repairs. (additional)</span></div>
+<div class="nsent nitem ncrossed" data-en="I don't want many repairs. (additional)" data-gr="Δεν θέλω πολλές επισκευές."><span class="el">Δεν θέλω πολλές επισκευές.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν θέλω πολλές επισκευές.")'>🔊</button><br/><span class="en">I don't want many repairs. (additional)</span></div>
 <p class="ntext">Common mistake: πάρα πολύ before a plural noun instead of πάρα πολλές.</p>
 </div>
 </section>
 <section class="nsec" id="nottaught">
-<h2 class="nsec-title">Grammar That Was Not Taught</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">Grammar That Was Not Taught</h2>
 <ul class="nlist"><li>Tenses and aspect: only corrected in passing (Μαλώνω → Μάλωσα). The present vs aorist contrast was not explained.</li><li>Passive voice: did not appear.</li><li>Subjunctive and να constructions: used in conversation (πρέπει να, μπορεί να, θέλω να), not taught.</li><li>Participles: did not appear.</li><li>Cases: only όροφοι / ορόφους and place phrases were touched on.</li><li>Pronouns: weak pronouns appeared (μου λέει, σου αρέσει) but were not taught.</li><li>Conditionals: αν αγοράσεις used by the teacher, not taught.</li><li>Connectors: γιατί, επειδή, αλλά, ενώ used in conversation, not taught.</li></ul>
 </section>
 <section class="nsec" id="wordorder">
-<h2 class="nsec-title">Word Order Worth Reviewing</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">Word Order Worth Reviewing</h2>
 <p class="ntext">Place phrase after the verb: verb, object, then location.</p>
-<div class="nsent nitem" data-gr="Και έχω το γραφείο στον κάτω όροφο." data-en="And I have the office on the lower floor."><span class="el">Και έχω το γραφείο στον κάτω όροφο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Και έχω το γραφείο στον κάτω όροφο.&quot;)">🔊</button><br><span class="en">And I have the office on the lower floor.</span></div>
+<div class="nsent nitem" data-en="And I have the office on the lower floor." data-gr="Και έχω το γραφείο στον κάτω όροφο."><span class="el">Και έχω το γραφείο στον κάτω όροφο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Και έχω το γραφείο στον κάτω όροφο.")'>🔊</button><br/><span class="en">And I have the office on the lower floor.</span></div>
 <p class="ntext">Negation before θέλω, then να + verb.</p>
-<div class="nsent nitem" data-gr="Δεν θέλω να έχει αυλή." data-en="I don&#x27;t want it to have a yard."><span class="el">Δεν θέλω να έχει αυλή.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν θέλω να έχει αυλή.&quot;)">🔊</button><br><span class="en">I don't want it to have a yard.</span></div>
+<div class="nsent nitem" data-en="I don't want it to have a yard." data-gr="Δεν θέλω να έχει αυλή."><span class="el">Δεν θέλω να έχει αυλή.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν θέλω να έχει αυλή.")'>🔊</button><br/><span class="en">I don't want it to have a yard.</span></div>
 <p class="ntext">Time frame first, then the verb.</p>
-<div class="nsent nitem" data-gr="Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα." data-en="This week we&#x27;re doing it an hour earlier for me."><span class="el">Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα.&quot;)">🔊</button><br><span class="en">This week we're doing it an hour earlier for me.</span></div>
+<div class="nsent nitem" data-en="This week we're doing it an hour earlier for me." data-gr="Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα."><span class="el">Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα.")'>🔊</button><br/><span class="en">This week we're doing it an hour earlier for me.</span></div>
 <p class="ntext">Reason clause after the main clause with γιατί.</p>
-<div class="nsent nitem" data-gr="Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει." data-en="The developer wants the money upfront because he takes the money and builds."><span class="el">Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.&quot;)">🔊</button><br><span class="en">The developer wants the money upfront because he takes the money and builds.</span></div>
+<div class="nsent nitem" data-en="The developer wants the money upfront because he takes the money and builds." data-gr="Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει."><span class="el">Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.")'>🔊</button><br/><span class="en">The developer wants the money upfront because he takes the money and builds.</span></div>
 </section>
 <section class="nsec" id="priorities">
-<h2 class="nsec-title">Must Learn / Worth Recognizing / Lower Priority</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">Must Learn / Worth Recognizing / Lower Priority</h2>
 <div class="nsub"><h4>Must learn</h4>
 <ul class="nlist"><li>ροφήματα vs ποτά</li><li>aorist vs present stem</li><li>ο ήχος / ο φόρος (masculine -ος)</li><li>όροφος: όροφοι / ορόφους</li><li>μοιάζω + adjective</li></ul>
 </div>
@@ -457,22 +458,22 @@ section.nsec h2.nsec-title { cursor:pointer; user-select:none; -webkit-user-sele
 </div>
 </section>
 <section class="nsec" id="best">
-<h2 class="nsec-title">Best Sentences to Memorize</h2>
-<div class="nsent nitem" data-gr="Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα." data-en="This week we&#x27;re doing it an hour earlier for me."><span class="el">Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα.&quot;)">🔊</button><br><span class="en">This week we're doing it an hour earlier for me.</span></div>
-<div class="nsent nitem" data-gr="Μοιάζουν μικρότερες." data-en="They seem shorter."><span class="el">Μοιάζουν μικρότερες.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Μοιάζουν μικρότερες.&quot;)">🔊</button><br><span class="en">They seem shorter.</span></div>
-<div class="nsent nitem" data-gr="Ρόφημα είναι το τσάι." data-en="A hot drink is tea."><span class="el">Ρόφημα είναι το τσάι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ρόφημα είναι το τσάι.&quot;)">🔊</button><br><span class="en">A hot drink is tea.</span></div>
-<div class="nsent nitem" data-gr="Εγώ μένω στον πάνω όροφο." data-en="I live on the upper floor."><span class="el">Εγώ μένω στον πάνω όροφο.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Εγώ μένω στον πάνω όροφο.&quot;)">🔊</button><br><span class="en">I live on the upper floor.</span></div>
-<div class="nsent nitem" data-gr="Εδώ είναι 3 ορόφοι." data-en="Here there are 3 floors."><span class="el">Εδώ είναι 3 ορόφοι.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Εδώ είναι 3 ορόφοι.&quot;)">🔊</button><br><span class="en">Here there are 3 floors.</span></div>
-<div class="nsent nitem" data-gr="Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί." data-en="You have to be sure you want to live there."><span class="el">Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί.&quot;)">🔊</button><br><span class="en">You have to be sure you want to live there.</span></div>
-<div class="nsent nitem" data-gr="Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου." data-en="In Cyprus it&#x27;s not easy to sell your house."><span class="el">Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου.&quot;)">🔊</button><br><span class="en">In Cyprus it's not easy to sell your house.</span></div>
-<div class="nsent nitem" data-gr="Δεν θέλω να έχει αυλή." data-en="I don&#x27;t want it to have a yard."><span class="el">Δεν θέλω να έχει αυλή.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν θέλω να έχει αυλή.&quot;)">🔊</button><br><span class="en">I don't want it to have a yard.</span></div>
-<div class="nsent nitem" data-gr="Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα." data-en="I tried many times, but every time I failed."><span class="el">Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα.&quot;)">🔊</button><br><span class="en">I tried many times, but every time I failed.</span></div>
-<div class="nsent nitem" data-gr="Δεν μπορούν να συμφωνήσουν." data-en="They can&#x27;t agree."><span class="el">Δεν μπορούν να συμφωνήσουν.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν μπορούν να συμφωνήσουν.&quot;)">🔊</button><br><span class="en">They can't agree.</span></div>
-<div class="nsent nitem" data-gr="Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει." data-en="The developer wants the money upfront because he takes the money and builds."><span class="el">Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.&quot;)">🔊</button><br><span class="en">The developer wants the money upfront because he takes the money and builds.</span></div>
-<div class="nsent nitem" data-gr="Σκέφτεσαι να φύγεις από την Καλιφόρνια;" data-en="Are you thinking of leaving California?"><span class="el">Σκέφτεσαι να φύγεις από την Καλιφόρνια;</span><button class="tts-btn" onclick="ttsSpeak(this,&quot;Σκέφτεσαι να φύγεις από την Καλιφόρνια;&quot;)">🔊</button><br><span class="en">Are you thinking of leaving California?</span></div>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">Best Sentences to Memorize</h2>
+<div class="nsent nitem" data-en="This week we're doing it an hour earlier for me." data-gr="Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα."><span class="el">Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Αυτή τη βδομάδα κάνουμε μια ώρα πιο νωρίς για μένα.")'>🔊</button><br/><span class="en">This week we're doing it an hour earlier for me.</span></div>
+<div class="nsent nitem" data-en="They seem shorter." data-gr="Μοιάζουν μικρότερες."><span class="el">Μοιάζουν μικρότερες.</span><button class="tts-btn" onclick='ttsSpeak(this,"Μοιάζουν μικρότερες.")'>🔊</button><br/><span class="en">They seem shorter.</span></div>
+<div class="nsent nitem" data-en="A hot drink is tea." data-gr="Ρόφημα είναι το τσάι."><span class="el">Ρόφημα είναι το τσάι.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ρόφημα είναι το τσάι.")'>🔊</button><br/><span class="en">A hot drink is tea.</span></div>
+<div class="nsent nitem" data-en="I live on the upper floor." data-gr="Εγώ μένω στον πάνω όροφο."><span class="el">Εγώ μένω στον πάνω όροφο.</span><button class="tts-btn" onclick='ttsSpeak(this,"Εγώ μένω στον πάνω όροφο.")'>🔊</button><br/><span class="en">I live on the upper floor.</span></div>
+<div class="nsent nitem" data-en="Here there are 3 floors." data-gr="Εδώ είναι 3 ορόφοι."><span class="el">Εδώ είναι 3 ορόφοι.</span><button class="tts-btn" onclick='ttsSpeak(this,"Εδώ είναι 3 ορόφοι.")'>🔊</button><br/><span class="en">Here there are 3 floors.</span></div>
+<div class="nsent nitem" data-en="You have to be sure you want to live there." data-gr="Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί."><span class="el">Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί.</span><button class="tts-btn" onclick='ttsSpeak(this,"Πρέπει να είσαι σίγουρος ότι θέλεις να μένεις εκεί.")'>🔊</button><br/><span class="en">You have to be sure you want to live there.</span></div>
+<div class="nsent nitem" data-en="In Cyprus it's not easy to sell your house." data-gr="Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου."><span class="el">Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου.</span><button class="tts-btn" onclick='ttsSpeak(this,"Στην Κύπρο δεν είναι εύκολο να πουλήσεις το σπίτι σου.")'>🔊</button><br/><span class="en">In Cyprus it's not easy to sell your house.</span></div>
+<div class="nsent nitem" data-en="I don't want it to have a yard." data-gr="Δεν θέλω να έχει αυλή."><span class="el">Δεν θέλω να έχει αυλή.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν θέλω να έχει αυλή.")'>🔊</button><br/><span class="en">I don't want it to have a yard.</span></div>
+<div class="nsent nitem" data-en="I tried many times, but every time I failed." data-gr="Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα."><span class="el">Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα.</span><button class="tts-btn" onclick='ttsSpeak(this,"Προσπάθησα πολλές φορές, αλλά κάθε φορά απέτυχα.")'>🔊</button><br/><span class="en">I tried many times, but every time I failed.</span></div>
+<div class="nsent nitem" data-en="They can't agree." data-gr="Δεν μπορούν να συμφωνήσουν."><span class="el">Δεν μπορούν να συμφωνήσουν.</span><button class="tts-btn" onclick='ttsSpeak(this,"Δεν μπορούν να συμφωνήσουν.")'>🔊</button><br/><span class="en">They can't agree.</span></div>
+<div class="nsent nitem" data-en="The developer wants the money upfront because he takes the money and builds." data-gr="Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει."><span class="el">Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.</span><button class="tts-btn" onclick='ttsSpeak(this,"Ο εργολάβος θέλει τα χρήματα μπροστά γιατί παίρνει τα χρήματα και χτίζει.")'>🔊</button><br/><span class="en">The developer wants the money upfront because he takes the money and builds.</span></div>
+<div class="nsent nitem" data-en="Are you thinking of leaving California?" data-gr="Σκέφτεσαι να φύγεις από την Καλιφόρνια;"><span class="el">Σκέφτεσαι να φύγεις από την Καλιφόρνια;</span><button class="tts-btn" onclick='ttsSpeak(this,"Σκέφτεσαι να φύγεις από την Καλιφόρνια;")'>🔊</button><br/><span class="en">Are you thinking of leaving California?</span></div>
 </section>
 <section class="nsec" id="focus">
-<h2 class="nsec-title">Where to Focus Next</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">Where to Focus Next</h2>
 <p class="nsec-intro">Based only on my lines in this lesson (about 26 minutes recorded).</p>
 <div class="nsub"><h4>1. Wrong article gender on masculine -ος nouns (about 5 times)<span class="ntag fix">fix</span></h4>
 <p class="ntext">το ήχος (×2), το φόρος, αυτό το άνθρωπο, τα βαλίτσες. Correct: ο ήχος, ο φόρος, αυτός ο άνθρωπος, τις βαλίτσες. Rule: -ος nouns are normally masculine. The teacher did not correct these, and a transcription error could account for one or two, so treat the count as approximate.</p>
@@ -497,16 +498,15 @@ section.nsec h2.nsec-title { cursor:pointer; user-select:none; -webkit-user-sele
 </div>
 </section>
 <section class="nsec" id="switches">
-<h2 class="nsec-title">English Sentences (said in English)</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">English Sentences (said in English)</h2>
 <p class="nsec-intro">23 full sentences I said in English, with suggested Greek (the recording does not show the Greek). The words and phrases I switched on are in the vocabulary tables at the top, marked 'English switch'; B1/B2 words from these sentences are there too.</p>
-<div class="ngrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)"><div class="nh">I said in English</div><div class="nh">Greek (suggested)</div><div class="nc">So next week is going to be the same time?</div><div class="nc"><span class="nitem" data-gr="Την επόμενη εβδομάδα θα είναι η ίδια ώρα;" data-en="So next week is going to be the same time?">Την επόμενη εβδομάδα θα είναι η ίδια ώρα; <button class="tts-btn" onclick="ttsSpeak(this,&quot;Την επόμενη εβδομάδα θα είναι η ίδια ώρα;&quot;)">🔊</button></span></div><div class="nc alt">It's the same for me, though. Next week.</div><div class="nc alt"><span class="nitem" data-gr="Για μένα είναι η ίδια ώρα την επόμενη εβδομάδα." data-en="It&#x27;s the same for me, though. Next week.">Για μένα είναι η ίδια ώρα την επόμενη εβδομάδα. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Για μένα είναι η ίδια ώρα την επόμενη εβδομάδα.&quot;)">🔊</button></span></div><div class="nc">I don't really like the time change.</div><div class="nc"><span class="nitem" data-gr="Δεν μου αρέσει πολύ η αλλαγή της ώρας." data-en="I don&#x27;t really like the time change.">Δεν μου αρέσει πολύ η αλλαγή της ώρας. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν μου αρέσει πολύ η αλλαγή της ώρας.&quot;)">🔊</button></span></div><div class="nc alt">We don't have enough sunlight.</div><div class="nc alt"><span class="nitem" data-gr="Δεν έχουμε αρκετό φως." data-en="We don&#x27;t have enough sunlight.">Δεν έχουμε αρκετό φως. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν έχουμε αρκετό φως.&quot;)">🔊</button></span></div><div class="nc">It's Pete's coffee.</div><div class="nc"><span class="nitem" data-gr="Είναι ο καφές του Πέτρου." data-en="It&#x27;s Pete&#x27;s coffee.">Είναι ο καφές του Πέτρου. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Είναι ο καφές του Πέτρου.&quot;)">🔊</button></span></div><div class="nc alt">I think it's the same part of my brain.</div><div class="nc alt"><span class="nitem" data-gr="Νομίζω ότι είναι το ίδιο μέρος του μυαλού μου." data-en="I think it&#x27;s the same part of my brain.">Νομίζω ότι είναι το ίδιο μέρος του μυαλού μου. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Νομίζω ότι είναι το ίδιο μέρος του μυαλού μου.&quot;)">🔊</button></span></div><div class="nc">What's the word for drill?</div><div class="nc"><span class="nitem" data-gr="Πώς λέγεται το τρυπάνι;" data-en="What&#x27;s the word for drill?">Πώς λέγεται το τρυπάνι; <button class="tts-btn" onclick="ttsSpeak(this,&quot;Πώς λέγεται το τρυπάνι;&quot;)">🔊</button></span></div><div class="nc alt">What do you call them?</div><div class="nc alt"><span class="nitem" data-gr="Πώς τους λένε;" data-en="What do you call them?">Πώς τους λένε; <button class="tts-btn" onclick="ttsSpeak(this,&quot;Πώς τους λένε;&quot;)">🔊</button></span></div><div class="nc">It's terrible.</div><div class="nc"><span class="nitem" data-gr="Είναι τρομερό." data-en="It&#x27;s terrible.">Είναι τρομερό. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Είναι τρομερό.&quot;)">🔊</button></span></div><div class="nc alt">Is it safe for the baby?</div><div class="nc alt"><span class="nitem" data-gr="Είναι ασφαλές για το μωρό;" data-en="Is it safe for the baby?">Είναι ασφαλές για το μωρό; <button class="tts-btn" onclick="ttsSpeak(this,&quot;Είναι ασφαλές για το μωρό;&quot;)">🔊</button></span></div><div class="nc">Each floor has 2 apartments.</div><div class="nc"><span class="nitem" data-gr="Κάθε όροφος έχει 2 διαμερίσματα." data-en="Each floor has 2 apartments.">Κάθε όροφος έχει 2 διαμερίσματα. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Κάθε όροφος έχει 2 διαμερίσματα.&quot;)">🔊</button></span></div><div class="nc alt">Why can't we just figure it out?</div><div class="nc alt"><span class="nitem" data-gr="Γιατί δεν μπορούμε να το λύσουμε;" data-en="Why can&#x27;t we just figure it out?">Γιατί δεν μπορούμε να το λύσουμε; <button class="tts-btn" onclick="ttsSpeak(this,&quot;Γιατί δεν μπορούμε να το λύσουμε;&quot;)">🔊</button></span></div><div class="nc">We got so close.</div><div class="nc"><span class="nitem" data-gr="Ήμασταν πολύ κοντά." data-en="We got so close.">Ήμασταν πολύ κοντά. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Ήμασταν πολύ κοντά.&quot;)">🔊</button></span></div><div class="nc alt">He wants me to buy.</div><div class="nc alt"><span class="nitem" data-gr="Θέλει να αγοράσω." data-en="He wants me to buy.">Θέλει να αγοράσω. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλει να αγοράσω.&quot;)">🔊</button></span></div><div class="nc">I want it to be modern.</div><div class="nc"><span class="nitem" data-gr="Θέλω να είναι μοντέρνο." data-en="I want it to be modern.">Θέλω να είναι μοντέρνο. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλω να είναι μοντέρνο.&quot;)">🔊</button></span></div><div class="nc alt">She wants it completely new, brand new.</div><div class="nc alt"><span class="nitem" data-gr="Θέλει να είναι εντελώς καινούργιο, ολοκαίνουργιο." data-en="She wants it completely new, brand new.">Θέλει να είναι εντελώς καινούργιο, ολοκαίνουργιο. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Θέλει να είναι εντελώς καινούργιο, ολοκαίνουργιο.&quot;)">🔊</button></span></div><div class="nc">We pay half now and a bit after each stage.</div><div class="nc"><span class="nitem" data-gr="Πληρώνουμε τα μισά τώρα και λίγα μετά από κάθε στάδιο." data-en="We pay half now and a bit after each stage.">Πληρώνουμε τα μισά τώρα και λίγα μετά από κάθε στάδιο. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Πληρώνουμε τα μισά τώρα και λίγα μετά από κάθε στάδιο.&quot;)">🔊</button></span></div><div class="nc alt">They couldn't agree on the amount of the penalty.</div><div class="nc alt"><span class="nitem" data-gr="Δεν συμφώνησαν στο ποσό του προστίμου." data-en="They couldn&#x27;t agree on the amount of the penalty.">Δεν συμφώνησαν στο ποσό του προστίμου. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν συμφώνησαν στο ποσό του προστίμου.&quot;)">🔊</button></span></div><div class="nc">They don't trust each other.</div><div class="nc"><span class="nitem" data-gr="Δεν εμπιστεύονται ο ένας τον άλλον." data-en="They don&#x27;t trust each other.">Δεν εμπιστεύονται ο ένας τον άλλον. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Δεν εμπιστεύονται ο ένας τον άλλον.&quot;)">🔊</button></span></div><div class="nc alt">That's probably less important.</div><div class="nc alt"><span class="nitem" data-gr="Αυτό είναι ίσως λιγότερο σημαντικό." data-en="That&#x27;s probably less important.">Αυτό είναι ίσως λιγότερο σημαντικό. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Αυτό είναι ίσως λιγότερο σημαντικό.&quot;)">🔊</button></span></div><div class="nc">I have lots of choices.</div><div class="nc"><span class="nitem" data-gr="Έχω πολλές επιλογές." data-en="I have lots of choices.">Έχω πολλές επιλογές. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Έχω πολλές επιλογές.&quot;)">🔊</button></span></div><div class="nc alt">Can I call you back in 5 minutes?</div><div class="nc alt"><span class="nitem" data-gr="Μπορώ να σε πάρω τηλέφωνο σε 5 λεπτά;" data-en="Can I call you back in 5 minutes?">Μπορώ να σε πάρω τηλέφωνο σε 5 λεπτά; <button class="tts-btn" onclick="ttsSpeak(this,&quot;Μπορώ να σε πάρω τηλέφωνο σε 5 λεπτά;&quot;)">🔊</button></span></div><div class="nc">I think Eleni wants to talk to me urgently.</div><div class="nc"><span class="nitem" data-gr="Νομίζω ότι η Ελένη θέλει να μου μιλήσει επειγόντως." data-en="I think Eleni wants to talk to me urgently.">Νομίζω ότι η Ελένη θέλει να μου μιλήσει επειγόντως. <button class="tts-btn" onclick="ttsSpeak(this,&quot;Νομίζω ότι η Ελένη θέλει να μου μιλήσει επειγόντως.&quot;)">🔊</button></span></div></div>
+<div class="ngrid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)"><div class="nh">I said in English</div><div class="nh">Greek (suggested)</div><div class="nc">So next week is going to be the same time?</div><div class="nc"><span class="nitem" data-en="So next week is going to be the same time?" data-gr="Την επόμενη εβδομάδα θα είναι η ίδια ώρα;">Την επόμενη εβδομάδα θα είναι η ίδια ώρα; <button class="tts-btn" onclick='ttsSpeak(this,"Την επόμενη εβδομάδα θα είναι η ίδια ώρα;")'>🔊</button></span></div><div class="nc alt">It's the same for me, though. Next week.</div><div class="nc alt"><span class="nitem" data-en="It's the same for me, though. Next week." data-gr="Για μένα είναι η ίδια ώρα την επόμενη εβδομάδα.">Για μένα είναι η ίδια ώρα την επόμενη εβδομάδα. <button class="tts-btn" onclick='ttsSpeak(this,"Για μένα είναι η ίδια ώρα την επόμενη εβδομάδα.")'>🔊</button></span></div><div class="nc">I don't really like the time change.</div><div class="nc"><span class="nitem" data-en="I don't really like the time change." data-gr="Δεν μου αρέσει πολύ η αλλαγή της ώρας.">Δεν μου αρέσει πολύ η αλλαγή της ώρας. <button class="tts-btn" onclick='ttsSpeak(this,"Δεν μου αρέσει πολύ η αλλαγή της ώρας.")'>🔊</button></span></div><div class="nc alt">We don't have enough sunlight.</div><div class="nc alt"><span class="nitem" data-en="We don't have enough sunlight." data-gr="Δεν έχουμε αρκετό φως.">Δεν έχουμε αρκετό φως. <button class="tts-btn" onclick='ttsSpeak(this,"Δεν έχουμε αρκετό φως.")'>🔊</button></span></div><div class="nc">It's Pete's coffee.</div><div class="nc"><span class="nitem" data-en="It's Pete's coffee." data-gr="Είναι ο καφές του Πέτρου.">Είναι ο καφές του Πέτρου. <button class="tts-btn" onclick='ttsSpeak(this,"Είναι ο καφές του Πέτρου.")'>🔊</button></span></div><div class="nc alt">I think it's the same part of my brain.</div><div class="nc alt"><span class="nitem" data-en="I think it's the same part of my brain." data-gr="Νομίζω ότι είναι το ίδιο μέρος του μυαλού μου.">Νομίζω ότι είναι το ίδιο μέρος του μυαλού μου. <button class="tts-btn" onclick='ttsSpeak(this,"Νομίζω ότι είναι το ίδιο μέρος του μυαλού μου.")'>🔊</button></span></div><div class="nc">What's the word for drill?</div><div class="nc"><span class="nitem" data-en="What's the word for drill?" data-gr="Πώς λέγεται το τρυπάνι;">Πώς λέγεται το τρυπάνι; <button class="tts-btn" onclick='ttsSpeak(this,"Πώς λέγεται το τρυπάνι;")'>🔊</button></span></div><div class="nc alt">What do you call them?</div><div class="nc alt"><span class="nitem" data-en="What do you call them?" data-gr="Πώς τους λένε;">Πώς τους λένε; <button class="tts-btn" onclick='ttsSpeak(this,"Πώς τους λένε;")'>🔊</button></span></div><div class="nc">It's terrible.</div><div class="nc"><span class="nitem" data-en="It's terrible." data-gr="Είναι τρομερό.">Είναι τρομερό. <button class="tts-btn" onclick='ttsSpeak(this,"Είναι τρομερό.")'>🔊</button></span></div><div class="nc alt">Is it safe for the baby?</div><div class="nc alt"><span class="nitem" data-en="Is it safe for the baby?" data-gr="Είναι ασφαλές για το μωρό;">Είναι ασφαλές για το μωρό; <button class="tts-btn" onclick='ttsSpeak(this,"Είναι ασφαλές για το μωρό;")'>🔊</button></span></div><div class="nc">Each floor has 2 apartments.</div><div class="nc"><span class="nitem" data-en="Each floor has 2 apartments." data-gr="Κάθε όροφος έχει 2 διαμερίσματα.">Κάθε όροφος έχει 2 διαμερίσματα. <button class="tts-btn" onclick='ttsSpeak(this,"Κάθε όροφος έχει 2 διαμερίσματα.")'>🔊</button></span></div><div class="nc alt">Why can't we just figure it out?</div><div class="nc alt"><span class="nitem" data-en="Why can't we just figure it out?" data-gr="Γιατί δεν μπορούμε να το λύσουμε;">Γιατί δεν μπορούμε να το λύσουμε; <button class="tts-btn" onclick='ttsSpeak(this,"Γιατί δεν μπορούμε να το λύσουμε;")'>🔊</button></span></div><div class="nc">We got so close.</div><div class="nc"><span class="nitem" data-en="We got so close." data-gr="Ήμασταν πολύ κοντά.">Ήμασταν πολύ κοντά. <button class="tts-btn" onclick='ttsSpeak(this,"Ήμασταν πολύ κοντά.")'>🔊</button></span></div><div class="nc alt">He wants me to buy.</div><div class="nc alt"><span class="nitem" data-en="He wants me to buy." data-gr="Θέλει να αγοράσω.">Θέλει να αγοράσω. <button class="tts-btn" onclick='ttsSpeak(this,"Θέλει να αγοράσω.")'>🔊</button></span></div><div class="nc">I want it to be modern.</div><div class="nc"><span class="nitem" data-en="I want it to be modern." data-gr="Θέλω να είναι μοντέρνο.">Θέλω να είναι μοντέρνο. <button class="tts-btn" onclick='ttsSpeak(this,"Θέλω να είναι μοντέρνο.")'>🔊</button></span></div><div class="nc alt">She wants it completely new, brand new.</div><div class="nc alt"><span class="nitem" data-en="She wants it completely new, brand new." data-gr="Θέλει να είναι εντελώς καινούργιο, ολοκαίνουργιο.">Θέλει να είναι εντελώς καινούργιο, ολοκαίνουργιο. <button class="tts-btn" onclick='ttsSpeak(this,"Θέλει να είναι εντελώς καινούργιο, ολοκαίνουργιο.")'>🔊</button></span></div><div class="nc">We pay half now and a bit after each stage.</div><div class="nc"><span class="nitem" data-en="We pay half now and a bit after each stage." data-gr="Πληρώνουμε τα μισά τώρα και λίγα μετά από κάθε στάδιο.">Πληρώνουμε τα μισά τώρα και λίγα μετά από κάθε στάδιο. <button class="tts-btn" onclick='ttsSpeak(this,"Πληρώνουμε τα μισά τώρα και λίγα μετά από κάθε στάδιο.")'>🔊</button></span></div><div class="nc alt">They couldn't agree on the amount of the penalty.</div><div class="nc alt"><span class="nitem" data-en="They couldn't agree on the amount of the penalty." data-gr="Δεν συμφώνησαν στο ποσό του προστίμου.">Δεν συμφώνησαν στο ποσό του προστίμου. <button class="tts-btn" onclick='ttsSpeak(this,"Δεν συμφώνησαν στο ποσό του προστίμου.")'>🔊</button></span></div><div class="nc">They don't trust each other.</div><div class="nc"><span class="nitem" data-en="They don't trust each other." data-gr="Δεν εμπιστεύονται ο ένας τον άλλον.">Δεν εμπιστεύονται ο ένας τον άλλον. <button class="tts-btn" onclick='ttsSpeak(this,"Δεν εμπιστεύονται ο ένας τον άλλον.")'>🔊</button></span></div><div class="nc alt">That's probably less important.</div><div class="nc alt"><span class="nitem" data-en="That's probably less important." data-gr="Αυτό είναι ίσως λιγότερο σημαντικό.">Αυτό είναι ίσως λιγότερο σημαντικό. <button class="tts-btn" onclick='ttsSpeak(this,"Αυτό είναι ίσως λιγότερο σημαντικό.")'>🔊</button></span></div><div class="nc">I have lots of choices.</div><div class="nc"><span class="nitem" data-en="I have lots of choices." data-gr="Έχω πολλές επιλογές.">Έχω πολλές επιλογές. <button class="tts-btn" onclick='ttsSpeak(this,"Έχω πολλές επιλογές.")'>🔊</button></span></div><div class="nc alt">Can I call you back in 5 minutes?</div><div class="nc alt"><span class="nitem" data-en="Can I call you back in 5 minutes?" data-gr="Μπορώ να σε πάρω τηλέφωνο σε 5 λεπτά;">Μπορώ να σε πάρω τηλέφωνο σε 5 λεπτά; <button class="tts-btn" onclick='ttsSpeak(this,"Μπορώ να σε πάρω τηλέφωνο σε 5 λεπτά;")'>🔊</button></span></div><div class="nc">I think Eleni wants to talk to me urgently.</div><div class="nc"><span class="nitem" data-en="I think Eleni wants to talk to me urgently." data-gr="Νομίζω ότι η Ελένη θέλει να μου μιλήσει επειγόντως.">Νομίζω ότι η Ελένη θέλει να μου μιλήσει επειγόντως. <button class="tts-btn" onclick='ttsSpeak(this,"Νομίζω ότι η Ελένη θέλει να μου μιλήσει επειγόντως.")'>🔊</button></span></div></div>
 </section>
 <section class="nsec" id="plan">
-<h2 class="nsec-title">Short Review Plan</h2>
+<h2 class="nsec-title" style="cursor: pointer; user-select: none;">Short Review Plan</h2>
 <ul class="nlist"><li>Session 1 (15 min): vocabulary table, say each word with its article and example aloud.</li><li>Session 2 (15 min): Drill 1, article gender on -ος nouns.</li><li>Session 3 (15 min): Drill 2, aorist vs present.</li><li>Session 4 (15 min): να-constructions: 10 sentences with πρέπει / μπορεί / θέλω / δεν θέλω να.</li><li>Final speaking challenge (5 min): talk about your ideal apartment near your in-laws in Athens, including price, floors and contract terms.</li></ul>
 </section>
 </div><!-- /notes -->
-
 <script>
 (function(){
   function getVoice() {
@@ -889,78 +889,77 @@ section.nsec h2.nsec-title { cursor:pointer; user-select:none; -webkit-user-sele
 </script>
 <!-- ══════════════════════════════════ FREQ PICKER MODAL -->
 <div id="fc-freq-picker" style="display: none;">
-  <div class="fc-picker-box">
-    <h3>🃏 Flashcard Filter</h3>
-    <p>Select which frequency groups to include:</p>
-    <div class="fc-freq-circles">
-      <div class="fc-freq-toggle selected" data-color="#27ae60">
-        <span class="fc-dot" style="background:#27ae60;"></span>top 3k
+<div class="fc-picker-box">
+<h3>🃏 Flashcard Filter</h3>
+<p>Select which frequency groups to include:</p>
+<div class="fc-freq-circles">
+<div class="fc-freq-toggle selected" data-color="#27ae60">
+<span class="fc-dot" style="background:#27ae60;"></span>top 3k
       </div>
-      <div class="fc-freq-toggle selected" data-color="#2980b9">
-        <span class="fc-dot" style="background:#2980b9;"></span>3k–8k
+<div class="fc-freq-toggle selected" data-color="#2980b9">
+<span class="fc-dot" style="background:#2980b9;"></span>3k–8k
       </div>
-      <div class="fc-freq-toggle selected" data-color="#e67e22">
-        <span class="fc-dot" style="background:#e67e22;"></span>8k–15k
+<div class="fc-freq-toggle selected" data-color="#e67e22">
+<span class="fc-dot" style="background:#e67e22;"></span>8k–15k
       </div>
-      <div class="fc-freq-toggle selected" data-color="#c0392b">
-        <span class="fc-dot" style="background:#c0392b;"></span>15k+
+<div class="fc-freq-toggle selected" data-color="#c0392b">
+<span class="fc-dot" style="background:#c0392b;"></span>15k+
       </div>
-      <div class="fc-freq-toggle selected" data-color="#bdc3c7">
-        <span class="fc-dot" style="background:#bdc3c7;"></span>unknown
+<div class="fc-freq-toggle selected" data-color="#bdc3c7">
+<span class="fc-dot" style="background:#bdc3c7;"></span>unknown
       </div>
-    </div>
-    <div class="fc-picker-actions">
-      <span id="fc-picker-count">0 words</span>
-      <button id="fc-picker-cancel">Cancel</button>
-      <button id="fc-picker-start">Start Flashcards</button>
-    </div>
-  </div>
+</div>
+<div class="fc-picker-actions">
+<span id="fc-picker-count">0 words</span>
+<button id="fc-picker-cancel">Cancel</button>
+<button id="fc-picker-start">Start Flashcards</button>
+</div>
+</div>
 </div>
 <!-- ═════════════════════════════════════════════ FLASHCARD MODAL -->
 <div id="fc-modal" style="display: none;">
-  <div class="fc-box">
-    <div class="fc-header">
-      <div class="fc-mode-btns">
-        <button class="fc-mode-btn active" id="fc-mode-g2e">Ελληνικά → English</button>
-        <button class="fc-mode-btn" id="fc-mode-e2g">English → Ελληνικά</button>
-      </div>
-      <span class="fc-progress" id="fc-progress">0 / 0 mastered  ·  0 remaining</span>
-      <button class="fc-close" id="fc-close-btn" title="Close">✕</button>
-    </div>
-    <div class="fc-voice-bar" id="fc-voice-bar">
-      <span style="font-weight:600;">Voice:</span>
-      <label><input type="radio" name="voice" value="el-GR-NestorasNeural"> ♂ Nestoras</label>
-      <label><input type="radio" name="voice" value="el-GR-AthinaNeural"> ♀ Athina</label>
-      <label for="fc-speed-slider" style="margin-left:8px;">Speed:</label>
-      <input type="range" id="fc-speed-slider" min="0.50" max="1.00" step="0.05" value="0.80" style="width:100px;">
-      <span id="fc-speed-val">0.80x</span>
-      <label style="margin-left:8px;" title="Automatically play Greek audio when a card is shown or its answer revealed"><input type="checkbox" id="fc-autoplay" checked> 🔈 Auto</label>
-    </div>
-    <div id="fc-study-area">
-      <div class="fc-card" id="fc-card">
-        <div id="fc-front-content"><div class="fc-greek"></div></div>
-        <span class="fc-tts-btn" id="fc-tts-btn" title="Play pronunciation">🔊</span>
-        <div class="fc-inline-answer" id="fc-inline-answer" style="display:none;"></div>
-        <div class="fc-reveal-hint" id="fc-reveal-hint"></div>
-      </div>
-      <div class="fc-answer-area" id="fc-answer-area" style="display: none;">
-        <hr class="fc-divider">
-        <div class="fc-answer-content" id="fc-answer-content"></div>
-        <div class="fc-btns">
-          <button id="fc-wrong-btn">✗ Review Again</button>
-          <button id="fc-correct-btn">✓ Got It</button>
-        </div>
-      </div>
-    </div>
-    <div class="fc-complete" id="fc-complete" style="display: none;">
-      <div class="fc-complete-icon">🎉</div>
-      <h3>Session complete!</h3>
-      <p id="fc-complete-msg">You worked through all 0 cards.</p>
-      <button id="fc-restart-btn">Study Again</button>
-    </div>
-  </div>
+<div class="fc-box">
+<div class="fc-header">
+<div class="fc-mode-btns">
+<button class="fc-mode-btn active" id="fc-mode-g2e">Ελληνικά → English</button>
+<button class="fc-mode-btn" id="fc-mode-e2g">English → Ελληνικά</button>
 </div>
-
+<span class="fc-progress" id="fc-progress">0 / 0 mastered  ·  0 remaining</span>
+<button class="fc-close" id="fc-close-btn" title="Close">✕</button>
+</div>
+<div class="fc-voice-bar" id="fc-voice-bar">
+<span style="font-weight:600;">Voice:</span>
+<label><input name="voice" type="radio" value="el-GR-NestorasNeural"/> ♂ Nestoras</label>
+<label><input name="voice" type="radio" value="el-GR-AthinaNeural"/> ♀ Athina</label>
+<label for="fc-speed-slider" style="margin-left:8px;">Speed:</label>
+<input id="fc-speed-slider" max="1.00" min="0.50" step="0.05" style="width:100px;" type="range" value="0.80"/>
+<span id="fc-speed-val">0.80x</span>
+<label style="margin-left:8px;" title="Automatically play Greek audio when a card is shown or its answer revealed"><input checked="" id="fc-autoplay" type="checkbox"/> 🔈 Auto</label>
+</div>
+<div id="fc-study-area">
+<div class="fc-card" id="fc-card">
+<div id="fc-front-content"><div class="fc-greek"></div></div>
+<span class="fc-tts-btn" id="fc-tts-btn" title="Play pronunciation">🔊</span>
+<div class="fc-inline-answer" id="fc-inline-answer" style="display:none;"></div>
+<div class="fc-reveal-hint" id="fc-reveal-hint"></div>
+</div>
+<div class="fc-answer-area" id="fc-answer-area" style="display: none;">
+<hr class="fc-divider"/>
+<div class="fc-answer-content" id="fc-answer-content"></div>
+<div class="fc-btns">
+<button id="fc-wrong-btn">✗ Review Again</button>
+<button id="fc-correct-btn">✓ Got It</button>
+</div>
+</div>
+</div>
+<div class="fc-complete" id="fc-complete" style="display: none;">
+<div class="fc-complete-icon">🎉</div>
+<h3>Session complete!</h3>
+<p id="fc-complete-msg">You worked through all 0 cards.</p>
+<button id="fc-restart-btn">Study Again</button>
+</div>
+</div>
+</div>
 <script>
 // ── Flashcard Logic (Greek) ──
 (function(){
@@ -1288,50 +1287,48 @@ section.nsec h2.nsec-title { cursor:pointer; user-select:none; -webkit-user-sele
   });
 })();
 </script>
-
-
 <!-- ═════════════ GRAMMAR FLASHCARD MODAL -->
 <div id="gc-modal" style="display: none;">
-  <div class="fc-box">
-    <div class="fc-header">
-      <div class="fc-mode-btns">
-        <button class="fc-mode-btn active" id="gc-mode-g2e">Ελληνικά → English</button>
-        <button class="fc-mode-btn" id="gc-mode-e2g">English → Ελληνικά</button>
-      </div>
-      <span class="fc-progress" id="gc-progress">0 / 0 mastered  ·  0 remaining</span>
-      <button class="fc-close" id="gc-close-btn" title="Close">✕</button>
-    </div>
-    <div class="fc-voice-bar" id="gc-voice-bar">
-      <span style="font-weight:600;">Voice:</span>
-      <label><input type="radio" name="gvoice" value="el-GR-NestorasNeural" checked> ♂ Nestoras</label>
-      <label><input type="radio" name="gvoice" value="el-GR-AthinaNeural"> ♀ Athina</label>
-      <label for="gc-speed-slider" style="margin-left:8px;">Speed:</label>
-      <input type="range" id="gc-speed-slider" min="0.50" max="1.00" step="0.05" value="0.80" style="width:100px;">
-      <span id="gc-speed-val">0.80x</span>
-      <label style="margin-left:8px;" title="Automatically play Greek audio"><input type="checkbox" id="gc-autoplay" checked> 🔈 Auto</label>
-    </div>
-    <div id="gc-study-area">
-      <div class="fc-card" id="gc-card">
-        <div id="gc-front-content"><div class="fc-greek"></div></div>
-        <span class="fc-tts-btn" id="gc-tts-btn" title="Play pronunciation">🔊</span>
-        <div class="fc-inline-answer" id="gc-inline-answer" style="display:none;"></div>
-      </div>
-      <div class="fc-answer-area" id="gc-answer-area" style="display: none;">
-        <hr class="fc-divider">
-        <div class="fc-answer-content" id="gc-answer-content"></div>
-        <div class="fc-btns">
-          <button id="gc-wrong-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#b94040;color:#fff;">✗ Review Again</button>
-          <button id="gc-correct-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#3a7d44;color:#fff;">✓ Got It</button>
-        </div>
-      </div>
-    </div>
-    <div class="fc-complete" id="gc-complete" style="display: none;">
-      <div class="fc-complete-icon">🎉</div>
-      <h3>Session complete!</h3>
-      <p id="gc-complete-msg"></p>
-      <button id="gc-restart-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#4a6a9c;color:#fff;margin-top:8px;">Study Again</button>
-    </div>
-  </div>
+<div class="fc-box">
+<div class="fc-header">
+<div class="fc-mode-btns">
+<button class="fc-mode-btn active" id="gc-mode-g2e">Ελληνικά → English</button>
+<button class="fc-mode-btn" id="gc-mode-e2g">English → Ελληνικά</button>
+</div>
+<span class="fc-progress" id="gc-progress">0 / 0 mastered  ·  0 remaining</span>
+<button class="fc-close" id="gc-close-btn" title="Close">✕</button>
+</div>
+<div class="fc-voice-bar" id="gc-voice-bar">
+<span style="font-weight:600;">Voice:</span>
+<label><input checked="" name="gvoice" type="radio" value="el-GR-NestorasNeural"/> ♂ Nestoras</label>
+<label><input name="gvoice" type="radio" value="el-GR-AthinaNeural"/> ♀ Athina</label>
+<label for="gc-speed-slider" style="margin-left:8px;">Speed:</label>
+<input id="gc-speed-slider" max="1.00" min="0.50" step="0.05" style="width:100px;" type="range" value="0.80"/>
+<span id="gc-speed-val">0.80x</span>
+<label style="margin-left:8px;" title="Automatically play Greek audio"><input checked="" id="gc-autoplay" type="checkbox"/> 🔈 Auto</label>
+</div>
+<div id="gc-study-area">
+<div class="fc-card" id="gc-card">
+<div id="gc-front-content"><div class="fc-greek"></div></div>
+<span class="fc-tts-btn" id="gc-tts-btn" title="Play pronunciation">🔊</span>
+<div class="fc-inline-answer" id="gc-inline-answer" style="display:none;"></div>
+</div>
+<div class="fc-answer-area" id="gc-answer-area" style="display: none;">
+<hr class="fc-divider"/>
+<div class="fc-answer-content" id="gc-answer-content"></div>
+<div class="fc-btns">
+<button id="gc-wrong-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#b94040;color:#fff;">✗ Review Again</button>
+<button id="gc-correct-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#3a7d44;color:#fff;">✓ Got It</button>
+</div>
+</div>
+</div>
+<div class="fc-complete" id="gc-complete" style="display: none;">
+<div class="fc-complete-icon">🎉</div>
+<h3>Session complete!</h3>
+<p id="gc-complete-msg"></p>
+<button id="gc-restart-btn" style="border:none;border-radius:7px;padding:8px 22px;font-size:14px;font-weight:bold;cursor:pointer;background:#4a6a9c;color:#fff;margin-top:8px;">Study Again</button>
+</div>
+</div>
 </div>
 <script>
 // ── Lesson Notes: cross-off + Grammar Flashcards (separate from vocab flashcards / Anki export) ──
@@ -1468,5 +1465,4 @@ section.nsec h2.nsec-title { cursor:pointer; user-select:none; -webkit-user-sele
   });
 })();
 </script>
-
 </body></html>
